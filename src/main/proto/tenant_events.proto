@@ -1,0 +1,179 @@
+syntax = "proto3";
+
+package com.nnipa.proto.tenant;
+
+option java_package = "com.nnipa.proto.tenant";
+option java_outer_classname = "TenantEventProtos";
+option java_multiple_files = true;
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/struct.proto";
+import "common.proto";
+
+// ============================================
+// Tenant Domain Events
+// ============================================
+
+// Event: Tenant Created
+message TenantCreatedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  message TenantData {
+    string tenant_id = 1;
+    string name = 2;
+    string domain = 3;
+    com.nnipa.proto.common.OrganizationType organization_type = 4;
+    com.nnipa.proto.common.SubscriptionTier subscription_tier = 5;
+    com.nnipa.proto.common.DataIsolationStrategy isolation_strategy = 6;
+    string parent_tenant_id = 7;
+    bool is_active = 8;
+    google.protobuf.Timestamp created_at = 9;
+    com.nnipa.proto.common.ContactInfo contact_info = 10;
+    map<string, string> settings = 11;
+    repeated string enabled_features = 12;
+  }
+
+  TenantData tenant = 2;
+}
+
+// Event: Tenant Updated
+message TenantUpdatedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  message UpdateData {
+    string tenant_id = 1;
+    map<string, google.protobuf.Value> changed_fields = 2;
+    string updated_by = 3;
+    google.protobuf.Timestamp updated_at = 4;
+  }
+
+  UpdateData update = 2;
+}
+
+// Event: Tenant Activated
+message TenantActivatedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string tenant_id = 2;
+  string activated_by = 3;
+  google.protobuf.Timestamp activated_at = 4;
+  string reason = 5;
+}
+
+// Event: Tenant Deactivated
+message TenantDeactivatedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string tenant_id = 2;
+  string deactivated_by = 3;
+  google.protobuf.Timestamp deactivated_at = 4;
+  string reason = 5;
+  bool is_temporary = 6;
+}
+
+// Event: Tenant Deleted
+message TenantDeletedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string tenant_id = 2;
+  string deleted_by = 3;
+  google.protobuf.Timestamp deleted_at = 4;
+  string reason = 5;
+  bool soft_delete = 6;
+}
+
+// Event: Subscription Changed
+message SubscriptionChangedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  message SubscriptionChange {
+    string tenant_id = 1;
+    com.nnipa.proto.common.SubscriptionTier old_tier = 2;
+    com.nnipa.proto.common.SubscriptionTier new_tier = 3;
+    google.protobuf.Timestamp effective_date = 4;
+    string changed_by = 5;
+    string reason = 6;
+    double price_change = 7;
+  }
+
+  SubscriptionChange change = 2;
+}
+
+// Event: Feature Enabled
+message FeatureEnabledEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string tenant_id = 2;
+  string feature_code = 3;
+  string feature_name = 4;
+  google.protobuf.Timestamp enabled_at = 5;
+  string enabled_by = 6;
+  map<string, string> configuration = 7;
+}
+
+// Event: Feature Disabled
+message FeatureDisabledEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string tenant_id = 2;
+  string feature_code = 3;
+  string feature_name = 4;
+  google.protobuf.Timestamp disabled_at = 5;
+  string disabled_by = 6;
+  string reason = 7;
+}
+
+// Event: Tenant Provisioning Started
+message TenantProvisioningStartedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string tenant_id = 2;
+  repeated string resources_to_provision = 3;
+  google.protobuf.Timestamp started_at = 4;
+  string initiated_by = 5;
+}
+
+// Event: Tenant Provisioning Completed
+message TenantProvisioningCompletedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string tenant_id = 2;
+  repeated string provisioned_resources = 3;
+  google.protobuf.Timestamp completed_at = 4;
+  int64 duration_ms = 5;
+}
+
+// Event: Tenant Provisioning Failed
+message TenantProvisioningFailedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string tenant_id = 2;
+  com.nnipa.proto.common.ErrorDetail error = 3;
+  repeated string failed_resources = 4;
+  google.protobuf.Timestamp failed_at = 5;
+}
+
+// Event: Tenant Settings Changed
+message TenantSettingsChangedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string tenant_id = 2;
+  map<string, google.protobuf.Value> old_settings = 3;
+  map<string, google.protobuf.Value> new_settings = 4;
+  string changed_by = 5;
+  google.protobuf.Timestamp changed_at = 6;
+}
+
+// Event: Usage Limit Exceeded
+message UsageLimitExceededEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string tenant_id = 2;
+  string resource_type = 3;
+  int64 limit = 4;
+  int64 current_usage = 5;
+  google.protobuf.Timestamp exceeded_at = 6;
+  string action_taken = 7;
+}
+
+// Event: Compliance Status Changed
+message ComplianceStatusChangedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string tenant_id = 2;
+  string compliance_type = 3;
+  string old_status = 4;
+  string new_status = 5;
+  google.protobuf.Timestamp changed_at = 6;
+  string changed_by = 7;
+  map<string, string> details = 8;
+}

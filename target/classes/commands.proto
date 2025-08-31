@@ -1,0 +1,176 @@
+syntax = "proto3";
+
+package com.nnipa.proto.command;
+
+option java_package = "com.nnipa.proto.command";
+option java_outer_classname = "CommandProtos";
+option java_multiple_files = true;
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/any.proto";
+import "common.proto";
+
+// ============================================
+// Cross-Service Commands
+// ============================================
+
+// Command: Validate Tenant
+message ValidateTenantCommand {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string tenant_id = 2;
+  repeated string validations = 3;  // active, subscription, features
+  bool check_hierarchy = 4;
+}
+
+// Command: Get Tenant Context
+message GetTenantContextCommand {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string tenant_id = 2;
+  repeated string required_fields = 3;
+}
+
+// Response: Tenant Context
+message TenantContextResponse {
+  com.nnipa.proto.common.CommandResponse response = 1;
+
+  message TenantContext {
+    string tenant_id = 1;
+    string name = 2;
+    com.nnipa.proto.common.OrganizationType organization_type = 3;
+    com.nnipa.proto.common.SubscriptionTier subscription_tier = 4;
+    bool is_active = 5;
+    repeated string enabled_features = 6;
+    map<string, string> settings = 7;
+    string parent_tenant_id = 8;
+    com.nnipa.proto.common.DataIsolationStrategy isolation_strategy = 9;
+  }
+
+  TenantContext context = 2;
+}
+
+// Command: Authorize Action
+message AuthorizeActionCommand {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string user_id = 2;
+  string tenant_id = 3;
+  string resource = 4;
+  string action = 5;
+  map<string, string> context = 6;
+}
+
+// Response: Authorization Result
+message AuthorizationResponse {
+  com.nnipa.proto.common.CommandResponse response = 1;
+  bool authorized = 2;
+  repeated string granted_permissions = 3;
+  string denial_reason = 4;
+}
+
+// Command: Send Notification
+message SendNotificationCommand {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  message NotificationData {
+    string recipient_id = 1;
+    string tenant_id = 2;
+    string type = 3;  // email, sms, push, in-app
+    string template_id = 4;
+    map<string, string> template_variables = 5;
+    string subject = 6;
+    string body = 7;
+    com.nnipa.proto.common.Priority priority = 8;
+    repeated string channels = 9;
+    google.protobuf.Timestamp schedule_at = 10;
+  }
+
+  NotificationData notification = 2;
+}
+
+// Command: Provision Resources
+message ProvisionResourcesCommand {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string tenant_id = 2;
+  repeated string resource_types = 3;  // database, storage, cache, etc.
+  map<string, string> configuration = 4;
+  bool async_provision = 5;
+}
+
+// Command: Validate User
+message ValidateUserCommand {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string user_id = 2;
+  string tenant_id = 3;
+  repeated string validations = 4;  // active, mfa, permissions
+}
+
+// Command: Audit Log
+message AuditLogCommand {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  message AuditEntry {
+    string tenant_id = 1;
+    string user_id = 2;
+    string action = 3;
+    string resource_type = 4;
+    string resource_id = 5;
+    google.protobuf.Any old_value = 6;
+    google.protobuf.Any new_value = 7;
+    string result = 8;
+    google.protobuf.Timestamp timestamp = 9;
+    string ip_address = 10;
+    map<string, string> context = 11;
+  }
+
+  AuditEntry entry = 2;
+}
+
+// Command: Calculate Usage
+message CalculateUsageCommand {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string tenant_id = 2;
+  string resource_type = 3;
+  google.protobuf.Timestamp start_time = 4;
+  google.protobuf.Timestamp end_time = 5;
+  bool detailed = 6;
+}
+
+// Response: Usage Data
+message UsageDataResponse {
+  com.nnipa.proto.common.CommandResponse response = 1;
+
+  message UsageData {
+    string tenant_id = 1;
+    string resource_type = 2;
+    int64 total_usage = 3;
+    int64 limit = 4;
+    double percentage_used = 5;
+    google.protobuf.Timestamp period_start = 6;
+    google.protobuf.Timestamp period_end = 7;
+    map<string, int64> breakdown = 8;
+  }
+
+  UsageData usage = 2;
+}
+
+// Command: Check Compliance
+message CheckComplianceCommand {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string tenant_id = 2;
+  repeated string compliance_types = 3;  // GDPR, HIPAA, SOC2, etc.
+  bool generate_report = 4;
+}
+
+// Response: Compliance Status
+message ComplianceStatusResponse {
+  com.nnipa.proto.common.CommandResponse response = 1;
+
+  message ComplianceStatus {
+    string compliance_type = 1;
+    bool compliant = 2;
+    repeated string violations = 3;
+    repeated string recommendations = 4;
+    google.protobuf.Timestamp last_checked = 5;
+  }
+
+  repeated ComplianceStatus statuses = 2;
+}

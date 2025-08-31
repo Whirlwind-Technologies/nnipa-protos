@@ -1,0 +1,140 @@
+syntax = "proto3";
+
+package com.nnipa.proto.common;
+
+option java_package = "com.nnipa.proto.common";
+option java_outer_classname = "CommonProtos";
+option java_multiple_files = true;
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/any.proto";
+
+// ============================================
+// Common Enums
+// ============================================
+
+enum EventStatus {
+  EVENT_STATUS_UNSPECIFIED = 0;
+  EVENT_STATUS_PENDING = 1;
+  EVENT_STATUS_PROCESSING = 2;
+  EVENT_STATUS_COMPLETED = 3;
+  EVENT_STATUS_FAILED = 4;
+  EVENT_STATUS_RETRY = 5;
+}
+
+enum Priority {
+  PRIORITY_UNSPECIFIED = 0;
+  PRIORITY_LOW = 1;
+  PRIORITY_MEDIUM = 2;
+  PRIORITY_HIGH = 3;
+  PRIORITY_CRITICAL = 4;
+}
+
+// ============================================
+// Common Messages
+// ============================================
+
+// Base event metadata included in all events
+message EventMetadata {
+  string event_id = 1;                      // Unique event identifier
+  string correlation_id = 2;                // For tracking related events
+  string source_service = 3;                // Service that generated the event
+  google.protobuf.Timestamp timestamp = 4;  // Event creation time
+  int32 version = 5;                        // Schema version
+  map<string, string> headers = 6;          // Custom headers
+  string tenant_id = 7;                     // Multi-tenant context
+  string user_id = 8;                       // User who triggered the event
+  Priority priority = 9;                     // Event priority
+  int32 retry_count = 10;                   // Number of retries
+}
+
+// Standard error information
+message ErrorDetail {
+  string code = 1;
+  string message = 2;
+  string details = 3;
+  google.protobuf.Timestamp timestamp = 4;
+  string service = 5;
+  map<string, string> metadata = 6;
+}
+
+// Pagination information
+message PaginationInfo {
+  int32 page = 1;
+  int32 page_size = 2;
+  int64 total_items = 3;
+  int32 total_pages = 4;
+}
+
+// Audit information
+message AuditInfo {
+  string created_by = 1;
+  google.protobuf.Timestamp created_at = 2;
+  string updated_by = 3;
+  google.protobuf.Timestamp updated_at = 4;
+  string ip_address = 5;
+  string user_agent = 6;
+}
+
+// Address information
+message Address {
+  string street = 1;
+  string city = 2;
+  string state = 3;
+  string postal_code = 4;
+  string country = 5;
+  double latitude = 6;
+  double longitude = 7;
+}
+
+// Contact information
+message ContactInfo {
+  string email = 1;
+  string phone = 2;
+  string mobile = 3;
+  string fax = 4;
+  Address address = 5;
+}
+
+// Organization type enum (matching existing system)
+enum OrganizationType {
+  ORGANIZATION_TYPE_UNSPECIFIED = 0;
+  ORGANIZATION_TYPE_GOVERNMENT_AGENCY = 1;
+  ORGANIZATION_TYPE_CORPORATION = 2;
+  ORGANIZATION_TYPE_ACADEMIC_INSTITUTION = 3;
+  ORGANIZATION_TYPE_HEALTHCARE = 4;
+  ORGANIZATION_TYPE_FINANCIAL_INSTITUTION = 5;
+  ORGANIZATION_TYPE_NON_PROFIT = 6;
+  ORGANIZATION_TYPE_STARTUP = 7;
+  ORGANIZATION_TYPE_RESEARCH = 8;
+  ORGANIZATION_TYPE_INDIVIDUAL = 9;
+}
+
+// Subscription tier enum
+enum SubscriptionTier {
+  TIER_UNSPECIFIED = 0;
+  TIER_FREE = 1;
+  TIER_BASIC = 2;
+  TIER_PROFESSIONAL = 3;
+  TIER_ENTERPRISE = 4;
+  TIER_GOVERNMENT = 5;
+}
+
+// Data isolation strategy enum
+enum DataIsolationStrategy {
+  ISOLATION_UNSPECIFIED = 0;
+  ISOLATION_SHARED_DATABASE = 1;
+  ISOLATION_SCHEMA_ISOLATION = 2;
+  ISOLATION_DATABASE_ISOLATION = 3;
+  ISOLATION_HYBRID = 4;
+  ISOLATION_PHYSICAL_ISOLATION = 5;
+}
+
+// Generic command response
+message CommandResponse {
+  bool success = 1;
+  string message = 2;
+  ErrorDetail error = 3;
+  google.protobuf.Any data = 4;
+  google.protobuf.Timestamp timestamp = 5;
+}

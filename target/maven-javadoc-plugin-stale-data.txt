@@ -1,0 +1,128 @@
+@options
+@packages
+-classpath
+'C:/Users/HarryMcNinson/.m2/repository/io/grpc/grpc-netty-shaded/1.69.0/grpc-netty-shaded-1.69.0.jar;C:/Users/HarryMcNinson/.m2/repository/io/grpc/grpc-core/1.69.0/grpc-core-1.69.0.jar;C:/Users/HarryMcNinson/.m2/repository/com/google/guava/guava/33.3.1-android/guava-33.3.1-android.jar;C:/Users/HarryMcNinson/.m2/repository/com/google/guava/failureaccess/1.0.2/failureaccess-1.0.2.jar;C:/Users/HarryMcNinson/.m2/repository/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:/Users/HarryMcNinson/.m2/repository/org/checkerframework/checker-qual/3.43.0/checker-qual-3.43.0.jar;C:/Users/HarryMcNinson/.m2/repository/com/google/errorprone/error_prone_annotations/2.30.0/error_prone_annotations-2.30.0.jar;C:/Users/HarryMcNinson/.m2/repository/io/grpc/grpc-api/1.69.0/grpc-api-1.69.0.jar;C:/Users/HarryMcNinson/.m2/repository/io/grpc/grpc-protobuf/1.69.0/grpc-protobuf-1.69.0.jar;C:/Users/HarryMcNinson/.m2/repository/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar;C:/Users/HarryMcNinson/.m2/repository/com/google/api/grpc/proto-google-common-protos/2.48.0/proto-google-common-protos-2.48.0.jar;C:/Users/HarryMcNinson/.m2/repository/io/grpc/grpc-stub/1.69.0/grpc-stub-1.69.0.jar;C:/Users/HarryMcNinson/.m2/repository/org/apache/tomcat/annotations-api/6.0.53/annotations-api-6.0.53.jar;C:/Users/HarryMcNinson/.m2/repository/net/devh/grpc-spring-boot-starter/3.1.0.RELEASE/grpc-spring-boot-starter-3.1.0.RELEASE.jar;C:/Users/HarryMcNinson/.m2/repository/net/devh/grpc-server-spring-boot-starter/3.1.0.RELEASE/grpc-server-spring-boot-starter-3.1.0.RELEASE.jar;C:/Users/HarryMcNinson/.m2/repository/net/devh/grpc-common-spring-boot/3.1.0.RELEASE/grpc-common-spring-boot-3.1.0.RELEASE.jar;C:/Users/HarryMcNinson/.m2/repository/org/springframework/boot/spring-boot-starter/3.2.4/spring-boot-starter-3.2.4.jar;C:/Users/HarryMcNinson/.m2/repository/org/springframework/boot/spring-boot/3.2.4/spring-boot-3.2.4.jar;C:/Users/HarryMcNinson/.m2/repository/org/springframework/spring-context/6.1.5/spring-context-6.1.5.jar;C:/Users/HarryMcNinson/.m2/repository/org/springframework/spring-aop/6.1.5/spring-aop-6.1.5.jar;C:/Users/HarryMcNinson/.m2/repository/org/springframework/spring-beans/6.1.5/spring-beans-6.1.5.jar;C:/Users/HarryMcNinson/.m2/repository/org/springframework/spring-expression/6.1.5/spring-expression-6.1.5.jar;C:/Users/HarryMcNinson/.m2/repository/io/micrometer/micrometer-observation/1.12.4/micrometer-observation-1.12.4.jar;C:/Users/HarryMcNinson/.m2/repository/io/micrometer/micrometer-commons/1.12.4/micrometer-commons-1.12.4.jar;C:/Users/HarryMcNinson/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.2.4/spring-boot-autoconfigure-3.2.4.jar;C:/Users/HarryMcNinson/.m2/repository/org/springframework/boot/spring-boot-starter-logging/3.2.4/spring-boot-starter-logging-3.2.4.jar;C:/Users/HarryMcNinson/.m2/repository/ch/qos/logback/logback-classic/1.4.14/logback-classic-1.4.14.jar;C:/Users/HarryMcNinson/.m2/repository/ch/qos/logback/logback-core/1.4.14/logback-core-1.4.14.jar;C:/Users/HarryMcNinson/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.21.1/log4j-to-slf4j-2.21.1.jar;C:/Users/HarryMcNinson/.m2/repository/org/apache/logging/log4j/log4j-api/2.21.1/log4j-api-2.21.1.jar;C:/Users/HarryMcNinson/.m2/repository/org/slf4j/jul-to-slf4j/2.0.12/jul-to-slf4j-2.0.12.jar;C:/Users/HarryMcNinson/.m2/repository/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar;C:/Users/HarryMcNinson/.m2/repository/org/springframework/spring-core/6.1.5/spring-core-6.1.5.jar;C:/Users/HarryMcNinson/.m2/repository/org/springframework/spring-jcl/6.1.5/spring-jcl-6.1.5.jar;C:/Users/HarryMcNinson/.m2/repository/io/grpc/grpc-inprocess/1.63.0/grpc-inprocess-1.63.0.jar;C:/Users/HarryMcNinson/.m2/repository/io/grpc/grpc-services/1.63.0/grpc-services-1.63.0.jar;C:/Users/HarryMcNinson/.m2/repository/net/devh/grpc-client-spring-boot-starter/3.1.0.RELEASE/grpc-client-spring-boot-starter-3.1.0.RELEASE.jar;C:/Users/HarryMcNinson/.m2/repository/jakarta/validation/jakarta.validation-api/3.0.2/jakarta.validation-api-3.0.2.jar;C:/Users/HarryMcNinson/.m2/repository/com/google/protobuf/protobuf-java/3.25.3/protobuf-java-3.25.3.jar;C:/Users/HarryMcNinson/.m2/repository/com/google/protobuf/protobuf-java-util/3.25.3/protobuf-java-util-3.25.3.jar;C:/Users/HarryMcNinson/.m2/repository/com/google/code/gson/gson/2.8.9/gson-2.8.9.jar;C:/Users/HarryMcNinson/.m2/repository/com/google/j2objc/j2objc-annotations/2.8/j2objc-annotations-2.8.jar;C:/Users/HarryMcNinson/.m2/repository/io/confluent/kafka-protobuf-serializer/7.8.0/kafka-protobuf-serializer-7.8.0.jar;C:/Users/HarryMcNinson/.m2/repository/io/confluent/kafka-protobuf-provider/7.8.0/kafka-protobuf-provider-7.8.0.jar;C:/Users/HarryMcNinson/.m2/repository/com/squareup/wire/wire-schema-jvm/5.0.0/wire-schema-jvm-5.0.0.jar;C:/Users/HarryMcNinson/.m2/repository/com/squareup/javapoet/1.13.0/javapoet-1.13.0.jar;C:/Users/HarryMcNinson/.m2/repository/com/squareup/kotlinpoet-jvm/1.18.0/kotlinpoet-jvm-1.18.0.jar;C:/Users/HarryMcNinson/.m2/repository/org/jetbrains/kotlin/kotlin-reflect/2.0.0/kotlin-reflect-2.0.0.jar;C:/Users/HarryMcNinson/.m2/repository/com/squareup/wire/wire-runtime-jvm/5.0.0/wire-runtime-jvm-5.0.0.jar;C:/Users/HarryMcNinson/.m2/repository/com/squareup/okio/okio-jvm/3.4.0/okio-jvm-3.4.0.jar;C:/Users/HarryMcNinson/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk8/1.8.0/kotlin-stdlib-jdk8-1.8.0.jar;C:/Users/HarryMcNinson/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-jdk7/1.8.0/kotlin-stdlib-jdk7-1.8.0.jar;C:/Users/HarryMcNinson/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib-common/1.8.0/kotlin-stdlib-common-1.8.0.jar;C:/Users/HarryMcNinson/.m2/repository/org/apache/commons/commons-lang3/3.12.0/commons-lang3-3.12.0.jar;C:/Users/HarryMcNinson/.m2/repository/org/jetbrains/kotlin/kotlin-stdlib/1.9.10/kotlin-stdlib-1.9.10.jar;C:/Users/HarryMcNinson/.m2/repository/org/jetbrains/annotations/13.0/annotations-13.0.jar;C:/Users/HarryMcNinson/.m2/repository/io/confluent/kafka-protobuf-types/7.8.0/kafka-protobuf-types-7.8.0.jar;C:/Users/HarryMcNinson/.m2/repository/io/confluent/kafka-schema-serializer/7.8.0/kafka-schema-serializer-7.8.0.jar;C:/Users/HarryMcNinson/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-csv/2.16.0/jackson-dataformat-csv-2.16.0.jar;C:/Users/HarryMcNinson/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.16.0/jackson-annotations-2.16.0.jar;C:/Users/HarryMcNinson/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.16.0/jackson-core-2.16.0.jar;C:/Users/HarryMcNinson/.m2/repository/io/confluent/kafka-schema-registry-client/7.8.0/kafka-schema-registry-client-7.8.0.jar;C:/Users/HarryMcNinson/.m2/repository/org/yaml/snakeyaml/2.0/snakeyaml-2.0.jar;C:/Users/HarryMcNinson/.m2/repository/org/apache/kafka/kafka-clients/7.8.0-ccs/kafka-clients-7.8.0-ccs.jar;C:/Users/HarryMcNinson/.m2/repository/com/github/luben/zstd-jni/1.5.6-4/zstd-jni-1.5.6-4.jar;C:/Users/HarryMcNinson/.m2/repository/org/lz4/lz4-java/1.8.0/lz4-java-1.8.0.jar;C:/Users/HarryMcNinson/.m2/repository/org/xerial/snappy/snappy-java/1.1.10.5/snappy-java-1.1.10.5.jar;C:/Users/HarryMcNinson/.m2/repository/org/apache/avro/avro/1.11.4/avro-1.11.4.jar;C:/Users/HarryMcNinson/.m2/repository/org/apache/commons/commons-compress/1.26.1/commons-compress-1.26.1.jar;C:/Users/HarryMcNinson/.m2/repository/commons-codec/commons-codec/1.16.1/commons-codec-1.16.1.jar;C:/Users/HarryMcNinson/.m2/repository/commons-io/commons-io/2.15.1/commons-io-2.15.1.jar;C:/Users/HarryMcNinson/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.16.0/jackson-databind-2.16.0.jar;C:/Users/HarryMcNinson/.m2/repository/io/swagger/core/v3/swagger-annotations/2.1.10/swagger-annotations-2.1.10.jar;C:/Users/HarryMcNinson/.m2/repository/io/confluent/common-utils/7.8.0/common-utils-7.8.0.jar;C:/Users/HarryMcNinson/.m2/repository/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar;C:/Users/HarryMcNinson/.m2/repository/javax/annotation/javax.annotation-api/1.3.2/javax.annotation-api-1.3.2.jar'
+-encoding
+'UTF-8'
+-protected
+-source
+'21'
+-sourcepath
+'C:/Users/HarryMcNinson/Documents/projects/nnipa/nnipa/nnipa-protos/src/main/java;C:/Users/HarryMcNinson/Documents/projects/nnipa/nnipa/nnipa-protos/target/generated-sources/protobuf/java;C:/Users/HarryMcNinson/Documents/projects/nnipa/nnipa/nnipa-protos/target/generated-sources/protobuf/grpc-java;C:/Users/HarryMcNinson/Documents/projects/nnipa/nnipa/nnipa-protos/target/generated-sources/annotations'
+-author
+-bottom
+'Copyright &#169; 2025. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/HarryMcNinson/Documents/projects/nnipa/nnipa/nnipa-protos/target/apidocs'
+-docencoding
+'UTF-8'
+-Xdoclint:none
+-doctitle
+'NNIPA Protocol Buffers 1.0.0 API'
+-use
+-version
+-windowtitle
+'NNIPA Protocol Buffers 1.0.0 API'
+com.nnipa.proto.auth
+com.nnipa.proto.command
+com.nnipa.proto.common
+com.nnipa.proto.tenant
+C:\Users\HarryMcNinson\.m2\repository\io\grpc\grpc-netty-shaded\1.69.0\grpc-netty-shaded-1.69.0.jar = 1754585372917
+C:\Users\HarryMcNinson\.m2\repository\io\grpc\grpc-core\1.69.0\grpc-core-1.69.0.jar = 1754585366055
+C:\Users\HarryMcNinson\.m2\repository\com\google\guava\guava\33.3.1-android\guava-33.3.1-android.jar = 1754585370727
+C:\Users\HarryMcNinson\.m2\repository\com\google\guava\failureaccess\1.0.2\failureaccess-1.0.2.jar = 1754585370884
+C:\Users\HarryMcNinson\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar = 1754585364556
+C:\Users\HarryMcNinson\.m2\repository\org\checkerframework\checker-qual\3.43.0\checker-qual-3.43.0.jar = 1754585366514
+C:\Users\HarryMcNinson\.m2\repository\com\google\errorprone\error_prone_annotations\2.30.0\error_prone_annotations-2.30.0.jar = 1754585364671
+C:\Users\HarryMcNinson\.m2\repository\io\grpc\grpc-api\1.69.0\grpc-api-1.69.0.jar = 1754585366293
+C:\Users\HarryMcNinson\.m2\repository\io\grpc\grpc-protobuf\1.69.0\grpc-protobuf-1.69.0.jar = 1754585370888
+C:\Users\HarryMcNinson\.m2\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar = 1754585364802
+C:\Users\HarryMcNinson\.m2\repository\com\google\api\grpc\proto-google-common-protos\2.48.0\proto-google-common-protos-2.48.0.jar = 1754585370727
+C:\Users\HarryMcNinson\.m2\repository\io\grpc\grpc-stub\1.69.0\grpc-stub-1.69.0.jar = 1754585370898
+C:\Users\HarryMcNinson\.m2\repository\org\apache\tomcat\annotations-api\6.0.53\annotations-api-6.0.53.jar = 1754585366194
+C:\Users\HarryMcNinson\.m2\repository\net\devh\grpc-spring-boot-starter\3.1.0.RELEASE\grpc-spring-boot-starter-3.1.0.RELEASE.jar = 1754585366557
+C:\Users\HarryMcNinson\.m2\repository\net\devh\grpc-server-spring-boot-starter\3.1.0.RELEASE\grpc-server-spring-boot-starter-3.1.0.RELEASE.jar = 1754585367111
+C:\Users\HarryMcNinson\.m2\repository\net\devh\grpc-common-spring-boot\3.1.0.RELEASE\grpc-common-spring-boot-3.1.0.RELEASE.jar = 1754585365602
+C:\Users\HarryMcNinson\.m2\repository\org\springframework\boot\spring-boot-starter\3.2.4\spring-boot-starter-3.2.4.jar = 1756498306144
+C:\Users\HarryMcNinson\.m2\repository\org\springframework\boot\spring-boot\3.2.4\spring-boot-3.2.4.jar = 1756498306967
+C:\Users\HarryMcNinson\.m2\repository\org\springframework\spring-context\6.1.5\spring-context-6.1.5.jar = 1756498306782
+C:\Users\HarryMcNinson\.m2\repository\org\springframework\spring-aop\6.1.5\spring-aop-6.1.5.jar = 1756498306860
+C:\Users\HarryMcNinson\.m2\repository\org\springframework\spring-beans\6.1.5\spring-beans-6.1.5.jar = 1756498306485
+C:\Users\HarryMcNinson\.m2\repository\org\springframework\spring-expression\6.1.5\spring-expression-6.1.5.jar = 1756498306410
+C:\Users\HarryMcNinson\.m2\repository\io\micrometer\micrometer-observation\1.12.4\micrometer-observation-1.12.4.jar = 1756498306898
+C:\Users\HarryMcNinson\.m2\repository\io\micrometer\micrometer-commons\1.12.4\micrometer-commons-1.12.4.jar = 1756498306190
+C:\Users\HarryMcNinson\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\3.2.4\spring-boot-autoconfigure-3.2.4.jar = 1756498306943
+C:\Users\HarryMcNinson\.m2\repository\org\springframework\boot\spring-boot-starter-logging\3.2.4\spring-boot-starter-logging-3.2.4.jar = 1756498306169
+C:\Users\HarryMcNinson\.m2\repository\ch\qos\logback\logback-classic\1.4.14\logback-classic-1.4.14.jar = 1756498306560
+C:\Users\HarryMcNinson\.m2\repository\ch\qos\logback\logback-core\1.4.14\logback-core-1.4.14.jar = 1756498306528
+C:\Users\HarryMcNinson\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.21.1\log4j-to-slf4j-2.21.1.jar = 1756498306177
+C:\Users\HarryMcNinson\.m2\repository\org\apache\logging\log4j\log4j-api\2.21.1\log4j-api-2.21.1.jar = 1756498306457
+C:\Users\HarryMcNinson\.m2\repository\org\slf4j\jul-to-slf4j\2.0.12\jul-to-slf4j-2.0.12.jar = 1756498306144
+C:\Users\HarryMcNinson\.m2\repository\jakarta\annotation\jakarta.annotation-api\2.1.1\jakarta.annotation-api-2.1.1.jar = 1753806221939
+C:\Users\HarryMcNinson\.m2\repository\org\springframework\spring-core\6.1.5\spring-core-6.1.5.jar = 1756498306816
+C:\Users\HarryMcNinson\.m2\repository\org\springframework\spring-jcl\6.1.5\spring-jcl-6.1.5.jar = 1756498306148
+C:\Users\HarryMcNinson\.m2\repository\io\grpc\grpc-inprocess\1.63.0\grpc-inprocess-1.63.0.jar = 1754585364757
+C:\Users\HarryMcNinson\.m2\repository\io\grpc\grpc-services\1.63.0\grpc-services-1.63.0.jar = 1754585367360
+C:\Users\HarryMcNinson\.m2\repository\net\devh\grpc-client-spring-boot-starter\3.1.0.RELEASE\grpc-client-spring-boot-starter-3.1.0.RELEASE.jar = 1754585365061
+C:\Users\HarryMcNinson\.m2\repository\jakarta\validation\jakarta.validation-api\3.0.2\jakarta.validation-api-3.0.2.jar = 1753899936736
+C:\Users\HarryMcNinson\.m2\repository\com\google\protobuf\protobuf-java\3.25.3\protobuf-java-3.25.3.jar = 1756583561431
+C:\Users\HarryMcNinson\.m2\repository\com\google\protobuf\protobuf-java-util\3.25.3\protobuf-java-util-3.25.3.jar = 1756583561772
+C:\Users\HarryMcNinson\.m2\repository\com\google\code\gson\gson\2.8.9\gson-2.8.9.jar = 1756486305325
+C:\Users\HarryMcNinson\.m2\repository\com\google\j2objc\j2objc-annotations\2.8\j2objc-annotations-2.8.jar = 1754585364557
+C:\Users\HarryMcNinson\.m2\repository\io\confluent\kafka-protobuf-serializer\7.8.0\kafka-protobuf-serializer-7.8.0.jar = 1756498652323
+C:\Users\HarryMcNinson\.m2\repository\io\confluent\kafka-protobuf-provider\7.8.0\kafka-protobuf-provider-7.8.0.jar = 1756498653239
+C:\Users\HarryMcNinson\.m2\repository\com\squareup\wire\wire-schema-jvm\5.0.0\wire-schema-jvm-5.0.0.jar = 1756498653521
+C:\Users\HarryMcNinson\.m2\repository\com\squareup\javapoet\1.13.0\javapoet-1.13.0.jar = 1756486305902
+C:\Users\HarryMcNinson\.m2\repository\com\squareup\kotlinpoet-jvm\1.18.0\kotlinpoet-jvm-1.18.0.jar = 1756498652242
+C:\Users\HarryMcNinson\.m2\repository\org\jetbrains\kotlin\kotlin-reflect\2.0.0\kotlin-reflect-2.0.0.jar = 1756498653614
+C:\Users\HarryMcNinson\.m2\repository\com\squareup\wire\wire-runtime-jvm\5.0.0\wire-runtime-jvm-5.0.0.jar = 1756498652086
+C:\Users\HarryMcNinson\.m2\repository\com\squareup\okio\okio-jvm\3.4.0\okio-jvm-3.4.0.jar = 1756486305465
+C:\Users\HarryMcNinson\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib-jdk8\1.8.0\kotlin-stdlib-jdk8-1.8.0.jar = 1756497544388
+C:\Users\HarryMcNinson\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib-jdk7\1.8.0\kotlin-stdlib-jdk7-1.8.0.jar = 1756498652236
+C:\Users\HarryMcNinson\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib-common\1.8.0\kotlin-stdlib-common-1.8.0.jar = 1756497544628
+C:\Users\HarryMcNinson\.m2\repository\org\apache\commons\commons-lang3\3.12.0\commons-lang3-3.12.0.jar = 1754403269965
+C:\Users\HarryMcNinson\.m2\repository\org\jetbrains\kotlin\kotlin-stdlib\1.9.10\kotlin-stdlib-1.9.10.jar = 1756497544744
+C:\Users\HarryMcNinson\.m2\repository\org\jetbrains\annotations\13.0\annotations-13.0.jar = 1756118979460
+C:\Users\HarryMcNinson\.m2\repository\io\confluent\kafka-protobuf-types\7.8.0\kafka-protobuf-types-7.8.0.jar = 1756498653087
+C:\Users\HarryMcNinson\.m2\repository\io\confluent\kafka-schema-serializer\7.8.0\kafka-schema-serializer-7.8.0.jar = 1756498652007
+C:\Users\HarryMcNinson\.m2\repository\com\fasterxml\jackson\dataformat\jackson-dataformat-csv\2.16.0\jackson-dataformat-csv-2.16.0.jar = 1756497543990
+C:\Users\HarryMcNinson\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.16.0\jackson-annotations-2.16.0.jar = 1756497543955
+C:\Users\HarryMcNinson\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.16.0\jackson-core-2.16.0.jar = 1756497544712
+C:\Users\HarryMcNinson\.m2\repository\io\confluent\kafka-schema-registry-client\7.8.0\kafka-schema-registry-client-7.8.0.jar = 1756498653102
+C:\Users\HarryMcNinson\.m2\repository\org\yaml\snakeyaml\2.0\snakeyaml-2.0.jar = 1754676220981
+C:\Users\HarryMcNinson\.m2\repository\org\apache\kafka\kafka-clients\7.8.0-ccs\kafka-clients-7.8.0-ccs.jar = 1756498656672
+C:\Users\HarryMcNinson\.m2\repository\com\github\luben\zstd-jni\1.5.6-4\zstd-jni-1.5.6-4.jar = 1754013070655
+C:\Users\HarryMcNinson\.m2\repository\org\lz4\lz4-java\1.8.0\lz4-java-1.8.0.jar = 1754013070729
+C:\Users\HarryMcNinson\.m2\repository\org\xerial\snappy\snappy-java\1.1.10.5\snappy-java-1.1.10.5.jar = 1754013069667
+C:\Users\HarryMcNinson\.m2\repository\org\apache\avro\avro\1.11.4\avro-1.11.4.jar = 1756498653325
+C:\Users\HarryMcNinson\.m2\repository\org\apache\commons\commons-compress\1.26.1\commons-compress-1.26.1.jar = 1756489216628
+C:\Users\HarryMcNinson\.m2\repository\commons-codec\commons-codec\1.16.1\commons-codec-1.16.1.jar = 1756489216500
+C:\Users\HarryMcNinson\.m2\repository\commons-io\commons-io\2.15.1\commons-io-2.15.1.jar = 1756489213885
+C:\Users\HarryMcNinson\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.16.0\jackson-databind-2.16.0.jar = 1756497544949
+C:\Users\HarryMcNinson\.m2\repository\io\swagger\core\v3\swagger-annotations\2.1.10\swagger-annotations-2.1.10.jar = 1756486304428
+C:\Users\HarryMcNinson\.m2\repository\io\confluent\common-utils\7.8.0\common-utils-7.8.0.jar = 1756498652305
+C:\Users\HarryMcNinson\.m2\repository\org\slf4j\slf4j-api\1.7.36\slf4j-api-1.7.36.jar = 1754403269822
+C:\Users\HarryMcNinson\.m2\repository\javax\annotation\javax.annotation-api\1.3.2\javax.annotation-api-1.3.2.jar = 1755545714501
+C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\src\main\java = 1756597627957
+C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java = 1756598817428
+C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\grpc-java = 1756598811333
+C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\annotations = 1756598811723
+C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\apidocs\allclasses-index.html = 1756598833393
+C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\apidocs\allpackages-index.html = 1756598833397
+C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\apidocs\constant-values.html = 1756598832115
+C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\apidocs\deprecated-list.html = 1756598833084
+C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\apidocs\element-list = 1756598832021
+C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\apidocs\help-doc.html = 1756598833556
+C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\apidocs\index-all.html = 1756598833548
+C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\apidocs\index.html = 1756598833087
+C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\apidocs\member-search-index.js = 1756598833412
+C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\apidocs\module-search-index.js = 1756598833400
+C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\apidocs\overview-summary.html = 1756598833553
+C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\apidocs\overview-tree.html = 1756598833077
+C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\apidocs\package-search-index.js = 1756598833401
+C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\apidocs\search.html = 1756598833550
+C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\apidocs\serialized-form.html = 1756598832161
+C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\apidocs\tag-search-index.js = 1756598833414
+C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\apidocs\type-search-index.js = 1756598833402
