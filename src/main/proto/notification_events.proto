@@ -1,0 +1,162 @@
+syntax = "proto3";
+
+package com.nnipa.proto.notification;
+
+option java_package = "com.nnipa.proto.notification";
+option java_outer_classname = "NotificationEventProtos";
+option java_multiple_files = true;
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/struct.proto";
+import "common.proto";
+
+// ============================================
+// Notification Domain Events
+// ============================================
+
+// Event: Notification Sent
+message NotificationSentEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  message NotificationData {
+    string notification_id = 1;
+    string recipient_id = 2;
+    string tenant_id = 3;
+    string channel = 4;  // email, sms, push, in-app
+    string type = 5;     // registration, password_reset, alert, etc.
+    string template_id = 6;
+    string subject = 7;
+    string content = 8;
+    google.protobuf.Timestamp sent_at = 9;
+    string provider = 10; // sendgrid, twilio, smtp, etc.
+    string external_id = 11; // provider's message ID
+    map<string, string> metadata_map = 12;
+  }
+
+  NotificationData notification = 2;
+}
+
+// Event: Notification Delivered
+message NotificationDeliveredEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  string notification_id = 2;
+  string recipient_id = 3;
+  string channel = 4;
+  google.protobuf.Timestamp delivered_at = 5;
+  string delivery_status = 6;
+  map<string, string> delivery_metadata = 7;
+}
+
+// Event: Notification Failed
+message NotificationFailedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  message FailureData {
+    string notification_id = 1;
+    string recipient_id = 2;
+    string channel = 3;
+    string failure_reason = 4;
+    string error_code = 5;
+    google.protobuf.Timestamp failed_at = 6;
+    int32 retry_count = 7;
+    bool will_retry = 8;
+    google.protobuf.Timestamp next_retry_at = 9;
+  }
+
+  FailureData failure = 2;
+}
+
+// Event: Notification Opened
+message NotificationOpenedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  string notification_id = 2;
+  string recipient_id = 3;
+  google.protobuf.Timestamp opened_at = 4;
+  string device_info = 5;
+  string ip_address = 6;
+}
+
+// Event: Notification Clicked
+message NotificationClickedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  string notification_id = 2;
+  string recipient_id = 3;
+  string link_clicked = 4;
+  google.protobuf.Timestamp clicked_at = 5;
+  string device_info = 6;
+}
+
+// Event: Preference Updated
+message PreferenceUpdatedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  message PreferenceData {
+    string user_id = 1;
+    string tenant_id = 2;
+    map<string, bool> channel_preferences = 3;  // email: true, sms: false
+    map<string, bool> type_preferences = 4;     // marketing: false, alerts: true
+    repeated string quiet_hours = 5;            // ["22:00-08:00"]
+    string timezone = 6;
+    google.protobuf.Timestamp updated_at = 7;
+  }
+
+  PreferenceData preferences = 2;
+}
+
+// Event: Escalation Triggered
+message EscalationTriggeredEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  message EscalationData {
+    string escalation_id = 1;
+    string original_notification_id = 2;
+    string rule_id = 3;
+    string escalation_level = 4;
+    repeated string recipients = 5;
+    string reason = 6;
+    google.protobuf.Timestamp triggered_at = 7;
+    map<string, string> context = 8;
+  }
+
+  EscalationData escalation = 2;
+}
+
+// Event: Template Created
+message TemplateCreatedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  message TemplateData {
+    string template_id = 1;
+    string name = 2;
+    string type = 3;  // email, sms, push
+    string category = 4;  // transactional, marketing, alert
+    string subject = 5;
+    string content = 6;
+    repeated string variables = 7;
+    string created_by = 8;
+    google.protobuf.Timestamp created_at = 9;
+    bool is_active = 10;
+  }
+
+  TemplateData template = 2;
+}
+
+// Event: Batch Notification Queued
+message BatchNotificationQueuedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  message BatchData {
+    string batch_id = 1;
+    int32 total_recipients = 2;
+    string template_id = 3;
+    string channel = 4;
+    google.protobuf.Timestamp scheduled_at = 5;
+    string created_by = 6;
+    map<string, string> batch_metadata = 7;
+  }
+
+  BatchData batch = 2;
+}

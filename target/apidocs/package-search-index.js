@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.nnipa.proto.auth"},{"l":"com.nnipa.proto.command"},{"l":"com.nnipa.proto.common"},{"l":"com.nnipa.proto.tenant"}];updateSearchResults();
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"com.nnipa.proto.auth"},{"l":"com.nnipa.proto.command"},{"l":"com.nnipa.proto.common"},{"l":"com.nnipa.proto.notification"},{"l":"com.nnipa.proto.tenant"}];updateSearchResults();

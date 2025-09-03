@@ -13,6 +13,27 @@ import "common.proto";
 // Authentication Domain Events
 // ============================================
 
+// Event: User Registered
+message UserRegisteredEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  message RegistrationData {
+    string user_id = 1;
+    string tenant_id = 2;
+    string username = 3;
+    string email = 4;
+    string registration_method = 5;  // self_registration, admin_created, oauth, saml, etc.
+    google.protobuf.Timestamp registered_at = 6;
+    string ip_address = 7;
+    string user_agent = 8;
+    bool email_verified = 9;
+    string registration_source = 10;  // web, mobile, api, etc.
+    map<string, string> additional_info = 11;
+  }
+
+  RegistrationData registration = 2;
+}
+
 // Event: User Login
 message UserLoginEvent {
   com.nnipa.proto.common.EventMetadata metadata = 1;
