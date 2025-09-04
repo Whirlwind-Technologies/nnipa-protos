@@ -155,7 +155,7 @@ message TokenGeneratedEvent {
     google.protobuf.Timestamp issued_at = 5;
     google.protobuf.Timestamp expires_at = 6;
     repeated string scopes = 7;
-    string issued_to = 8;  // client_id or application
+    string issued_to = 8;  // client_id or application..
   }
 
   TokenData token = 2;
