@@ -7,24 +7,31 @@
 
     <groupId>com.nnipa</groupId>
     <artifactId>nnipa-protos</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>NNIPA Protocol Buffers</name>
     <description>Central repository for all NNIPA platform protobuf definitions</description>
+
+    <!-- GitHub repository information -->
+    <scm>
+        <connection>scm:git:https://github.com/Whirlwind-Technologies/nnipa-protos.git</connection>
+        <developerConnection>scm:git:https://github.com/Whirlwind-Technologies/nnipa-protos.git</developerConnection>
+        <url>https://github.com/Whirlwind-Technologies/nnipa-protos</url>
+    </scm>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <!-- Protobuf versions - aligned with Confluent 7.8.0 -->
+        <!-- Protobuf versions -->
         <protobuf.version>3.25.3</protobuf.version>
         <protobuf-plugin.version>0.6.1</protobuf-plugin.version>
         <os-maven-plugin.version>1.7.1</os-maven-plugin.version>
 
-        <!-- Kafka protobuf -->
-        <kafka-protobuf.version>7.8.0</kafka-protobuf.version>
+        <!-- GRPC version -->
+        <grpc.version>1.69.0</grpc.version>
 
         <!-- Build plugins -->
         <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
@@ -33,53 +40,30 @@
     </properties>
 
     <dependencies>
-        <!-- Protobuf runtime -->
-        <!--GRPC -->
-        <dependency>
-            <groupId>io.grpc</groupId>
-            <artifactId>grpc-netty-shaded</artifactId>
-            <version>1.69.0</version>
-        </dependency>
-        <dependency>
-            <groupId>io.grpc</groupId>
-            <artifactId>grpc-protobuf</artifactId>
-            <version>1.69.0</version>
-        </dependency>
-        <dependency>
-            <groupId>io.grpc</groupId>
-            <artifactId>grpc-stub</artifactId>
-            <version>1.69.0</version>
-        </dependency>
-        <dependency> <!-- necessary for Java 9+ -->
-            <groupId>org.apache.tomcat</groupId>
-            <artifactId>annotations-api</artifactId>
-            <version>6.0.53</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>net.devh</groupId>
-            <artifactId>grpc-spring-boot-starter</artifactId>
-            <version>3.1.0.RELEASE</version>
-        </dependency>
+        <!-- Core Protobuf runtime (required) -->
         <dependency>
             <groupId>com.google.protobuf</groupId>
             <artifactId>protobuf-java</artifactId>
             <version>${protobuf.version}</version>
         </dependency>
 
-        <!-- Protobuf utilities -->
+        <!-- Protobuf utilities (useful for JSON conversion, etc.) -->
         <dependency>
             <groupId>com.google.protobuf</groupId>
             <artifactId>protobuf-java-util</artifactId>
             <version>${protobuf.version}</version>
         </dependency>
 
-        <!-- Kafka Protobuf Serializer (for schema registry integration) -->
+        <!-- GRPC dependencies (only if you're using gRPC services) -->
         <dependency>
-            <groupId>io.confluent</groupId>
-            <artifactId>kafka-protobuf-serializer</artifactId>
-            <version>${kafka-protobuf.version}</version>
-            <scope>provided</scope>
+            <groupId>io.grpc</groupId>
+            <artifactId>grpc-protobuf</artifactId>
+            <version>${grpc.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.grpc</groupId>
+            <artifactId>grpc-stub</artifactId>
+            <version>${grpc.version}</version>
         </dependency>
 
         <!-- Annotations for generated code -->
@@ -101,15 +85,16 @@
         </extensions>
 
         <plugins>
-            <!-- PROTO -->
+            <!-- Protobuf compilation plugin -->
             <plugin>
                 <groupId>org.xolstice.maven.plugins</groupId>
                 <artifactId>protobuf-maven-plugin</artifactId>
-                <version>0.6.1</version>
+                <version>${protobuf-plugin.version}</version>
                 <configuration>
-                    <protocArtifact>com.google.protobuf:protoc:3.25.5:exe:${os.detected.classifier}</protocArtifact>
+                    <protocArtifact>com.google.protobuf:protoc:${protobuf.version}:exe:${os.detected.classifier}</protocArtifact>
+                    <!-- Only include gRPC plugin if you're using gRPC services -->
                     <pluginId>grpc-java</pluginId>
-                    <pluginArtifact>io.grpc:protoc-gen-grpc-java:1.68.1:exe:${os.detected.classifier}</pluginArtifact>
+                    <pluginArtifact>io.grpc:protoc-gen-grpc-java:${grpc.version}:exe:${os.detected.classifier}</pluginArtifact>
                 </configuration>
                 <executions>
                     <execution>
@@ -167,25 +152,12 @@
         </plugins>
     </build>
 
-    <!-- Repository configuration for Confluent packages -->
-    <repositories>
-        <repository>
-            <id>confluent</id>
-            <url>https://packages.confluent.io/maven/</url>
-        </repository>
-    </repositories>
-
-    <!-- Distribution management for internal repository -->
+    <!-- Distribution to GitHub Packages -->
     <distributionManagement>
         <repository>
-            <id>nnipa-releases</id>
-            <name>NNIPA Release Repository</name>
-            <url>http://nexus.nnipa.local/repository/maven-releases/</url>
+            <id>github</id>
+            <name>GitHub Packages</name>
+            <url>https://maven.pkg.github.com/Whirlwind-Technologies/nnipa-protos</url>
         </repository>
-        <snapshotRepository>
-            <id>nnipa-snapshots</id>
-            <name>NNIPA Snapshot Repository</name>
-            <url>http://nexus.nnipa.local/repository/maven-snapshots/</url>
-        </snapshotRepository>
     </distributionManagement>
 </project>
