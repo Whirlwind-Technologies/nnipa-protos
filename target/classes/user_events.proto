@@ -1,0 +1,102 @@
+syntax = "proto3";
+
+package com.nnipa.proto.user;
+
+option java_package = "com.nnipa.proto.user";
+option java_outer_classname = "UserEventProtos";
+option java_multiple_files = true;
+
+import "google/protobuf/timestamp.proto";
+import "common.proto";
+
+// ============================================
+// User Management Domain Events
+// ============================================
+
+// Event: User Created
+message UserCreatedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string user_id = 2;
+  string tenant_id = 3;
+  string username = 4;
+  string email = 5;
+  string first_name = 6;
+  string last_name = 7;
+  string user_type = 8;
+  string organization_id = 9;
+  string department_id = 10;
+  google.protobuf.Timestamp created_at = 11;
+}
+
+// Event: User Updated
+message UserUpdatedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string user_id = 2;
+  string tenant_id = 3;
+  map<string, string> changes = 4;
+  google.protobuf.Timestamp updated_at = 5;
+}
+
+// Event: User Activated
+message UserActivatedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string user_id = 2;
+  string tenant_id = 3;
+  google.protobuf.Timestamp activated_at = 4;
+}
+
+// Event: User Deactivated
+message UserDeactivatedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string user_id = 2;
+  string tenant_id = 3;
+  string reason = 4;
+  google.protobuf.Timestamp deactivated_at = 5;
+}
+
+// Event: User Deleted
+message UserDeletedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string user_id = 2;
+  string tenant_id = 3;
+  google.protobuf.Timestamp deleted_at = 4;
+}
+
+// Event: Profile Updated
+message ProfileUpdatedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string user_id = 2;
+  map<string, string> changes = 3;
+  google.protobuf.Timestamp updated_at = 4;
+}
+
+// Event: Organization Created
+message OrganizationCreatedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string organization_id = 2;
+  string tenant_id = 3;
+  string org_code = 4;
+  string name = 5;
+  google.protobuf.Timestamp created_at = 6;
+}
+
+// Event: Department Created
+message DepartmentCreatedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string department_id = 2;
+  string organization_id = 3;
+  string dept_code = 4;
+  string name = 5;
+  google.protobuf.Timestamp created_at = 6;
+}
+
+// Event: User Activity Tracked
+message UserActivityTrackedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string user_id = 2;
+  string activity_type = 3;
+  string resource_type = 4;
+  string resource_id = 5;
+  google.protobuf.Timestamp activity_timestamp = 6;
+  map<string, string> activity_data = 7;
+}
