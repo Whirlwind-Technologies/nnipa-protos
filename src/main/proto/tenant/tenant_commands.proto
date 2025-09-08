@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package com.nnipa.proto.tenant;
+
+option java_package = "com.nnipa.proto.tenant";
+option java_multiple_files = true;
+
+import "common/common.proto";
+
+// Command: Validate Tenant
+message ValidateTenantCommand {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string tenant_id = 2;
+  repeated string validations = 3;
+}
+
+// Command: Provision Tenant
+message ProvisionTenantCommand {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string tenant_id = 2;
+  repeated string resources = 3;
+  map<string, string> configuration = 4;
+}

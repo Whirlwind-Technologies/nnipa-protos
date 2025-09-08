@@ -1,0 +1,68 @@
+syntax = "proto3";
+
+package com.nnipa.proto.authz;
+
+option java_package = "com.nnipa.proto.authz";
+option java_multiple_files = true;
+
+import "google/protobuf/timestamp.proto";
+import "common/common.proto";
+
+// Event: Role Created
+message RoleCreatedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string role_id = 2;
+  string tenant_id = 3;
+  string role_name = 4;
+  string description = 5;
+  repeated string permissions = 6;
+  google.protobuf.Timestamp created_at = 7;
+  string created_by = 8;
+}
+
+// Event: Role Assigned
+message RoleAssignedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string user_id = 2;
+  string tenant_id = 3;
+  string role_id = 4;
+  string role_name = 5;
+  string assigned_by = 6;
+  google.protobuf.Timestamp assigned_at = 7;
+  google.protobuf.Timestamp expires_at = 8;
+}
+
+// Event: Role Revoked
+message RoleRevokedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string user_id = 2;
+  string tenant_id = 3;
+  string role_id = 4;
+  string role_name = 5;
+  string revoked_by = 6;
+  google.protobuf.Timestamp revoked_at = 7;
+  string reason = 8;
+}
+
+// Event: Permission Granted
+message PermissionGrantedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string user_id = 2;
+  string tenant_id = 3;
+  string resource = 4;
+  string action = 5;
+  string granted_by = 6;
+  google.protobuf.Timestamp granted_at = 7;
+}
+
+// Event: Authorization Checked
+message AuthorizationCheckedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string user_id = 2;
+  string tenant_id = 3;
+  string resource = 4;
+  string action = 5;
+  bool allowed = 6;
+  string reason = 7;
+  google.protobuf.Timestamp checked_at = 8;
+}

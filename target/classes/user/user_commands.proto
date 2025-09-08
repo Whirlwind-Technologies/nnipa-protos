@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package com.nnipa.proto.user;
+
+option java_package = "com.nnipa.proto.user";
+option java_multiple_files = true;
+
+import "common/common.proto";
+
+// Command: Update User Profile
+message UpdateUserProfileCommand {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string user_id = 2;
+  string tenant_id = 3;
+  map<string, string> profile_updates = 4;
+}
+
+// Command: Sync User Data
+message SyncUserDataCommand {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string user_id = 2;
+  string tenant_id = 3;
+  repeated string sync_targets = 4;
+}

@@ -1,0 +1,170 @@
+syntax = "proto3";
+
+package com.nnipa.proto.auth;
+
+option java_package = "com.nnipa.proto.auth";
+option java_multiple_files = true;
+
+import "google/protobuf/timestamp.proto";
+import "common/common.proto";
+
+// ============================================
+// New Registration Events
+// ============================================
+
+// Event: Self-Signup (New Tenant)
+message SelfSignupEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string user_id = 2;
+  string email = 3;
+  string username = 4;
+  string first_name = 5;
+  string last_name = 6;
+  string phone_number = 7;
+  string activation_token = 8;
+  string organization_name = 9;
+  string organization_type = 10;
+  string organization_email = 11;
+  bool mfa_enabled = 12;
+  google.protobuf.Timestamp timestamp = 13;
+  string ip_address = 14;
+  string user_agent = 15;
+}
+
+// Event: Admin-Created User (Existing Tenant)
+message AdminCreatedUserEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string user_id = 2;
+  string tenant_id = 3;
+  string email = 4;
+  string username = 5;
+  string first_name = 6;
+  string last_name = 7;
+  string phone_number = 8;
+  string activation_token = 9;
+  string created_by = 10;
+  string initial_role = 11;
+  bool mfa_enabled = 12;
+  bool must_change_password = 13;
+  google.protobuf.Timestamp timestamp = 14;
+}
+
+// Event: User Registered (Generic - for backward compatibility)
+message UserRegisteredEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  message RegistrationData {
+    string user_id = 1;
+    string tenant_id = 2;
+    string username = 3;
+    string email = 4;
+    string registration_method = 5;
+    google.protobuf.Timestamp registered_at = 6;
+    string ip_address = 7;
+    string user_agent = 8;
+    bool email_verified = 9;
+    string registration_source = 10;
+    map<string, string> additional_info = 11;
+  }
+
+  RegistrationData registration = 2;
+}
+
+// Event: User Activated
+message UserActivatedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string user_id = 2;
+  string tenant_id = 3;
+  string activation_token = 4;
+  google.protobuf.Timestamp activated_at = 5;
+  string ip_address = 6;
+}
+
+// Event: User Login
+message UserLoginEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  message LoginData {
+    string user_id = 1;
+    string tenant_id = 2;
+    string username = 3;
+    string email = 4;
+    string authentication_method = 5;
+    string ip_address = 6;
+    string user_agent = 7;
+    string session_id = 8;
+    google.protobuf.Timestamp login_time = 9;
+    bool mfa_used = 10;
+    string device_id = 11;
+    map<string, string> additional_info = 12;
+  }
+
+  LoginData login = 2;
+}
+
+// Event: User Logout
+message UserLogoutEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  message LogoutData {
+    string user_id = 1;
+    string tenant_id = 2;
+    string session_id = 3;
+    google.protobuf.Timestamp logout_time = 4;
+    string logout_reason = 5;
+    int64 session_duration_ms = 6;
+  }
+
+  LogoutData logout = 2;
+}
+
+// Event: Login Failed
+message LoginFailedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  message FailureData {
+    string username = 1;
+    string tenant_id = 2;
+    string failure_reason = 3;
+    string ip_address = 4;
+    string user_agent = 5;
+    google.protobuf.Timestamp attempt_time = 6;
+    int32 failure_count = 7;
+    bool account_locked = 8;
+  }
+
+  FailureData failure = 2;
+}
+
+// Event: Password Changed
+message PasswordChangedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string user_id = 2;
+  string tenant_id = 3;
+  string changed_by = 4;
+  google.protobuf.Timestamp changed_at = 5;
+  bool forced_change = 6;
+  string change_reason = 7;
+}
+
+// Event: Password Reset Requested
+message PasswordResetRequestedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string user_id = 2;
+  string email = 3;
+  string tenant_id = 4;
+  string reset_token = 5;
+  google.protobuf.Timestamp requested_at = 6;
+  google.protobuf.Timestamp expires_at = 7;
+  string ip_address = 8;
+}
+
+// Event: MFA Enabled
+message MFAEnabledEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string user_id = 2;
+  string tenant_id = 3;
+  string mfa_type = 4;
+  google.protobuf.Timestamp enabled_at = 5;
+  string device_name = 6;
+}

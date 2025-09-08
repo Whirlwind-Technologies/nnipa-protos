@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package com.nnipa.proto.authz;
+
+option java_package = "com.nnipa.proto.authz";
+option java_multiple_files = true;
+
+import "common/common.proto";
+
+// Command: Check Authorization
+message CheckAuthorizationCommand {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string user_id = 2;
+  string tenant_id = 3;
+  string resource = 4;
+  string action = 5;
+  map<string, string> context = 6;
+}
+
+// Command: Grant Permission
+message GrantPermissionCommand {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string user_id = 2;
+  string tenant_id = 3;
+  string resource = 4;
+  string action = 5;
+  string granted_by = 6;
+}

@@ -1,0 +1,104 @@
+syntax = "proto3";
+
+package com.nnipa.proto.command;
+
+option java_package = "com.nnipa.proto.command";
+option java_multiple_files = true;
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/any.proto";
+import "common/common.proto";
+
+
+// ============================================
+// Cross-Service Commands
+// ============================================
+
+// Command: Create Tenant (for self-signup)
+message CreateTenantCommand {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string user_id = 2;
+  string organization_name = 3;
+  string organization_type = 4;
+  string organization_email = 5;
+  string organization_phone = 6;
+  string owner_user_id = 7;
+  string subscription_plan = 8;
+  bool auto_activate = 9;
+  map<string, string> additional_settings = 10;
+}
+
+// Command: Create User Profile
+message CreateUserProfileCommand {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string user_id = 2;
+  string tenant_id = 3;
+  string email = 4;
+  string username = 5;
+  string first_name = 6;
+  string last_name = 7;
+  string phone_number = 8;
+  string user_type = 9;
+  map<string, string> preferences = 10;
+}
+
+// Command: Assign Role
+message AssignRoleCommand {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string user_id = 2;
+  string tenant_id = 3;
+  string role = 4;
+  string assigned_by = 5;
+  google.protobuf.Timestamp effective_from = 6;
+  google.protobuf.Timestamp expires_at = 7;
+}
+
+// Command: Send Notification
+message SendNotificationCommand {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  message NotificationData {
+    string recipient_id = 1;
+    string tenant_id = 2;
+    string type = 3;
+    string channel = 4;
+    string template_id = 5;
+    map<string, string> template_params = 6;
+    string subject = 7;
+    string body = 8;
+    google.protobuf.Timestamp send_at = 9;
+    bool high_priority = 10;
+  }
+
+  NotificationData notification = 2;
+}
+
+// Command: Provision Resources
+message ProvisionResourcesCommand {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string tenant_id = 2;
+  repeated string resources = 3;
+  map<string, string> configuration = 4;
+  bool async_provision = 5;
+}
+
+// Command: Audit Log
+message AuditLogCommand {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  message AuditEntry {
+    string tenant_id = 1;
+    string user_id = 2;
+    string action = 3;
+    string resource_type = 4;
+    string resource_id = 5;
+    google.protobuf.Any old_value = 6;
+    google.protobuf.Any new_value = 7;
+    string result = 8;
+    google.protobuf.Timestamp timestamp = 9;
+    string ip_address = 10;
+    map<string, string> context = 11;
+  }
+
+  AuditEntry entry = 2;
+}

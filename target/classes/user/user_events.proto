@@ -1,0 +1,62 @@
+syntax = "proto3";
+
+package com.nnipa.proto.user;
+
+option java_package = "com.nnipa.proto.user";
+option java_multiple_files = true;
+
+import "google/protobuf/timestamp.proto";
+import "common/common.proto";
+import "common/enums.proto";
+
+// Event: User Created
+message UserCreatedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string user_id = 2;
+  string tenant_id = 3;
+  string username = 4;
+  string email = 5;
+  string first_name = 6;
+  string last_name = 7;
+  string user_type = 8;
+  com.nnipa.proto.common.UserStatus status = 9;
+  google.protobuf.Timestamp created_at = 10;
+}
+
+// Event: User Updated
+message UserUpdatedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string user_id = 2;
+  string tenant_id = 3;
+  map<string, string> changed_fields = 4;
+  google.protobuf.Timestamp updated_at = 5;
+  string updated_by = 6;
+}
+
+// Event: User Activated
+message UserActivatedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string user_id = 2;
+  string tenant_id = 3;
+  google.protobuf.Timestamp activated_at = 4;
+  string activated_by = 5;
+}
+
+// Event: User Deactivated
+message UserDeactivatedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string user_id = 2;
+  string tenant_id = 3;
+  string reason = 4;
+  google.protobuf.Timestamp deactivated_at = 5;
+  string deactivated_by = 6;
+}
+
+// Event: User Profile Updated
+message UserProfileUpdatedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string user_id = 2;
+  string tenant_id = 3;
+  map<string, string> profile_data = 4;
+  google.protobuf.Timestamp updated_at = 5;
+}

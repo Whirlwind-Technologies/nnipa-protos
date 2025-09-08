@@ -1,0 +1,86 @@
+syntax = "proto3";
+
+package com.nnipa.proto.common;
+
+option java_package = "com.nnipa.proto.common";
+option java_outer_classname = "CommonProtos";
+option java_multiple_files = true;
+
+import "google/protobuf/timestamp.proto";
+import "common/enums.proto";
+
+// ============================================
+// Common Messages
+// ============================================
+
+// Base event metadata included in all events
+message EventMetadata {
+  string event_id = 1;                      // Unique event identifier
+  string correlation_id = 2;                // For tracking related events
+  string source_service = 3;                // Service that generated the event
+  google.protobuf.Timestamp timestamp = 4;  // Event creation time
+  string version = 5;                       // Schema version
+  map<string, string> headers = 6;          // Custom headers
+  string tenant_id = 7;                     // Multi-tenant context
+  string user_id = 8;                       // User who triggered the event
+  Priority priority = 9;                    // Event priority
+  int32 retry_count = 10;                   // Number of retries
+}
+
+// Standard error information
+message ErrorDetail {
+  string code = 1;
+  string message = 2;
+  string details = 3;
+  google.protobuf.Timestamp timestamp = 4;
+  string service = 5;
+  map<string, string> metadata = 6;
+}
+
+// Command response wrapper
+message CommandResponse {
+  bool success = 1;
+  string message = 2;
+  ErrorDetail error = 3;
+  google.protobuf.Timestamp timestamp = 4;
+  string correlation_id = 5;
+}
+
+// Pagination information
+message PaginationInfo {
+  int32 page = 1;
+  int32 page_size = 2;
+  int64 total_items = 3;
+  int32 total_pages = 4;
+}
+
+// Audit information
+message AuditInfo {
+  string created_by = 1;
+  google.protobuf.Timestamp created_at = 2;
+  string updated_by = 3;
+  google.protobuf.Timestamp updated_at = 4;
+  string ip_address = 5;
+  string user_agent = 6;
+}
+
+// Address information
+message Address {
+  string street_line1 = 1;
+  string street_line2 = 2;
+  string city = 3;
+  string state_province = 4;
+  string postal_code = 5;
+  string country = 6;
+  double latitude = 7;
+  double longitude = 8;
+}
+
+// Contact information
+message ContactInfo {
+  string email = 1;
+  string phone = 2;
+  string mobile = 3;
+  string fax = 4;
+  Address address = 5;
+}

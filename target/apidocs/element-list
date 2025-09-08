@@ -2,6 +2,5 @@ com.nnipa.proto.auth
 com.nnipa.proto.authz
 com.nnipa.proto.command
 com.nnipa.proto.common
-com.nnipa.proto.notification
 com.nnipa.proto.tenant
 com.nnipa.proto.user

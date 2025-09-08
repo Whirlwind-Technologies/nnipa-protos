@@ -1,0 +1,85 @@
+syntax = "proto3";
+
+package com.nnipa.proto.tenant;
+
+option java_package = "com.nnipa.proto.tenant";
+option java_multiple_files = true;
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/struct.proto";
+import "common/common.proto";
+import "common/enums.proto";
+
+// Event: Tenant Created
+message TenantCreatedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  message TenantData {
+    string tenant_id = 1;
+    string name = 2;
+    string tenant_code = 3;
+    string domain = 4;
+    com.nnipa.proto.common.OrganizationType organization_type = 5;
+    com.nnipa.proto.common.SubscriptionTier subscription_tier = 6;
+    com.nnipa.proto.common.DataIsolationStrategy isolation_strategy = 7;
+    string owner_user_id = 8;
+    string parent_tenant_id = 9;
+    bool is_active = 10;
+    google.protobuf.Timestamp created_at = 11;
+    com.nnipa.proto.common.ContactInfo contact_info = 12;
+    map<string, string> settings = 13;
+    repeated string enabled_features = 14;
+  }
+
+  TenantData tenant = 2;
+}
+
+// Event: Tenant Updated
+message TenantUpdatedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  message UpdateData {
+    string tenant_id = 1;
+    map<string, google.protobuf.Value> changed_fields = 2;
+    string updated_by = 3;
+    google.protobuf.Timestamp updated_at = 4;
+  }
+
+  UpdateData update = 2;
+}
+
+// Event: Tenant Activated
+message TenantActivatedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string tenant_id = 2;
+  string activated_by = 3;
+  google.protobuf.Timestamp activated_at = 4;
+  string reason = 5;
+}
+
+// Event: Tenant Deactivated
+message TenantDeactivatedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string tenant_id = 2;
+  string deactivated_by = 3;
+  google.protobuf.Timestamp deactivated_at = 4;
+  string reason = 5;
+  bool is_temporary = 6;
+}
+
+// Event: Subscription Changed
+message SubscriptionChangedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  message SubscriptionChange {
+    string tenant_id = 1;
+    com.nnipa.proto.common.SubscriptionTier old_tier = 2;
+    com.nnipa.proto.common.SubscriptionTier new_tier = 3;
+    google.protobuf.Timestamp effective_date = 4;
+    string changed_by = 5;
+    string reason = 6;
+    double price_change = 7;
+  }
+
+  SubscriptionChange change = 2;
+}
