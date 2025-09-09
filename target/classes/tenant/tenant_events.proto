@@ -83,3 +83,22 @@ message SubscriptionChangedEvent {
 
   SubscriptionChange change = 2;
 }
+
+// Event: Tenant Migrated
+message TenantMigratedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  message MigrationData {
+    string tenant_id = 1;
+    string from_strategy = 2;
+    string to_strategy = 3;
+    google.protobuf.Timestamp migration_started_at = 4;
+    google.protobuf.Timestamp migration_completed_at = 5;
+    string migrated_by = 6;
+    string reason = 7;
+    com.nnipa.proto.common.MigrationStatus status = 8;
+    map<string, string> migration_metadata = 9;
+  }
+
+  MigrationData migration = 2;
+}

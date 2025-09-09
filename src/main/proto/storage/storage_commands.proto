@@ -1,0 +1,321 @@
+syntax = "proto3";
+
+package com.nnipa.proto.storage;
+
+option java_package = "com.nnipa.proto.storage";
+option java_multiple_files = true;
+
+import "google/protobuf/timestamp.proto";
+import "common/common.proto";
+
+// ============================================
+// Storage Domain Commands
+// ============================================
+
+// Command: Upload Object
+message UploadObjectCommand {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  message UploadData {
+    string tenant_id = 1;
+    string object_key = 2;
+    string object_name = 3;
+    int64 size_bytes = 4;
+    string content_type = 5;
+    string storage_tier = 6;
+    string storage_backend = 7;
+    bool encrypt = 8;
+    bool compress = 9;
+    map<string, string> object_metadata = 10;
+    repeated string tags = 11;
+    string upload_id = 12;
+    int32 part_number = 13;  // For multipart uploads
+    string checksum = 14;
+    string user_id = 15;
+  }
+
+  UploadData upload_data = 2;
+}
+
+// Command: Download Object
+message DownloadObjectCommand {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  message DownloadData {
+    string object_id = 1;
+    string tenant_id = 2;
+    string object_key = 3;
+    string user_id = 4;
+    int64 range_start = 5;  // For partial downloads
+    int64 range_end = 6;
+    string download_format = 7;
+    bool stream = 8;
+  }
+
+  DownloadData download_data = 2;
+}
+
+// Command: Delete Object
+message DeleteObjectCommand {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  message DeleteData {
+    string object_id = 1;
+    string tenant_id = 2;
+    string object_key = 3;
+    bool permanent = 4;
+    string deleted_by = 5;
+    string deletion_reason = 6;
+  }
+
+  DeleteData delete_data = 2;
+}
+
+// Command: Copy Object
+message CopyObjectCommand {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  message CopyData {
+    string source_object_id = 1;
+    string source_tenant_id = 2;
+    string source_key = 3;
+    string target_tenant_id = 4;
+    string target_key = 5;
+    string target_name = 6;
+    bool deep_copy = 7;
+    string copied_by = 8;
+    map<string, string> target_metadata = 9;
+  }
+
+  CopyData copy_data = 2;
+}
+
+// Command: Move Object
+message MoveObjectCommand {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  message MoveData {
+    string object_id = 1;
+    string tenant_id = 2;
+    string source_key = 3;
+    string target_key = 4;
+    string target_bucket = 5;
+    string moved_by = 6;
+  }
+
+  MoveData move_data = 2;
+}
+
+// Command: Change Storage Tier
+message ChangeStorageTierCommand {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  message TierChangeData {
+    string object_id = 1;
+    string tenant_id = 2;
+    string object_key = 3;
+    string target_tier = 4;
+    string reason = 5;
+    bool immediate = 6;
+    string requested_by = 7;
+  }
+
+  TierChangeData tier_change_data = 2;
+}
+
+// Command: Create Version
+message CreateVersionCommand {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  message VersionData {
+    string object_id = 1;
+    string tenant_id = 2;
+    string object_key = 3;
+    int64 size_bytes = 4;
+    string checksum = 5;
+    string created_by = 6;
+    string version_comment = 7;
+    map<string, string> version_metadata = 8;
+  }
+
+  VersionData version_data = 2;
+}
+
+// Command: Restore Version
+message RestoreVersionCommand {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  message RestoreData {
+    string object_id = 1;
+    string tenant_id = 2;
+    string object_key = 3;
+    int32 version_number = 4;
+    string restored_by = 5;
+    string restore_reason = 6;
+  }
+
+  RestoreData restore_data = 2;
+}
+
+// Command: Share Object
+message ShareObjectCommand {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  message ShareData {
+    string object_id = 1;
+    string tenant_id = 2;
+    string object_key = 3;
+    repeated string share_with = 4;
+    string permission_level = 5;
+    google.protobuf.Timestamp expires_at = 6;
+    string shared_by = 7;
+    bool generate_link = 8;
+    bool notify_recipients = 9;
+  }
+
+  ShareData share_data = 2;
+}
+
+// Command: Scan Object
+message ScanObjectCommand {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  message ScanData {
+    string object_id = 1;
+    string tenant_id = 2;
+    string object_key = 3;
+    repeated string scan_types = 4;  // VIRUS, MALWARE, DLP, COMPLIANCE
+    bool quarantine_if_threat = 5;
+    string requested_by = 6;
+  }
+
+  ScanData scan_data = 2;
+}
+
+// Command: Create Backup
+message CreateBackupCommand {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  message BackupData {
+    string tenant_id = 1;
+    repeated string object_ids = 2;
+    string backup_type = 3;  // FULL, INCREMENTAL, DIFFERENTIAL
+    string backup_location = 4;
+    google.protobuf.Timestamp retention_until = 5;
+    string created_by = 6;
+    bool encrypt_backup = 7;
+    bool compress_backup = 8;
+  }
+
+  BackupData backup_data = 2;
+}
+
+// Command: Restore from Backup
+message RestoreFromBackupCommand {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  message RestoreData {
+    string backup_id = 1;
+    string tenant_id = 2;
+    repeated string object_ids = 3;  // Empty means restore all
+    string restore_location = 4;
+    bool overwrite_existing = 5;
+    string restored_by = 6;
+  }
+
+  RestoreData restore_data = 2;
+}
+
+// Command: Apply Lifecycle Policy
+message ApplyLifecyclePolicyCommand {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  message PolicyData {
+    string policy_id = 1;
+    string tenant_id = 2;
+    string policy_name = 3;
+    repeated PolicyRule rules = 4;
+    bool dry_run = 5;
+    string applied_by = 6;
+  }
+
+  message PolicyRule {
+    string rule_id = 1;
+    string condition = 2;  // age > 30 days, accessed < 1 time, etc.
+    string action = 3;     // TIER, DELETE, ARCHIVE
+    map<string, string> parameters = 4;
+  }
+
+  PolicyData policy_data = 2;
+}
+
+// Command: Migrate Storage
+message MigrateStorageCommand {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  message MigrationData {
+    string tenant_id = 1;
+    repeated string object_ids = 2;  // Empty means all objects
+    string source_backend = 3;
+    string target_backend = 4;
+    bool validate_after = 5;
+    bool delete_source = 6;
+    string initiated_by = 7;
+    map<string, string> migration_options = 8;
+  }
+
+  MigrationData migration_data = 2;
+}
+
+// Command: Generate Presigned URL
+message GeneratePresignedUrlCommand {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  message UrlData {
+    string object_id = 1;
+    string tenant_id = 2;
+    string object_key = 3;
+    string operation = 4;  // GET, PUT, DELETE
+    int64 expiry_seconds = 5;
+    string requested_by = 6;
+    map<string, string> url_parameters = 7;
+  }
+
+  UrlData url_data = 2;
+}
+
+// Command: Validate Storage Integrity
+message ValidateStorageIntegrityCommand {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  message ValidationData {
+    string tenant_id = 1;
+    repeated string object_ids = 2;
+    bool check_checksum = 3;
+    bool check_size = 4;
+    bool check_metadata = 5;
+    bool repair_if_corrupt = 6;
+    string requested_by = 7;
+  }
+
+  ValidationData validation_data = 2;
+}
+
+// Response: Storage Operation Result
+message StorageOperationResult {
+  com.nnipa.proto.common.CommandResponse response = 1;
+
+  message ResultData {
+    string operation_id = 1;
+    string operation_type = 2;
+    bool success = 3;
+    string object_id = 4;
+    string object_key = 5;
+    int64 bytes_processed = 6;
+    int64 duration_ms = 7;
+    string result_url = 8;
+    map<string, string> result_metadata = 9;
+  }
+
+  ResultData result_data = 2;
+}

@@ -65,6 +65,21 @@ public final class TenantEvents {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_nnipa_proto_tenant_SubscriptionChangedEvent_SubscriptionChange_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_nnipa_proto_tenant_TenantMigratedEvent_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_nnipa_proto_tenant_TenantMigratedEvent_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_nnipa_proto_tenant_TenantMigratedEvent_MigrationData_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_nnipa_proto_tenant_TenantMigratedEvent_MigrationData_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_nnipa_proto_tenant_TenantMigratedEvent_MigrationData_MigrationMetadataEntry_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_nnipa_proto_tenant_TenantMigratedEvent_MigrationData_MigrationMetadataEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -129,8 +144,23 @@ public final class TenantEvents {
       ".proto.common.SubscriptionTier\0222\n\016effect" +
       "ive_date\030\004 \001(\0132\032.google.protobuf.Timesta" +
       "mp\022\022\n\nchanged_by\030\005 \001(\t\022\016\n\006reason\030\006 \001(\t\022\024" +
-      "\n\014price_change\030\007 \001(\001B\032\n\026com.nnipa.proto." +
-      "tenantP\001b\006proto3"
+      "\n\014price_change\030\007 \001(\001\"\351\004\n\023TenantMigratedE" +
+      "vent\0227\n\010metadata\030\001 \001(\0132%.com.nnipa.proto" +
+      ".common.EventMetadata\022L\n\tmigration\030\002 \001(\013" +
+      "29.com.nnipa.proto.tenant.TenantMigrated" +
+      "Event.MigrationData\032\312\003\n\rMigrationData\022\021\n" +
+      "\ttenant_id\030\001 \001(\t\022\025\n\rfrom_strategy\030\002 \001(\t\022" +
+      "\023\n\013to_strategy\030\003 \001(\t\0228\n\024migration_starte" +
+      "d_at\030\004 \001(\0132\032.google.protobuf.Timestamp\022:" +
+      "\n\026migration_completed_at\030\005 \001(\0132\032.google." +
+      "protobuf.Timestamp\022\023\n\013migrated_by\030\006 \001(\t\022" +
+      "\016\n\006reason\030\007 \001(\t\0227\n\006status\030\010 \001(\0162\'.com.nn" +
+      "ipa.proto.common.MigrationStatus\022l\n\022migr" +
+      "ation_metadata\030\t \003(\0132P.com.nnipa.proto.t" +
+      "enant.TenantMigratedEvent.MigrationData." +
+      "MigrationMetadataEntry\0328\n\026MigrationMetad" +
+      "ataEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001" +
+      "B\032\n\026com.nnipa.proto.tenantP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -200,6 +230,24 @@ public final class TenantEvents {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nnipa_proto_tenant_SubscriptionChangedEvent_SubscriptionChange_descriptor,
         new java.lang.String[] { "TenantId", "OldTier", "NewTier", "EffectiveDate", "ChangedBy", "Reason", "PriceChange", });
+    internal_static_com_nnipa_proto_tenant_TenantMigratedEvent_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_com_nnipa_proto_tenant_TenantMigratedEvent_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_nnipa_proto_tenant_TenantMigratedEvent_descriptor,
+        new java.lang.String[] { "Metadata", "Migration", });
+    internal_static_com_nnipa_proto_tenant_TenantMigratedEvent_MigrationData_descriptor =
+      internal_static_com_nnipa_proto_tenant_TenantMigratedEvent_descriptor.getNestedTypes().get(0);
+    internal_static_com_nnipa_proto_tenant_TenantMigratedEvent_MigrationData_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_nnipa_proto_tenant_TenantMigratedEvent_MigrationData_descriptor,
+        new java.lang.String[] { "TenantId", "FromStrategy", "ToStrategy", "MigrationStartedAt", "MigrationCompletedAt", "MigratedBy", "Reason", "Status", "MigrationMetadata", });
+    internal_static_com_nnipa_proto_tenant_TenantMigratedEvent_MigrationData_MigrationMetadataEntry_descriptor =
+      internal_static_com_nnipa_proto_tenant_TenantMigratedEvent_MigrationData_descriptor.getNestedTypes().get(0);
+    internal_static_com_nnipa_proto_tenant_TenantMigratedEvent_MigrationData_MigrationMetadataEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_nnipa_proto_tenant_TenantMigratedEvent_MigrationData_MigrationMetadataEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.protobuf.StructProto.getDescriptor();
     com.nnipa.proto.common.CommonProtos.getDescriptor();

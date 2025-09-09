@@ -84,3 +84,18 @@ message ContactInfo {
   string fax = 4;
   Address address = 5;
 }
+
+message StorageMetadata {
+  string object_id = 1;
+  string tenant_id = 2;
+  string bucket_name = 3;
+  string region = 4;
+  string storage_class = 5;
+  int64 size_bytes = 6;
+  string content_type = 7;
+  string checksum = 8;
+  google.protobuf.Timestamp created_at = 9;
+  google.protobuf.Timestamp modified_at = 10;
+  map<string, string> custom_metadata = 11;
+}
+

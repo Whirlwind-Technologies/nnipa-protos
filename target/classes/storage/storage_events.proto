@@ -1,0 +1,338 @@
+syntax = "proto3";
+
+package com.nnipa.proto.storage;
+
+option java_package = "com.nnipa.proto.storage";
+option java_multiple_files = true;
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/struct.proto";
+import "common/common.proto";
+
+// ============================================
+// Storage Domain Events
+// ============================================
+
+// Event: Storage Object Created
+message StorageCreatedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  message StorageData {
+    string object_id = 1;
+    string tenant_id = 2;
+    string object_key = 3;
+    string object_name = 4;
+    int64 size_bytes = 5;
+    string storage_tier = 6;        // HOT, WARM, COLD, ARCHIVE
+    string storage_backend = 7;     // S3, AZURE_BLOB, GCS, LOCAL
+    string data_format = 8;         // JSON, CSV, PARQUET, AVRO, etc.
+    string content_type = 9;
+    string checksum = 10;
+    bool encrypted = 11;
+    bool compressed = 12;
+    int32 version_number = 13;
+    bool is_current_version = 14;
+    string created_by = 15;
+    google.protobuf.Timestamp created_at = 16;
+    map<string, string> metadata = 17;
+    string storage_class = 18;
+    string encryption_algorithm = 19;
+    string compression_type = 20;
+    repeated string tags = 21;
+    string bucket_name = 22;
+    string region = 23;
+  }
+
+  StorageData storage_data = 2;
+}
+
+// Event: Storage Object Updated
+message StorageUpdatedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  StorageCreatedEvent.StorageData storage_data = 2;
+  string updated_by = 3;
+  google.protobuf.Timestamp updated_at = 4;
+  map<string, google.protobuf.Value> changed_fields = 5;
+}
+
+// Event: Storage Object Deleted
+message StorageDeletedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string object_id = 2;
+  string tenant_id = 3;
+  string object_key = 4;
+  bool permanent = 5;
+  string deleted_by = 6;
+  google.protobuf.Timestamp deleted_at = 7;
+  string deletion_reason = 8;
+  int64 size_bytes = 9;
+  string storage_tier = 10;
+}
+
+// Event: Storage Object Versioned
+message StorageVersionedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  message VersionData {
+    string object_id = 1;
+    string tenant_id = 2;
+    string object_key = 3;
+    int32 new_version_number = 4;
+    int32 previous_version_number = 5;
+    string previous_version_id = 6;
+    string created_by = 7;
+    google.protobuf.Timestamp created_at = 8;
+    int64 size_bytes = 9;
+    string change_summary = 10;
+    map<string, string> version_metadata = 11;
+  }
+
+  VersionData version_data = 2;
+}
+
+// Event: Storage Object Tiered
+message StorageTieredEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  message TierData {
+    string object_id = 1;
+    string tenant_id = 2;
+    string object_key = 3;
+    string from_tier = 4;    // HOT, WARM, COLD, ARCHIVE
+    string to_tier = 5;      // HOT, WARM, COLD, ARCHIVE
+    int64 size_bytes = 6;
+    google.protobuf.Timestamp transitioned_at = 7;
+    string transition_reason = 8;
+    double cost_impact = 9;
+    int64 access_frequency = 10;
+    google.protobuf.Timestamp last_accessed = 11;
+  }
+
+  TierData tier_data = 2;
+}
+
+// Event: Storage Object Accessed
+message StorageAccessedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string object_id = 2;
+  string tenant_id = 3;
+  string object_key = 4;
+  string accessed_by = 5;
+  google.protobuf.Timestamp accessed_at = 6;
+  int64 access_count = 7;
+  string access_type = 8;      // READ, DOWNLOAD, PREVIEW, METADATA
+  string ip_address = 9;
+  string user_agent = 10;
+  int64 bytes_transferred = 11;
+  int64 duration_ms = 12;
+}
+
+// Event: Storage Object Replicated
+message StorageReplicatedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  message ReplicationData {
+    string object_id = 1;
+    string tenant_id = 2;
+    string object_key = 3;
+    string source_region = 4;
+    string target_region = 5;
+    string replication_type = 6;  // SYNC, ASYNC, CROSS_REGION
+    google.protobuf.Timestamp started_at = 7;
+    google.protobuf.Timestamp completed_at = 8;
+    int64 size_bytes = 9;
+    bool success = 10;
+    string error_message = 11;
+  }
+
+  ReplicationData replication_data = 2;
+}
+
+// Event: Storage Object Compressed
+message StorageCompressedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  message CompressionData {
+    string object_id = 1;
+    string tenant_id = 2;
+    string object_key = 3;
+    int64 original_size_bytes = 4;
+    int64 compressed_size_bytes = 5;
+    double compression_ratio = 6;
+    string compression_algorithm = 7;  // GZIP, SNAPPY, LZ4, ZSTD
+    google.protobuf.Timestamp compressed_at = 8;
+    int64 duration_ms = 9;
+  }
+
+  CompressionData compression_data = 2;
+}
+
+// Event: Storage Object Encrypted
+message StorageEncryptedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  message EncryptionData {
+    string object_id = 1;
+    string tenant_id = 2;
+    string object_key = 3;
+    string encryption_algorithm = 4;  // AES256, RSA, etc.
+    string key_id = 5;
+    google.protobuf.Timestamp encrypted_at = 6;
+    string encrypted_by = 7;
+    bool client_side = 8;
+  }
+
+  EncryptionData encryption_data = 2;
+}
+
+// Event: Storage Quota Exceeded
+message StorageQuotaExceededEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  message QuotaData {
+    string tenant_id = 1;
+    int64 quota_bytes = 2;
+    int64 used_bytes = 3;
+    int64 attempted_size = 4;
+    string action_taken = 5;  // BLOCKED, NOTIFIED, AUTO_EXPANDED
+    google.protobuf.Timestamp exceeded_at = 6;
+    repeated string notification_sent_to = 7;
+  }
+
+  QuotaData quota_data = 2;
+}
+
+// Event: Storage Object Shared
+message StorageSharedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  message ShareData {
+    string object_id = 1;
+    string tenant_id = 2;
+    string object_key = 3;
+    string shared_by = 4;
+    repeated string shared_with = 5;
+    string permission_level = 6;  // READ, WRITE, DELETE, ADMIN
+    google.protobuf.Timestamp shared_at = 7;
+    google.protobuf.Timestamp expires_at = 8;
+    string share_link = 9;
+    bool is_public = 10;
+  }
+
+  ShareData share_data = 2;
+}
+
+// Event: Storage Object Restored
+message StorageRestoredEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  message RestoreData {
+    string object_id = 1;
+    string tenant_id = 2;
+    string object_key = 3;
+    string restored_from = 4;  // ARCHIVE, BACKUP, SNAPSHOT
+    string restored_by = 5;
+    google.protobuf.Timestamp restored_at = 6;
+    int64 duration_ms = 7;
+    double cost = 8;
+  }
+
+  RestoreData restore_data = 2;
+}
+
+// Event: Storage Lifecycle Policy Applied
+message StorageLifecyclePolicyAppliedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  message PolicyData {
+    string policy_id = 1;
+    string policy_name = 2;
+    string tenant_id = 3;
+    int32 objects_affected = 4;
+    string action_taken = 5;  // TIERED, DELETED, ARCHIVED
+    google.protobuf.Timestamp applied_at = 6;
+    int64 bytes_affected = 7;
+    double cost_savings = 8;
+  }
+
+  PolicyData policy_data = 2;
+}
+
+// Event: Storage Object Scanned
+message StorageScannedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  message ScanData {
+    string object_id = 1;
+    string tenant_id = 2;
+    string object_key = 3;
+    string scan_type = 4;  // VIRUS, MALWARE, DLP, COMPLIANCE
+    bool threat_detected = 5;
+    string threat_name = 6;
+    string action_taken = 7;  // QUARANTINED, DELETED, NOTIFIED
+    google.protobuf.Timestamp scanned_at = 8;
+    string scanner_version = 9;
+    map<string, string> scan_results = 10;
+  }
+
+  ScanData scan_data = 2;
+}
+
+// Event: Storage Backup Created
+message StorageBackupCreatedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  message BackupData {
+    string backup_id = 1;
+    string tenant_id = 2;
+    repeated string object_ids = 3;
+    string backup_type = 4;  // FULL, INCREMENTAL, DIFFERENTIAL
+    string backup_location = 5;
+    int64 total_size_bytes = 6;
+    google.protobuf.Timestamp started_at = 7;
+    google.protobuf.Timestamp completed_at = 8;
+    bool success = 9;
+    string error_message = 10;
+    google.protobuf.Timestamp retention_until = 11;
+  }
+
+  BackupData backup_data = 2;
+}
+
+// Event: Storage Migration Started
+message StorageMigrationStartedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  message MigrationData {
+    string migration_id = 1;
+    string tenant_id = 2;
+    string source_backend = 3;
+    string target_backend = 4;
+    int32 total_objects = 5;
+    int64 total_bytes = 6;
+    google.protobuf.Timestamp started_at = 7;
+    string initiated_by = 8;
+    map<string, string> migration_options = 9;
+  }
+
+  MigrationData migration_data = 2;
+}
+
+// Event: Storage Migration Completed
+message StorageMigrationCompletedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  message CompletionData {
+    string migration_id = 1;
+    string tenant_id = 2;
+    int32 objects_migrated = 3;
+    int32 objects_failed = 4;
+    int64 bytes_migrated = 5;
+    google.protobuf.Timestamp completed_at = 6;
+    int64 duration_ms = 7;
+    bool success = 8;
+    repeated string errors = 9;
+  }
+
+  CompletionData completion_data = 2;
+}

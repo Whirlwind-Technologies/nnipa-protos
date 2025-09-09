@@ -60,6 +60,16 @@ public final class CommonProtos {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_nnipa_proto_common_ContactInfo_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_nnipa_proto_common_StorageMetadata_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_nnipa_proto_common_StorageMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_nnipa_proto_common_StorageMetadata_CustomMetadataEntry_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_nnipa_proto_common_StorageMetadata_CustomMetadataEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -105,9 +115,19 @@ public final class CommonProtos {
       "de\030\007 \001(\001\022\021\n\tlongitude\030\010 \001(\001\"z\n\013ContactIn" +
       "fo\022\r\n\005email\030\001 \001(\t\022\r\n\005phone\030\002 \001(\t\022\016\n\006mobi" +
       "le\030\003 \001(\t\022\013\n\003fax\030\004 \001(\t\0220\n\007address\030\005 \001(\0132\037" +
-      ".com.nnipa.proto.common.AddressB(\n\026com.n" +
-      "nipa.proto.commonB\014CommonProtosP\001b\006proto" +
-      "3"
+      ".com.nnipa.proto.common.Address\"\235\003\n\017Stor" +
+      "ageMetadata\022\021\n\tobject_id\030\001 \001(\t\022\021\n\ttenant" +
+      "_id\030\002 \001(\t\022\023\n\013bucket_name\030\003 \001(\t\022\016\n\006region" +
+      "\030\004 \001(\t\022\025\n\rstorage_class\030\005 \001(\t\022\022\n\nsize_by" +
+      "tes\030\006 \001(\003\022\024\n\014content_type\030\007 \001(\t\022\020\n\010check" +
+      "sum\030\010 \001(\t\022.\n\ncreated_at\030\t \001(\0132\032.google.p" +
+      "rotobuf.Timestamp\022/\n\013modified_at\030\n \001(\0132\032" +
+      ".google.protobuf.Timestamp\022T\n\017custom_met" +
+      "adata\030\013 \003(\0132;.com.nnipa.proto.common.Sto" +
+      "rageMetadata.CustomMetadataEntry\0325\n\023Cust" +
+      "omMetadataEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 " +
+      "\001(\t:\0028\001B(\n\026com.nnipa.proto.commonB\014Commo" +
+      "nProtosP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -169,6 +189,18 @@ public final class CommonProtos {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nnipa_proto_common_ContactInfo_descriptor,
         new java.lang.String[] { "Email", "Phone", "Mobile", "Fax", "Address", });
+    internal_static_com_nnipa_proto_common_StorageMetadata_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_com_nnipa_proto_common_StorageMetadata_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_nnipa_proto_common_StorageMetadata_descriptor,
+        new java.lang.String[] { "ObjectId", "TenantId", "BucketName", "Region", "StorageClass", "SizeBytes", "ContentType", "Checksum", "CreatedAt", "ModifiedAt", "CustomMetadata", });
+    internal_static_com_nnipa_proto_common_StorageMetadata_CustomMetadataEntry_descriptor =
+      internal_static_com_nnipa_proto_common_StorageMetadata_descriptor.getNestedTypes().get(0);
+    internal_static_com_nnipa_proto_common_StorageMetadata_CustomMetadataEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_nnipa_proto_common_StorageMetadata_CustomMetadataEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
     com.google.protobuf.TimestampProto.getDescriptor();
     com.nnipa.proto.common.Enums.getDescriptor();
   }
