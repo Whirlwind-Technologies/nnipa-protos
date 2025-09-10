@@ -16,6 +16,51 @@ public final class TenantCommands {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_nnipa_proto_tenant_CreateTenantCommand_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_nnipa_proto_tenant_CreateTenantCommand_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_nnipa_proto_tenant_CreateTenantCommand_TenantDetails_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_nnipa_proto_tenant_CreateTenantCommand_TenantDetails_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_nnipa_proto_tenant_CreateTenantCommand_TenantDetails_MetadataEntry_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_nnipa_proto_tenant_CreateTenantCommand_TenantDetails_MetadataEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_nnipa_proto_tenant_CreateTenantCommand_TenantDetails_SettingsEntry_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_nnipa_proto_tenant_CreateTenantCommand_TenantDetails_SettingsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_nnipa_proto_tenant_UpdateTenantCommand_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_nnipa_proto_tenant_UpdateTenantCommand_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_nnipa_proto_tenant_UpdateTenantCommand_UpdateDetails_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_nnipa_proto_tenant_UpdateTenantCommand_UpdateDetails_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_nnipa_proto_tenant_UpdateTenantCommand_UpdateDetails_MetadataEntry_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_nnipa_proto_tenant_UpdateTenantCommand_UpdateDetails_MetadataEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_nnipa_proto_tenant_UpdateTenantCommand_UpdateDetails_SettingsEntry_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_nnipa_proto_tenant_UpdateTenantCommand_UpdateDetails_SettingsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_nnipa_proto_tenant_UpdateTenantCommand_UpdateDetails_FeatureFlagsEntry_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_nnipa_proto_tenant_UpdateTenantCommand_UpdateDetails_FeatureFlagsEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_nnipa_proto_tenant_ValidateTenantCommand_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -40,32 +85,119 @@ public final class TenantCommands {
   static {
     java.lang.String[] descriptorData = {
       "\n\034tenant/tenant_commands.proto\022\026com.nnip" +
-      "a.proto.tenant\032\023common/common.proto\"x\n\025V" +
-      "alidateTenantCommand\0227\n\010metadata\030\001 \001(\0132%" +
-      ".com.nnipa.proto.common.EventMetadata\022\021\n" +
-      "\ttenant_id\030\002 \001(\t\022\023\n\013validations\030\003 \003(\t\"\207\002" +
-      "\n\026ProvisionTenantCommand\0227\n\010metadata\030\001 \001" +
-      "(\0132%.com.nnipa.proto.common.EventMetadat" +
-      "a\022\021\n\ttenant_id\030\002 \001(\t\022\021\n\tresources\030\003 \003(\t\022" +
-      "X\n\rconfiguration\030\004 \003(\0132A.com.nnipa.proto" +
-      ".tenant.ProvisionTenantCommand.Configura" +
-      "tionEntry\0324\n\022ConfigurationEntry\022\013\n\003key\030\001" +
-      " \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B\032\n\026com.nnipa.pro" +
-      "to.tenantP\001b\006proto3"
+      "a.proto.tenant\032\023common/common.proto\"\340\004\n\023" +
+      "CreateTenantCommand\0229\n\010metadata\030\001 \001(\0132\'." +
+      "com.nnipa.proto.common.CommandMetadata\022J" +
+      "\n\007details\030\002 \001(\01329.com.nnipa.proto.tenant" +
+      ".CreateTenantCommand.TenantDetails\032\301\003\n\rT" +
+      "enantDetails\022\014\n\004code\030\001 \001(\t\022\014\n\004name\030\002 \001(\t" +
+      "\022\031\n\021organization_type\030\003 \001(\t\022\031\n\021subscript" +
+      "ion_plan\030\004 \001(\t\022\032\n\022isolation_strategy\030\005 \001" +
+      "(\t\022Y\n\010metadata\030\006 \003(\0132G.com.nnipa.proto.t" +
+      "enant.CreateTenantCommand.TenantDetails." +
+      "MetadataEntry\022Y\n\010settings\030\007 \003(\0132G.com.nn" +
+      "ipa.proto.tenant.CreateTenantCommand.Ten" +
+      "antDetails.SettingsEntry\022\023\n\013admin_email\030" +
+      "\010 \001(\t\022\025\n\rbilling_email\030\t \001(\t\032/\n\rMetadata" +
+      "Entry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032/\n" +
+      "\rSettingsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001" +
+      "(\t:\0028\001\"\304\005\n\023UpdateTenantCommand\0229\n\010metada" +
+      "ta\030\001 \001(\0132\'.com.nnipa.proto.common.Comman" +
+      "dMetadata\022\021\n\ttenant_id\030\002 \001(\t\022J\n\007updates\030" +
+      "\003 \001(\01329.com.nnipa.proto.tenant.UpdateTen" +
+      "antCommand.UpdateDetails\032\222\004\n\rUpdateDetai" +
+      "ls\022\021\n\004name\030\001 \001(\tH\000\210\001\001\022\036\n\021subscription_pl" +
+      "an\030\002 \001(\tH\001\210\001\001\022Y\n\010metadata\030\003 \003(\0132G.com.nn" +
+      "ipa.proto.tenant.UpdateTenantCommand.Upd" +
+      "ateDetails.MetadataEntry\022Y\n\010settings\030\004 \003" +
+      "(\0132G.com.nnipa.proto.tenant.UpdateTenant" +
+      "Command.UpdateDetails.SettingsEntry\022b\n\rf" +
+      "eature_flags\030\005 \003(\0132K.com.nnipa.proto.ten" +
+      "ant.UpdateTenantCommand.UpdateDetails.Fe" +
+      "atureFlagsEntry\032/\n\rMetadataEntry\022\013\n\003key\030" +
+      "\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032/\n\rSettingsEntr" +
+      "y\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\0323\n\021Fea" +
+      "tureFlagsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001" +
+      "(\010:\0028\001B\007\n\005_nameB\024\n\022_subscription_plan\"x\n" +
+      "\025ValidateTenantCommand\0227\n\010metadata\030\001 \001(\013" +
+      "2%.com.nnipa.proto.common.EventMetadata\022" +
+      "\021\n\ttenant_id\030\002 \001(\t\022\023\n\013validations\030\003 \003(\t\"" +
+      "\207\002\n\026ProvisionTenantCommand\0227\n\010metadata\030\001" +
+      " \001(\0132%.com.nnipa.proto.common.EventMetad" +
+      "ata\022\021\n\ttenant_id\030\002 \001(\t\022\021\n\tresources\030\003 \003(" +
+      "\t\022X\n\rconfiguration\030\004 \003(\0132A.com.nnipa.pro" +
+      "to.tenant.ProvisionTenantCommand.Configu" +
+      "rationEntry\0324\n\022ConfigurationEntry\022\013\n\003key" +
+      "\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B\032\n\026com.nnipa.p" +
+      "roto.tenantP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.nnipa.proto.common.CommonProtos.getDescriptor(),
         });
-    internal_static_com_nnipa_proto_tenant_ValidateTenantCommand_descriptor =
+    internal_static_com_nnipa_proto_tenant_CreateTenantCommand_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_com_nnipa_proto_tenant_CreateTenantCommand_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_nnipa_proto_tenant_CreateTenantCommand_descriptor,
+        new java.lang.String[] { "Metadata", "Details", });
+    internal_static_com_nnipa_proto_tenant_CreateTenantCommand_TenantDetails_descriptor =
+      internal_static_com_nnipa_proto_tenant_CreateTenantCommand_descriptor.getNestedTypes().get(0);
+    internal_static_com_nnipa_proto_tenant_CreateTenantCommand_TenantDetails_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_nnipa_proto_tenant_CreateTenantCommand_TenantDetails_descriptor,
+        new java.lang.String[] { "Code", "Name", "OrganizationType", "SubscriptionPlan", "IsolationStrategy", "Metadata", "Settings", "AdminEmail", "BillingEmail", });
+    internal_static_com_nnipa_proto_tenant_CreateTenantCommand_TenantDetails_MetadataEntry_descriptor =
+      internal_static_com_nnipa_proto_tenant_CreateTenantCommand_TenantDetails_descriptor.getNestedTypes().get(0);
+    internal_static_com_nnipa_proto_tenant_CreateTenantCommand_TenantDetails_MetadataEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_nnipa_proto_tenant_CreateTenantCommand_TenantDetails_MetadataEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_com_nnipa_proto_tenant_CreateTenantCommand_TenantDetails_SettingsEntry_descriptor =
+      internal_static_com_nnipa_proto_tenant_CreateTenantCommand_TenantDetails_descriptor.getNestedTypes().get(1);
+    internal_static_com_nnipa_proto_tenant_CreateTenantCommand_TenantDetails_SettingsEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_nnipa_proto_tenant_CreateTenantCommand_TenantDetails_SettingsEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_com_nnipa_proto_tenant_UpdateTenantCommand_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_com_nnipa_proto_tenant_UpdateTenantCommand_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_nnipa_proto_tenant_UpdateTenantCommand_descriptor,
+        new java.lang.String[] { "Metadata", "TenantId", "Updates", });
+    internal_static_com_nnipa_proto_tenant_UpdateTenantCommand_UpdateDetails_descriptor =
+      internal_static_com_nnipa_proto_tenant_UpdateTenantCommand_descriptor.getNestedTypes().get(0);
+    internal_static_com_nnipa_proto_tenant_UpdateTenantCommand_UpdateDetails_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_nnipa_proto_tenant_UpdateTenantCommand_UpdateDetails_descriptor,
+        new java.lang.String[] { "Name", "SubscriptionPlan", "Metadata", "Settings", "FeatureFlags", });
+    internal_static_com_nnipa_proto_tenant_UpdateTenantCommand_UpdateDetails_MetadataEntry_descriptor =
+      internal_static_com_nnipa_proto_tenant_UpdateTenantCommand_UpdateDetails_descriptor.getNestedTypes().get(0);
+    internal_static_com_nnipa_proto_tenant_UpdateTenantCommand_UpdateDetails_MetadataEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_nnipa_proto_tenant_UpdateTenantCommand_UpdateDetails_MetadataEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_com_nnipa_proto_tenant_UpdateTenantCommand_UpdateDetails_SettingsEntry_descriptor =
+      internal_static_com_nnipa_proto_tenant_UpdateTenantCommand_UpdateDetails_descriptor.getNestedTypes().get(1);
+    internal_static_com_nnipa_proto_tenant_UpdateTenantCommand_UpdateDetails_SettingsEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_nnipa_proto_tenant_UpdateTenantCommand_UpdateDetails_SettingsEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_com_nnipa_proto_tenant_UpdateTenantCommand_UpdateDetails_FeatureFlagsEntry_descriptor =
+      internal_static_com_nnipa_proto_tenant_UpdateTenantCommand_UpdateDetails_descriptor.getNestedTypes().get(2);
+    internal_static_com_nnipa_proto_tenant_UpdateTenantCommand_UpdateDetails_FeatureFlagsEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_nnipa_proto_tenant_UpdateTenantCommand_UpdateDetails_FeatureFlagsEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_com_nnipa_proto_tenant_ValidateTenantCommand_descriptor =
+      getDescriptor().getMessageTypes().get(2);
     internal_static_com_nnipa_proto_tenant_ValidateTenantCommand_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nnipa_proto_tenant_ValidateTenantCommand_descriptor,
         new java.lang.String[] { "Metadata", "TenantId", "Validations", });
     internal_static_com_nnipa_proto_tenant_ProvisionTenantCommand_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_com_nnipa_proto_tenant_ProvisionTenantCommand_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nnipa_proto_tenant_ProvisionTenantCommand_descriptor,

@@ -21,6 +21,9 @@ private static final long serialVersionUID = 0L;
     super(builder);
   }
   private TenantUpdatedEvent() {
+    updatedBy_ = "";
+    changedFields_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
@@ -41,1254 +44,6 @@ private static final long serialVersionUID = 0L;
     return com.nnipa.proto.tenant.TenantEvents.internal_static_com_nnipa_proto_tenant_TenantUpdatedEvent_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.nnipa.proto.tenant.TenantUpdatedEvent.class, com.nnipa.proto.tenant.TenantUpdatedEvent.Builder.class);
-  }
-
-  public interface UpdateDataOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     * <code>string tenant_id = 1;</code>
-     * @return The tenantId.
-     */
-    java.lang.String getTenantId();
-    /**
-     * <code>string tenant_id = 1;</code>
-     * @return The bytes for tenantId.
-     */
-    com.google.protobuf.ByteString
-        getTenantIdBytes();
-
-    /**
-     * <code>map&lt;string, .google.protobuf.Value&gt; changed_fields = 2;</code>
-     */
-    int getChangedFieldsCount();
-    /**
-     * <code>map&lt;string, .google.protobuf.Value&gt; changed_fields = 2;</code>
-     */
-    boolean containsChangedFields(
-        java.lang.String key);
-    /**
-     * Use {@link #getChangedFieldsMap()} instead.
-     */
-    @java.lang.Deprecated
-    java.util.Map<java.lang.String, com.google.protobuf.Value>
-    getChangedFields();
-    /**
-     * <code>map&lt;string, .google.protobuf.Value&gt; changed_fields = 2;</code>
-     */
-    java.util.Map<java.lang.String, com.google.protobuf.Value>
-    getChangedFieldsMap();
-    /**
-     * <code>map&lt;string, .google.protobuf.Value&gt; changed_fields = 2;</code>
-     */
-    /* nullable */
-com.google.protobuf.Value getChangedFieldsOrDefault(
-        java.lang.String key,
-        /* nullable */
-com.google.protobuf.Value defaultValue);
-    /**
-     * <code>map&lt;string, .google.protobuf.Value&gt; changed_fields = 2;</code>
-     */
-    com.google.protobuf.Value getChangedFieldsOrThrow(
-        java.lang.String key);
-
-    /**
-     * <code>string updated_by = 3;</code>
-     * @return The updatedBy.
-     */
-    java.lang.String getUpdatedBy();
-    /**
-     * <code>string updated_by = 3;</code>
-     * @return The bytes for updatedBy.
-     */
-    com.google.protobuf.ByteString
-        getUpdatedByBytes();
-
-    /**
-     * <code>.google.protobuf.Timestamp updated_at = 4;</code>
-     * @return Whether the updatedAt field is set.
-     */
-    boolean hasUpdatedAt();
-    /**
-     * <code>.google.protobuf.Timestamp updated_at = 4;</code>
-     * @return The updatedAt.
-     */
-    com.google.protobuf.Timestamp getUpdatedAt();
-    /**
-     * <code>.google.protobuf.Timestamp updated_at = 4;</code>
-     */
-    com.google.protobuf.TimestampOrBuilder getUpdatedAtOrBuilder();
-  }
-  /**
-   * Protobuf type {@code com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData}
-   */
-  public static final class UpdateData extends
-      com.google.protobuf.GeneratedMessageV3 implements
-      // @@protoc_insertion_point(message_implements:com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData)
-      UpdateDataOrBuilder {
-  private static final long serialVersionUID = 0L;
-    // Use UpdateData.newBuilder() to construct.
-    private UpdateData(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-    private UpdateData() {
-      tenantId_ = "";
-      updatedBy_ = "";
-    }
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(
-        UnusedPrivateParameter unused) {
-      return new UpdateData();
-    }
-
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.nnipa.proto.tenant.TenantEvents.internal_static_com_nnipa_proto_tenant_TenantUpdatedEvent_UpdateData_descriptor;
-    }
-
-    @SuppressWarnings({"rawtypes"})
-    @java.lang.Override
-    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
-        int number) {
-      switch (number) {
-        case 2:
-          return internalGetChangedFields();
-        default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
-      }
-    }
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.nnipa.proto.tenant.TenantEvents.internal_static_com_nnipa_proto_tenant_TenantUpdatedEvent_UpdateData_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData.class, com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData.Builder.class);
-    }
-
-    private int bitField0_;
-    public static final int TENANT_ID_FIELD_NUMBER = 1;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object tenantId_ = "";
-    /**
-     * <code>string tenant_id = 1;</code>
-     * @return The tenantId.
-     */
-    @java.lang.Override
-    public java.lang.String getTenantId() {
-      java.lang.Object ref = tenantId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        tenantId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string tenant_id = 1;</code>
-     * @return The bytes for tenantId.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getTenantIdBytes() {
-      java.lang.Object ref = tenantId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        tenantId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int CHANGED_FIELDS_FIELD_NUMBER = 2;
-    private static final class ChangedFieldsDefaultEntryHolder {
-      static final com.google.protobuf.MapEntry<
-          java.lang.String, com.google.protobuf.Value> defaultEntry =
-              com.google.protobuf.MapEntry
-              .<java.lang.String, com.google.protobuf.Value>newDefaultInstance(
-                  com.nnipa.proto.tenant.TenantEvents.internal_static_com_nnipa_proto_tenant_TenantUpdatedEvent_UpdateData_ChangedFieldsEntry_descriptor, 
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "",
-                  com.google.protobuf.WireFormat.FieldType.MESSAGE,
-                  com.google.protobuf.Value.getDefaultInstance());
-    }
-    @SuppressWarnings("serial")
-    private com.google.protobuf.MapField<
-        java.lang.String, com.google.protobuf.Value> changedFields_;
-    private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.Value>
-    internalGetChangedFields() {
-      if (changedFields_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            ChangedFieldsDefaultEntryHolder.defaultEntry);
-      }
-      return changedFields_;
-    }
-    public int getChangedFieldsCount() {
-      return internalGetChangedFields().getMap().size();
-    }
-    /**
-     * <code>map&lt;string, .google.protobuf.Value&gt; changed_fields = 2;</code>
-     */
-    @java.lang.Override
-    public boolean containsChangedFields(
-        java.lang.String key) {
-      if (key == null) { throw new NullPointerException("map key"); }
-      return internalGetChangedFields().getMap().containsKey(key);
-    }
-    /**
-     * Use {@link #getChangedFieldsMap()} instead.
-     */
-    @java.lang.Override
-    @java.lang.Deprecated
-    public java.util.Map<java.lang.String, com.google.protobuf.Value> getChangedFields() {
-      return getChangedFieldsMap();
-    }
-    /**
-     * <code>map&lt;string, .google.protobuf.Value&gt; changed_fields = 2;</code>
-     */
-    @java.lang.Override
-    public java.util.Map<java.lang.String, com.google.protobuf.Value> getChangedFieldsMap() {
-      return internalGetChangedFields().getMap();
-    }
-    /**
-     * <code>map&lt;string, .google.protobuf.Value&gt; changed_fields = 2;</code>
-     */
-    @java.lang.Override
-    public /* nullable */
-com.google.protobuf.Value getChangedFieldsOrDefault(
-        java.lang.String key,
-        /* nullable */
-com.google.protobuf.Value defaultValue) {
-      if (key == null) { throw new NullPointerException("map key"); }
-      java.util.Map<java.lang.String, com.google.protobuf.Value> map =
-          internalGetChangedFields().getMap();
-      return map.containsKey(key) ? map.get(key) : defaultValue;
-    }
-    /**
-     * <code>map&lt;string, .google.protobuf.Value&gt; changed_fields = 2;</code>
-     */
-    @java.lang.Override
-    public com.google.protobuf.Value getChangedFieldsOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new NullPointerException("map key"); }
-      java.util.Map<java.lang.String, com.google.protobuf.Value> map =
-          internalGetChangedFields().getMap();
-      if (!map.containsKey(key)) {
-        throw new java.lang.IllegalArgumentException();
-      }
-      return map.get(key);
-    }
-
-    public static final int UPDATED_BY_FIELD_NUMBER = 3;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object updatedBy_ = "";
-    /**
-     * <code>string updated_by = 3;</code>
-     * @return The updatedBy.
-     */
-    @java.lang.Override
-    public java.lang.String getUpdatedBy() {
-      java.lang.Object ref = updatedBy_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        updatedBy_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string updated_by = 3;</code>
-     * @return The bytes for updatedBy.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getUpdatedByBytes() {
-      java.lang.Object ref = updatedBy_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        updatedBy_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int UPDATED_AT_FIELD_NUMBER = 4;
-    private com.google.protobuf.Timestamp updatedAt_;
-    /**
-     * <code>.google.protobuf.Timestamp updated_at = 4;</code>
-     * @return Whether the updatedAt field is set.
-     */
-    @java.lang.Override
-    public boolean hasUpdatedAt() {
-      return ((bitField0_ & 0x00000001) != 0);
-    }
-    /**
-     * <code>.google.protobuf.Timestamp updated_at = 4;</code>
-     * @return The updatedAt.
-     */
-    @java.lang.Override
-    public com.google.protobuf.Timestamp getUpdatedAt() {
-      return updatedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updatedAt_;
-    }
-    /**
-     * <code>.google.protobuf.Timestamp updated_at = 4;</code>
-     */
-    @java.lang.Override
-    public com.google.protobuf.TimestampOrBuilder getUpdatedAtOrBuilder() {
-      return updatedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updatedAt_;
-    }
-
-    private byte memoizedIsInitialized = -1;
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tenantId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, tenantId_);
-      }
-      com.google.protobuf.GeneratedMessageV3
-        .serializeStringMapTo(
-          output,
-          internalGetChangedFields(),
-          ChangedFieldsDefaultEntryHolder.defaultEntry,
-          2);
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(updatedBy_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, updatedBy_);
-      }
-      if (((bitField0_ & 0x00000001) != 0)) {
-        output.writeMessage(4, getUpdatedAt());
-      }
-      getUnknownFields().writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tenantId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, tenantId_);
-      }
-      for (java.util.Map.Entry<java.lang.String, com.google.protobuf.Value> entry
-           : internalGetChangedFields().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.Value>
-        changedFields__ = ChangedFieldsDefaultEntryHolder.defaultEntry.newBuilderForType()
-            .setKey(entry.getKey())
-            .setValue(entry.getValue())
-            .build();
-        size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(2, changedFields__);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(updatedBy_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, updatedBy_);
-      }
-      if (((bitField0_ & 0x00000001) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, getUpdatedAt());
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-       return true;
-      }
-      if (!(obj instanceof com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData)) {
-        return super.equals(obj);
-      }
-      com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData other = (com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData) obj;
-
-      if (!getTenantId()
-          .equals(other.getTenantId())) return false;
-      if (!internalGetChangedFields().equals(
-          other.internalGetChangedFields())) return false;
-      if (!getUpdatedBy()
-          .equals(other.getUpdatedBy())) return false;
-      if (hasUpdatedAt() != other.hasUpdatedAt()) return false;
-      if (hasUpdatedAt()) {
-        if (!getUpdatedAt()
-            .equals(other.getUpdatedAt())) return false;
-      }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      hash = (37 * hash) + TENANT_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getTenantId().hashCode();
-      if (!internalGetChangedFields().getMap().isEmpty()) {
-        hash = (37 * hash) + CHANGED_FIELDS_FIELD_NUMBER;
-        hash = (53 * hash) + internalGetChangedFields().hashCode();
-      }
-      hash = (37 * hash) + UPDATED_BY_FIELD_NUMBER;
-      hash = (53 * hash) + getUpdatedBy().hashCode();
-      if (hasUpdatedAt()) {
-        hash = (37 * hash) + UPDATED_AT_FIELD_NUMBER;
-        hash = (53 * hash) + getUpdatedAt().hashCode();
-      }
-      hash = (29 * hash) + getUnknownFields().hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData parseFrom(
-        com.google.protobuf.ByteString data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData parseFrom(
-        com.google.protobuf.ByteString data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-    public static com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    public static com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-
-    public static com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
-    public static com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
-    public static com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData parseFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() { return newBuilder(); }
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-    public static Builder newBuilder(com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-    /**
-     * Protobuf type {@code com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData}
-     */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData)
-        com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateDataOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.nnipa.proto.tenant.TenantEvents.internal_static_com_nnipa_proto_tenant_TenantUpdatedEvent_UpdateData_descriptor;
-      }
-
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
-          int number) {
-        switch (number) {
-          case 2:
-            return internalGetChangedFields();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
-        }
-      }
-      @SuppressWarnings({"rawtypes"})
-      protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
-          int number) {
-        switch (number) {
-          case 2:
-            return internalGetMutableChangedFields();
-          default:
-            throw new RuntimeException(
-                "Invalid map field number: " + number);
-        }
-      }
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.nnipa.proto.tenant.TenantEvents.internal_static_com_nnipa_proto_tenant_TenantUpdatedEvent_UpdateData_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData.class, com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData.Builder.class);
-      }
-
-      // Construct using com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData.newBuilder()
-      private Builder() {
-        maybeForceBuilderInitialization();
-      }
-
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-        maybeForceBuilderInitialization();
-      }
-      private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-          getUpdatedAtFieldBuilder();
-        }
-      }
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        bitField0_ = 0;
-        tenantId_ = "";
-        internalGetMutableChangedFields().clear();
-        updatedBy_ = "";
-        updatedAt_ = null;
-        if (updatedAtBuilder_ != null) {
-          updatedAtBuilder_.dispose();
-          updatedAtBuilder_ = null;
-        }
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.nnipa.proto.tenant.TenantEvents.internal_static_com_nnipa_proto_tenant_TenantUpdatedEvent_UpdateData_descriptor;
-      }
-
-      @java.lang.Override
-      public com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData getDefaultInstanceForType() {
-        return com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData.getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData build() {
-        com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData result = buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData buildPartial() {
-        com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData result = new com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData(this);
-        if (bitField0_ != 0) { buildPartial0(result); }
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartial0(com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData result) {
-        int from_bitField0_ = bitField0_;
-        if (((from_bitField0_ & 0x00000001) != 0)) {
-          result.tenantId_ = tenantId_;
-        }
-        if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.changedFields_ = internalGetChangedFields().build(ChangedFieldsDefaultEntryHolder.defaultEntry);
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
-          result.updatedBy_ = updatedBy_;
-        }
-        int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.updatedAt_ = updatedAtBuilder_ == null
-              ? updatedAt_
-              : updatedAtBuilder_.build();
-          to_bitField0_ |= 0x00000001;
-        }
-        result.bitField0_ |= to_bitField0_;
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.setField(field, value);
-      }
-      @java.lang.Override
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-      @java.lang.Override
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData) {
-          return mergeFrom((com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData)other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData other) {
-        if (other == com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData.getDefaultInstance()) return this;
-        if (!other.getTenantId().isEmpty()) {
-          tenantId_ = other.tenantId_;
-          bitField0_ |= 0x00000001;
-          onChanged();
-        }
-        internalGetMutableChangedFields().mergeFrom(
-            other.internalGetChangedFields());
-        bitField0_ |= 0x00000002;
-        if (!other.getUpdatedBy().isEmpty()) {
-          updatedBy_ = other.updatedBy_;
-          bitField0_ |= 0x00000004;
-          onChanged();
-        }
-        if (other.hasUpdatedAt()) {
-          mergeUpdatedAt(other.getUpdatedAt());
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10: {
-                tenantId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
-                break;
-              } // case 10
-              case 18: {
-                com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.Value>
-                changedFields__ = input.readMessage(
-                    ChangedFieldsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-                internalGetMutableChangedFields().ensureBuilderMap().put(
-                    changedFields__.getKey(), changedFields__.getValue());
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 18
-              case 26: {
-                updatedBy_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
-                break;
-              } // case 26
-              case 34: {
-                input.readMessage(
-                    getUpdatedAtFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000008;
-                break;
-              } // case 34
-              default: {
-                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                  done = true; // was an endgroup tag
-                }
-                break;
-              } // default:
-            } // switch (tag)
-          } // while (!done)
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.unwrapIOException();
-        } finally {
-          onChanged();
-        } // finally
-        return this;
-      }
-      private int bitField0_;
-
-      private java.lang.Object tenantId_ = "";
-      /**
-       * <code>string tenant_id = 1;</code>
-       * @return The tenantId.
-       */
-      public java.lang.String getTenantId() {
-        java.lang.Object ref = tenantId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          tenantId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string tenant_id = 1;</code>
-       * @return The bytes for tenantId.
-       */
-      public com.google.protobuf.ByteString
-          getTenantIdBytes() {
-        java.lang.Object ref = tenantId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          tenantId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string tenant_id = 1;</code>
-       * @param value The tenantId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTenantId(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        tenantId_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string tenant_id = 1;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearTenantId() {
-        tenantId_ = getDefaultInstance().getTenantId();
-        bitField0_ = (bitField0_ & ~0x00000001);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string tenant_id = 1;</code>
-       * @param value The bytes for tenantId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setTenantIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
-        tenantId_ = value;
-        bitField0_ |= 0x00000001;
-        onChanged();
-        return this;
-      }
-
-      private static final class ChangedFieldsConverter implements com.google.protobuf.MapFieldBuilder.Converter<java.lang.String, com.google.protobuf.ValueOrBuilder, com.google.protobuf.Value> {
-        @java.lang.Override
-        public com.google.protobuf.Value build(com.google.protobuf.ValueOrBuilder val) {
-          if (val instanceof com.google.protobuf.Value) { return (com.google.protobuf.Value) val; }
-          return ((com.google.protobuf.Value.Builder) val).build();
-        }
-
-        @java.lang.Override
-        public com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.Value> defaultEntry() {
-          return ChangedFieldsDefaultEntryHolder.defaultEntry;
-        }
-      };
-      private static final ChangedFieldsConverter changedFieldsConverter = new ChangedFieldsConverter();
-
-      private com.google.protobuf.MapFieldBuilder<
-          java.lang.String, com.google.protobuf.ValueOrBuilder, com.google.protobuf.Value, com.google.protobuf.Value.Builder> changedFields_;
-      private com.google.protobuf.MapFieldBuilder<java.lang.String, com.google.protobuf.ValueOrBuilder, com.google.protobuf.Value, com.google.protobuf.Value.Builder>
-          internalGetChangedFields() {
-        if (changedFields_ == null) {
-          return new com.google.protobuf.MapFieldBuilder<>(changedFieldsConverter);
-        }
-        return changedFields_;
-      }
-      private com.google.protobuf.MapFieldBuilder<java.lang.String, com.google.protobuf.ValueOrBuilder, com.google.protobuf.Value, com.google.protobuf.Value.Builder>
-          internalGetMutableChangedFields() {
-        if (changedFields_ == null) {
-          changedFields_ = new com.google.protobuf.MapFieldBuilder<>(changedFieldsConverter);
-        }
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return changedFields_;
-      }
-      public int getChangedFieldsCount() {
-        return internalGetChangedFields().ensureBuilderMap().size();
-      }
-      /**
-       * <code>map&lt;string, .google.protobuf.Value&gt; changed_fields = 2;</code>
-       */
-      @java.lang.Override
-      public boolean containsChangedFields(
-          java.lang.String key) {
-        if (key == null) { throw new NullPointerException("map key"); }
-        return internalGetChangedFields().ensureBuilderMap().containsKey(key);
-      }
-      /**
-       * Use {@link #getChangedFieldsMap()} instead.
-       */
-      @java.lang.Override
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.String, com.google.protobuf.Value> getChangedFields() {
-        return getChangedFieldsMap();
-      }
-      /**
-       * <code>map&lt;string, .google.protobuf.Value&gt; changed_fields = 2;</code>
-       */
-      @java.lang.Override
-      public java.util.Map<java.lang.String, com.google.protobuf.Value> getChangedFieldsMap() {
-        return internalGetChangedFields().getImmutableMap();
-      }
-      /**
-       * <code>map&lt;string, .google.protobuf.Value&gt; changed_fields = 2;</code>
-       */
-      @java.lang.Override
-      public /* nullable */
-com.google.protobuf.Value getChangedFieldsOrDefault(
-          java.lang.String key,
-          /* nullable */
-com.google.protobuf.Value defaultValue) {
-        if (key == null) { throw new NullPointerException("map key"); }
-        java.util.Map<java.lang.String, com.google.protobuf.ValueOrBuilder> map = internalGetMutableChangedFields().ensureBuilderMap();
-        return map.containsKey(key) ? changedFieldsConverter.build(map.get(key)) : defaultValue;
-      }
-      /**
-       * <code>map&lt;string, .google.protobuf.Value&gt; changed_fields = 2;</code>
-       */
-      @java.lang.Override
-      public com.google.protobuf.Value getChangedFieldsOrThrow(
-          java.lang.String key) {
-        if (key == null) { throw new NullPointerException("map key"); }
-        java.util.Map<java.lang.String, com.google.protobuf.ValueOrBuilder> map = internalGetMutableChangedFields().ensureBuilderMap();
-        if (!map.containsKey(key)) {
-          throw new java.lang.IllegalArgumentException();
-        }
-        return changedFieldsConverter.build(map.get(key));
-      }
-      public Builder clearChangedFields() {
-        bitField0_ = (bitField0_ & ~0x00000002);
-        internalGetMutableChangedFields().clear();
-        return this;
-      }
-      /**
-       * <code>map&lt;string, .google.protobuf.Value&gt; changed_fields = 2;</code>
-       */
-      public Builder removeChangedFields(
-          java.lang.String key) {
-        if (key == null) { throw new NullPointerException("map key"); }
-        internalGetMutableChangedFields().ensureBuilderMap()
-            .remove(key);
-        return this;
-      }
-      /**
-       * Use alternate mutation accessors instead.
-       */
-      @java.lang.Deprecated
-      public java.util.Map<java.lang.String, com.google.protobuf.Value>
-          getMutableChangedFields() {
-        bitField0_ |= 0x00000002;
-        return internalGetMutableChangedFields().ensureMessageMap();
-      }
-      /**
-       * <code>map&lt;string, .google.protobuf.Value&gt; changed_fields = 2;</code>
-       */
-      public Builder putChangedFields(
-          java.lang.String key,
-          com.google.protobuf.Value value) {
-        if (key == null) { throw new NullPointerException("map key"); }
-        if (value == null) { throw new NullPointerException("map value"); }
-        internalGetMutableChangedFields().ensureBuilderMap()
-            .put(key, value);
-        bitField0_ |= 0x00000002;
-        return this;
-      }
-      /**
-       * <code>map&lt;string, .google.protobuf.Value&gt; changed_fields = 2;</code>
-       */
-      public Builder putAllChangedFields(
-          java.util.Map<java.lang.String, com.google.protobuf.Value> values) {
-        for (java.util.Map.Entry<java.lang.String, com.google.protobuf.Value> e : values.entrySet()) {
-          if (e.getKey() == null || e.getValue() == null) {
-            throw new NullPointerException();
-          }
-        }
-        internalGetMutableChangedFields().ensureBuilderMap()
-            .putAll(values);
-        bitField0_ |= 0x00000002;
-        return this;
-      }
-      /**
-       * <code>map&lt;string, .google.protobuf.Value&gt; changed_fields = 2;</code>
-       */
-      public com.google.protobuf.Value.Builder putChangedFieldsBuilderIfAbsent(
-          java.lang.String key) {
-        java.util.Map<java.lang.String, com.google.protobuf.ValueOrBuilder> builderMap = internalGetMutableChangedFields().ensureBuilderMap();
-        com.google.protobuf.ValueOrBuilder entry = builderMap.get(key);
-        if (entry == null) {
-          entry = com.google.protobuf.Value.newBuilder();
-          builderMap.put(key, entry);
-        }
-        if (entry instanceof com.google.protobuf.Value) {
-          entry = ((com.google.protobuf.Value) entry).toBuilder();
-          builderMap.put(key, entry);
-        }
-        return (com.google.protobuf.Value.Builder) entry;
-      }
-
-      private java.lang.Object updatedBy_ = "";
-      /**
-       * <code>string updated_by = 3;</code>
-       * @return The updatedBy.
-       */
-      public java.lang.String getUpdatedBy() {
-        java.lang.Object ref = updatedBy_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          updatedBy_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string updated_by = 3;</code>
-       * @return The bytes for updatedBy.
-       */
-      public com.google.protobuf.ByteString
-          getUpdatedByBytes() {
-        java.lang.Object ref = updatedBy_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          updatedBy_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string updated_by = 3;</code>
-       * @param value The updatedBy to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUpdatedBy(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        updatedBy_ = value;
-        bitField0_ |= 0x00000004;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string updated_by = 3;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearUpdatedBy() {
-        updatedBy_ = getDefaultInstance().getUpdatedBy();
-        bitField0_ = (bitField0_ & ~0x00000004);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string updated_by = 3;</code>
-       * @param value The bytes for updatedBy to set.
-       * @return This builder for chaining.
-       */
-      public Builder setUpdatedByBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
-        updatedBy_ = value;
-        bitField0_ |= 0x00000004;
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.Timestamp updatedAt_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> updatedAtBuilder_;
-      /**
-       * <code>.google.protobuf.Timestamp updated_at = 4;</code>
-       * @return Whether the updatedAt field is set.
-       */
-      public boolean hasUpdatedAt() {
-        return ((bitField0_ & 0x00000008) != 0);
-      }
-      /**
-       * <code>.google.protobuf.Timestamp updated_at = 4;</code>
-       * @return The updatedAt.
-       */
-      public com.google.protobuf.Timestamp getUpdatedAt() {
-        if (updatedAtBuilder_ == null) {
-          return updatedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updatedAt_;
-        } else {
-          return updatedAtBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.google.protobuf.Timestamp updated_at = 4;</code>
-       */
-      public Builder setUpdatedAt(com.google.protobuf.Timestamp value) {
-        if (updatedAtBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          updatedAt_ = value;
-        } else {
-          updatedAtBuilder_.setMessage(value);
-        }
-        bitField0_ |= 0x00000008;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.Timestamp updated_at = 4;</code>
-       */
-      public Builder setUpdatedAt(
-          com.google.protobuf.Timestamp.Builder builderForValue) {
-        if (updatedAtBuilder_ == null) {
-          updatedAt_ = builderForValue.build();
-        } else {
-          updatedAtBuilder_.setMessage(builderForValue.build());
-        }
-        bitField0_ |= 0x00000008;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.Timestamp updated_at = 4;</code>
-       */
-      public Builder mergeUpdatedAt(com.google.protobuf.Timestamp value) {
-        if (updatedAtBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) != 0) &&
-            updatedAt_ != null &&
-            updatedAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
-            getUpdatedAtBuilder().mergeFrom(value);
-          } else {
-            updatedAt_ = value;
-          }
-        } else {
-          updatedAtBuilder_.mergeFrom(value);
-        }
-        if (updatedAt_ != null) {
-          bitField0_ |= 0x00000008;
-          onChanged();
-        }
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.Timestamp updated_at = 4;</code>
-       */
-      public Builder clearUpdatedAt() {
-        bitField0_ = (bitField0_ & ~0x00000008);
-        updatedAt_ = null;
-        if (updatedAtBuilder_ != null) {
-          updatedAtBuilder_.dispose();
-          updatedAtBuilder_ = null;
-        }
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.google.protobuf.Timestamp updated_at = 4;</code>
-       */
-      public com.google.protobuf.Timestamp.Builder getUpdatedAtBuilder() {
-        bitField0_ |= 0x00000008;
-        onChanged();
-        return getUpdatedAtFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.google.protobuf.Timestamp updated_at = 4;</code>
-       */
-      public com.google.protobuf.TimestampOrBuilder getUpdatedAtOrBuilder() {
-        if (updatedAtBuilder_ != null) {
-          return updatedAtBuilder_.getMessageOrBuilder();
-        } else {
-          return updatedAt_ == null ?
-              com.google.protobuf.Timestamp.getDefaultInstance() : updatedAt_;
-        }
-      }
-      /**
-       * <code>.google.protobuf.Timestamp updated_at = 4;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
-          getUpdatedAtFieldBuilder() {
-        if (updatedAtBuilder_ == null) {
-          updatedAtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                  getUpdatedAt(),
-                  getParentForChildren(),
-                  isClean());
-          updatedAt_ = null;
-        }
-        return updatedAtBuilder_;
-      }
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-
-      // @@protoc_insertion_point(builder_scope:com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData)
-    }
-
-    // @@protoc_insertion_point(class_scope:com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData)
-    private static final com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData DEFAULT_INSTANCE;
-    static {
-      DEFAULT_INSTANCE = new com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData();
-    }
-
-    public static com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<UpdateData>
-        PARSER = new com.google.protobuf.AbstractParser<UpdateData>() {
-      @java.lang.Override
-      public UpdateData parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        Builder builder = newBuilder();
-        try {
-          builder.mergeFrom(input, extensionRegistry);
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.setUnfinishedMessage(builder.buildPartial());
-        } catch (com.google.protobuf.UninitializedMessageException e) {
-          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
-        } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(e)
-              .setUnfinishedMessage(builder.buildPartial());
-        }
-        return builder.buildPartial();
-      }
-    };
-
-    public static com.google.protobuf.Parser<UpdateData> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<UpdateData> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
-
   }
 
   private int bitField0_;
@@ -1318,30 +73,132 @@ com.google.protobuf.Value defaultValue) {
     return metadata_ == null ? com.nnipa.proto.common.EventMetadata.getDefaultInstance() : metadata_;
   }
 
-  public static final int UPDATE_FIELD_NUMBER = 2;
-  private com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData update_;
+  public static final int TENANT_FIELD_NUMBER = 2;
+  private com.nnipa.proto.tenant.TenantCreatedEvent.TenantData tenant_;
   /**
-   * <code>.com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData update = 2;</code>
-   * @return Whether the update field is set.
+   * <code>.com.nnipa.proto.tenant.TenantCreatedEvent.TenantData tenant = 2;</code>
+   * @return Whether the tenant field is set.
    */
   @java.lang.Override
-  public boolean hasUpdate() {
+  public boolean hasTenant() {
     return ((bitField0_ & 0x00000002) != 0);
   }
   /**
-   * <code>.com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData update = 2;</code>
-   * @return The update.
+   * <code>.com.nnipa.proto.tenant.TenantCreatedEvent.TenantData tenant = 2;</code>
+   * @return The tenant.
    */
   @java.lang.Override
-  public com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData getUpdate() {
-    return update_ == null ? com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData.getDefaultInstance() : update_;
+  public com.nnipa.proto.tenant.TenantCreatedEvent.TenantData getTenant() {
+    return tenant_ == null ? com.nnipa.proto.tenant.TenantCreatedEvent.TenantData.getDefaultInstance() : tenant_;
   }
   /**
-   * <code>.com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData update = 2;</code>
+   * <code>.com.nnipa.proto.tenant.TenantCreatedEvent.TenantData tenant = 2;</code>
    */
   @java.lang.Override
-  public com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateDataOrBuilder getUpdateOrBuilder() {
-    return update_ == null ? com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData.getDefaultInstance() : update_;
+  public com.nnipa.proto.tenant.TenantCreatedEvent.TenantDataOrBuilder getTenantOrBuilder() {
+    return tenant_ == null ? com.nnipa.proto.tenant.TenantCreatedEvent.TenantData.getDefaultInstance() : tenant_;
+  }
+
+  public static final int UPDATED_AT_FIELD_NUMBER = 3;
+  private com.google.protobuf.Timestamp updatedAt_;
+  /**
+   * <code>.google.protobuf.Timestamp updated_at = 3;</code>
+   * @return Whether the updatedAt field is set.
+   */
+  @java.lang.Override
+  public boolean hasUpdatedAt() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+  /**
+   * <code>.google.protobuf.Timestamp updated_at = 3;</code>
+   * @return The updatedAt.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Timestamp getUpdatedAt() {
+    return updatedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updatedAt_;
+  }
+  /**
+   * <code>.google.protobuf.Timestamp updated_at = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.TimestampOrBuilder getUpdatedAtOrBuilder() {
+    return updatedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updatedAt_;
+  }
+
+  public static final int UPDATED_BY_FIELD_NUMBER = 4;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object updatedBy_ = "";
+  /**
+   * <code>string updated_by = 4;</code>
+   * @return The updatedBy.
+   */
+  @java.lang.Override
+  public java.lang.String getUpdatedBy() {
+    java.lang.Object ref = updatedBy_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      updatedBy_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string updated_by = 4;</code>
+   * @return The bytes for updatedBy.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getUpdatedByBytes() {
+    java.lang.Object ref = updatedBy_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      updatedBy_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CHANGED_FIELDS_FIELD_NUMBER = 5;
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList changedFields_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+  /**
+   * <code>repeated string changed_fields = 5;</code>
+   * @return A list containing the changedFields.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getChangedFieldsList() {
+    return changedFields_;
+  }
+  /**
+   * <code>repeated string changed_fields = 5;</code>
+   * @return The count of changedFields.
+   */
+  public int getChangedFieldsCount() {
+    return changedFields_.size();
+  }
+  /**
+   * <code>repeated string changed_fields = 5;</code>
+   * @param index The index of the element to return.
+   * @return The changedFields at the given index.
+   */
+  public java.lang.String getChangedFields(int index) {
+    return changedFields_.get(index);
+  }
+  /**
+   * <code>repeated string changed_fields = 5;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the changedFields at the given index.
+   */
+  public com.google.protobuf.ByteString
+      getChangedFieldsBytes(int index) {
+    return changedFields_.getByteString(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -1362,7 +219,16 @@ com.google.protobuf.Value defaultValue) {
       output.writeMessage(1, getMetadata());
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      output.writeMessage(2, getUpdate());
+      output.writeMessage(2, getTenant());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(3, getUpdatedAt());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(updatedBy_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, updatedBy_);
+    }
+    for (int i = 0; i < changedFields_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, changedFields_.getRaw(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -1379,7 +245,22 @@ com.google.protobuf.Value defaultValue) {
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getUpdate());
+        .computeMessageSize(2, getTenant());
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeMessageSize(3, getUpdatedAt());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(updatedBy_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, updatedBy_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < changedFields_.size(); i++) {
+        dataSize += computeStringSizeNoTag(changedFields_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getChangedFieldsList().size();
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1401,11 +282,20 @@ com.google.protobuf.Value defaultValue) {
       if (!getMetadata()
           .equals(other.getMetadata())) return false;
     }
-    if (hasUpdate() != other.hasUpdate()) return false;
-    if (hasUpdate()) {
-      if (!getUpdate()
-          .equals(other.getUpdate())) return false;
+    if (hasTenant() != other.hasTenant()) return false;
+    if (hasTenant()) {
+      if (!getTenant()
+          .equals(other.getTenant())) return false;
     }
+    if (hasUpdatedAt() != other.hasUpdatedAt()) return false;
+    if (hasUpdatedAt()) {
+      if (!getUpdatedAt()
+          .equals(other.getUpdatedAt())) return false;
+    }
+    if (!getUpdatedBy()
+        .equals(other.getUpdatedBy())) return false;
+    if (!getChangedFieldsList()
+        .equals(other.getChangedFieldsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1421,9 +311,19 @@ com.google.protobuf.Value defaultValue) {
       hash = (37 * hash) + METADATA_FIELD_NUMBER;
       hash = (53 * hash) + getMetadata().hashCode();
     }
-    if (hasUpdate()) {
-      hash = (37 * hash) + UPDATE_FIELD_NUMBER;
-      hash = (53 * hash) + getUpdate().hashCode();
+    if (hasTenant()) {
+      hash = (37 * hash) + TENANT_FIELD_NUMBER;
+      hash = (53 * hash) + getTenant().hashCode();
+    }
+    if (hasUpdatedAt()) {
+      hash = (37 * hash) + UPDATED_AT_FIELD_NUMBER;
+      hash = (53 * hash) + getUpdatedAt().hashCode();
+    }
+    hash = (37 * hash) + UPDATED_BY_FIELD_NUMBER;
+    hash = (53 * hash) + getUpdatedBy().hashCode();
+    if (getChangedFieldsCount() > 0) {
+      hash = (37 * hash) + CHANGED_FIELDS_FIELD_NUMBER;
+      hash = (53 * hash) + getChangedFieldsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1560,7 +460,8 @@ com.google.protobuf.Value defaultValue) {
       if (com.google.protobuf.GeneratedMessageV3
               .alwaysUseFieldBuilders) {
         getMetadataFieldBuilder();
-        getUpdateFieldBuilder();
+        getTenantFieldBuilder();
+        getUpdatedAtFieldBuilder();
       }
     }
     @java.lang.Override
@@ -1572,11 +473,19 @@ com.google.protobuf.Value defaultValue) {
         metadataBuilder_.dispose();
         metadataBuilder_ = null;
       }
-      update_ = null;
-      if (updateBuilder_ != null) {
-        updateBuilder_.dispose();
-        updateBuilder_ = null;
+      tenant_ = null;
+      if (tenantBuilder_ != null) {
+        tenantBuilder_.dispose();
+        tenantBuilder_ = null;
       }
+      updatedAt_ = null;
+      if (updatedAtBuilder_ != null) {
+        updatedAtBuilder_.dispose();
+        updatedAtBuilder_ = null;
+      }
+      updatedBy_ = "";
+      changedFields_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -1618,10 +527,23 @@ com.google.protobuf.Value defaultValue) {
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.update_ = updateBuilder_ == null
-            ? update_
-            : updateBuilder_.build();
+        result.tenant_ = tenantBuilder_ == null
+            ? tenant_
+            : tenantBuilder_.build();
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.updatedAt_ = updatedAtBuilder_ == null
+            ? updatedAt_
+            : updatedAtBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.updatedBy_ = updatedBy_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        changedFields_.makeImmutable();
+        result.changedFields_ = changedFields_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1673,8 +595,26 @@ com.google.protobuf.Value defaultValue) {
       if (other.hasMetadata()) {
         mergeMetadata(other.getMetadata());
       }
-      if (other.hasUpdate()) {
-        mergeUpdate(other.getUpdate());
+      if (other.hasTenant()) {
+        mergeTenant(other.getTenant());
+      }
+      if (other.hasUpdatedAt()) {
+        mergeUpdatedAt(other.getUpdatedAt());
+      }
+      if (!other.getUpdatedBy().isEmpty()) {
+        updatedBy_ = other.updatedBy_;
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      if (!other.changedFields_.isEmpty()) {
+        if (changedFields_.isEmpty()) {
+          changedFields_ = other.changedFields_;
+          bitField0_ |= 0x00000010;
+        } else {
+          ensureChangedFieldsIsMutable();
+          changedFields_.addAll(other.changedFields_);
+        }
+        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1711,11 +651,29 @@ com.google.protobuf.Value defaultValue) {
             } // case 10
             case 18: {
               input.readMessage(
-                  getUpdateFieldBuilder().getBuilder(),
+                  getTenantFieldBuilder().getBuilder(),
                   extensionRegistry);
               bitField0_ |= 0x00000002;
               break;
             } // case 18
+            case 26: {
+              input.readMessage(
+                  getUpdatedAtFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000004;
+              break;
+            } // case 26
+            case 34: {
+              updatedBy_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000008;
+              break;
+            } // case 34
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+              ensureChangedFieldsIsMutable();
+              changedFields_.add(s);
+              break;
+            } // case 42
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1854,125 +812,429 @@ com.google.protobuf.Value defaultValue) {
       return metadataBuilder_;
     }
 
-    private com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData update_;
+    private com.nnipa.proto.tenant.TenantCreatedEvent.TenantData tenant_;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData, com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData.Builder, com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateDataOrBuilder> updateBuilder_;
+        com.nnipa.proto.tenant.TenantCreatedEvent.TenantData, com.nnipa.proto.tenant.TenantCreatedEvent.TenantData.Builder, com.nnipa.proto.tenant.TenantCreatedEvent.TenantDataOrBuilder> tenantBuilder_;
     /**
-     * <code>.com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData update = 2;</code>
-     * @return Whether the update field is set.
+     * <code>.com.nnipa.proto.tenant.TenantCreatedEvent.TenantData tenant = 2;</code>
+     * @return Whether the tenant field is set.
      */
-    public boolean hasUpdate() {
+    public boolean hasTenant() {
       return ((bitField0_ & 0x00000002) != 0);
     }
     /**
-     * <code>.com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData update = 2;</code>
-     * @return The update.
+     * <code>.com.nnipa.proto.tenant.TenantCreatedEvent.TenantData tenant = 2;</code>
+     * @return The tenant.
      */
-    public com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData getUpdate() {
-      if (updateBuilder_ == null) {
-        return update_ == null ? com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData.getDefaultInstance() : update_;
+    public com.nnipa.proto.tenant.TenantCreatedEvent.TenantData getTenant() {
+      if (tenantBuilder_ == null) {
+        return tenant_ == null ? com.nnipa.proto.tenant.TenantCreatedEvent.TenantData.getDefaultInstance() : tenant_;
       } else {
-        return updateBuilder_.getMessage();
+        return tenantBuilder_.getMessage();
       }
     }
     /**
-     * <code>.com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData update = 2;</code>
+     * <code>.com.nnipa.proto.tenant.TenantCreatedEvent.TenantData tenant = 2;</code>
      */
-    public Builder setUpdate(com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData value) {
-      if (updateBuilder_ == null) {
+    public Builder setTenant(com.nnipa.proto.tenant.TenantCreatedEvent.TenantData value) {
+      if (tenantBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
         }
-        update_ = value;
+        tenant_ = value;
       } else {
-        updateBuilder_.setMessage(value);
+        tenantBuilder_.setMessage(value);
       }
       bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
     /**
-     * <code>.com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData update = 2;</code>
+     * <code>.com.nnipa.proto.tenant.TenantCreatedEvent.TenantData tenant = 2;</code>
      */
-    public Builder setUpdate(
-        com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData.Builder builderForValue) {
-      if (updateBuilder_ == null) {
-        update_ = builderForValue.build();
+    public Builder setTenant(
+        com.nnipa.proto.tenant.TenantCreatedEvent.TenantData.Builder builderForValue) {
+      if (tenantBuilder_ == null) {
+        tenant_ = builderForValue.build();
       } else {
-        updateBuilder_.setMessage(builderForValue.build());
+        tenantBuilder_.setMessage(builderForValue.build());
       }
       bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
     /**
-     * <code>.com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData update = 2;</code>
+     * <code>.com.nnipa.proto.tenant.TenantCreatedEvent.TenantData tenant = 2;</code>
      */
-    public Builder mergeUpdate(com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData value) {
-      if (updateBuilder_ == null) {
+    public Builder mergeTenant(com.nnipa.proto.tenant.TenantCreatedEvent.TenantData value) {
+      if (tenantBuilder_ == null) {
         if (((bitField0_ & 0x00000002) != 0) &&
-          update_ != null &&
-          update_ != com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData.getDefaultInstance()) {
-          getUpdateBuilder().mergeFrom(value);
+          tenant_ != null &&
+          tenant_ != com.nnipa.proto.tenant.TenantCreatedEvent.TenantData.getDefaultInstance()) {
+          getTenantBuilder().mergeFrom(value);
         } else {
-          update_ = value;
+          tenant_ = value;
         }
       } else {
-        updateBuilder_.mergeFrom(value);
+        tenantBuilder_.mergeFrom(value);
       }
-      if (update_ != null) {
+      if (tenant_ != null) {
         bitField0_ |= 0x00000002;
         onChanged();
       }
       return this;
     }
     /**
-     * <code>.com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData update = 2;</code>
+     * <code>.com.nnipa.proto.tenant.TenantCreatedEvent.TenantData tenant = 2;</code>
      */
-    public Builder clearUpdate() {
+    public Builder clearTenant() {
       bitField0_ = (bitField0_ & ~0x00000002);
-      update_ = null;
-      if (updateBuilder_ != null) {
-        updateBuilder_.dispose();
-        updateBuilder_ = null;
+      tenant_ = null;
+      if (tenantBuilder_ != null) {
+        tenantBuilder_.dispose();
+        tenantBuilder_ = null;
       }
       onChanged();
       return this;
     }
     /**
-     * <code>.com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData update = 2;</code>
+     * <code>.com.nnipa.proto.tenant.TenantCreatedEvent.TenantData tenant = 2;</code>
      */
-    public com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData.Builder getUpdateBuilder() {
+    public com.nnipa.proto.tenant.TenantCreatedEvent.TenantData.Builder getTenantBuilder() {
       bitField0_ |= 0x00000002;
       onChanged();
-      return getUpdateFieldBuilder().getBuilder();
+      return getTenantFieldBuilder().getBuilder();
     }
     /**
-     * <code>.com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData update = 2;</code>
+     * <code>.com.nnipa.proto.tenant.TenantCreatedEvent.TenantData tenant = 2;</code>
      */
-    public com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateDataOrBuilder getUpdateOrBuilder() {
-      if (updateBuilder_ != null) {
-        return updateBuilder_.getMessageOrBuilder();
+    public com.nnipa.proto.tenant.TenantCreatedEvent.TenantDataOrBuilder getTenantOrBuilder() {
+      if (tenantBuilder_ != null) {
+        return tenantBuilder_.getMessageOrBuilder();
       } else {
-        return update_ == null ?
-            com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData.getDefaultInstance() : update_;
+        return tenant_ == null ?
+            com.nnipa.proto.tenant.TenantCreatedEvent.TenantData.getDefaultInstance() : tenant_;
       }
     }
     /**
-     * <code>.com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData update = 2;</code>
+     * <code>.com.nnipa.proto.tenant.TenantCreatedEvent.TenantData tenant = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData, com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData.Builder, com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateDataOrBuilder> 
-        getUpdateFieldBuilder() {
-      if (updateBuilder_ == null) {
-        updateBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData, com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData.Builder, com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateDataOrBuilder>(
-                getUpdate(),
+        com.nnipa.proto.tenant.TenantCreatedEvent.TenantData, com.nnipa.proto.tenant.TenantCreatedEvent.TenantData.Builder, com.nnipa.proto.tenant.TenantCreatedEvent.TenantDataOrBuilder> 
+        getTenantFieldBuilder() {
+      if (tenantBuilder_ == null) {
+        tenantBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.nnipa.proto.tenant.TenantCreatedEvent.TenantData, com.nnipa.proto.tenant.TenantCreatedEvent.TenantData.Builder, com.nnipa.proto.tenant.TenantCreatedEvent.TenantDataOrBuilder>(
+                getTenant(),
                 getParentForChildren(),
                 isClean());
-        update_ = null;
+        tenant_ = null;
       }
-      return updateBuilder_;
+      return tenantBuilder_;
+    }
+
+    private com.google.protobuf.Timestamp updatedAt_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> updatedAtBuilder_;
+    /**
+     * <code>.google.protobuf.Timestamp updated_at = 3;</code>
+     * @return Whether the updatedAt field is set.
+     */
+    public boolean hasUpdatedAt() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+    /**
+     * <code>.google.protobuf.Timestamp updated_at = 3;</code>
+     * @return The updatedAt.
+     */
+    public com.google.protobuf.Timestamp getUpdatedAt() {
+      if (updatedAtBuilder_ == null) {
+        return updatedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updatedAt_;
+      } else {
+        return updatedAtBuilder_.getMessage();
+      }
+    }
+    /**
+     * <code>.google.protobuf.Timestamp updated_at = 3;</code>
+     */
+    public Builder setUpdatedAt(com.google.protobuf.Timestamp value) {
+      if (updatedAtBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        updatedAt_ = value;
+      } else {
+        updatedAtBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.Timestamp updated_at = 3;</code>
+     */
+    public Builder setUpdatedAt(
+        com.google.protobuf.Timestamp.Builder builderForValue) {
+      if (updatedAtBuilder_ == null) {
+        updatedAt_ = builderForValue.build();
+      } else {
+        updatedAtBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.Timestamp updated_at = 3;</code>
+     */
+    public Builder mergeUpdatedAt(com.google.protobuf.Timestamp value) {
+      if (updatedAtBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0) &&
+          updatedAt_ != null &&
+          updatedAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          getUpdatedAtBuilder().mergeFrom(value);
+        } else {
+          updatedAt_ = value;
+        }
+      } else {
+        updatedAtBuilder_.mergeFrom(value);
+      }
+      if (updatedAt_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.Timestamp updated_at = 3;</code>
+     */
+    public Builder clearUpdatedAt() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      updatedAt_ = null;
+      if (updatedAtBuilder_ != null) {
+        updatedAtBuilder_.dispose();
+        updatedAtBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>.google.protobuf.Timestamp updated_at = 3;</code>
+     */
+    public com.google.protobuf.Timestamp.Builder getUpdatedAtBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getUpdatedAtFieldBuilder().getBuilder();
+    }
+    /**
+     * <code>.google.protobuf.Timestamp updated_at = 3;</code>
+     */
+    public com.google.protobuf.TimestampOrBuilder getUpdatedAtOrBuilder() {
+      if (updatedAtBuilder_ != null) {
+        return updatedAtBuilder_.getMessageOrBuilder();
+      } else {
+        return updatedAt_ == null ?
+            com.google.protobuf.Timestamp.getDefaultInstance() : updatedAt_;
+      }
+    }
+    /**
+     * <code>.google.protobuf.Timestamp updated_at = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+        getUpdatedAtFieldBuilder() {
+      if (updatedAtBuilder_ == null) {
+        updatedAtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                getUpdatedAt(),
+                getParentForChildren(),
+                isClean());
+        updatedAt_ = null;
+      }
+      return updatedAtBuilder_;
+    }
+
+    private java.lang.Object updatedBy_ = "";
+    /**
+     * <code>string updated_by = 4;</code>
+     * @return The updatedBy.
+     */
+    public java.lang.String getUpdatedBy() {
+      java.lang.Object ref = updatedBy_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        updatedBy_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string updated_by = 4;</code>
+     * @return The bytes for updatedBy.
+     */
+    public com.google.protobuf.ByteString
+        getUpdatedByBytes() {
+      java.lang.Object ref = updatedBy_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        updatedBy_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string updated_by = 4;</code>
+     * @param value The updatedBy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUpdatedBy(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      updatedBy_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string updated_by = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearUpdatedBy() {
+      updatedBy_ = getDefaultInstance().getUpdatedBy();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string updated_by = 4;</code>
+     * @param value The bytes for updatedBy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setUpdatedByBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      updatedBy_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList changedFields_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    private void ensureChangedFieldsIsMutable() {
+      if (!changedFields_.isModifiable()) {
+        changedFields_ = new com.google.protobuf.LazyStringArrayList(changedFields_);
+      }
+      bitField0_ |= 0x00000010;
+    }
+    /**
+     * <code>repeated string changed_fields = 5;</code>
+     * @return A list containing the changedFields.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getChangedFieldsList() {
+      changedFields_.makeImmutable();
+      return changedFields_;
+    }
+    /**
+     * <code>repeated string changed_fields = 5;</code>
+     * @return The count of changedFields.
+     */
+    public int getChangedFieldsCount() {
+      return changedFields_.size();
+    }
+    /**
+     * <code>repeated string changed_fields = 5;</code>
+     * @param index The index of the element to return.
+     * @return The changedFields at the given index.
+     */
+    public java.lang.String getChangedFields(int index) {
+      return changedFields_.get(index);
+    }
+    /**
+     * <code>repeated string changed_fields = 5;</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the changedFields at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getChangedFieldsBytes(int index) {
+      return changedFields_.getByteString(index);
+    }
+    /**
+     * <code>repeated string changed_fields = 5;</code>
+     * @param index The index to set the value at.
+     * @param value The changedFields to set.
+     * @return This builder for chaining.
+     */
+    public Builder setChangedFields(
+        int index, java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      ensureChangedFieldsIsMutable();
+      changedFields_.set(index, value);
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string changed_fields = 5;</code>
+     * @param value The changedFields to add.
+     * @return This builder for chaining.
+     */
+    public Builder addChangedFields(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      ensureChangedFieldsIsMutable();
+      changedFields_.add(value);
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string changed_fields = 5;</code>
+     * @param values The changedFields to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllChangedFields(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureChangedFieldsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, changedFields_);
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string changed_fields = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearChangedFields() {
+      changedFields_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000010);;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>repeated string changed_fields = 5;</code>
+     * @param value The bytes of the changedFields to add.
+     * @return This builder for chaining.
+     */
+    public Builder addChangedFieldsBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      ensureChangedFieldsIsMutable();
+      changedFields_.add(value);
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

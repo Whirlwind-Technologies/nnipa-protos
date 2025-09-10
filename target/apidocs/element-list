@@ -1,5 +1,6 @@
 com.nnipa.proto.auth
 com.nnipa.proto.authz
+com.nnipa.proto.billing
 com.nnipa.proto.command
 com.nnipa.proto.common
 com.nnipa.proto.storage

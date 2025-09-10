@@ -6,7 +6,6 @@ option java_package = "com.nnipa.proto.tenant";
 option java_multiple_files = true;
 
 import "google/protobuf/timestamp.proto";
-import "google/protobuf/struct.proto";
 import "common/common.proto";
 import "common/enums.proto";
 
@@ -16,19 +15,19 @@ message TenantCreatedEvent {
 
   message TenantData {
     string tenant_id = 1;
-    string name = 2;
-    string tenant_code = 3;
-    string domain = 4;
-    com.nnipa.proto.common.OrganizationType organization_type = 5;
-    com.nnipa.proto.common.SubscriptionTier subscription_tier = 6;
-    com.nnipa.proto.common.DataIsolationStrategy isolation_strategy = 7;
-    string owner_user_id = 8;
-    string parent_tenant_id = 9;
-    bool is_active = 10;
-    google.protobuf.Timestamp created_at = 11;
-    com.nnipa.proto.common.ContactInfo contact_info = 12;
-    map<string, string> settings = 13;
-    repeated string enabled_features = 14;
+    string tenant_code = 2;
+    string name = 3;
+    string organization_type = 4;
+    string subscription_plan = 5;
+    string billing_cycle = 6;
+    string isolation_strategy = 7;
+    string status = 8;
+    int32 max_users = 9;
+    map<string, string> metadata = 10;
+    map<string, string> settings = 11;
+    map<string, bool> feature_flags = 12;
+    google.protobuf.Timestamp created_at = 13;
+    string created_by = 14;
   }
 
   TenantData tenant = 2;
@@ -37,15 +36,10 @@ message TenantCreatedEvent {
 // Event: Tenant Updated
 message TenantUpdatedEvent {
   com.nnipa.proto.common.EventMetadata metadata = 1;
-
-  message UpdateData {
-    string tenant_id = 1;
-    map<string, google.protobuf.Value> changed_fields = 2;
-    string updated_by = 3;
-    google.protobuf.Timestamp updated_at = 4;
-  }
-
-  UpdateData update = 2;
+  TenantCreatedEvent.TenantData tenant = 2;
+  google.protobuf.Timestamp updated_at = 3;
+  string updated_by = 4;
+  repeated string changed_fields = 5;
 }
 
 // Event: Tenant Activated
@@ -61,10 +55,10 @@ message TenantActivatedEvent {
 message TenantDeactivatedEvent {
   com.nnipa.proto.common.EventMetadata metadata = 1;
   string tenant_id = 2;
-  string deactivated_by = 3;
-  google.protobuf.Timestamp deactivated_at = 4;
-  string reason = 5;
-  bool is_temporary = 6;
+  string tenant_code = 3;
+  string reason = 4;
+  google.protobuf.Timestamp deactivated_at = 5;
+  string deactivated_by = 6;
 }
 
 // Event: Subscription Changed
@@ -92,13 +86,45 @@ message TenantMigratedEvent {
     string tenant_id = 1;
     string from_strategy = 2;
     string to_strategy = 3;
-    google.protobuf.Timestamp migration_started_at = 4;
-    google.protobuf.Timestamp migration_completed_at = 5;
-    string migrated_by = 6;
-    string reason = 7;
-    com.nnipa.proto.common.MigrationStatus status = 8;
-    map<string, string> migration_metadata = 9;
+    google.protobuf.Timestamp started_at = 4;
+    google.protobuf.Timestamp completed_at = 5;
+    string status = 6;
+    map<string, string> migration_metadata = 7;
   }
 
   MigrationData migration = 2;
+}
+
+message TenantSubscriptionChangedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  message SubscriptionData {
+    string tenant_id = 1;
+    string old_plan = 2;
+    string new_plan = 3;
+    google.protobuf.Timestamp changed_at = 4;
+    google.protobuf.Timestamp effective_date = 5;
+    google.protobuf.Timestamp next_billing_date = 6;
+    string changed_by = 7;
+    string change_reason = 8;
+  }
+
+  SubscriptionData subscription_data = 2;
+}
+
+// Event: Tenant Suspended
+message TenantSuspendedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string tenant_id = 2;
+  string reason = 3;
+  google.protobuf.Timestamp suspended_at = 4;
+  google.protobuf.Timestamp auto_resume_at = 5;
+}
+
+// Event: Tenant Reactivated
+message TenantReactivatedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string tenant_id = 2;
+  google.protobuf.Timestamp reactivated_at = 3;
+  string reactivated_by = 4;
 }

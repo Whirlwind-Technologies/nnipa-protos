@@ -1,0 +1,59 @@
+syntax = "proto3";
+
+package com.nnipa.proto.billing;
+
+option java_package = "com.nnipa.proto.billing";
+option java_outer_classname = "BillingEventProtos";
+option java_multiple_files = true;
+
+import "google/protobuf/timestamp.proto";
+import "common/common.proto";
+
+// Event: Payment Failed
+message PaymentFailedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  string tenant_id = 2;
+  string tenant_name = 3;
+  string subscription_plan = 4;
+  double amount = 5;
+  string currency = 6;
+  int32 failed_attempt_count = 7;
+  string failure_reason = 8;
+  google.protobuf.Timestamp failed_at = 9;
+  string next_retry_at = 10;
+}
+
+// Event: Payment Succeeded
+message PaymentSucceededEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  string tenant_id = 2;
+  string invoice_id = 3;
+  double amount = 4;
+  string currency = 5;
+  string payment_method = 6;
+  google.protobuf.Timestamp paid_at = 7;
+}
+
+// Event: Subscription Renewed
+message SubscriptionRenewedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  string tenant_id = 2;
+  string subscription_plan = 3;
+  google.protobuf.Timestamp renewal_date = 4;
+  google.protobuf.Timestamp next_renewal_date = 5;
+  double amount = 6;
+  string currency = 7;
+}
+
+// Generic Billing Event (for backwards compatibility)
+message BillingEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  string tenant_id = 2;
+  string event_type = 3; // PAYMENT_FAILED, PAYMENT_SUCCEEDED, etc.
+  map<string, string> event_data = 4;
+  google.protobuf.Timestamp occurred_at = 5;
+}

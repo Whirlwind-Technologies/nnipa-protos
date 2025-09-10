@@ -7,6 +7,42 @@ option java_multiple_files = true;
 
 import "common/common.proto";
 
+// Command: Create Tenant
+message CreateTenantCommand {
+  com.nnipa.proto.common.CommandMetadata metadata = 1;
+
+  message TenantDetails {
+    string code = 1;
+    string name = 2;
+    string organization_type = 3;
+    string subscription_plan = 4;
+    string isolation_strategy = 5;
+    map<string, string> metadata = 6;
+    map<string, string> settings = 7;
+    string admin_email = 8;
+    string billing_email = 9;
+  }
+
+  TenantDetails details = 2;
+}
+
+// Command: Update Tenant
+message UpdateTenantCommand {
+  com.nnipa.proto.common.CommandMetadata metadata = 1;
+  string tenant_id = 2;
+
+  message UpdateDetails {
+    optional string name = 1;
+    optional string subscription_plan = 2;
+    map<string, string> metadata = 3;
+    map<string, string> settings = 4;
+    map<string, bool> feature_flags = 5;
+  }
+
+  UpdateDetails updates = 3;
+}
+
+
 // Command: Validate Tenant
 message ValidateTenantCommand {
   com.nnipa.proto.common.EventMetadata metadata = 1;

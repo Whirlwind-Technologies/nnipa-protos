@@ -84,76 +84,53 @@ private static final long serialVersionUID = 0L;
         getToStrategyBytes();
 
     /**
-     * <code>.google.protobuf.Timestamp migration_started_at = 4;</code>
-     * @return Whether the migrationStartedAt field is set.
+     * <code>.google.protobuf.Timestamp started_at = 4;</code>
+     * @return Whether the startedAt field is set.
      */
-    boolean hasMigrationStartedAt();
+    boolean hasStartedAt();
     /**
-     * <code>.google.protobuf.Timestamp migration_started_at = 4;</code>
-     * @return The migrationStartedAt.
+     * <code>.google.protobuf.Timestamp started_at = 4;</code>
+     * @return The startedAt.
      */
-    com.google.protobuf.Timestamp getMigrationStartedAt();
+    com.google.protobuf.Timestamp getStartedAt();
     /**
-     * <code>.google.protobuf.Timestamp migration_started_at = 4;</code>
+     * <code>.google.protobuf.Timestamp started_at = 4;</code>
      */
-    com.google.protobuf.TimestampOrBuilder getMigrationStartedAtOrBuilder();
+    com.google.protobuf.TimestampOrBuilder getStartedAtOrBuilder();
 
     /**
-     * <code>.google.protobuf.Timestamp migration_completed_at = 5;</code>
-     * @return Whether the migrationCompletedAt field is set.
+     * <code>.google.protobuf.Timestamp completed_at = 5;</code>
+     * @return Whether the completedAt field is set.
      */
-    boolean hasMigrationCompletedAt();
+    boolean hasCompletedAt();
     /**
-     * <code>.google.protobuf.Timestamp migration_completed_at = 5;</code>
-     * @return The migrationCompletedAt.
+     * <code>.google.protobuf.Timestamp completed_at = 5;</code>
+     * @return The completedAt.
      */
-    com.google.protobuf.Timestamp getMigrationCompletedAt();
+    com.google.protobuf.Timestamp getCompletedAt();
     /**
-     * <code>.google.protobuf.Timestamp migration_completed_at = 5;</code>
+     * <code>.google.protobuf.Timestamp completed_at = 5;</code>
      */
-    com.google.protobuf.TimestampOrBuilder getMigrationCompletedAtOrBuilder();
+    com.google.protobuf.TimestampOrBuilder getCompletedAtOrBuilder();
 
     /**
-     * <code>string migrated_by = 6;</code>
-     * @return The migratedBy.
-     */
-    java.lang.String getMigratedBy();
-    /**
-     * <code>string migrated_by = 6;</code>
-     * @return The bytes for migratedBy.
-     */
-    com.google.protobuf.ByteString
-        getMigratedByBytes();
-
-    /**
-     * <code>string reason = 7;</code>
-     * @return The reason.
-     */
-    java.lang.String getReason();
-    /**
-     * <code>string reason = 7;</code>
-     * @return The bytes for reason.
-     */
-    com.google.protobuf.ByteString
-        getReasonBytes();
-
-    /**
-     * <code>.com.nnipa.proto.common.MigrationStatus status = 8;</code>
-     * @return The enum numeric value on the wire for status.
-     */
-    int getStatusValue();
-    /**
-     * <code>.com.nnipa.proto.common.MigrationStatus status = 8;</code>
+     * <code>string status = 6;</code>
      * @return The status.
      */
-    com.nnipa.proto.common.MigrationStatus getStatus();
+    java.lang.String getStatus();
+    /**
+     * <code>string status = 6;</code>
+     * @return The bytes for status.
+     */
+    com.google.protobuf.ByteString
+        getStatusBytes();
 
     /**
-     * <code>map&lt;string, string&gt; migration_metadata = 9;</code>
+     * <code>map&lt;string, string&gt; migration_metadata = 7;</code>
      */
     int getMigrationMetadataCount();
     /**
-     * <code>map&lt;string, string&gt; migration_metadata = 9;</code>
+     * <code>map&lt;string, string&gt; migration_metadata = 7;</code>
      */
     boolean containsMigrationMetadata(
         java.lang.String key);
@@ -164,12 +141,12 @@ private static final long serialVersionUID = 0L;
     java.util.Map<java.lang.String, java.lang.String>
     getMigrationMetadata();
     /**
-     * <code>map&lt;string, string&gt; migration_metadata = 9;</code>
+     * <code>map&lt;string, string&gt; migration_metadata = 7;</code>
      */
     java.util.Map<java.lang.String, java.lang.String>
     getMigrationMetadataMap();
     /**
-     * <code>map&lt;string, string&gt; migration_metadata = 9;</code>
+     * <code>map&lt;string, string&gt; migration_metadata = 7;</code>
      */
     /* nullable */
 java.lang.String getMigrationMetadataOrDefault(
@@ -177,7 +154,7 @@ java.lang.String getMigrationMetadataOrDefault(
         /* nullable */
 java.lang.String defaultValue);
     /**
-     * <code>map&lt;string, string&gt; migration_metadata = 9;</code>
+     * <code>map&lt;string, string&gt; migration_metadata = 7;</code>
      */
     java.lang.String getMigrationMetadataOrThrow(
         java.lang.String key);
@@ -198,9 +175,7 @@ java.lang.String defaultValue);
       tenantId_ = "";
       fromStrategy_ = "";
       toStrategy_ = "";
-      migratedBy_ = "";
-      reason_ = "";
-      status_ = 0;
+      status_ = "";
     }
 
     @java.lang.Override
@@ -220,7 +195,7 @@ java.lang.String defaultValue);
     protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
         int number) {
       switch (number) {
-        case 9:
+        case 7:
           return internalGetMigrationMetadata();
         default:
           throw new RuntimeException(
@@ -353,155 +328,98 @@ java.lang.String defaultValue);
       }
     }
 
-    public static final int MIGRATION_STARTED_AT_FIELD_NUMBER = 4;
-    private com.google.protobuf.Timestamp migrationStartedAt_;
+    public static final int STARTED_AT_FIELD_NUMBER = 4;
+    private com.google.protobuf.Timestamp startedAt_;
     /**
-     * <code>.google.protobuf.Timestamp migration_started_at = 4;</code>
-     * @return Whether the migrationStartedAt field is set.
+     * <code>.google.protobuf.Timestamp started_at = 4;</code>
+     * @return Whether the startedAt field is set.
      */
     @java.lang.Override
-    public boolean hasMigrationStartedAt() {
+    public boolean hasStartedAt() {
       return ((bitField0_ & 0x00000001) != 0);
     }
     /**
-     * <code>.google.protobuf.Timestamp migration_started_at = 4;</code>
-     * @return The migrationStartedAt.
+     * <code>.google.protobuf.Timestamp started_at = 4;</code>
+     * @return The startedAt.
      */
     @java.lang.Override
-    public com.google.protobuf.Timestamp getMigrationStartedAt() {
-      return migrationStartedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : migrationStartedAt_;
+    public com.google.protobuf.Timestamp getStartedAt() {
+      return startedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startedAt_;
     }
     /**
-     * <code>.google.protobuf.Timestamp migration_started_at = 4;</code>
+     * <code>.google.protobuf.Timestamp started_at = 4;</code>
      */
     @java.lang.Override
-    public com.google.protobuf.TimestampOrBuilder getMigrationStartedAtOrBuilder() {
-      return migrationStartedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : migrationStartedAt_;
+    public com.google.protobuf.TimestampOrBuilder getStartedAtOrBuilder() {
+      return startedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startedAt_;
     }
 
-    public static final int MIGRATION_COMPLETED_AT_FIELD_NUMBER = 5;
-    private com.google.protobuf.Timestamp migrationCompletedAt_;
+    public static final int COMPLETED_AT_FIELD_NUMBER = 5;
+    private com.google.protobuf.Timestamp completedAt_;
     /**
-     * <code>.google.protobuf.Timestamp migration_completed_at = 5;</code>
-     * @return Whether the migrationCompletedAt field is set.
+     * <code>.google.protobuf.Timestamp completed_at = 5;</code>
+     * @return Whether the completedAt field is set.
      */
     @java.lang.Override
-    public boolean hasMigrationCompletedAt() {
+    public boolean hasCompletedAt() {
       return ((bitField0_ & 0x00000002) != 0);
     }
     /**
-     * <code>.google.protobuf.Timestamp migration_completed_at = 5;</code>
-     * @return The migrationCompletedAt.
+     * <code>.google.protobuf.Timestamp completed_at = 5;</code>
+     * @return The completedAt.
      */
     @java.lang.Override
-    public com.google.protobuf.Timestamp getMigrationCompletedAt() {
-      return migrationCompletedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : migrationCompletedAt_;
+    public com.google.protobuf.Timestamp getCompletedAt() {
+      return completedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : completedAt_;
     }
     /**
-     * <code>.google.protobuf.Timestamp migration_completed_at = 5;</code>
+     * <code>.google.protobuf.Timestamp completed_at = 5;</code>
      */
     @java.lang.Override
-    public com.google.protobuf.TimestampOrBuilder getMigrationCompletedAtOrBuilder() {
-      return migrationCompletedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : migrationCompletedAt_;
+    public com.google.protobuf.TimestampOrBuilder getCompletedAtOrBuilder() {
+      return completedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : completedAt_;
     }
 
-    public static final int MIGRATED_BY_FIELD_NUMBER = 6;
+    public static final int STATUS_FIELD_NUMBER = 6;
     @SuppressWarnings("serial")
-    private volatile java.lang.Object migratedBy_ = "";
+    private volatile java.lang.Object status_ = "";
     /**
-     * <code>string migrated_by = 6;</code>
-     * @return The migratedBy.
-     */
-    @java.lang.Override
-    public java.lang.String getMigratedBy() {
-      java.lang.Object ref = migratedBy_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        migratedBy_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string migrated_by = 6;</code>
-     * @return The bytes for migratedBy.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getMigratedByBytes() {
-      java.lang.Object ref = migratedBy_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        migratedBy_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int REASON_FIELD_NUMBER = 7;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object reason_ = "";
-    /**
-     * <code>string reason = 7;</code>
-     * @return The reason.
-     */
-    @java.lang.Override
-    public java.lang.String getReason() {
-      java.lang.Object ref = reason_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        reason_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string reason = 7;</code>
-     * @return The bytes for reason.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getReasonBytes() {
-      java.lang.Object ref = reason_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        reason_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int STATUS_FIELD_NUMBER = 8;
-    private int status_ = 0;
-    /**
-     * <code>.com.nnipa.proto.common.MigrationStatus status = 8;</code>
-     * @return The enum numeric value on the wire for status.
-     */
-    @java.lang.Override public int getStatusValue() {
-      return status_;
-    }
-    /**
-     * <code>.com.nnipa.proto.common.MigrationStatus status = 8;</code>
+     * <code>string status = 6;</code>
      * @return The status.
      */
-    @java.lang.Override public com.nnipa.proto.common.MigrationStatus getStatus() {
-      com.nnipa.proto.common.MigrationStatus result = com.nnipa.proto.common.MigrationStatus.forNumber(status_);
-      return result == null ? com.nnipa.proto.common.MigrationStatus.UNRECOGNIZED : result;
+    @java.lang.Override
+    public java.lang.String getStatus() {
+      java.lang.Object ref = status_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        status_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string status = 6;</code>
+     * @return The bytes for status.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getStatusBytes() {
+      java.lang.Object ref = status_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        status_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
-    public static final int MIGRATION_METADATA_FIELD_NUMBER = 9;
+    public static final int MIGRATION_METADATA_FIELD_NUMBER = 7;
     private static final class MigrationMetadataDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.String, java.lang.String> defaultEntry =
@@ -528,7 +446,7 @@ java.lang.String defaultValue);
       return internalGetMigrationMetadata().getMap().size();
     }
     /**
-     * <code>map&lt;string, string&gt; migration_metadata = 9;</code>
+     * <code>map&lt;string, string&gt; migration_metadata = 7;</code>
      */
     @java.lang.Override
     public boolean containsMigrationMetadata(
@@ -545,14 +463,14 @@ java.lang.String defaultValue);
       return getMigrationMetadataMap();
     }
     /**
-     * <code>map&lt;string, string&gt; migration_metadata = 9;</code>
+     * <code>map&lt;string, string&gt; migration_metadata = 7;</code>
      */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getMigrationMetadataMap() {
       return internalGetMigrationMetadata().getMap();
     }
     /**
-     * <code>map&lt;string, string&gt; migration_metadata = 9;</code>
+     * <code>map&lt;string, string&gt; migration_metadata = 7;</code>
      */
     @java.lang.Override
     public /* nullable */
@@ -566,7 +484,7 @@ java.lang.String defaultValue) {
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;string, string&gt; migration_metadata = 9;</code>
+     * <code>map&lt;string, string&gt; migration_metadata = 7;</code>
      */
     @java.lang.Override
     public java.lang.String getMigrationMetadataOrThrow(
@@ -604,26 +522,20 @@ java.lang.String defaultValue) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, toStrategy_);
       }
       if (((bitField0_ & 0x00000001) != 0)) {
-        output.writeMessage(4, getMigrationStartedAt());
+        output.writeMessage(4, getStartedAt());
       }
       if (((bitField0_ & 0x00000002) != 0)) {
-        output.writeMessage(5, getMigrationCompletedAt());
+        output.writeMessage(5, getCompletedAt());
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(migratedBy_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, migratedBy_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reason_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, reason_);
-      }
-      if (status_ != com.nnipa.proto.common.MigrationStatus.MIGRATION_STATUS_UNSPECIFIED.getNumber()) {
-        output.writeEnum(8, status_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(status_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, status_);
       }
       com.google.protobuf.GeneratedMessageV3
         .serializeStringMapTo(
           output,
           internalGetMigrationMetadata(),
           MigrationMetadataDefaultEntryHolder.defaultEntry,
-          9);
+          7);
       getUnknownFields().writeTo(output);
     }
 
@@ -644,21 +556,14 @@ java.lang.String defaultValue) {
       }
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, getMigrationStartedAt());
+          .computeMessageSize(4, getStartedAt());
       }
       if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, getMigrationCompletedAt());
+          .computeMessageSize(5, getCompletedAt());
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(migratedBy_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, migratedBy_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reason_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, reason_);
-      }
-      if (status_ != com.nnipa.proto.common.MigrationStatus.MIGRATION_STATUS_UNSPECIFIED.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(8, status_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(status_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, status_);
       }
       for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
            : internalGetMigrationMetadata().getMap().entrySet()) {
@@ -668,7 +573,7 @@ java.lang.String defaultValue) {
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(9, migrationMetadata__);
+            .computeMessageSize(7, migrationMetadata__);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -691,21 +596,18 @@ java.lang.String defaultValue) {
           .equals(other.getFromStrategy())) return false;
       if (!getToStrategy()
           .equals(other.getToStrategy())) return false;
-      if (hasMigrationStartedAt() != other.hasMigrationStartedAt()) return false;
-      if (hasMigrationStartedAt()) {
-        if (!getMigrationStartedAt()
-            .equals(other.getMigrationStartedAt())) return false;
+      if (hasStartedAt() != other.hasStartedAt()) return false;
+      if (hasStartedAt()) {
+        if (!getStartedAt()
+            .equals(other.getStartedAt())) return false;
       }
-      if (hasMigrationCompletedAt() != other.hasMigrationCompletedAt()) return false;
-      if (hasMigrationCompletedAt()) {
-        if (!getMigrationCompletedAt()
-            .equals(other.getMigrationCompletedAt())) return false;
+      if (hasCompletedAt() != other.hasCompletedAt()) return false;
+      if (hasCompletedAt()) {
+        if (!getCompletedAt()
+            .equals(other.getCompletedAt())) return false;
       }
-      if (!getMigratedBy()
-          .equals(other.getMigratedBy())) return false;
-      if (!getReason()
-          .equals(other.getReason())) return false;
-      if (status_ != other.status_) return false;
+      if (!getStatus()
+          .equals(other.getStatus())) return false;
       if (!internalGetMigrationMetadata().equals(
           other.internalGetMigrationMetadata())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -725,20 +627,16 @@ java.lang.String defaultValue) {
       hash = (53 * hash) + getFromStrategy().hashCode();
       hash = (37 * hash) + TO_STRATEGY_FIELD_NUMBER;
       hash = (53 * hash) + getToStrategy().hashCode();
-      if (hasMigrationStartedAt()) {
-        hash = (37 * hash) + MIGRATION_STARTED_AT_FIELD_NUMBER;
-        hash = (53 * hash) + getMigrationStartedAt().hashCode();
+      if (hasStartedAt()) {
+        hash = (37 * hash) + STARTED_AT_FIELD_NUMBER;
+        hash = (53 * hash) + getStartedAt().hashCode();
       }
-      if (hasMigrationCompletedAt()) {
-        hash = (37 * hash) + MIGRATION_COMPLETED_AT_FIELD_NUMBER;
-        hash = (53 * hash) + getMigrationCompletedAt().hashCode();
+      if (hasCompletedAt()) {
+        hash = (37 * hash) + COMPLETED_AT_FIELD_NUMBER;
+        hash = (53 * hash) + getCompletedAt().hashCode();
       }
-      hash = (37 * hash) + MIGRATED_BY_FIELD_NUMBER;
-      hash = (53 * hash) + getMigratedBy().hashCode();
-      hash = (37 * hash) + REASON_FIELD_NUMBER;
-      hash = (53 * hash) + getReason().hashCode();
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
-      hash = (53 * hash) + status_;
+      hash = (53 * hash) + getStatus().hashCode();
       if (!internalGetMigrationMetadata().getMap().isEmpty()) {
         hash = (37 * hash) + MIGRATION_METADATA_FIELD_NUMBER;
         hash = (53 * hash) + internalGetMigrationMetadata().hashCode();
@@ -856,7 +754,7 @@ java.lang.String defaultValue) {
       protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
           int number) {
         switch (number) {
-          case 9:
+          case 7:
             return internalGetMigrationMetadata();
           default:
             throw new RuntimeException(
@@ -867,7 +765,7 @@ java.lang.String defaultValue) {
       protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
           int number) {
         switch (number) {
-          case 9:
+          case 7:
             return internalGetMutableMigrationMetadata();
           default:
             throw new RuntimeException(
@@ -895,8 +793,8 @@ java.lang.String defaultValue) {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getMigrationStartedAtFieldBuilder();
-          getMigrationCompletedAtFieldBuilder();
+          getStartedAtFieldBuilder();
+          getCompletedAtFieldBuilder();
         }
       }
       @java.lang.Override
@@ -906,19 +804,17 @@ java.lang.String defaultValue) {
         tenantId_ = "";
         fromStrategy_ = "";
         toStrategy_ = "";
-        migrationStartedAt_ = null;
-        if (migrationStartedAtBuilder_ != null) {
-          migrationStartedAtBuilder_.dispose();
-          migrationStartedAtBuilder_ = null;
+        startedAt_ = null;
+        if (startedAtBuilder_ != null) {
+          startedAtBuilder_.dispose();
+          startedAtBuilder_ = null;
         }
-        migrationCompletedAt_ = null;
-        if (migrationCompletedAtBuilder_ != null) {
-          migrationCompletedAtBuilder_.dispose();
-          migrationCompletedAtBuilder_ = null;
+        completedAt_ = null;
+        if (completedAtBuilder_ != null) {
+          completedAtBuilder_.dispose();
+          completedAtBuilder_ = null;
         }
-        migratedBy_ = "";
-        reason_ = "";
-        status_ = 0;
+        status_ = "";
         internalGetMutableMigrationMetadata().clear();
         return this;
       }
@@ -964,27 +860,21 @@ java.lang.String defaultValue) {
         }
         int to_bitField0_ = 0;
         if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.migrationStartedAt_ = migrationStartedAtBuilder_ == null
-              ? migrationStartedAt_
-              : migrationStartedAtBuilder_.build();
+          result.startedAt_ = startedAtBuilder_ == null
+              ? startedAt_
+              : startedAtBuilder_.build();
           to_bitField0_ |= 0x00000001;
         }
         if (((from_bitField0_ & 0x00000010) != 0)) {
-          result.migrationCompletedAt_ = migrationCompletedAtBuilder_ == null
-              ? migrationCompletedAt_
-              : migrationCompletedAtBuilder_.build();
+          result.completedAt_ = completedAtBuilder_ == null
+              ? completedAt_
+              : completedAtBuilder_.build();
           to_bitField0_ |= 0x00000002;
         }
         if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.migratedBy_ = migratedBy_;
-        }
-        if (((from_bitField0_ & 0x00000040) != 0)) {
-          result.reason_ = reason_;
-        }
-        if (((from_bitField0_ & 0x00000080) != 0)) {
           result.status_ = status_;
         }
-        if (((from_bitField0_ & 0x00000100) != 0)) {
+        if (((from_bitField0_ & 0x00000040) != 0)) {
           result.migrationMetadata_ = internalGetMigrationMetadata();
           result.migrationMetadata_.makeImmutable();
         }
@@ -1050,28 +940,20 @@ java.lang.String defaultValue) {
           bitField0_ |= 0x00000004;
           onChanged();
         }
-        if (other.hasMigrationStartedAt()) {
-          mergeMigrationStartedAt(other.getMigrationStartedAt());
+        if (other.hasStartedAt()) {
+          mergeStartedAt(other.getStartedAt());
         }
-        if (other.hasMigrationCompletedAt()) {
-          mergeMigrationCompletedAt(other.getMigrationCompletedAt());
+        if (other.hasCompletedAt()) {
+          mergeCompletedAt(other.getCompletedAt());
         }
-        if (!other.getMigratedBy().isEmpty()) {
-          migratedBy_ = other.migratedBy_;
+        if (!other.getStatus().isEmpty()) {
+          status_ = other.status_;
           bitField0_ |= 0x00000020;
           onChanged();
         }
-        if (!other.getReason().isEmpty()) {
-          reason_ = other.reason_;
-          bitField0_ |= 0x00000040;
-          onChanged();
-        }
-        if (other.status_ != 0) {
-          setStatusValue(other.getStatusValue());
-        }
         internalGetMutableMigrationMetadata().mergeFrom(
             other.internalGetMigrationMetadata());
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000040;
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -1115,42 +997,32 @@ java.lang.String defaultValue) {
               } // case 26
               case 34: {
                 input.readMessage(
-                    getMigrationStartedAtFieldBuilder().getBuilder(),
+                    getStartedAtFieldBuilder().getBuilder(),
                     extensionRegistry);
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
               case 42: {
                 input.readMessage(
-                    getMigrationCompletedAtFieldBuilder().getBuilder(),
+                    getCompletedAtFieldBuilder().getBuilder(),
                     extensionRegistry);
                 bitField0_ |= 0x00000010;
                 break;
               } // case 42
               case 50: {
-                migratedBy_ = input.readStringRequireUtf8();
+                status_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000020;
                 break;
               } // case 50
               case 58: {
-                reason_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
-                break;
-              } // case 58
-              case 64: {
-                status_ = input.readEnum();
-                bitField0_ |= 0x00000080;
-                break;
-              } // case 64
-              case 74: {
                 com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
                 migrationMetadata__ = input.readMessage(
                     MigrationMetadataDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
                 internalGetMutableMigrationMetadata().getMutableMap().put(
                     migrationMetadata__.getKey(), migrationMetadata__.getValue());
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000040;
                 break;
-              } // case 74
+              } // case 58
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -1384,441 +1256,316 @@ java.lang.String defaultValue) {
         return this;
       }
 
-      private com.google.protobuf.Timestamp migrationStartedAt_;
+      private com.google.protobuf.Timestamp startedAt_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> migrationStartedAtBuilder_;
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> startedAtBuilder_;
       /**
-       * <code>.google.protobuf.Timestamp migration_started_at = 4;</code>
-       * @return Whether the migrationStartedAt field is set.
+       * <code>.google.protobuf.Timestamp started_at = 4;</code>
+       * @return Whether the startedAt field is set.
        */
-      public boolean hasMigrationStartedAt() {
+      public boolean hasStartedAt() {
         return ((bitField0_ & 0x00000008) != 0);
       }
       /**
-       * <code>.google.protobuf.Timestamp migration_started_at = 4;</code>
-       * @return The migrationStartedAt.
+       * <code>.google.protobuf.Timestamp started_at = 4;</code>
+       * @return The startedAt.
        */
-      public com.google.protobuf.Timestamp getMigrationStartedAt() {
-        if (migrationStartedAtBuilder_ == null) {
-          return migrationStartedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : migrationStartedAt_;
+      public com.google.protobuf.Timestamp getStartedAt() {
+        if (startedAtBuilder_ == null) {
+          return startedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startedAt_;
         } else {
-          return migrationStartedAtBuilder_.getMessage();
+          return startedAtBuilder_.getMessage();
         }
       }
       /**
-       * <code>.google.protobuf.Timestamp migration_started_at = 4;</code>
+       * <code>.google.protobuf.Timestamp started_at = 4;</code>
        */
-      public Builder setMigrationStartedAt(com.google.protobuf.Timestamp value) {
-        if (migrationStartedAtBuilder_ == null) {
+      public Builder setStartedAt(com.google.protobuf.Timestamp value) {
+        if (startedAtBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          migrationStartedAt_ = value;
+          startedAt_ = value;
         } else {
-          migrationStartedAtBuilder_.setMessage(value);
+          startedAtBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp migration_started_at = 4;</code>
+       * <code>.google.protobuf.Timestamp started_at = 4;</code>
        */
-      public Builder setMigrationStartedAt(
+      public Builder setStartedAt(
           com.google.protobuf.Timestamp.Builder builderForValue) {
-        if (migrationStartedAtBuilder_ == null) {
-          migrationStartedAt_ = builderForValue.build();
+        if (startedAtBuilder_ == null) {
+          startedAt_ = builderForValue.build();
         } else {
-          migrationStartedAtBuilder_.setMessage(builderForValue.build());
+          startedAtBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp migration_started_at = 4;</code>
+       * <code>.google.protobuf.Timestamp started_at = 4;</code>
        */
-      public Builder mergeMigrationStartedAt(com.google.protobuf.Timestamp value) {
-        if (migrationStartedAtBuilder_ == null) {
+      public Builder mergeStartedAt(com.google.protobuf.Timestamp value) {
+        if (startedAtBuilder_ == null) {
           if (((bitField0_ & 0x00000008) != 0) &&
-            migrationStartedAt_ != null &&
-            migrationStartedAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
-            getMigrationStartedAtBuilder().mergeFrom(value);
+            startedAt_ != null &&
+            startedAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getStartedAtBuilder().mergeFrom(value);
           } else {
-            migrationStartedAt_ = value;
+            startedAt_ = value;
           }
         } else {
-          migrationStartedAtBuilder_.mergeFrom(value);
+          startedAtBuilder_.mergeFrom(value);
         }
-        if (migrationStartedAt_ != null) {
+        if (startedAt_ != null) {
           bitField0_ |= 0x00000008;
           onChanged();
         }
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp migration_started_at = 4;</code>
+       * <code>.google.protobuf.Timestamp started_at = 4;</code>
        */
-      public Builder clearMigrationStartedAt() {
+      public Builder clearStartedAt() {
         bitField0_ = (bitField0_ & ~0x00000008);
-        migrationStartedAt_ = null;
-        if (migrationStartedAtBuilder_ != null) {
-          migrationStartedAtBuilder_.dispose();
-          migrationStartedAtBuilder_ = null;
+        startedAt_ = null;
+        if (startedAtBuilder_ != null) {
+          startedAtBuilder_.dispose();
+          startedAtBuilder_ = null;
         }
         onChanged();
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp migration_started_at = 4;</code>
+       * <code>.google.protobuf.Timestamp started_at = 4;</code>
        */
-      public com.google.protobuf.Timestamp.Builder getMigrationStartedAtBuilder() {
+      public com.google.protobuf.Timestamp.Builder getStartedAtBuilder() {
         bitField0_ |= 0x00000008;
         onChanged();
-        return getMigrationStartedAtFieldBuilder().getBuilder();
+        return getStartedAtFieldBuilder().getBuilder();
       }
       /**
-       * <code>.google.protobuf.Timestamp migration_started_at = 4;</code>
+       * <code>.google.protobuf.Timestamp started_at = 4;</code>
        */
-      public com.google.protobuf.TimestampOrBuilder getMigrationStartedAtOrBuilder() {
-        if (migrationStartedAtBuilder_ != null) {
-          return migrationStartedAtBuilder_.getMessageOrBuilder();
+      public com.google.protobuf.TimestampOrBuilder getStartedAtOrBuilder() {
+        if (startedAtBuilder_ != null) {
+          return startedAtBuilder_.getMessageOrBuilder();
         } else {
-          return migrationStartedAt_ == null ?
-              com.google.protobuf.Timestamp.getDefaultInstance() : migrationStartedAt_;
+          return startedAt_ == null ?
+              com.google.protobuf.Timestamp.getDefaultInstance() : startedAt_;
         }
       }
       /**
-       * <code>.google.protobuf.Timestamp migration_started_at = 4;</code>
+       * <code>.google.protobuf.Timestamp started_at = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
-          getMigrationStartedAtFieldBuilder() {
-        if (migrationStartedAtBuilder_ == null) {
-          migrationStartedAtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+          getStartedAtFieldBuilder() {
+        if (startedAtBuilder_ == null) {
+          startedAtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                  getMigrationStartedAt(),
+                  getStartedAt(),
                   getParentForChildren(),
                   isClean());
-          migrationStartedAt_ = null;
+          startedAt_ = null;
         }
-        return migrationStartedAtBuilder_;
+        return startedAtBuilder_;
       }
 
-      private com.google.protobuf.Timestamp migrationCompletedAt_;
+      private com.google.protobuf.Timestamp completedAt_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> migrationCompletedAtBuilder_;
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> completedAtBuilder_;
       /**
-       * <code>.google.protobuf.Timestamp migration_completed_at = 5;</code>
-       * @return Whether the migrationCompletedAt field is set.
+       * <code>.google.protobuf.Timestamp completed_at = 5;</code>
+       * @return Whether the completedAt field is set.
        */
-      public boolean hasMigrationCompletedAt() {
+      public boolean hasCompletedAt() {
         return ((bitField0_ & 0x00000010) != 0);
       }
       /**
-       * <code>.google.protobuf.Timestamp migration_completed_at = 5;</code>
-       * @return The migrationCompletedAt.
+       * <code>.google.protobuf.Timestamp completed_at = 5;</code>
+       * @return The completedAt.
        */
-      public com.google.protobuf.Timestamp getMigrationCompletedAt() {
-        if (migrationCompletedAtBuilder_ == null) {
-          return migrationCompletedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : migrationCompletedAt_;
+      public com.google.protobuf.Timestamp getCompletedAt() {
+        if (completedAtBuilder_ == null) {
+          return completedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : completedAt_;
         } else {
-          return migrationCompletedAtBuilder_.getMessage();
+          return completedAtBuilder_.getMessage();
         }
       }
       /**
-       * <code>.google.protobuf.Timestamp migration_completed_at = 5;</code>
+       * <code>.google.protobuf.Timestamp completed_at = 5;</code>
        */
-      public Builder setMigrationCompletedAt(com.google.protobuf.Timestamp value) {
-        if (migrationCompletedAtBuilder_ == null) {
+      public Builder setCompletedAt(com.google.protobuf.Timestamp value) {
+        if (completedAtBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          migrationCompletedAt_ = value;
+          completedAt_ = value;
         } else {
-          migrationCompletedAtBuilder_.setMessage(value);
+          completedAtBuilder_.setMessage(value);
         }
         bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp migration_completed_at = 5;</code>
+       * <code>.google.protobuf.Timestamp completed_at = 5;</code>
        */
-      public Builder setMigrationCompletedAt(
+      public Builder setCompletedAt(
           com.google.protobuf.Timestamp.Builder builderForValue) {
-        if (migrationCompletedAtBuilder_ == null) {
-          migrationCompletedAt_ = builderForValue.build();
+        if (completedAtBuilder_ == null) {
+          completedAt_ = builderForValue.build();
         } else {
-          migrationCompletedAtBuilder_.setMessage(builderForValue.build());
+          completedAtBuilder_.setMessage(builderForValue.build());
         }
         bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp migration_completed_at = 5;</code>
+       * <code>.google.protobuf.Timestamp completed_at = 5;</code>
        */
-      public Builder mergeMigrationCompletedAt(com.google.protobuf.Timestamp value) {
-        if (migrationCompletedAtBuilder_ == null) {
+      public Builder mergeCompletedAt(com.google.protobuf.Timestamp value) {
+        if (completedAtBuilder_ == null) {
           if (((bitField0_ & 0x00000010) != 0) &&
-            migrationCompletedAt_ != null &&
-            migrationCompletedAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
-            getMigrationCompletedAtBuilder().mergeFrom(value);
+            completedAt_ != null &&
+            completedAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getCompletedAtBuilder().mergeFrom(value);
           } else {
-            migrationCompletedAt_ = value;
+            completedAt_ = value;
           }
         } else {
-          migrationCompletedAtBuilder_.mergeFrom(value);
+          completedAtBuilder_.mergeFrom(value);
         }
-        if (migrationCompletedAt_ != null) {
+        if (completedAt_ != null) {
           bitField0_ |= 0x00000010;
           onChanged();
         }
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp migration_completed_at = 5;</code>
+       * <code>.google.protobuf.Timestamp completed_at = 5;</code>
        */
-      public Builder clearMigrationCompletedAt() {
+      public Builder clearCompletedAt() {
         bitField0_ = (bitField0_ & ~0x00000010);
-        migrationCompletedAt_ = null;
-        if (migrationCompletedAtBuilder_ != null) {
-          migrationCompletedAtBuilder_.dispose();
-          migrationCompletedAtBuilder_ = null;
+        completedAt_ = null;
+        if (completedAtBuilder_ != null) {
+          completedAtBuilder_.dispose();
+          completedAtBuilder_ = null;
         }
         onChanged();
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp migration_completed_at = 5;</code>
+       * <code>.google.protobuf.Timestamp completed_at = 5;</code>
        */
-      public com.google.protobuf.Timestamp.Builder getMigrationCompletedAtBuilder() {
+      public com.google.protobuf.Timestamp.Builder getCompletedAtBuilder() {
         bitField0_ |= 0x00000010;
         onChanged();
-        return getMigrationCompletedAtFieldBuilder().getBuilder();
+        return getCompletedAtFieldBuilder().getBuilder();
       }
       /**
-       * <code>.google.protobuf.Timestamp migration_completed_at = 5;</code>
+       * <code>.google.protobuf.Timestamp completed_at = 5;</code>
        */
-      public com.google.protobuf.TimestampOrBuilder getMigrationCompletedAtOrBuilder() {
-        if (migrationCompletedAtBuilder_ != null) {
-          return migrationCompletedAtBuilder_.getMessageOrBuilder();
+      public com.google.protobuf.TimestampOrBuilder getCompletedAtOrBuilder() {
+        if (completedAtBuilder_ != null) {
+          return completedAtBuilder_.getMessageOrBuilder();
         } else {
-          return migrationCompletedAt_ == null ?
-              com.google.protobuf.Timestamp.getDefaultInstance() : migrationCompletedAt_;
+          return completedAt_ == null ?
+              com.google.protobuf.Timestamp.getDefaultInstance() : completedAt_;
         }
       }
       /**
-       * <code>.google.protobuf.Timestamp migration_completed_at = 5;</code>
+       * <code>.google.protobuf.Timestamp completed_at = 5;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
-          getMigrationCompletedAtFieldBuilder() {
-        if (migrationCompletedAtBuilder_ == null) {
-          migrationCompletedAtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+          getCompletedAtFieldBuilder() {
+        if (completedAtBuilder_ == null) {
+          completedAtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
               com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                  getMigrationCompletedAt(),
+                  getCompletedAt(),
                   getParentForChildren(),
                   isClean());
-          migrationCompletedAt_ = null;
+          completedAt_ = null;
         }
-        return migrationCompletedAtBuilder_;
+        return completedAtBuilder_;
       }
 
-      private java.lang.Object migratedBy_ = "";
+      private java.lang.Object status_ = "";
       /**
-       * <code>string migrated_by = 6;</code>
-       * @return The migratedBy.
+       * <code>string status = 6;</code>
+       * @return The status.
        */
-      public java.lang.String getMigratedBy() {
-        java.lang.Object ref = migratedBy_;
+      public java.lang.String getStatus() {
+        java.lang.Object ref = status_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          migratedBy_ = s;
+          status_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string migrated_by = 6;</code>
-       * @return The bytes for migratedBy.
+       * <code>string status = 6;</code>
+       * @return The bytes for status.
        */
       public com.google.protobuf.ByteString
-          getMigratedByBytes() {
-        java.lang.Object ref = migratedBy_;
+          getStatusBytes() {
+        java.lang.Object ref = status_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          migratedBy_ = b;
+          status_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string migrated_by = 6;</code>
-       * @param value The migratedBy to set.
+       * <code>string status = 6;</code>
+       * @param value The status to set.
        * @return This builder for chaining.
        */
-      public Builder setMigratedBy(
+      public Builder setStatus(
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
-        migratedBy_ = value;
+        status_ = value;
         bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
       /**
-       * <code>string migrated_by = 6;</code>
+       * <code>string status = 6;</code>
        * @return This builder for chaining.
        */
-      public Builder clearMigratedBy() {
-        migratedBy_ = getDefaultInstance().getMigratedBy();
+      public Builder clearStatus() {
+        status_ = getDefaultInstance().getStatus();
         bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
         return this;
       }
       /**
-       * <code>string migrated_by = 6;</code>
-       * @param value The bytes for migratedBy to set.
+       * <code>string status = 6;</code>
+       * @param value The bytes for status to set.
        * @return This builder for chaining.
        */
-      public Builder setMigratedByBytes(
+      public Builder setStatusBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
-        migratedBy_ = value;
-        bitField0_ |= 0x00000020;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object reason_ = "";
-      /**
-       * <code>string reason = 7;</code>
-       * @return The reason.
-       */
-      public java.lang.String getReason() {
-        java.lang.Object ref = reason_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          reason_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string reason = 7;</code>
-       * @return The bytes for reason.
-       */
-      public com.google.protobuf.ByteString
-          getReasonBytes() {
-        java.lang.Object ref = reason_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          reason_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string reason = 7;</code>
-       * @param value The reason to set.
-       * @return This builder for chaining.
-       */
-      public Builder setReason(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        reason_ = value;
-        bitField0_ |= 0x00000040;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string reason = 7;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearReason() {
-        reason_ = getDefaultInstance().getReason();
-        bitField0_ = (bitField0_ & ~0x00000040);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string reason = 7;</code>
-       * @param value The bytes for reason to set.
-       * @return This builder for chaining.
-       */
-      public Builder setReasonBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
-        reason_ = value;
-        bitField0_ |= 0x00000040;
-        onChanged();
-        return this;
-      }
-
-      private int status_ = 0;
-      /**
-       * <code>.com.nnipa.proto.common.MigrationStatus status = 8;</code>
-       * @return The enum numeric value on the wire for status.
-       */
-      @java.lang.Override public int getStatusValue() {
-        return status_;
-      }
-      /**
-       * <code>.com.nnipa.proto.common.MigrationStatus status = 8;</code>
-       * @param value The enum numeric value on the wire for status to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStatusValue(int value) {
         status_ = value;
-        bitField0_ |= 0x00000080;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.com.nnipa.proto.common.MigrationStatus status = 8;</code>
-       * @return The status.
-       */
-      @java.lang.Override
-      public com.nnipa.proto.common.MigrationStatus getStatus() {
-        com.nnipa.proto.common.MigrationStatus result = com.nnipa.proto.common.MigrationStatus.forNumber(status_);
-        return result == null ? com.nnipa.proto.common.MigrationStatus.UNRECOGNIZED : result;
-      }
-      /**
-       * <code>.com.nnipa.proto.common.MigrationStatus status = 8;</code>
-       * @param value The status to set.
-       * @return This builder for chaining.
-       */
-      public Builder setStatus(com.nnipa.proto.common.MigrationStatus value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        bitField0_ |= 0x00000080;
-        status_ = value.getNumber();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.com.nnipa.proto.common.MigrationStatus status = 8;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearStatus() {
-        bitField0_ = (bitField0_ & ~0x00000080);
-        status_ = 0;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
@@ -1842,7 +1589,7 @@ java.lang.String defaultValue) {
         if (!migrationMetadata_.isMutable()) {
           migrationMetadata_ = migrationMetadata_.copy();
         }
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000040;
         onChanged();
         return migrationMetadata_;
       }
@@ -1850,7 +1597,7 @@ java.lang.String defaultValue) {
         return internalGetMigrationMetadata().getMap().size();
       }
       /**
-       * <code>map&lt;string, string&gt; migration_metadata = 9;</code>
+       * <code>map&lt;string, string&gt; migration_metadata = 7;</code>
        */
       @java.lang.Override
       public boolean containsMigrationMetadata(
@@ -1867,14 +1614,14 @@ java.lang.String defaultValue) {
         return getMigrationMetadataMap();
       }
       /**
-       * <code>map&lt;string, string&gt; migration_metadata = 9;</code>
+       * <code>map&lt;string, string&gt; migration_metadata = 7;</code>
        */
       @java.lang.Override
       public java.util.Map<java.lang.String, java.lang.String> getMigrationMetadataMap() {
         return internalGetMigrationMetadata().getMap();
       }
       /**
-       * <code>map&lt;string, string&gt; migration_metadata = 9;</code>
+       * <code>map&lt;string, string&gt; migration_metadata = 7;</code>
        */
       @java.lang.Override
       public /* nullable */
@@ -1888,7 +1635,7 @@ java.lang.String defaultValue) {
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
-       * <code>map&lt;string, string&gt; migration_metadata = 9;</code>
+       * <code>map&lt;string, string&gt; migration_metadata = 7;</code>
        */
       @java.lang.Override
       public java.lang.String getMigrationMetadataOrThrow(
@@ -1902,13 +1649,13 @@ java.lang.String defaultValue) {
         return map.get(key);
       }
       public Builder clearMigrationMetadata() {
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000040);
         internalGetMutableMigrationMetadata().getMutableMap()
             .clear();
         return this;
       }
       /**
-       * <code>map&lt;string, string&gt; migration_metadata = 9;</code>
+       * <code>map&lt;string, string&gt; migration_metadata = 7;</code>
        */
       public Builder removeMigrationMetadata(
           java.lang.String key) {
@@ -1923,11 +1670,11 @@ java.lang.String defaultValue) {
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String>
           getMutableMigrationMetadata() {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000040;
         return internalGetMutableMigrationMetadata().getMutableMap();
       }
       /**
-       * <code>map&lt;string, string&gt; migration_metadata = 9;</code>
+       * <code>map&lt;string, string&gt; migration_metadata = 7;</code>
        */
       public Builder putMigrationMetadata(
           java.lang.String key,
@@ -1936,17 +1683,17 @@ java.lang.String defaultValue) {
         if (value == null) { throw new NullPointerException("map value"); }
         internalGetMutableMigrationMetadata().getMutableMap()
             .put(key, value);
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000040;
         return this;
       }
       /**
-       * <code>map&lt;string, string&gt; migration_metadata = 9;</code>
+       * <code>map&lt;string, string&gt; migration_metadata = 7;</code>
        */
       public Builder putAllMigrationMetadata(
           java.util.Map<java.lang.String, java.lang.String> values) {
         internalGetMutableMigrationMetadata().getMutableMap()
             .putAll(values);
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000040;
         return this;
       }
       @java.lang.Override

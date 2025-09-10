@@ -60,140 +60,135 @@ private static final long serialVersionUID = 0L;
         getTenantIdBytes();
 
     /**
-     * <code>string name = 2;</code>
-     * @return The name.
-     */
-    java.lang.String getName();
-    /**
-     * <code>string name = 2;</code>
-     * @return The bytes for name.
-     */
-    com.google.protobuf.ByteString
-        getNameBytes();
-
-    /**
-     * <code>string tenant_code = 3;</code>
+     * <code>string tenant_code = 2;</code>
      * @return The tenantCode.
      */
     java.lang.String getTenantCode();
     /**
-     * <code>string tenant_code = 3;</code>
+     * <code>string tenant_code = 2;</code>
      * @return The bytes for tenantCode.
      */
     com.google.protobuf.ByteString
         getTenantCodeBytes();
 
     /**
-     * <code>string domain = 4;</code>
-     * @return The domain.
+     * <code>string name = 3;</code>
+     * @return The name.
      */
-    java.lang.String getDomain();
+    java.lang.String getName();
     /**
-     * <code>string domain = 4;</code>
-     * @return The bytes for domain.
+     * <code>string name = 3;</code>
+     * @return The bytes for name.
      */
     com.google.protobuf.ByteString
-        getDomainBytes();
+        getNameBytes();
 
     /**
-     * <code>.com.nnipa.proto.common.OrganizationType organization_type = 5;</code>
-     * @return The enum numeric value on the wire for organizationType.
-     */
-    int getOrganizationTypeValue();
-    /**
-     * <code>.com.nnipa.proto.common.OrganizationType organization_type = 5;</code>
+     * <code>string organization_type = 4;</code>
      * @return The organizationType.
      */
-    com.nnipa.proto.common.OrganizationType getOrganizationType();
+    java.lang.String getOrganizationType();
+    /**
+     * <code>string organization_type = 4;</code>
+     * @return The bytes for organizationType.
+     */
+    com.google.protobuf.ByteString
+        getOrganizationTypeBytes();
 
     /**
-     * <code>.com.nnipa.proto.common.SubscriptionTier subscription_tier = 6;</code>
-     * @return The enum numeric value on the wire for subscriptionTier.
+     * <code>string subscription_plan = 5;</code>
+     * @return The subscriptionPlan.
      */
-    int getSubscriptionTierValue();
+    java.lang.String getSubscriptionPlan();
     /**
-     * <code>.com.nnipa.proto.common.SubscriptionTier subscription_tier = 6;</code>
-     * @return The subscriptionTier.
+     * <code>string subscription_plan = 5;</code>
+     * @return The bytes for subscriptionPlan.
      */
-    com.nnipa.proto.common.SubscriptionTier getSubscriptionTier();
+    com.google.protobuf.ByteString
+        getSubscriptionPlanBytes();
 
     /**
-     * <code>.com.nnipa.proto.common.DataIsolationStrategy isolation_strategy = 7;</code>
-     * @return The enum numeric value on the wire for isolationStrategy.
+     * <code>string billing_cycle = 6;</code>
+     * @return The billingCycle.
      */
-    int getIsolationStrategyValue();
+    java.lang.String getBillingCycle();
     /**
-     * <code>.com.nnipa.proto.common.DataIsolationStrategy isolation_strategy = 7;</code>
+     * <code>string billing_cycle = 6;</code>
+     * @return The bytes for billingCycle.
+     */
+    com.google.protobuf.ByteString
+        getBillingCycleBytes();
+
+    /**
+     * <code>string isolation_strategy = 7;</code>
      * @return The isolationStrategy.
      */
-    com.nnipa.proto.common.DataIsolationStrategy getIsolationStrategy();
-
+    java.lang.String getIsolationStrategy();
     /**
-     * <code>string owner_user_id = 8;</code>
-     * @return The ownerUserId.
-     */
-    java.lang.String getOwnerUserId();
-    /**
-     * <code>string owner_user_id = 8;</code>
-     * @return The bytes for ownerUserId.
+     * <code>string isolation_strategy = 7;</code>
+     * @return The bytes for isolationStrategy.
      */
     com.google.protobuf.ByteString
-        getOwnerUserIdBytes();
+        getIsolationStrategyBytes();
 
     /**
-     * <code>string parent_tenant_id = 9;</code>
-     * @return The parentTenantId.
+     * <code>string status = 8;</code>
+     * @return The status.
      */
-    java.lang.String getParentTenantId();
+    java.lang.String getStatus();
     /**
-     * <code>string parent_tenant_id = 9;</code>
-     * @return The bytes for parentTenantId.
+     * <code>string status = 8;</code>
+     * @return The bytes for status.
      */
     com.google.protobuf.ByteString
-        getParentTenantIdBytes();
+        getStatusBytes();
 
     /**
-     * <code>bool is_active = 10;</code>
-     * @return The isActive.
+     * <code>int32 max_users = 9;</code>
+     * @return The maxUsers.
      */
-    boolean getIsActive();
+    int getMaxUsers();
 
     /**
-     * <code>.google.protobuf.Timestamp created_at = 11;</code>
-     * @return Whether the createdAt field is set.
+     * <code>map&lt;string, string&gt; metadata = 10;</code>
      */
-    boolean hasCreatedAt();
+    int getMetadataCount();
     /**
-     * <code>.google.protobuf.Timestamp created_at = 11;</code>
-     * @return The createdAt.
+     * <code>map&lt;string, string&gt; metadata = 10;</code>
      */
-    com.google.protobuf.Timestamp getCreatedAt();
+    boolean containsMetadata(
+        java.lang.String key);
     /**
-     * <code>.google.protobuf.Timestamp created_at = 11;</code>
+     * Use {@link #getMetadataMap()} instead.
      */
-    com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder();
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.String>
+    getMetadata();
+    /**
+     * <code>map&lt;string, string&gt; metadata = 10;</code>
+     */
+    java.util.Map<java.lang.String, java.lang.String>
+    getMetadataMap();
+    /**
+     * <code>map&lt;string, string&gt; metadata = 10;</code>
+     */
+    /* nullable */
+java.lang.String getMetadataOrDefault(
+        java.lang.String key,
+        /* nullable */
+java.lang.String defaultValue);
+    /**
+     * <code>map&lt;string, string&gt; metadata = 10;</code>
+     */
+    java.lang.String getMetadataOrThrow(
+        java.lang.String key);
 
     /**
-     * <code>.com.nnipa.proto.common.ContactInfo contact_info = 12;</code>
-     * @return Whether the contactInfo field is set.
-     */
-    boolean hasContactInfo();
-    /**
-     * <code>.com.nnipa.proto.common.ContactInfo contact_info = 12;</code>
-     * @return The contactInfo.
-     */
-    com.nnipa.proto.common.ContactInfo getContactInfo();
-    /**
-     * <code>.com.nnipa.proto.common.ContactInfo contact_info = 12;</code>
-     */
-    com.nnipa.proto.common.ContactInfoOrBuilder getContactInfoOrBuilder();
-
-    /**
-     * <code>map&lt;string, string&gt; settings = 13;</code>
+     * <code>map&lt;string, string&gt; settings = 11;</code>
      */
     int getSettingsCount();
     /**
-     * <code>map&lt;string, string&gt; settings = 13;</code>
+     * <code>map&lt;string, string&gt; settings = 11;</code>
      */
     boolean containsSettings(
         java.lang.String key);
@@ -204,12 +199,12 @@ private static final long serialVersionUID = 0L;
     java.util.Map<java.lang.String, java.lang.String>
     getSettings();
     /**
-     * <code>map&lt;string, string&gt; settings = 13;</code>
+     * <code>map&lt;string, string&gt; settings = 11;</code>
      */
     java.util.Map<java.lang.String, java.lang.String>
     getSettingsMap();
     /**
-     * <code>map&lt;string, string&gt; settings = 13;</code>
+     * <code>map&lt;string, string&gt; settings = 11;</code>
      */
     /* nullable */
 java.lang.String getSettingsOrDefault(
@@ -217,35 +212,69 @@ java.lang.String getSettingsOrDefault(
         /* nullable */
 java.lang.String defaultValue);
     /**
-     * <code>map&lt;string, string&gt; settings = 13;</code>
+     * <code>map&lt;string, string&gt; settings = 11;</code>
      */
     java.lang.String getSettingsOrThrow(
         java.lang.String key);
 
     /**
-     * <code>repeated string enabled_features = 14;</code>
-     * @return A list containing the enabledFeatures.
+     * <code>map&lt;string, bool&gt; feature_flags = 12;</code>
      */
-    java.util.List<java.lang.String>
-        getEnabledFeaturesList();
+    int getFeatureFlagsCount();
     /**
-     * <code>repeated string enabled_features = 14;</code>
-     * @return The count of enabledFeatures.
+     * <code>map&lt;string, bool&gt; feature_flags = 12;</code>
      */
-    int getEnabledFeaturesCount();
+    boolean containsFeatureFlags(
+        java.lang.String key);
     /**
-     * <code>repeated string enabled_features = 14;</code>
-     * @param index The index of the element to return.
-     * @return The enabledFeatures at the given index.
+     * Use {@link #getFeatureFlagsMap()} instead.
      */
-    java.lang.String getEnabledFeatures(int index);
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.Boolean>
+    getFeatureFlags();
     /**
-     * <code>repeated string enabled_features = 14;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the enabledFeatures at the given index.
+     * <code>map&lt;string, bool&gt; feature_flags = 12;</code>
+     */
+    java.util.Map<java.lang.String, java.lang.Boolean>
+    getFeatureFlagsMap();
+    /**
+     * <code>map&lt;string, bool&gt; feature_flags = 12;</code>
+     */
+    boolean getFeatureFlagsOrDefault(
+        java.lang.String key,
+        boolean defaultValue);
+    /**
+     * <code>map&lt;string, bool&gt; feature_flags = 12;</code>
+     */
+    boolean getFeatureFlagsOrThrow(
+        java.lang.String key);
+
+    /**
+     * <code>.google.protobuf.Timestamp created_at = 13;</code>
+     * @return Whether the createdAt field is set.
+     */
+    boolean hasCreatedAt();
+    /**
+     * <code>.google.protobuf.Timestamp created_at = 13;</code>
+     * @return The createdAt.
+     */
+    com.google.protobuf.Timestamp getCreatedAt();
+    /**
+     * <code>.google.protobuf.Timestamp created_at = 13;</code>
+     */
+    com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder();
+
+    /**
+     * <code>string created_by = 14;</code>
+     * @return The createdBy.
+     */
+    java.lang.String getCreatedBy();
+    /**
+     * <code>string created_by = 14;</code>
+     * @return The bytes for createdBy.
      */
     com.google.protobuf.ByteString
-        getEnabledFeaturesBytes(int index);
+        getCreatedByBytes();
   }
   /**
    * Protobuf type {@code com.nnipa.proto.tenant.TenantCreatedEvent.TenantData}
@@ -261,16 +290,14 @@ java.lang.String defaultValue);
     }
     private TenantData() {
       tenantId_ = "";
-      name_ = "";
       tenantCode_ = "";
-      domain_ = "";
-      organizationType_ = 0;
-      subscriptionTier_ = 0;
-      isolationStrategy_ = 0;
-      ownerUserId_ = "";
-      parentTenantId_ = "";
-      enabledFeatures_ =
-          com.google.protobuf.LazyStringArrayList.emptyList();
+      name_ = "";
+      organizationType_ = "";
+      subscriptionPlan_ = "";
+      billingCycle_ = "";
+      isolationStrategy_ = "";
+      status_ = "";
+      createdBy_ = "";
     }
 
     @java.lang.Override
@@ -290,8 +317,12 @@ java.lang.String defaultValue);
     protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
         int number) {
       switch (number) {
-        case 13:
+        case 10:
+          return internalGetMetadata();
+        case 11:
           return internalGetSettings();
+        case 12:
+          return internalGetFeatureFlags();
         default:
           throw new RuntimeException(
               "Invalid map field number: " + number);
@@ -345,50 +376,11 @@ java.lang.String defaultValue);
       }
     }
 
-    public static final int NAME_FIELD_NUMBER = 2;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object name_ = "";
-    /**
-     * <code>string name = 2;</code>
-     * @return The name.
-     */
-    @java.lang.Override
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        name_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string name = 2;</code>
-     * @return The bytes for name.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getNameBytes() {
-      java.lang.Object ref = name_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        name_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int TENANT_CODE_FIELD_NUMBER = 3;
+    public static final int TENANT_CODE_FIELD_NUMBER = 2;
     @SuppressWarnings("serial")
     private volatile java.lang.Object tenantCode_ = "";
     /**
-     * <code>string tenant_code = 3;</code>
+     * <code>string tenant_code = 2;</code>
      * @return The tenantCode.
      */
     @java.lang.Override
@@ -405,7 +397,7 @@ java.lang.String defaultValue);
       }
     }
     /**
-     * <code>string tenant_code = 3;</code>
+     * <code>string tenant_code = 2;</code>
      * @return The bytes for tenantCode.
      */
     @java.lang.Override
@@ -423,241 +415,331 @@ java.lang.String defaultValue);
       }
     }
 
-    public static final int DOMAIN_FIELD_NUMBER = 4;
+    public static final int NAME_FIELD_NUMBER = 3;
     @SuppressWarnings("serial")
-    private volatile java.lang.Object domain_ = "";
+    private volatile java.lang.Object name_ = "";
     /**
-     * <code>string domain = 4;</code>
-     * @return The domain.
+     * <code>string name = 3;</code>
+     * @return The name.
      */
     @java.lang.Override
-    public java.lang.String getDomain() {
-      java.lang.Object ref = domain_;
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        domain_ = s;
+        name_ = s;
         return s;
       }
     }
     /**
-     * <code>string domain = 4;</code>
-     * @return The bytes for domain.
+     * <code>string name = 3;</code>
+     * @return The bytes for name.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getDomainBytes() {
-      java.lang.Object ref = domain_;
+        getNameBytes() {
+      java.lang.Object ref = name_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        domain_ = b;
+        name_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int ORGANIZATION_TYPE_FIELD_NUMBER = 5;
-    private int organizationType_ = 0;
+    public static final int ORGANIZATION_TYPE_FIELD_NUMBER = 4;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object organizationType_ = "";
     /**
-     * <code>.com.nnipa.proto.common.OrganizationType organization_type = 5;</code>
-     * @return The enum numeric value on the wire for organizationType.
-     */
-    @java.lang.Override public int getOrganizationTypeValue() {
-      return organizationType_;
-    }
-    /**
-     * <code>.com.nnipa.proto.common.OrganizationType organization_type = 5;</code>
+     * <code>string organization_type = 4;</code>
      * @return The organizationType.
      */
-    @java.lang.Override public com.nnipa.proto.common.OrganizationType getOrganizationType() {
-      com.nnipa.proto.common.OrganizationType result = com.nnipa.proto.common.OrganizationType.forNumber(organizationType_);
-      return result == null ? com.nnipa.proto.common.OrganizationType.UNRECOGNIZED : result;
+    @java.lang.Override
+    public java.lang.String getOrganizationType() {
+      java.lang.Object ref = organizationType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        organizationType_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string organization_type = 4;</code>
+     * @return The bytes for organizationType.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getOrganizationTypeBytes() {
+      java.lang.Object ref = organizationType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        organizationType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
-    public static final int SUBSCRIPTION_TIER_FIELD_NUMBER = 6;
-    private int subscriptionTier_ = 0;
+    public static final int SUBSCRIPTION_PLAN_FIELD_NUMBER = 5;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object subscriptionPlan_ = "";
     /**
-     * <code>.com.nnipa.proto.common.SubscriptionTier subscription_tier = 6;</code>
-     * @return The enum numeric value on the wire for subscriptionTier.
+     * <code>string subscription_plan = 5;</code>
+     * @return The subscriptionPlan.
      */
-    @java.lang.Override public int getSubscriptionTierValue() {
-      return subscriptionTier_;
+    @java.lang.Override
+    public java.lang.String getSubscriptionPlan() {
+      java.lang.Object ref = subscriptionPlan_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        subscriptionPlan_ = s;
+        return s;
+      }
     }
     /**
-     * <code>.com.nnipa.proto.common.SubscriptionTier subscription_tier = 6;</code>
-     * @return The subscriptionTier.
+     * <code>string subscription_plan = 5;</code>
+     * @return The bytes for subscriptionPlan.
      */
-    @java.lang.Override public com.nnipa.proto.common.SubscriptionTier getSubscriptionTier() {
-      com.nnipa.proto.common.SubscriptionTier result = com.nnipa.proto.common.SubscriptionTier.forNumber(subscriptionTier_);
-      return result == null ? com.nnipa.proto.common.SubscriptionTier.UNRECOGNIZED : result;
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSubscriptionPlanBytes() {
+      java.lang.Object ref = subscriptionPlan_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        subscriptionPlan_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int BILLING_CYCLE_FIELD_NUMBER = 6;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object billingCycle_ = "";
+    /**
+     * <code>string billing_cycle = 6;</code>
+     * @return The billingCycle.
+     */
+    @java.lang.Override
+    public java.lang.String getBillingCycle() {
+      java.lang.Object ref = billingCycle_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        billingCycle_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string billing_cycle = 6;</code>
+     * @return The bytes for billingCycle.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getBillingCycleBytes() {
+      java.lang.Object ref = billingCycle_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        billingCycle_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int ISOLATION_STRATEGY_FIELD_NUMBER = 7;
-    private int isolationStrategy_ = 0;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object isolationStrategy_ = "";
     /**
-     * <code>.com.nnipa.proto.common.DataIsolationStrategy isolation_strategy = 7;</code>
-     * @return The enum numeric value on the wire for isolationStrategy.
-     */
-    @java.lang.Override public int getIsolationStrategyValue() {
-      return isolationStrategy_;
-    }
-    /**
-     * <code>.com.nnipa.proto.common.DataIsolationStrategy isolation_strategy = 7;</code>
+     * <code>string isolation_strategy = 7;</code>
      * @return The isolationStrategy.
      */
-    @java.lang.Override public com.nnipa.proto.common.DataIsolationStrategy getIsolationStrategy() {
-      com.nnipa.proto.common.DataIsolationStrategy result = com.nnipa.proto.common.DataIsolationStrategy.forNumber(isolationStrategy_);
-      return result == null ? com.nnipa.proto.common.DataIsolationStrategy.UNRECOGNIZED : result;
-    }
-
-    public static final int OWNER_USER_ID_FIELD_NUMBER = 8;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object ownerUserId_ = "";
-    /**
-     * <code>string owner_user_id = 8;</code>
-     * @return The ownerUserId.
-     */
     @java.lang.Override
-    public java.lang.String getOwnerUserId() {
-      java.lang.Object ref = ownerUserId_;
+    public java.lang.String getIsolationStrategy() {
+      java.lang.Object ref = isolationStrategy_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        ownerUserId_ = s;
+        isolationStrategy_ = s;
         return s;
       }
     }
     /**
-     * <code>string owner_user_id = 8;</code>
-     * @return The bytes for ownerUserId.
+     * <code>string isolation_strategy = 7;</code>
+     * @return The bytes for isolationStrategy.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getOwnerUserIdBytes() {
-      java.lang.Object ref = ownerUserId_;
+        getIsolationStrategyBytes() {
+      java.lang.Object ref = isolationStrategy_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        ownerUserId_ = b;
+        isolationStrategy_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int PARENT_TENANT_ID_FIELD_NUMBER = 9;
+    public static final int STATUS_FIELD_NUMBER = 8;
     @SuppressWarnings("serial")
-    private volatile java.lang.Object parentTenantId_ = "";
+    private volatile java.lang.Object status_ = "";
     /**
-     * <code>string parent_tenant_id = 9;</code>
-     * @return The parentTenantId.
+     * <code>string status = 8;</code>
+     * @return The status.
      */
     @java.lang.Override
-    public java.lang.String getParentTenantId() {
-      java.lang.Object ref = parentTenantId_;
+    public java.lang.String getStatus() {
+      java.lang.Object ref = status_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        parentTenantId_ = s;
+        status_ = s;
         return s;
       }
     }
     /**
-     * <code>string parent_tenant_id = 9;</code>
-     * @return The bytes for parentTenantId.
+     * <code>string status = 8;</code>
+     * @return The bytes for status.
      */
     @java.lang.Override
     public com.google.protobuf.ByteString
-        getParentTenantIdBytes() {
-      java.lang.Object ref = parentTenantId_;
+        getStatusBytes() {
+      java.lang.Object ref = status_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        parentTenantId_ = b;
+        status_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int IS_ACTIVE_FIELD_NUMBER = 10;
-    private boolean isActive_ = false;
+    public static final int MAX_USERS_FIELD_NUMBER = 9;
+    private int maxUsers_ = 0;
     /**
-     * <code>bool is_active = 10;</code>
-     * @return The isActive.
+     * <code>int32 max_users = 9;</code>
+     * @return The maxUsers.
      */
     @java.lang.Override
-    public boolean getIsActive() {
-      return isActive_;
+    public int getMaxUsers() {
+      return maxUsers_;
     }
 
-    public static final int CREATED_AT_FIELD_NUMBER = 11;
-    private com.google.protobuf.Timestamp createdAt_;
-    /**
-     * <code>.google.protobuf.Timestamp created_at = 11;</code>
-     * @return Whether the createdAt field is set.
-     */
-    @java.lang.Override
-    public boolean hasCreatedAt() {
-      return ((bitField0_ & 0x00000001) != 0);
+    public static final int METADATA_FIELD_NUMBER = 10;
+    private static final class MetadataDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, java.lang.String> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, java.lang.String>newDefaultInstance(
+                  com.nnipa.proto.tenant.TenantEvents.internal_static_com_nnipa_proto_tenant_TenantCreatedEvent_TenantData_MetadataEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "");
+    }
+    @SuppressWarnings("serial")
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> metadata_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+    internalGetMetadata() {
+      if (metadata_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            MetadataDefaultEntryHolder.defaultEntry);
+      }
+      return metadata_;
+    }
+    public int getMetadataCount() {
+      return internalGetMetadata().getMap().size();
     }
     /**
-     * <code>.google.protobuf.Timestamp created_at = 11;</code>
-     * @return The createdAt.
+     * <code>map&lt;string, string&gt; metadata = 10;</code>
      */
     @java.lang.Override
-    public com.google.protobuf.Timestamp getCreatedAt() {
-      return createdAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
+    public boolean containsMetadata(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      return internalGetMetadata().getMap().containsKey(key);
     }
     /**
-     * <code>.google.protobuf.Timestamp created_at = 11;</code>
+     * Use {@link #getMetadataMap()} instead.
      */
     @java.lang.Override
-    public com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder() {
-      return createdAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
+      return getMetadataMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; metadata = 10;</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
+      return internalGetMetadata().getMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; metadata = 10;</code>
+     */
+    @java.lang.Override
+    public /* nullable */
+java.lang.String getMetadataOrDefault(
+        java.lang.String key,
+        /* nullable */
+java.lang.String defaultValue) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetMetadata().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, string&gt; metadata = 10;</code>
+     */
+    @java.lang.Override
+    public java.lang.String getMetadataOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetMetadata().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
     }
 
-    public static final int CONTACT_INFO_FIELD_NUMBER = 12;
-    private com.nnipa.proto.common.ContactInfo contactInfo_;
-    /**
-     * <code>.com.nnipa.proto.common.ContactInfo contact_info = 12;</code>
-     * @return Whether the contactInfo field is set.
-     */
-    @java.lang.Override
-    public boolean hasContactInfo() {
-      return ((bitField0_ & 0x00000002) != 0);
-    }
-    /**
-     * <code>.com.nnipa.proto.common.ContactInfo contact_info = 12;</code>
-     * @return The contactInfo.
-     */
-    @java.lang.Override
-    public com.nnipa.proto.common.ContactInfo getContactInfo() {
-      return contactInfo_ == null ? com.nnipa.proto.common.ContactInfo.getDefaultInstance() : contactInfo_;
-    }
-    /**
-     * <code>.com.nnipa.proto.common.ContactInfo contact_info = 12;</code>
-     */
-    @java.lang.Override
-    public com.nnipa.proto.common.ContactInfoOrBuilder getContactInfoOrBuilder() {
-      return contactInfo_ == null ? com.nnipa.proto.common.ContactInfo.getDefaultInstance() : contactInfo_;
-    }
-
-    public static final int SETTINGS_FIELD_NUMBER = 13;
+    public static final int SETTINGS_FIELD_NUMBER = 11;
     private static final class SettingsDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
           java.lang.String, java.lang.String> defaultEntry =
@@ -684,7 +766,7 @@ java.lang.String defaultValue);
       return internalGetSettings().getMap().size();
     }
     /**
-     * <code>map&lt;string, string&gt; settings = 13;</code>
+     * <code>map&lt;string, string&gt; settings = 11;</code>
      */
     @java.lang.Override
     public boolean containsSettings(
@@ -701,14 +783,14 @@ java.lang.String defaultValue);
       return getSettingsMap();
     }
     /**
-     * <code>map&lt;string, string&gt; settings = 13;</code>
+     * <code>map&lt;string, string&gt; settings = 11;</code>
      */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getSettingsMap() {
       return internalGetSettings().getMap();
     }
     /**
-     * <code>map&lt;string, string&gt; settings = 13;</code>
+     * <code>map&lt;string, string&gt; settings = 11;</code>
      */
     @java.lang.Override
     public /* nullable */
@@ -722,7 +804,7 @@ java.lang.String defaultValue) {
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
-     * <code>map&lt;string, string&gt; settings = 13;</code>
+     * <code>map&lt;string, string&gt; settings = 11;</code>
      */
     @java.lang.Override
     public java.lang.String getSettingsOrThrow(
@@ -736,41 +818,146 @@ java.lang.String defaultValue) {
       return map.get(key);
     }
 
-    public static final int ENABLED_FEATURES_FIELD_NUMBER = 14;
+    public static final int FEATURE_FLAGS_FIELD_NUMBER = 12;
+    private static final class FeatureFlagsDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          java.lang.String, java.lang.Boolean> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<java.lang.String, java.lang.Boolean>newDefaultInstance(
+                  com.nnipa.proto.tenant.TenantEvents.internal_static_com_nnipa_proto_tenant_TenantCreatedEvent_TenantData_FeatureFlagsEntry_descriptor, 
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.BOOL,
+                  false);
+    }
     @SuppressWarnings("serial")
-    private com.google.protobuf.LazyStringArrayList enabledFeatures_ =
-        com.google.protobuf.LazyStringArrayList.emptyList();
-    /**
-     * <code>repeated string enabled_features = 14;</code>
-     * @return A list containing the enabledFeatures.
-     */
-    public com.google.protobuf.ProtocolStringList
-        getEnabledFeaturesList() {
-      return enabledFeatures_;
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.Boolean> featureFlags_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.Boolean>
+    internalGetFeatureFlags() {
+      if (featureFlags_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            FeatureFlagsDefaultEntryHolder.defaultEntry);
+      }
+      return featureFlags_;
+    }
+    public int getFeatureFlagsCount() {
+      return internalGetFeatureFlags().getMap().size();
     }
     /**
-     * <code>repeated string enabled_features = 14;</code>
-     * @return The count of enabledFeatures.
+     * <code>map&lt;string, bool&gt; feature_flags = 12;</code>
      */
-    public int getEnabledFeaturesCount() {
-      return enabledFeatures_.size();
+    @java.lang.Override
+    public boolean containsFeatureFlags(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      return internalGetFeatureFlags().getMap().containsKey(key);
     }
     /**
-     * <code>repeated string enabled_features = 14;</code>
-     * @param index The index of the element to return.
-     * @return The enabledFeatures at the given index.
+     * Use {@link #getFeatureFlagsMap()} instead.
      */
-    public java.lang.String getEnabledFeatures(int index) {
-      return enabledFeatures_.get(index);
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.Boolean> getFeatureFlags() {
+      return getFeatureFlagsMap();
     }
     /**
-     * <code>repeated string enabled_features = 14;</code>
-     * @param index The index of the value to return.
-     * @return The bytes of the enabledFeatures at the given index.
+     * <code>map&lt;string, bool&gt; feature_flags = 12;</code>
      */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.Boolean> getFeatureFlagsMap() {
+      return internalGetFeatureFlags().getMap();
+    }
+    /**
+     * <code>map&lt;string, bool&gt; feature_flags = 12;</code>
+     */
+    @java.lang.Override
+    public boolean getFeatureFlagsOrDefault(
+        java.lang.String key,
+        boolean defaultValue) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, java.lang.Boolean> map =
+          internalGetFeatureFlags().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, bool&gt; feature_flags = 12;</code>
+     */
+    @java.lang.Override
+    public boolean getFeatureFlagsOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, java.lang.Boolean> map =
+          internalGetFeatureFlags().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public static final int CREATED_AT_FIELD_NUMBER = 13;
+    private com.google.protobuf.Timestamp createdAt_;
+    /**
+     * <code>.google.protobuf.Timestamp created_at = 13;</code>
+     * @return Whether the createdAt field is set.
+     */
+    @java.lang.Override
+    public boolean hasCreatedAt() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+    /**
+     * <code>.google.protobuf.Timestamp created_at = 13;</code>
+     * @return The createdAt.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getCreatedAt() {
+      return createdAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
+    }
+    /**
+     * <code>.google.protobuf.Timestamp created_at = 13;</code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder() {
+      return createdAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
+    }
+
+    public static final int CREATED_BY_FIELD_NUMBER = 14;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object createdBy_ = "";
+    /**
+     * <code>string created_by = 14;</code>
+     * @return The createdBy.
+     */
+    @java.lang.Override
+    public java.lang.String getCreatedBy() {
+      java.lang.Object ref = createdBy_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        createdBy_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string created_by = 14;</code>
+     * @return The bytes for createdBy.
+     */
+    @java.lang.Override
     public com.google.protobuf.ByteString
-        getEnabledFeaturesBytes(int index) {
-      return enabledFeatures_.getByteString(index);
+        getCreatedByBytes() {
+      java.lang.Object ref = createdBy_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        createdBy_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -790,47 +977,53 @@ java.lang.String defaultValue) {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tenantId_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, tenantId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, name_);
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tenantCode_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, tenantCode_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, tenantCode_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(domain_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, domain_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, name_);
       }
-      if (organizationType_ != com.nnipa.proto.common.OrganizationType.ORGANIZATION_TYPE_UNSPECIFIED.getNumber()) {
-        output.writeEnum(5, organizationType_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(organizationType_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, organizationType_);
       }
-      if (subscriptionTier_ != com.nnipa.proto.common.SubscriptionTier.TIER_UNSPECIFIED.getNumber()) {
-        output.writeEnum(6, subscriptionTier_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subscriptionPlan_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, subscriptionPlan_);
       }
-      if (isolationStrategy_ != com.nnipa.proto.common.DataIsolationStrategy.ISOLATION_STRATEGY_UNSPECIFIED.getNumber()) {
-        output.writeEnum(7, isolationStrategy_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(billingCycle_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, billingCycle_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ownerUserId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, ownerUserId_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(isolationStrategy_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, isolationStrategy_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parentTenantId_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, parentTenantId_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(status_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, status_);
       }
-      if (isActive_ != false) {
-        output.writeBool(10, isActive_);
+      if (maxUsers_ != 0) {
+        output.writeInt32(9, maxUsers_);
       }
-      if (((bitField0_ & 0x00000001) != 0)) {
-        output.writeMessage(11, getCreatedAt());
-      }
-      if (((bitField0_ & 0x00000002) != 0)) {
-        output.writeMessage(12, getContactInfo());
-      }
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetMetadata(),
+          MetadataDefaultEntryHolder.defaultEntry,
+          10);
       com.google.protobuf.GeneratedMessageV3
         .serializeStringMapTo(
           output,
           internalGetSettings(),
           SettingsDefaultEntryHolder.defaultEntry,
-          13);
-      for (int i = 0; i < enabledFeatures_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 14, enabledFeatures_.getRaw(i));
+          11);
+      com.google.protobuf.GeneratedMessageV3
+        .serializeStringMapTo(
+          output,
+          internalGetFeatureFlags(),
+          FeatureFlagsDefaultEntryHolder.defaultEntry,
+          12);
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(13, getCreatedAt());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createdBy_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 14, createdBy_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -844,44 +1037,40 @@ java.lang.String defaultValue) {
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tenantId_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, tenantId_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
-      }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tenantCode_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, tenantCode_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, tenantCode_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(domain_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, domain_);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, name_);
       }
-      if (organizationType_ != com.nnipa.proto.common.OrganizationType.ORGANIZATION_TYPE_UNSPECIFIED.getNumber()) {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(organizationType_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, organizationType_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(subscriptionPlan_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, subscriptionPlan_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(billingCycle_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, billingCycle_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(isolationStrategy_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, isolationStrategy_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(status_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, status_);
+      }
+      if (maxUsers_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(5, organizationType_);
+          .computeInt32Size(9, maxUsers_);
       }
-      if (subscriptionTier_ != com.nnipa.proto.common.SubscriptionTier.TIER_UNSPECIFIED.getNumber()) {
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+           : internalGetMetadata().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+        metadata__ = MetadataDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
         size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(6, subscriptionTier_);
-      }
-      if (isolationStrategy_ != com.nnipa.proto.common.DataIsolationStrategy.ISOLATION_STRATEGY_UNSPECIFIED.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(7, isolationStrategy_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ownerUserId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, ownerUserId_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(parentTenantId_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, parentTenantId_);
-      }
-      if (isActive_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(10, isActive_);
-      }
-      if (((bitField0_ & 0x00000001) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(11, getCreatedAt());
-      }
-      if (((bitField0_ & 0x00000002) != 0)) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(12, getContactInfo());
+            .computeMessageSize(10, metadata__);
       }
       for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
            : internalGetSettings().getMap().entrySet()) {
@@ -891,15 +1080,24 @@ java.lang.String defaultValue) {
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
-            .computeMessageSize(13, settings__);
+            .computeMessageSize(11, settings__);
       }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < enabledFeatures_.size(); i++) {
-          dataSize += computeStringSizeNoTag(enabledFeatures_.getRaw(i));
-        }
-        size += dataSize;
-        size += 1 * getEnabledFeaturesList().size();
+      for (java.util.Map.Entry<java.lang.String, java.lang.Boolean> entry
+           : internalGetFeatureFlags().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.Boolean>
+        featureFlags__ = FeatureFlagsDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(12, featureFlags__);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(13, getCreatedAt());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(createdBy_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, createdBy_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -918,35 +1116,35 @@ java.lang.String defaultValue) {
 
       if (!getTenantId()
           .equals(other.getTenantId())) return false;
-      if (!getName()
-          .equals(other.getName())) return false;
       if (!getTenantCode()
           .equals(other.getTenantCode())) return false;
-      if (!getDomain()
-          .equals(other.getDomain())) return false;
-      if (organizationType_ != other.organizationType_) return false;
-      if (subscriptionTier_ != other.subscriptionTier_) return false;
-      if (isolationStrategy_ != other.isolationStrategy_) return false;
-      if (!getOwnerUserId()
-          .equals(other.getOwnerUserId())) return false;
-      if (!getParentTenantId()
-          .equals(other.getParentTenantId())) return false;
-      if (getIsActive()
-          != other.getIsActive()) return false;
+      if (!getName()
+          .equals(other.getName())) return false;
+      if (!getOrganizationType()
+          .equals(other.getOrganizationType())) return false;
+      if (!getSubscriptionPlan()
+          .equals(other.getSubscriptionPlan())) return false;
+      if (!getBillingCycle()
+          .equals(other.getBillingCycle())) return false;
+      if (!getIsolationStrategy()
+          .equals(other.getIsolationStrategy())) return false;
+      if (!getStatus()
+          .equals(other.getStatus())) return false;
+      if (getMaxUsers()
+          != other.getMaxUsers()) return false;
+      if (!internalGetMetadata().equals(
+          other.internalGetMetadata())) return false;
+      if (!internalGetSettings().equals(
+          other.internalGetSettings())) return false;
+      if (!internalGetFeatureFlags().equals(
+          other.internalGetFeatureFlags())) return false;
       if (hasCreatedAt() != other.hasCreatedAt()) return false;
       if (hasCreatedAt()) {
         if (!getCreatedAt()
             .equals(other.getCreatedAt())) return false;
       }
-      if (hasContactInfo() != other.hasContactInfo()) return false;
-      if (hasContactInfo()) {
-        if (!getContactInfo()
-            .equals(other.getContactInfo())) return false;
-      }
-      if (!internalGetSettings().equals(
-          other.internalGetSettings())) return false;
-      if (!getEnabledFeaturesList()
-          .equals(other.getEnabledFeaturesList())) return false;
+      if (!getCreatedBy()
+          .equals(other.getCreatedBy())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -960,41 +1158,40 @@ java.lang.String defaultValue) {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + TENANT_ID_FIELD_NUMBER;
       hash = (53 * hash) + getTenantId().hashCode();
-      hash = (37 * hash) + NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getName().hashCode();
       hash = (37 * hash) + TENANT_CODE_FIELD_NUMBER;
       hash = (53 * hash) + getTenantCode().hashCode();
-      hash = (37 * hash) + DOMAIN_FIELD_NUMBER;
-      hash = (53 * hash) + getDomain().hashCode();
+      hash = (37 * hash) + NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getName().hashCode();
       hash = (37 * hash) + ORGANIZATION_TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + organizationType_;
-      hash = (37 * hash) + SUBSCRIPTION_TIER_FIELD_NUMBER;
-      hash = (53 * hash) + subscriptionTier_;
+      hash = (53 * hash) + getOrganizationType().hashCode();
+      hash = (37 * hash) + SUBSCRIPTION_PLAN_FIELD_NUMBER;
+      hash = (53 * hash) + getSubscriptionPlan().hashCode();
+      hash = (37 * hash) + BILLING_CYCLE_FIELD_NUMBER;
+      hash = (53 * hash) + getBillingCycle().hashCode();
       hash = (37 * hash) + ISOLATION_STRATEGY_FIELD_NUMBER;
-      hash = (53 * hash) + isolationStrategy_;
-      hash = (37 * hash) + OWNER_USER_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getOwnerUserId().hashCode();
-      hash = (37 * hash) + PARENT_TENANT_ID_FIELD_NUMBER;
-      hash = (53 * hash) + getParentTenantId().hashCode();
-      hash = (37 * hash) + IS_ACTIVE_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsActive());
-      if (hasCreatedAt()) {
-        hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
-        hash = (53 * hash) + getCreatedAt().hashCode();
-      }
-      if (hasContactInfo()) {
-        hash = (37 * hash) + CONTACT_INFO_FIELD_NUMBER;
-        hash = (53 * hash) + getContactInfo().hashCode();
+      hash = (53 * hash) + getIsolationStrategy().hashCode();
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getStatus().hashCode();
+      hash = (37 * hash) + MAX_USERS_FIELD_NUMBER;
+      hash = (53 * hash) + getMaxUsers();
+      if (!internalGetMetadata().getMap().isEmpty()) {
+        hash = (37 * hash) + METADATA_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetMetadata().hashCode();
       }
       if (!internalGetSettings().getMap().isEmpty()) {
         hash = (37 * hash) + SETTINGS_FIELD_NUMBER;
         hash = (53 * hash) + internalGetSettings().hashCode();
       }
-      if (getEnabledFeaturesCount() > 0) {
-        hash = (37 * hash) + ENABLED_FEATURES_FIELD_NUMBER;
-        hash = (53 * hash) + getEnabledFeaturesList().hashCode();
+      if (!internalGetFeatureFlags().getMap().isEmpty()) {
+        hash = (37 * hash) + FEATURE_FLAGS_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetFeatureFlags().hashCode();
       }
+      if (hasCreatedAt()) {
+        hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
+        hash = (53 * hash) + getCreatedAt().hashCode();
+      }
+      hash = (37 * hash) + CREATED_BY_FIELD_NUMBER;
+      hash = (53 * hash) + getCreatedBy().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1108,8 +1305,12 @@ java.lang.String defaultValue) {
       protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
           int number) {
         switch (number) {
-          case 13:
+          case 10:
+            return internalGetMetadata();
+          case 11:
             return internalGetSettings();
+          case 12:
+            return internalGetFeatureFlags();
           default:
             throw new RuntimeException(
                 "Invalid map field number: " + number);
@@ -1119,8 +1320,12 @@ java.lang.String defaultValue) {
       protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
           int number) {
         switch (number) {
-          case 13:
+          case 10:
+            return internalGetMutableMetadata();
+          case 11:
             return internalGetMutableSettings();
+          case 12:
+            return internalGetMutableFeatureFlags();
           default:
             throw new RuntimeException(
                 "Invalid map field number: " + number);
@@ -1148,7 +1353,6 @@ java.lang.String defaultValue) {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
           getCreatedAtFieldBuilder();
-          getContactInfoFieldBuilder();
         }
       }
       @java.lang.Override
@@ -1156,28 +1360,23 @@ java.lang.String defaultValue) {
         super.clear();
         bitField0_ = 0;
         tenantId_ = "";
-        name_ = "";
         tenantCode_ = "";
-        domain_ = "";
-        organizationType_ = 0;
-        subscriptionTier_ = 0;
-        isolationStrategy_ = 0;
-        ownerUserId_ = "";
-        parentTenantId_ = "";
-        isActive_ = false;
+        name_ = "";
+        organizationType_ = "";
+        subscriptionPlan_ = "";
+        billingCycle_ = "";
+        isolationStrategy_ = "";
+        status_ = "";
+        maxUsers_ = 0;
+        internalGetMutableMetadata().clear();
+        internalGetMutableSettings().clear();
+        internalGetMutableFeatureFlags().clear();
         createdAt_ = null;
         if (createdAtBuilder_ != null) {
           createdAtBuilder_.dispose();
           createdAtBuilder_ = null;
         }
-        contactInfo_ = null;
-        if (contactInfoBuilder_ != null) {
-          contactInfoBuilder_.dispose();
-          contactInfoBuilder_ = null;
-        }
-        internalGetMutableSettings().clear();
-        enabledFeatures_ =
-            com.google.protobuf.LazyStringArrayList.emptyList();
+        createdBy_ = "";
         return this;
       }
 
@@ -1215,52 +1414,50 @@ java.lang.String defaultValue) {
           result.tenantId_ = tenantId_;
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.name_ = name_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
           result.tenantCode_ = tenantCode_;
         }
-        if (((from_bitField0_ & 0x00000008) != 0)) {
-          result.domain_ = domain_;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.name_ = name_;
         }
-        if (((from_bitField0_ & 0x00000010) != 0)) {
+        if (((from_bitField0_ & 0x00000008) != 0)) {
           result.organizationType_ = organizationType_;
         }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.subscriptionPlan_ = subscriptionPlan_;
+        }
         if (((from_bitField0_ & 0x00000020) != 0)) {
-          result.subscriptionTier_ = subscriptionTier_;
+          result.billingCycle_ = billingCycle_;
         }
         if (((from_bitField0_ & 0x00000040) != 0)) {
           result.isolationStrategy_ = isolationStrategy_;
         }
         if (((from_bitField0_ & 0x00000080) != 0)) {
-          result.ownerUserId_ = ownerUserId_;
+          result.status_ = status_;
         }
         if (((from_bitField0_ & 0x00000100) != 0)) {
-          result.parentTenantId_ = parentTenantId_;
+          result.maxUsers_ = maxUsers_;
         }
         if (((from_bitField0_ & 0x00000200) != 0)) {
-          result.isActive_ = isActive_;
+          result.metadata_ = internalGetMetadata();
+          result.metadata_.makeImmutable();
+        }
+        if (((from_bitField0_ & 0x00000400) != 0)) {
+          result.settings_ = internalGetSettings();
+          result.settings_.makeImmutable();
+        }
+        if (((from_bitField0_ & 0x00000800) != 0)) {
+          result.featureFlags_ = internalGetFeatureFlags();
+          result.featureFlags_.makeImmutable();
         }
         int to_bitField0_ = 0;
-        if (((from_bitField0_ & 0x00000400) != 0)) {
+        if (((from_bitField0_ & 0x00001000) != 0)) {
           result.createdAt_ = createdAtBuilder_ == null
               ? createdAt_
               : createdAtBuilder_.build();
           to_bitField0_ |= 0x00000001;
         }
-        if (((from_bitField0_ & 0x00000800) != 0)) {
-          result.contactInfo_ = contactInfoBuilder_ == null
-              ? contactInfo_
-              : contactInfoBuilder_.build();
-          to_bitField0_ |= 0x00000002;
-        }
-        if (((from_bitField0_ & 0x00001000) != 0)) {
-          result.settings_ = internalGetSettings();
-          result.settings_.makeImmutable();
-        }
         if (((from_bitField0_ & 0x00002000) != 0)) {
-          enabledFeatures_.makeImmutable();
-          result.enabledFeatures_ = enabledFeatures_;
+          result.createdBy_ = createdBy_;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -1314,60 +1511,59 @@ java.lang.String defaultValue) {
           bitField0_ |= 0x00000001;
           onChanged();
         }
-        if (!other.getName().isEmpty()) {
-          name_ = other.name_;
+        if (!other.getTenantCode().isEmpty()) {
+          tenantCode_ = other.tenantCode_;
           bitField0_ |= 0x00000002;
           onChanged();
         }
-        if (!other.getTenantCode().isEmpty()) {
-          tenantCode_ = other.tenantCode_;
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
           bitField0_ |= 0x00000004;
           onChanged();
         }
-        if (!other.getDomain().isEmpty()) {
-          domain_ = other.domain_;
+        if (!other.getOrganizationType().isEmpty()) {
+          organizationType_ = other.organizationType_;
           bitField0_ |= 0x00000008;
           onChanged();
         }
-        if (other.organizationType_ != 0) {
-          setOrganizationTypeValue(other.getOrganizationTypeValue());
+        if (!other.getSubscriptionPlan().isEmpty()) {
+          subscriptionPlan_ = other.subscriptionPlan_;
+          bitField0_ |= 0x00000010;
+          onChanged();
         }
-        if (other.subscriptionTier_ != 0) {
-          setSubscriptionTierValue(other.getSubscriptionTierValue());
+        if (!other.getBillingCycle().isEmpty()) {
+          billingCycle_ = other.billingCycle_;
+          bitField0_ |= 0x00000020;
+          onChanged();
         }
-        if (other.isolationStrategy_ != 0) {
-          setIsolationStrategyValue(other.getIsolationStrategyValue());
+        if (!other.getIsolationStrategy().isEmpty()) {
+          isolationStrategy_ = other.isolationStrategy_;
+          bitField0_ |= 0x00000040;
+          onChanged();
         }
-        if (!other.getOwnerUserId().isEmpty()) {
-          ownerUserId_ = other.ownerUserId_;
+        if (!other.getStatus().isEmpty()) {
+          status_ = other.status_;
           bitField0_ |= 0x00000080;
           onChanged();
         }
-        if (!other.getParentTenantId().isEmpty()) {
-          parentTenantId_ = other.parentTenantId_;
-          bitField0_ |= 0x00000100;
-          onChanged();
+        if (other.getMaxUsers() != 0) {
+          setMaxUsers(other.getMaxUsers());
         }
-        if (other.getIsActive() != false) {
-          setIsActive(other.getIsActive());
-        }
+        internalGetMutableMetadata().mergeFrom(
+            other.internalGetMetadata());
+        bitField0_ |= 0x00000200;
+        internalGetMutableSettings().mergeFrom(
+            other.internalGetSettings());
+        bitField0_ |= 0x00000400;
+        internalGetMutableFeatureFlags().mergeFrom(
+            other.internalGetFeatureFlags());
+        bitField0_ |= 0x00000800;
         if (other.hasCreatedAt()) {
           mergeCreatedAt(other.getCreatedAt());
         }
-        if (other.hasContactInfo()) {
-          mergeContactInfo(other.getContactInfo());
-        }
-        internalGetMutableSettings().mergeFrom(
-            other.internalGetSettings());
-        bitField0_ |= 0x00001000;
-        if (!other.enabledFeatures_.isEmpty()) {
-          if (enabledFeatures_.isEmpty()) {
-            enabledFeatures_ = other.enabledFeatures_;
-            bitField0_ |= 0x00002000;
-          } else {
-            ensureEnabledFeaturesIsMutable();
-            enabledFeatures_.addAll(other.enabledFeatures_);
-          }
+        if (!other.getCreatedBy().isEmpty()) {
+          createdBy_ = other.createdBy_;
+          bitField0_ |= 0x00002000;
           onChanged();
         }
         this.mergeUnknownFields(other.getUnknownFields());
@@ -1402,77 +1598,82 @@ java.lang.String defaultValue) {
                 break;
               } // case 10
               case 18: {
-                name_ = input.readStringRequireUtf8();
+                tenantCode_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
               case 26: {
-                tenantCode_ = input.readStringRequireUtf8();
+                name_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
               case 34: {
-                domain_ = input.readStringRequireUtf8();
+                organizationType_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
-              case 40: {
-                organizationType_ = input.readEnum();
+              case 42: {
+                subscriptionPlan_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000010;
                 break;
-              } // case 40
-              case 48: {
-                subscriptionTier_ = input.readEnum();
+              } // case 42
+              case 50: {
+                billingCycle_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000020;
                 break;
-              } // case 48
-              case 56: {
-                isolationStrategy_ = input.readEnum();
+              } // case 50
+              case 58: {
+                isolationStrategy_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000040;
                 break;
-              } // case 56
+              } // case 58
               case 66: {
-                ownerUserId_ = input.readStringRequireUtf8();
+                status_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000080;
                 break;
               } // case 66
-              case 74: {
-                parentTenantId_ = input.readStringRequireUtf8();
+              case 72: {
+                maxUsers_ = input.readInt32();
                 bitField0_ |= 0x00000100;
                 break;
-              } // case 74
-              case 80: {
-                isActive_ = input.readBool();
+              } // case 72
+              case 82: {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+                metadata__ = input.readMessage(
+                    MetadataDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableMetadata().getMutableMap().put(
+                    metadata__.getKey(), metadata__.getValue());
                 bitField0_ |= 0x00000200;
                 break;
-              } // case 80
+              } // case 82
               case 90: {
-                input.readMessage(
-                    getCreatedAtFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000400;
-                break;
-              } // case 90
-              case 98: {
-                input.readMessage(
-                    getContactInfoFieldBuilder().getBuilder(),
-                    extensionRegistry);
-                bitField0_ |= 0x00000800;
-                break;
-              } // case 98
-              case 106: {
                 com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
                 settings__ = input.readMessage(
                     SettingsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
                 internalGetMutableSettings().getMutableMap().put(
                     settings__.getKey(), settings__.getValue());
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 90
+              case 98: {
+                com.google.protobuf.MapEntry<java.lang.String, java.lang.Boolean>
+                featureFlags__ = input.readMessage(
+                    FeatureFlagsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+                internalGetMutableFeatureFlags().getMutableMap().put(
+                    featureFlags__.getKey(), featureFlags__.getValue());
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 98
+              case 106: {
+                input.readMessage(
+                    getCreatedAtFieldBuilder().getBuilder(),
+                    extensionRegistry);
                 bitField0_ |= 0x00001000;
                 break;
               } // case 106
               case 114: {
-                java.lang.String s = input.readStringRequireUtf8();
-                ensureEnabledFeaturesIsMutable();
-                enabledFeatures_.add(s);
+                createdBy_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00002000;
                 break;
               } // case 114
               default: {
@@ -1564,81 +1765,9 @@ java.lang.String defaultValue) {
         return this;
       }
 
-      private java.lang.Object name_ = "";
-      /**
-       * <code>string name = 2;</code>
-       * @return The name.
-       */
-      public java.lang.String getName() {
-        java.lang.Object ref = name_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          name_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string name = 2;</code>
-       * @return The bytes for name.
-       */
-      public com.google.protobuf.ByteString
-          getNameBytes() {
-        java.lang.Object ref = name_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          name_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string name = 2;</code>
-       * @param value The name to set.
-       * @return This builder for chaining.
-       */
-      public Builder setName(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        name_ = value;
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string name = 2;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearName() {
-        name_ = getDefaultInstance().getName();
-        bitField0_ = (bitField0_ & ~0x00000002);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string name = 2;</code>
-       * @param value The bytes for name to set.
-       * @return This builder for chaining.
-       */
-      public Builder setNameBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
-        name_ = value;
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-
       private java.lang.Object tenantCode_ = "";
       /**
-       * <code>string tenant_code = 3;</code>
+       * <code>string tenant_code = 2;</code>
        * @return The tenantCode.
        */
       public java.lang.String getTenantCode() {
@@ -1654,7 +1783,7 @@ java.lang.String defaultValue) {
         }
       }
       /**
-       * <code>string tenant_code = 3;</code>
+       * <code>string tenant_code = 2;</code>
        * @return The bytes for tenantCode.
        */
       public com.google.protobuf.ByteString
@@ -1671,7 +1800,7 @@ java.lang.String defaultValue) {
         }
       }
       /**
-       * <code>string tenant_code = 3;</code>
+       * <code>string tenant_code = 2;</code>
        * @param value The tenantCode to set.
        * @return This builder for chaining.
        */
@@ -1679,22 +1808,22 @@ java.lang.String defaultValue) {
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
         tenantCode_ = value;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
       /**
-       * <code>string tenant_code = 3;</code>
+       * <code>string tenant_code = 2;</code>
        * @return This builder for chaining.
        */
       public Builder clearTenantCode() {
         tenantCode_ = getDefaultInstance().getTenantCode();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }
       /**
-       * <code>string tenant_code = 3;</code>
+       * <code>string tenant_code = 2;</code>
        * @param value The bytes for tenantCode to set.
        * @return This builder for chaining.
        */
@@ -1703,658 +1832,600 @@ java.lang.String defaultValue) {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
         tenantCode_ = value;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
 
-      private java.lang.Object domain_ = "";
+      private java.lang.Object name_ = "";
       /**
-       * <code>string domain = 4;</code>
-       * @return The domain.
+       * <code>string name = 3;</code>
+       * @return The name.
        */
-      public java.lang.String getDomain() {
-        java.lang.Object ref = domain_;
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          domain_ = s;
+          name_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string domain = 4;</code>
-       * @return The bytes for domain.
+       * <code>string name = 3;</code>
+       * @return The bytes for name.
        */
       public com.google.protobuf.ByteString
-          getDomainBytes() {
-        java.lang.Object ref = domain_;
+          getNameBytes() {
+        java.lang.Object ref = name_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          domain_ = b;
+          name_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string domain = 4;</code>
-       * @param value The domain to set.
+       * <code>string name = 3;</code>
+       * @param value The name to set.
        * @return This builder for chaining.
        */
-      public Builder setDomain(
+      public Builder setName(
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
-        domain_ = value;
+        name_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string name = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearName() {
+        name_ = getDefaultInstance().getName();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string name = 3;</code>
+       * @param value The bytes for name to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        name_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object organizationType_ = "";
+      /**
+       * <code>string organization_type = 4;</code>
+       * @return The organizationType.
+       */
+      public java.lang.String getOrganizationType() {
+        java.lang.Object ref = organizationType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          organizationType_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string organization_type = 4;</code>
+       * @return The bytes for organizationType.
+       */
+      public com.google.protobuf.ByteString
+          getOrganizationTypeBytes() {
+        java.lang.Object ref = organizationType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          organizationType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string organization_type = 4;</code>
+       * @param value The organizationType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setOrganizationType(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        organizationType_ = value;
         bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
       /**
-       * <code>string domain = 4;</code>
+       * <code>string organization_type = 4;</code>
        * @return This builder for chaining.
        */
-      public Builder clearDomain() {
-        domain_ = getDefaultInstance().getDomain();
+      public Builder clearOrganizationType() {
+        organizationType_ = getDefaultInstance().getOrganizationType();
         bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
       /**
-       * <code>string domain = 4;</code>
-       * @param value The bytes for domain to set.
+       * <code>string organization_type = 4;</code>
+       * @param value The bytes for organizationType to set.
        * @return This builder for chaining.
        */
-      public Builder setDomainBytes(
+      public Builder setOrganizationTypeBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
-        domain_ = value;
+        organizationType_ = value;
         bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
 
-      private int organizationType_ = 0;
+      private java.lang.Object subscriptionPlan_ = "";
       /**
-       * <code>.com.nnipa.proto.common.OrganizationType organization_type = 5;</code>
-       * @return The enum numeric value on the wire for organizationType.
+       * <code>string subscription_plan = 5;</code>
+       * @return The subscriptionPlan.
        */
-      @java.lang.Override public int getOrganizationTypeValue() {
-        return organizationType_;
-      }
-      /**
-       * <code>.com.nnipa.proto.common.OrganizationType organization_type = 5;</code>
-       * @param value The enum numeric value on the wire for organizationType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOrganizationTypeValue(int value) {
-        organizationType_ = value;
-        bitField0_ |= 0x00000010;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.com.nnipa.proto.common.OrganizationType organization_type = 5;</code>
-       * @return The organizationType.
-       */
-      @java.lang.Override
-      public com.nnipa.proto.common.OrganizationType getOrganizationType() {
-        com.nnipa.proto.common.OrganizationType result = com.nnipa.proto.common.OrganizationType.forNumber(organizationType_);
-        return result == null ? com.nnipa.proto.common.OrganizationType.UNRECOGNIZED : result;
-      }
-      /**
-       * <code>.com.nnipa.proto.common.OrganizationType organization_type = 5;</code>
-       * @param value The organizationType to set.
-       * @return This builder for chaining.
-       */
-      public Builder setOrganizationType(com.nnipa.proto.common.OrganizationType value) {
-        if (value == null) {
-          throw new NullPointerException();
+      public java.lang.String getSubscriptionPlan() {
+        java.lang.Object ref = subscriptionPlan_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          subscriptionPlan_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
         }
+      }
+      /**
+       * <code>string subscription_plan = 5;</code>
+       * @return The bytes for subscriptionPlan.
+       */
+      public com.google.protobuf.ByteString
+          getSubscriptionPlanBytes() {
+        java.lang.Object ref = subscriptionPlan_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          subscriptionPlan_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string subscription_plan = 5;</code>
+       * @param value The subscriptionPlan to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSubscriptionPlan(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        subscriptionPlan_ = value;
         bitField0_ |= 0x00000010;
-        organizationType_ = value.getNumber();
         onChanged();
         return this;
       }
       /**
-       * <code>.com.nnipa.proto.common.OrganizationType organization_type = 5;</code>
+       * <code>string subscription_plan = 5;</code>
        * @return This builder for chaining.
        */
-      public Builder clearOrganizationType() {
+      public Builder clearSubscriptionPlan() {
+        subscriptionPlan_ = getDefaultInstance().getSubscriptionPlan();
         bitField0_ = (bitField0_ & ~0x00000010);
-        organizationType_ = 0;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string subscription_plan = 5;</code>
+       * @param value The bytes for subscriptionPlan to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSubscriptionPlanBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        subscriptionPlan_ = value;
+        bitField0_ |= 0x00000010;
         onChanged();
         return this;
       }
 
-      private int subscriptionTier_ = 0;
+      private java.lang.Object billingCycle_ = "";
       /**
-       * <code>.com.nnipa.proto.common.SubscriptionTier subscription_tier = 6;</code>
-       * @return The enum numeric value on the wire for subscriptionTier.
+       * <code>string billing_cycle = 6;</code>
+       * @return The billingCycle.
        */
-      @java.lang.Override public int getSubscriptionTierValue() {
-        return subscriptionTier_;
-      }
-      /**
-       * <code>.com.nnipa.proto.common.SubscriptionTier subscription_tier = 6;</code>
-       * @param value The enum numeric value on the wire for subscriptionTier to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSubscriptionTierValue(int value) {
-        subscriptionTier_ = value;
-        bitField0_ |= 0x00000020;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.com.nnipa.proto.common.SubscriptionTier subscription_tier = 6;</code>
-       * @return The subscriptionTier.
-       */
-      @java.lang.Override
-      public com.nnipa.proto.common.SubscriptionTier getSubscriptionTier() {
-        com.nnipa.proto.common.SubscriptionTier result = com.nnipa.proto.common.SubscriptionTier.forNumber(subscriptionTier_);
-        return result == null ? com.nnipa.proto.common.SubscriptionTier.UNRECOGNIZED : result;
-      }
-      /**
-       * <code>.com.nnipa.proto.common.SubscriptionTier subscription_tier = 6;</code>
-       * @param value The subscriptionTier to set.
-       * @return This builder for chaining.
-       */
-      public Builder setSubscriptionTier(com.nnipa.proto.common.SubscriptionTier value) {
-        if (value == null) {
-          throw new NullPointerException();
+      public java.lang.String getBillingCycle() {
+        java.lang.Object ref = billingCycle_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          billingCycle_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
         }
+      }
+      /**
+       * <code>string billing_cycle = 6;</code>
+       * @return The bytes for billingCycle.
+       */
+      public com.google.protobuf.ByteString
+          getBillingCycleBytes() {
+        java.lang.Object ref = billingCycle_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          billingCycle_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string billing_cycle = 6;</code>
+       * @param value The billingCycle to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBillingCycle(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        billingCycle_ = value;
         bitField0_ |= 0x00000020;
-        subscriptionTier_ = value.getNumber();
         onChanged();
         return this;
       }
       /**
-       * <code>.com.nnipa.proto.common.SubscriptionTier subscription_tier = 6;</code>
+       * <code>string billing_cycle = 6;</code>
        * @return This builder for chaining.
        */
-      public Builder clearSubscriptionTier() {
+      public Builder clearBillingCycle() {
+        billingCycle_ = getDefaultInstance().getBillingCycle();
         bitField0_ = (bitField0_ & ~0x00000020);
-        subscriptionTier_ = 0;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string billing_cycle = 6;</code>
+       * @param value The bytes for billingCycle to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBillingCycleBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        billingCycle_ = value;
+        bitField0_ |= 0x00000020;
         onChanged();
         return this;
       }
 
-      private int isolationStrategy_ = 0;
+      private java.lang.Object isolationStrategy_ = "";
       /**
-       * <code>.com.nnipa.proto.common.DataIsolationStrategy isolation_strategy = 7;</code>
-       * @return The enum numeric value on the wire for isolationStrategy.
+       * <code>string isolation_strategy = 7;</code>
+       * @return The isolationStrategy.
        */
-      @java.lang.Override public int getIsolationStrategyValue() {
-        return isolationStrategy_;
+      public java.lang.String getIsolationStrategy() {
+        java.lang.Object ref = isolationStrategy_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          isolationStrategy_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>.com.nnipa.proto.common.DataIsolationStrategy isolation_strategy = 7;</code>
-       * @param value The enum numeric value on the wire for isolationStrategy to set.
+       * <code>string isolation_strategy = 7;</code>
+       * @return The bytes for isolationStrategy.
+       */
+      public com.google.protobuf.ByteString
+          getIsolationStrategyBytes() {
+        java.lang.Object ref = isolationStrategy_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          isolationStrategy_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string isolation_strategy = 7;</code>
+       * @param value The isolationStrategy to set.
        * @return This builder for chaining.
        */
-      public Builder setIsolationStrategyValue(int value) {
+      public Builder setIsolationStrategy(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
         isolationStrategy_ = value;
         bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
       /**
-       * <code>.com.nnipa.proto.common.DataIsolationStrategy isolation_strategy = 7;</code>
-       * @return The isolationStrategy.
-       */
-      @java.lang.Override
-      public com.nnipa.proto.common.DataIsolationStrategy getIsolationStrategy() {
-        com.nnipa.proto.common.DataIsolationStrategy result = com.nnipa.proto.common.DataIsolationStrategy.forNumber(isolationStrategy_);
-        return result == null ? com.nnipa.proto.common.DataIsolationStrategy.UNRECOGNIZED : result;
-      }
-      /**
-       * <code>.com.nnipa.proto.common.DataIsolationStrategy isolation_strategy = 7;</code>
-       * @param value The isolationStrategy to set.
+       * <code>string isolation_strategy = 7;</code>
        * @return This builder for chaining.
        */
-      public Builder setIsolationStrategy(com.nnipa.proto.common.DataIsolationStrategy value) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        bitField0_ |= 0x00000040;
-        isolationStrategy_ = value.getNumber();
+      public Builder clearIsolationStrategy() {
+        isolationStrategy_ = getDefaultInstance().getIsolationStrategy();
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
         return this;
       }
       /**
-       * <code>.com.nnipa.proto.common.DataIsolationStrategy isolation_strategy = 7;</code>
+       * <code>string isolation_strategy = 7;</code>
+       * @param value The bytes for isolationStrategy to set.
        * @return This builder for chaining.
        */
-      public Builder clearIsolationStrategy() {
-        bitField0_ = (bitField0_ & ~0x00000040);
-        isolationStrategy_ = 0;
+      public Builder setIsolationStrategyBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        isolationStrategy_ = value;
+        bitField0_ |= 0x00000040;
         onChanged();
         return this;
       }
 
-      private java.lang.Object ownerUserId_ = "";
+      private java.lang.Object status_ = "";
       /**
-       * <code>string owner_user_id = 8;</code>
-       * @return The ownerUserId.
+       * <code>string status = 8;</code>
+       * @return The status.
        */
-      public java.lang.String getOwnerUserId() {
-        java.lang.Object ref = ownerUserId_;
+      public java.lang.String getStatus() {
+        java.lang.Object ref = status_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          ownerUserId_ = s;
+          status_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string owner_user_id = 8;</code>
-       * @return The bytes for ownerUserId.
+       * <code>string status = 8;</code>
+       * @return The bytes for status.
        */
       public com.google.protobuf.ByteString
-          getOwnerUserIdBytes() {
-        java.lang.Object ref = ownerUserId_;
+          getStatusBytes() {
+        java.lang.Object ref = status_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          ownerUserId_ = b;
+          status_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string owner_user_id = 8;</code>
-       * @param value The ownerUserId to set.
+       * <code>string status = 8;</code>
+       * @param value The status to set.
        * @return This builder for chaining.
        */
-      public Builder setOwnerUserId(
+      public Builder setStatus(
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
-        ownerUserId_ = value;
+        status_ = value;
         bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
       /**
-       * <code>string owner_user_id = 8;</code>
+       * <code>string status = 8;</code>
        * @return This builder for chaining.
        */
-      public Builder clearOwnerUserId() {
-        ownerUserId_ = getDefaultInstance().getOwnerUserId();
+      public Builder clearStatus() {
+        status_ = getDefaultInstance().getStatus();
         bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
         return this;
       }
       /**
-       * <code>string owner_user_id = 8;</code>
-       * @param value The bytes for ownerUserId to set.
+       * <code>string status = 8;</code>
+       * @param value The bytes for status to set.
        * @return This builder for chaining.
        */
-      public Builder setOwnerUserIdBytes(
+      public Builder setStatusBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
-        ownerUserId_ = value;
+        status_ = value;
         bitField0_ |= 0x00000080;
         onChanged();
         return this;
       }
 
-      private java.lang.Object parentTenantId_ = "";
+      private int maxUsers_ ;
       /**
-       * <code>string parent_tenant_id = 9;</code>
-       * @return The parentTenantId.
-       */
-      public java.lang.String getParentTenantId() {
-        java.lang.Object ref = parentTenantId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          parentTenantId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string parent_tenant_id = 9;</code>
-       * @return The bytes for parentTenantId.
-       */
-      public com.google.protobuf.ByteString
-          getParentTenantIdBytes() {
-        java.lang.Object ref = parentTenantId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          parentTenantId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string parent_tenant_id = 9;</code>
-       * @param value The parentTenantId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setParentTenantId(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        parentTenantId_ = value;
-        bitField0_ |= 0x00000100;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string parent_tenant_id = 9;</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearParentTenantId() {
-        parentTenantId_ = getDefaultInstance().getParentTenantId();
-        bitField0_ = (bitField0_ & ~0x00000100);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string parent_tenant_id = 9;</code>
-       * @param value The bytes for parentTenantId to set.
-       * @return This builder for chaining.
-       */
-      public Builder setParentTenantIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
-        parentTenantId_ = value;
-        bitField0_ |= 0x00000100;
-        onChanged();
-        return this;
-      }
-
-      private boolean isActive_ ;
-      /**
-       * <code>bool is_active = 10;</code>
-       * @return The isActive.
+       * <code>int32 max_users = 9;</code>
+       * @return The maxUsers.
        */
       @java.lang.Override
-      public boolean getIsActive() {
-        return isActive_;
+      public int getMaxUsers() {
+        return maxUsers_;
       }
       /**
-       * <code>bool is_active = 10;</code>
-       * @param value The isActive to set.
+       * <code>int32 max_users = 9;</code>
+       * @param value The maxUsers to set.
        * @return This builder for chaining.
        */
-      public Builder setIsActive(boolean value) {
+      public Builder setMaxUsers(int value) {
 
-        isActive_ = value;
+        maxUsers_ = value;
+        bitField0_ |= 0x00000100;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 max_users = 9;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMaxUsers() {
+        bitField0_ = (bitField0_ & ~0x00000100);
+        maxUsers_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.String> metadata_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+          internalGetMetadata() {
+        if (metadata_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              MetadataDefaultEntryHolder.defaultEntry);
+        }
+        return metadata_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+          internalGetMutableMetadata() {
+        if (metadata_ == null) {
+          metadata_ = com.google.protobuf.MapField.newMapField(
+              MetadataDefaultEntryHolder.defaultEntry);
+        }
+        if (!metadata_.isMutable()) {
+          metadata_ = metadata_.copy();
+        }
         bitField0_ |= 0x00000200;
         onChanged();
-        return this;
+        return metadata_;
+      }
+      public int getMetadataCount() {
+        return internalGetMetadata().getMap().size();
       }
       /**
-       * <code>bool is_active = 10;</code>
-       * @return This builder for chaining.
+       * <code>map&lt;string, string&gt; metadata = 10;</code>
        */
-      public Builder clearIsActive() {
+      @java.lang.Override
+      public boolean containsMetadata(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        return internalGetMetadata().getMap().containsKey(key);
+      }
+      /**
+       * Use {@link #getMetadataMap()} instead.
+       */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
+        return getMetadataMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; metadata = 10;</code>
+       */
+      @java.lang.Override
+      public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
+        return internalGetMetadata().getMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; metadata = 10;</code>
+       */
+      @java.lang.Override
+      public /* nullable */
+java.lang.String getMetadataOrDefault(
+          java.lang.String key,
+          /* nullable */
+java.lang.String defaultValue) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetMetadata().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;string, string&gt; metadata = 10;</code>
+       */
+      @java.lang.Override
+      public java.lang.String getMetadataOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetMetadata().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+      public Builder clearMetadata() {
         bitField0_ = (bitField0_ & ~0x00000200);
-        isActive_ = false;
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.Timestamp createdAt_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> createdAtBuilder_;
-      /**
-       * <code>.google.protobuf.Timestamp created_at = 11;</code>
-       * @return Whether the createdAt field is set.
-       */
-      public boolean hasCreatedAt() {
-        return ((bitField0_ & 0x00000400) != 0);
-      }
-      /**
-       * <code>.google.protobuf.Timestamp created_at = 11;</code>
-       * @return The createdAt.
-       */
-      public com.google.protobuf.Timestamp getCreatedAt() {
-        if (createdAtBuilder_ == null) {
-          return createdAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
-        } else {
-          return createdAtBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.google.protobuf.Timestamp created_at = 11;</code>
-       */
-      public Builder setCreatedAt(com.google.protobuf.Timestamp value) {
-        if (createdAtBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          createdAt_ = value;
-        } else {
-          createdAtBuilder_.setMessage(value);
-        }
-        bitField0_ |= 0x00000400;
-        onChanged();
+        internalGetMutableMetadata().getMutableMap()
+            .clear();
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp created_at = 11;</code>
+       * <code>map&lt;string, string&gt; metadata = 10;</code>
        */
-      public Builder setCreatedAt(
-          com.google.protobuf.Timestamp.Builder builderForValue) {
-        if (createdAtBuilder_ == null) {
-          createdAt_ = builderForValue.build();
-        } else {
-          createdAtBuilder_.setMessage(builderForValue.build());
-        }
-        bitField0_ |= 0x00000400;
-        onChanged();
+      public Builder removeMetadata(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        internalGetMutableMetadata().getMutableMap()
+            .remove(key);
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp created_at = 11;</code>
+       * Use alternate mutation accessors instead.
        */
-      public Builder mergeCreatedAt(com.google.protobuf.Timestamp value) {
-        if (createdAtBuilder_ == null) {
-          if (((bitField0_ & 0x00000400) != 0) &&
-            createdAt_ != null &&
-            createdAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
-            getCreatedAtBuilder().mergeFrom(value);
-          } else {
-            createdAt_ = value;
-          }
-        } else {
-          createdAtBuilder_.mergeFrom(value);
-        }
-        if (createdAt_ != null) {
-          bitField0_ |= 0x00000400;
-          onChanged();
-        }
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String>
+          getMutableMetadata() {
+        bitField0_ |= 0x00000200;
+        return internalGetMutableMetadata().getMutableMap();
+      }
+      /**
+       * <code>map&lt;string, string&gt; metadata = 10;</code>
+       */
+      public Builder putMetadata(
+          java.lang.String key,
+          java.lang.String value) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        if (value == null) { throw new NullPointerException("map value"); }
+        internalGetMutableMetadata().getMutableMap()
+            .put(key, value);
+        bitField0_ |= 0x00000200;
         return this;
       }
       /**
-       * <code>.google.protobuf.Timestamp created_at = 11;</code>
+       * <code>map&lt;string, string&gt; metadata = 10;</code>
        */
-      public Builder clearCreatedAt() {
-        bitField0_ = (bitField0_ & ~0x00000400);
-        createdAt_ = null;
-        if (createdAtBuilder_ != null) {
-          createdAtBuilder_.dispose();
-          createdAtBuilder_ = null;
-        }
-        onChanged();
+      public Builder putAllMetadata(
+          java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableMetadata().getMutableMap()
+            .putAll(values);
+        bitField0_ |= 0x00000200;
         return this;
-      }
-      /**
-       * <code>.google.protobuf.Timestamp created_at = 11;</code>
-       */
-      public com.google.protobuf.Timestamp.Builder getCreatedAtBuilder() {
-        bitField0_ |= 0x00000400;
-        onChanged();
-        return getCreatedAtFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.google.protobuf.Timestamp created_at = 11;</code>
-       */
-      public com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder() {
-        if (createdAtBuilder_ != null) {
-          return createdAtBuilder_.getMessageOrBuilder();
-        } else {
-          return createdAt_ == null ?
-              com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
-        }
-      }
-      /**
-       * <code>.google.protobuf.Timestamp created_at = 11;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
-          getCreatedAtFieldBuilder() {
-        if (createdAtBuilder_ == null) {
-          createdAtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                  getCreatedAt(),
-                  getParentForChildren(),
-                  isClean());
-          createdAt_ = null;
-        }
-        return createdAtBuilder_;
-      }
-
-      private com.nnipa.proto.common.ContactInfo contactInfo_;
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.nnipa.proto.common.ContactInfo, com.nnipa.proto.common.ContactInfo.Builder, com.nnipa.proto.common.ContactInfoOrBuilder> contactInfoBuilder_;
-      /**
-       * <code>.com.nnipa.proto.common.ContactInfo contact_info = 12;</code>
-       * @return Whether the contactInfo field is set.
-       */
-      public boolean hasContactInfo() {
-        return ((bitField0_ & 0x00000800) != 0);
-      }
-      /**
-       * <code>.com.nnipa.proto.common.ContactInfo contact_info = 12;</code>
-       * @return The contactInfo.
-       */
-      public com.nnipa.proto.common.ContactInfo getContactInfo() {
-        if (contactInfoBuilder_ == null) {
-          return contactInfo_ == null ? com.nnipa.proto.common.ContactInfo.getDefaultInstance() : contactInfo_;
-        } else {
-          return contactInfoBuilder_.getMessage();
-        }
-      }
-      /**
-       * <code>.com.nnipa.proto.common.ContactInfo contact_info = 12;</code>
-       */
-      public Builder setContactInfo(com.nnipa.proto.common.ContactInfo value) {
-        if (contactInfoBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          contactInfo_ = value;
-        } else {
-          contactInfoBuilder_.setMessage(value);
-        }
-        bitField0_ |= 0x00000800;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.com.nnipa.proto.common.ContactInfo contact_info = 12;</code>
-       */
-      public Builder setContactInfo(
-          com.nnipa.proto.common.ContactInfo.Builder builderForValue) {
-        if (contactInfoBuilder_ == null) {
-          contactInfo_ = builderForValue.build();
-        } else {
-          contactInfoBuilder_.setMessage(builderForValue.build());
-        }
-        bitField0_ |= 0x00000800;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.com.nnipa.proto.common.ContactInfo contact_info = 12;</code>
-       */
-      public Builder mergeContactInfo(com.nnipa.proto.common.ContactInfo value) {
-        if (contactInfoBuilder_ == null) {
-          if (((bitField0_ & 0x00000800) != 0) &&
-            contactInfo_ != null &&
-            contactInfo_ != com.nnipa.proto.common.ContactInfo.getDefaultInstance()) {
-            getContactInfoBuilder().mergeFrom(value);
-          } else {
-            contactInfo_ = value;
-          }
-        } else {
-          contactInfoBuilder_.mergeFrom(value);
-        }
-        if (contactInfo_ != null) {
-          bitField0_ |= 0x00000800;
-          onChanged();
-        }
-        return this;
-      }
-      /**
-       * <code>.com.nnipa.proto.common.ContactInfo contact_info = 12;</code>
-       */
-      public Builder clearContactInfo() {
-        bitField0_ = (bitField0_ & ~0x00000800);
-        contactInfo_ = null;
-        if (contactInfoBuilder_ != null) {
-          contactInfoBuilder_.dispose();
-          contactInfoBuilder_ = null;
-        }
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>.com.nnipa.proto.common.ContactInfo contact_info = 12;</code>
-       */
-      public com.nnipa.proto.common.ContactInfo.Builder getContactInfoBuilder() {
-        bitField0_ |= 0x00000800;
-        onChanged();
-        return getContactInfoFieldBuilder().getBuilder();
-      }
-      /**
-       * <code>.com.nnipa.proto.common.ContactInfo contact_info = 12;</code>
-       */
-      public com.nnipa.proto.common.ContactInfoOrBuilder getContactInfoOrBuilder() {
-        if (contactInfoBuilder_ != null) {
-          return contactInfoBuilder_.getMessageOrBuilder();
-        } else {
-          return contactInfo_ == null ?
-              com.nnipa.proto.common.ContactInfo.getDefaultInstance() : contactInfo_;
-        }
-      }
-      /**
-       * <code>.com.nnipa.proto.common.ContactInfo contact_info = 12;</code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-          com.nnipa.proto.common.ContactInfo, com.nnipa.proto.common.ContactInfo.Builder, com.nnipa.proto.common.ContactInfoOrBuilder> 
-          getContactInfoFieldBuilder() {
-        if (contactInfoBuilder_ == null) {
-          contactInfoBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.nnipa.proto.common.ContactInfo, com.nnipa.proto.common.ContactInfo.Builder, com.nnipa.proto.common.ContactInfoOrBuilder>(
-                  getContactInfo(),
-                  getParentForChildren(),
-                  isClean());
-          contactInfo_ = null;
-        }
-        return contactInfoBuilder_;
       }
 
       private com.google.protobuf.MapField<
@@ -2376,7 +2447,7 @@ java.lang.String defaultValue) {
         if (!settings_.isMutable()) {
           settings_ = settings_.copy();
         }
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00000400;
         onChanged();
         return settings_;
       }
@@ -2384,7 +2455,7 @@ java.lang.String defaultValue) {
         return internalGetSettings().getMap().size();
       }
       /**
-       * <code>map&lt;string, string&gt; settings = 13;</code>
+       * <code>map&lt;string, string&gt; settings = 11;</code>
        */
       @java.lang.Override
       public boolean containsSettings(
@@ -2401,14 +2472,14 @@ java.lang.String defaultValue) {
         return getSettingsMap();
       }
       /**
-       * <code>map&lt;string, string&gt; settings = 13;</code>
+       * <code>map&lt;string, string&gt; settings = 11;</code>
        */
       @java.lang.Override
       public java.util.Map<java.lang.String, java.lang.String> getSettingsMap() {
         return internalGetSettings().getMap();
       }
       /**
-       * <code>map&lt;string, string&gt; settings = 13;</code>
+       * <code>map&lt;string, string&gt; settings = 11;</code>
        */
       @java.lang.Override
       public /* nullable */
@@ -2422,7 +2493,7 @@ java.lang.String defaultValue) {
         return map.containsKey(key) ? map.get(key) : defaultValue;
       }
       /**
-       * <code>map&lt;string, string&gt; settings = 13;</code>
+       * <code>map&lt;string, string&gt; settings = 11;</code>
        */
       @java.lang.Override
       public java.lang.String getSettingsOrThrow(
@@ -2436,13 +2507,13 @@ java.lang.String defaultValue) {
         return map.get(key);
       }
       public Builder clearSettings() {
-        bitField0_ = (bitField0_ & ~0x00001000);
+        bitField0_ = (bitField0_ & ~0x00000400);
         internalGetMutableSettings().getMutableMap()
             .clear();
         return this;
       }
       /**
-       * <code>map&lt;string, string&gt; settings = 13;</code>
+       * <code>map&lt;string, string&gt; settings = 11;</code>
        */
       public Builder removeSettings(
           java.lang.String key) {
@@ -2457,11 +2528,11 @@ java.lang.String defaultValue) {
       @java.lang.Deprecated
       public java.util.Map<java.lang.String, java.lang.String>
           getMutableSettings() {
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00000400;
         return internalGetMutableSettings().getMutableMap();
       }
       /**
-       * <code>map&lt;string, string&gt; settings = 13;</code>
+       * <code>map&lt;string, string&gt; settings = 11;</code>
        */
       public Builder putSettings(
           java.lang.String key,
@@ -2470,126 +2541,333 @@ java.lang.String defaultValue) {
         if (value == null) { throw new NullPointerException("map value"); }
         internalGetMutableSettings().getMutableMap()
             .put(key, value);
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00000400;
         return this;
       }
       /**
-       * <code>map&lt;string, string&gt; settings = 13;</code>
+       * <code>map&lt;string, string&gt; settings = 11;</code>
        */
       public Builder putAllSettings(
           java.util.Map<java.lang.String, java.lang.String> values) {
         internalGetMutableSettings().getMutableMap()
             .putAll(values);
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00000400;
         return this;
       }
 
-      private com.google.protobuf.LazyStringArrayList enabledFeatures_ =
-          com.google.protobuf.LazyStringArrayList.emptyList();
-      private void ensureEnabledFeaturesIsMutable() {
-        if (!enabledFeatures_.isModifiable()) {
-          enabledFeatures_ = new com.google.protobuf.LazyStringArrayList(enabledFeatures_);
+      private com.google.protobuf.MapField<
+          java.lang.String, java.lang.Boolean> featureFlags_;
+      private com.google.protobuf.MapField<java.lang.String, java.lang.Boolean>
+          internalGetFeatureFlags() {
+        if (featureFlags_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              FeatureFlagsDefaultEntryHolder.defaultEntry);
         }
-        bitField0_ |= 0x00002000;
+        return featureFlags_;
+      }
+      private com.google.protobuf.MapField<java.lang.String, java.lang.Boolean>
+          internalGetMutableFeatureFlags() {
+        if (featureFlags_ == null) {
+          featureFlags_ = com.google.protobuf.MapField.newMapField(
+              FeatureFlagsDefaultEntryHolder.defaultEntry);
+        }
+        if (!featureFlags_.isMutable()) {
+          featureFlags_ = featureFlags_.copy();
+        }
+        bitField0_ |= 0x00000800;
+        onChanged();
+        return featureFlags_;
+      }
+      public int getFeatureFlagsCount() {
+        return internalGetFeatureFlags().getMap().size();
       }
       /**
-       * <code>repeated string enabled_features = 14;</code>
-       * @return A list containing the enabledFeatures.
+       * <code>map&lt;string, bool&gt; feature_flags = 12;</code>
        */
-      public com.google.protobuf.ProtocolStringList
-          getEnabledFeaturesList() {
-        enabledFeatures_.makeImmutable();
-        return enabledFeatures_;
+      @java.lang.Override
+      public boolean containsFeatureFlags(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        return internalGetFeatureFlags().getMap().containsKey(key);
       }
       /**
-       * <code>repeated string enabled_features = 14;</code>
-       * @return The count of enabledFeatures.
+       * Use {@link #getFeatureFlagsMap()} instead.
        */
-      public int getEnabledFeaturesCount() {
-        return enabledFeatures_.size();
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.Boolean> getFeatureFlags() {
+        return getFeatureFlagsMap();
       }
       /**
-       * <code>repeated string enabled_features = 14;</code>
-       * @param index The index of the element to return.
-       * @return The enabledFeatures at the given index.
+       * <code>map&lt;string, bool&gt; feature_flags = 12;</code>
        */
-      public java.lang.String getEnabledFeatures(int index) {
-        return enabledFeatures_.get(index);
+      @java.lang.Override
+      public java.util.Map<java.lang.String, java.lang.Boolean> getFeatureFlagsMap() {
+        return internalGetFeatureFlags().getMap();
       }
       /**
-       * <code>repeated string enabled_features = 14;</code>
-       * @param index The index of the value to return.
-       * @return The bytes of the enabledFeatures at the given index.
+       * <code>map&lt;string, bool&gt; feature_flags = 12;</code>
+       */
+      @java.lang.Override
+      public boolean getFeatureFlagsOrDefault(
+          java.lang.String key,
+          boolean defaultValue) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        java.util.Map<java.lang.String, java.lang.Boolean> map =
+            internalGetFeatureFlags().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+      /**
+       * <code>map&lt;string, bool&gt; feature_flags = 12;</code>
+       */
+      @java.lang.Override
+      public boolean getFeatureFlagsOrThrow(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        java.util.Map<java.lang.String, java.lang.Boolean> map =
+            internalGetFeatureFlags().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+      public Builder clearFeatureFlags() {
+        bitField0_ = (bitField0_ & ~0x00000800);
+        internalGetMutableFeatureFlags().getMutableMap()
+            .clear();
+        return this;
+      }
+      /**
+       * <code>map&lt;string, bool&gt; feature_flags = 12;</code>
+       */
+      public Builder removeFeatureFlags(
+          java.lang.String key) {
+        if (key == null) { throw new NullPointerException("map key"); }
+        internalGetMutableFeatureFlags().getMutableMap()
+            .remove(key);
+        return this;
+      }
+      /**
+       * Use alternate mutation accessors instead.
+       */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.Boolean>
+          getMutableFeatureFlags() {
+        bitField0_ |= 0x00000800;
+        return internalGetMutableFeatureFlags().getMutableMap();
+      }
+      /**
+       * <code>map&lt;string, bool&gt; feature_flags = 12;</code>
+       */
+      public Builder putFeatureFlags(
+          java.lang.String key,
+          boolean value) {
+        if (key == null) { throw new NullPointerException("map key"); }
+
+        internalGetMutableFeatureFlags().getMutableMap()
+            .put(key, value);
+        bitField0_ |= 0x00000800;
+        return this;
+      }
+      /**
+       * <code>map&lt;string, bool&gt; feature_flags = 12;</code>
+       */
+      public Builder putAllFeatureFlags(
+          java.util.Map<java.lang.String, java.lang.Boolean> values) {
+        internalGetMutableFeatureFlags().getMutableMap()
+            .putAll(values);
+        bitField0_ |= 0x00000800;
+        return this;
+      }
+
+      private com.google.protobuf.Timestamp createdAt_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> createdAtBuilder_;
+      /**
+       * <code>.google.protobuf.Timestamp created_at = 13;</code>
+       * @return Whether the createdAt field is set.
+       */
+      public boolean hasCreatedAt() {
+        return ((bitField0_ & 0x00001000) != 0);
+      }
+      /**
+       * <code>.google.protobuf.Timestamp created_at = 13;</code>
+       * @return The createdAt.
+       */
+      public com.google.protobuf.Timestamp getCreatedAt() {
+        if (createdAtBuilder_ == null) {
+          return createdAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
+        } else {
+          return createdAtBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.google.protobuf.Timestamp created_at = 13;</code>
+       */
+      public Builder setCreatedAt(com.google.protobuf.Timestamp value) {
+        if (createdAtBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          createdAt_ = value;
+        } else {
+          createdAtBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00001000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp created_at = 13;</code>
+       */
+      public Builder setCreatedAt(
+          com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (createdAtBuilder_ == null) {
+          createdAt_ = builderForValue.build();
+        } else {
+          createdAtBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00001000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp created_at = 13;</code>
+       */
+      public Builder mergeCreatedAt(com.google.protobuf.Timestamp value) {
+        if (createdAtBuilder_ == null) {
+          if (((bitField0_ & 0x00001000) != 0) &&
+            createdAt_ != null &&
+            createdAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getCreatedAtBuilder().mergeFrom(value);
+          } else {
+            createdAt_ = value;
+          }
+        } else {
+          createdAtBuilder_.mergeFrom(value);
+        }
+        if (createdAt_ != null) {
+          bitField0_ |= 0x00001000;
+          onChanged();
+        }
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp created_at = 13;</code>
+       */
+      public Builder clearCreatedAt() {
+        bitField0_ = (bitField0_ & ~0x00001000);
+        createdAt_ = null;
+        if (createdAtBuilder_ != null) {
+          createdAtBuilder_.dispose();
+          createdAtBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>.google.protobuf.Timestamp created_at = 13;</code>
+       */
+      public com.google.protobuf.Timestamp.Builder getCreatedAtBuilder() {
+        bitField0_ |= 0x00001000;
+        onChanged();
+        return getCreatedAtFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.google.protobuf.Timestamp created_at = 13;</code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder() {
+        if (createdAtBuilder_ != null) {
+          return createdAtBuilder_.getMessageOrBuilder();
+        } else {
+          return createdAt_ == null ?
+              com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
+        }
+      }
+      /**
+       * <code>.google.protobuf.Timestamp created_at = 13;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+          getCreatedAtFieldBuilder() {
+        if (createdAtBuilder_ == null) {
+          createdAtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
+                  getCreatedAt(),
+                  getParentForChildren(),
+                  isClean());
+          createdAt_ = null;
+        }
+        return createdAtBuilder_;
+      }
+
+      private java.lang.Object createdBy_ = "";
+      /**
+       * <code>string created_by = 14;</code>
+       * @return The createdBy.
+       */
+      public java.lang.String getCreatedBy() {
+        java.lang.Object ref = createdBy_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          createdBy_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string created_by = 14;</code>
+       * @return The bytes for createdBy.
        */
       public com.google.protobuf.ByteString
-          getEnabledFeaturesBytes(int index) {
-        return enabledFeatures_.getByteString(index);
+          getCreatedByBytes() {
+        java.lang.Object ref = createdBy_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          createdBy_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
       }
       /**
-       * <code>repeated string enabled_features = 14;</code>
-       * @param index The index to set the value at.
-       * @param value The enabledFeatures to set.
+       * <code>string created_by = 14;</code>
+       * @param value The createdBy to set.
        * @return This builder for chaining.
        */
-      public Builder setEnabledFeatures(
-          int index, java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        ensureEnabledFeaturesIsMutable();
-        enabledFeatures_.set(index, value);
-        bitField0_ |= 0x00002000;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string enabled_features = 14;</code>
-       * @param value The enabledFeatures to add.
-       * @return This builder for chaining.
-       */
-      public Builder addEnabledFeatures(
+      public Builder setCreatedBy(
           java.lang.String value) {
         if (value == null) { throw new NullPointerException(); }
-        ensureEnabledFeaturesIsMutable();
-        enabledFeatures_.add(value);
+        createdBy_ = value;
         bitField0_ |= 0x00002000;
         onChanged();
         return this;
       }
       /**
-       * <code>repeated string enabled_features = 14;</code>
-       * @param values The enabledFeatures to add.
+       * <code>string created_by = 14;</code>
        * @return This builder for chaining.
        */
-      public Builder addAllEnabledFeatures(
-          java.lang.Iterable<java.lang.String> values) {
-        ensureEnabledFeaturesIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, enabledFeatures_);
-        bitField0_ |= 0x00002000;
+      public Builder clearCreatedBy() {
+        createdBy_ = getDefaultInstance().getCreatedBy();
+        bitField0_ = (bitField0_ & ~0x00002000);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated string enabled_features = 14;</code>
+       * <code>string created_by = 14;</code>
+       * @param value The bytes for createdBy to set.
        * @return This builder for chaining.
        */
-      public Builder clearEnabledFeatures() {
-        enabledFeatures_ =
-          com.google.protobuf.LazyStringArrayList.emptyList();
-        bitField0_ = (bitField0_ & ~0x00002000);;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string enabled_features = 14;</code>
-       * @param value The bytes of the enabledFeatures to add.
-       * @return This builder for chaining.
-       */
-      public Builder addEnabledFeaturesBytes(
+      public Builder setCreatedByBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) { throw new NullPointerException(); }
         checkByteStringIsUtf8(value);
-        ensureEnabledFeaturesIsMutable();
-        enabledFeatures_.add(value);
+        createdBy_ = value;
         bitField0_ |= 0x00002000;
         onChanged();
         return this;

@@ -24,17 +24,69 @@ public interface TenantUpdatedEventOrBuilder extends
   com.nnipa.proto.common.EventMetadataOrBuilder getMetadataOrBuilder();
 
   /**
-   * <code>.com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData update = 2;</code>
-   * @return Whether the update field is set.
+   * <code>.com.nnipa.proto.tenant.TenantCreatedEvent.TenantData tenant = 2;</code>
+   * @return Whether the tenant field is set.
    */
-  boolean hasUpdate();
+  boolean hasTenant();
   /**
-   * <code>.com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData update = 2;</code>
-   * @return The update.
+   * <code>.com.nnipa.proto.tenant.TenantCreatedEvent.TenantData tenant = 2;</code>
+   * @return The tenant.
    */
-  com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData getUpdate();
+  com.nnipa.proto.tenant.TenantCreatedEvent.TenantData getTenant();
   /**
-   * <code>.com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateData update = 2;</code>
+   * <code>.com.nnipa.proto.tenant.TenantCreatedEvent.TenantData tenant = 2;</code>
    */
-  com.nnipa.proto.tenant.TenantUpdatedEvent.UpdateDataOrBuilder getUpdateOrBuilder();
+  com.nnipa.proto.tenant.TenantCreatedEvent.TenantDataOrBuilder getTenantOrBuilder();
+
+  /**
+   * <code>.google.protobuf.Timestamp updated_at = 3;</code>
+   * @return Whether the updatedAt field is set.
+   */
+  boolean hasUpdatedAt();
+  /**
+   * <code>.google.protobuf.Timestamp updated_at = 3;</code>
+   * @return The updatedAt.
+   */
+  com.google.protobuf.Timestamp getUpdatedAt();
+  /**
+   * <code>.google.protobuf.Timestamp updated_at = 3;</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getUpdatedAtOrBuilder();
+
+  /**
+   * <code>string updated_by = 4;</code>
+   * @return The updatedBy.
+   */
+  java.lang.String getUpdatedBy();
+  /**
+   * <code>string updated_by = 4;</code>
+   * @return The bytes for updatedBy.
+   */
+  com.google.protobuf.ByteString
+      getUpdatedByBytes();
+
+  /**
+   * <code>repeated string changed_fields = 5;</code>
+   * @return A list containing the changedFields.
+   */
+  java.util.List<java.lang.String>
+      getChangedFieldsList();
+  /**
+   * <code>repeated string changed_fields = 5;</code>
+   * @return The count of changedFields.
+   */
+  int getChangedFieldsCount();
+  /**
+   * <code>repeated string changed_fields = 5;</code>
+   * @param index The index of the element to return.
+   * @return The changedFields at the given index.
+   */
+  java.lang.String getChangedFields(int index);
+  /**
+   * <code>repeated string changed_fields = 5;</code>
+   * @param index The index of the value to return.
+   * @return The bytes of the changedFields at the given index.
+   */
+  com.google.protobuf.ByteString
+      getChangedFieldsBytes(int index);
 }

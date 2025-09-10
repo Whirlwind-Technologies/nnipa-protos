@@ -70,6 +70,26 @@ public final class CommonProtos {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_nnipa_proto_common_StorageMetadata_CustomMetadataEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_nnipa_proto_common_CommandMetadata_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_nnipa_proto_common_CommandMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_nnipa_proto_common_CommandMetadata_HeadersEntry_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_nnipa_proto_common_CommandMetadata_HeadersEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_nnipa_proto_common_ErrorResponse_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_nnipa_proto_common_ErrorResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_nnipa_proto_common_ErrorResponse_DetailsEntry_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_nnipa_proto_common_ErrorResponse_DetailsEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -126,8 +146,21 @@ public final class CommonProtos {
       "adata\030\013 \003(\0132;.com.nnipa.proto.common.Sto" +
       "rageMetadata.CustomMetadataEntry\0325\n\023Cust" +
       "omMetadataEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 " +
-      "\001(\t:\0028\001B(\n\026com.nnipa.proto.commonB\014Commo" +
-      "nProtosP\001b\006proto3"
+      "\001(\t:\0028\001\"\224\002\n\017CommandMetadata\022\022\n\ncommand_i" +
+      "d\030\001 \001(\t\022-\n\ttimestamp\030\002 \001(\0132\032.google.prot" +
+      "obuf.Timestamp\022\016\n\006source\030\003 \001(\t\022\016\n\006target" +
+      "\030\004 \001(\t\022\026\n\016correlation_id\030\005 \001(\t\022\017\n\007user_i" +
+      "d\030\006 \001(\t\022E\n\007headers\030\007 \003(\01324.com.nnipa.pro" +
+      "to.common.CommandMetadata.HeadersEntry\032." +
+      "\n\014HeadersEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001" +
+      "(\t:\0028\001\"\352\001\n\rErrorResponse\022\020\n\010error_id\030\001 \001" +
+      "(\t\022\022\n\nerror_code\030\002 \001(\t\022\017\n\007message\030\003 \001(\t\022" +
+      "-\n\ttimestamp\030\004 \001(\0132\032.google.protobuf.Tim" +
+      "estamp\022C\n\007details\030\005 \003(\01322.com.nnipa.prot" +
+      "o.common.ErrorResponse.DetailsEntry\032.\n\014D" +
+      "etailsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:" +
+      "\0028\001B(\n\026com.nnipa.proto.commonB\014CommonPro" +
+      "tosP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -200,6 +233,30 @@ public final class CommonProtos {
     internal_static_com_nnipa_proto_common_StorageMetadata_CustomMetadataEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nnipa_proto_common_StorageMetadata_CustomMetadataEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_com_nnipa_proto_common_CommandMetadata_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_com_nnipa_proto_common_CommandMetadata_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_nnipa_proto_common_CommandMetadata_descriptor,
+        new java.lang.String[] { "CommandId", "Timestamp", "Source", "Target", "CorrelationId", "UserId", "Headers", });
+    internal_static_com_nnipa_proto_common_CommandMetadata_HeadersEntry_descriptor =
+      internal_static_com_nnipa_proto_common_CommandMetadata_descriptor.getNestedTypes().get(0);
+    internal_static_com_nnipa_proto_common_CommandMetadata_HeadersEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_nnipa_proto_common_CommandMetadata_HeadersEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_com_nnipa_proto_common_ErrorResponse_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_com_nnipa_proto_common_ErrorResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_nnipa_proto_common_ErrorResponse_descriptor,
+        new java.lang.String[] { "ErrorId", "ErrorCode", "Message", "Timestamp", "Details", });
+    internal_static_com_nnipa_proto_common_ErrorResponse_DetailsEntry_descriptor =
+      internal_static_com_nnipa_proto_common_ErrorResponse_descriptor.getNestedTypes().get(0);
+    internal_static_com_nnipa_proto_common_ErrorResponse_DetailsEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_nnipa_proto_common_ErrorResponse_DetailsEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     com.google.protobuf.TimestampProto.getDescriptor();
     com.nnipa.proto.common.Enums.getDescriptor();
