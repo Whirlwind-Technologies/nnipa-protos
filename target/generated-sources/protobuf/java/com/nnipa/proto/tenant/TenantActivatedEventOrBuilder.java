@@ -36,41 +36,41 @@ public interface TenantActivatedEventOrBuilder extends
       getTenantIdBytes();
 
   /**
-   * <code>string activated_by = 3;</code>
+   * <code>string tenant_code = 3;</code>
+   * @return The tenantCode.
+   */
+  java.lang.String getTenantCode();
+  /**
+   * <code>string tenant_code = 3;</code>
+   * @return The bytes for tenantCode.
+   */
+  com.google.protobuf.ByteString
+      getTenantCodeBytes();
+
+  /**
+   * <code>string activated_by = 4;</code>
    * @return The activatedBy.
    */
   java.lang.String getActivatedBy();
   /**
-   * <code>string activated_by = 3;</code>
+   * <code>string activated_by = 4;</code>
    * @return The bytes for activatedBy.
    */
   com.google.protobuf.ByteString
       getActivatedByBytes();
 
   /**
-   * <code>.google.protobuf.Timestamp activated_at = 4;</code>
+   * <code>.google.protobuf.Timestamp activated_at = 5;</code>
    * @return Whether the activatedAt field is set.
    */
   boolean hasActivatedAt();
   /**
-   * <code>.google.protobuf.Timestamp activated_at = 4;</code>
+   * <code>.google.protobuf.Timestamp activated_at = 5;</code>
    * @return The activatedAt.
    */
   com.google.protobuf.Timestamp getActivatedAt();
   /**
-   * <code>.google.protobuf.Timestamp activated_at = 4;</code>
+   * <code>.google.protobuf.Timestamp activated_at = 5;</code>
    */
   com.google.protobuf.TimestampOrBuilder getActivatedAtOrBuilder();
-
-  /**
-   * <code>string reason = 5;</code>
-   * @return The reason.
-   */
-  java.lang.String getReason();
-  /**
-   * <code>string reason = 5;</code>
-   * @return The bytes for reason.
-   */
-  com.google.protobuf.ByteString
-      getReasonBytes();
 }

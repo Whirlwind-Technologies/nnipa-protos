@@ -9,49 +9,131 @@ import "google/protobuf/timestamp.proto";
 import "common/common.proto";
 import "common/enums.proto";
 
+// Shared TenantData message used across events
+message TenantData {
+  string tenant_id = 1;
+  string tenant_code = 2;
+  string name = 3;
+  string organization_type = 4;
+  string status = 5;
+  google.protobuf.Timestamp created_at = 6;
+
+  // Optional fields
+  string display_name = 7;
+  string organization_email = 8;
+  string country = 9;
+  string isolation_strategy = 10;
+  int32 max_users = 11;
+  int32 storage_quota_gb = 12;
+}
+
+// Shared SubscriptionData message used across events
+message SubscriptionData {
+  string subscription_id = 1;
+  string tenant_id = 2;
+  string plan = 3;
+  string status = 4;
+  google.protobuf.Timestamp start_date = 5;
+
+  // Optional fields
+  google.protobuf.Timestamp end_date = 6;
+  double monthly_price = 7;
+  string currency = 8;
+  string billing_cycle = 9;
+  google.protobuf.Timestamp next_renewal_date = 10;
+  bool auto_renew = 11;
+}
+
 // Event: Tenant Created
 message TenantCreatedEvent {
   com.nnipa.proto.common.EventMetadata metadata = 1;
-
-  message TenantData {
-    string tenant_id = 1;
-    string tenant_code = 2;
-    string name = 3;
-    string organization_type = 4;
-    string subscription_plan = 5;
-    string billing_cycle = 6;
-    string isolation_strategy = 7;
-    string status = 8;
-    int32 max_users = 9;
-    map<string, string> metadata = 10;
-    map<string, string> settings = 11;
-    map<string, bool> feature_flags = 12;
-    google.protobuf.Timestamp created_at = 13;
-    string created_by = 14;
-  }
-
   TenantData tenant = 2;
 }
 
 // Event: Tenant Updated
 message TenantUpdatedEvent {
   com.nnipa.proto.common.EventMetadata metadata = 1;
-  TenantCreatedEvent.TenantData tenant = 2;
-  google.protobuf.Timestamp updated_at = 3;
-  string updated_by = 4;
-  repeated string changed_fields = 5;
+  TenantData tenant = 2;
+  string updated_by = 3;
+  google.protobuf.Timestamp updated_at = 4;
 }
 
 // Event: Tenant Activated
 message TenantActivatedEvent {
   com.nnipa.proto.common.EventMetadata metadata = 1;
   string tenant_id = 2;
-  string activated_by = 3;
-  google.protobuf.Timestamp activated_at = 4;
-  string reason = 5;
+  string tenant_code = 3;
+  string activated_by = 4;
+  google.protobuf.Timestamp activated_at = 5;
 }
 
-// Event: Tenant Deactivated
+// Event: Tenant Suspended
+message TenantSuspendedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string tenant_id = 2;
+  string tenant_code = 3;
+  string reason = 4;
+  string suspended_by = 5;
+  google.protobuf.Timestamp suspended_at = 6;
+}
+
+// Event: Tenant Deleted
+message TenantDeletedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string tenant_id = 2;
+  string tenant_code = 3;
+  string deleted_by = 4;
+  google.protobuf.Timestamp deleted_at = 5;
+  bool permanent = 6;
+}
+
+// Event: Subscription Created
+message SubscriptionCreatedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  SubscriptionData subscription = 2;
+}
+
+// Event: Subscription Updated
+message SubscriptionUpdatedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  SubscriptionData subscription = 2;
+  string previous_plan = 3;
+  google.protobuf.Timestamp updated_at = 4;
+}
+
+// Event: Subscription Cancelled
+message SubscriptionCancelledEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string subscription_id = 2;
+  string tenant_id = 3;
+  string plan = 4;
+  string reason = 5;
+  google.protobuf.Timestamp cancelled_at = 6;
+  google.protobuf.Timestamp effective_date = 7;
+}
+
+// Event: Feature Enabled
+message FeatureEnabledEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string tenant_id = 2;
+  string feature_code = 3;
+  string feature_name = 4;
+  string category = 5;
+  google.protobuf.Timestamp enabled_at = 6;
+  bool trial_enabled = 7;
+  int32 trial_days = 8;
+}
+
+// Event: Feature Disabled
+message FeatureDisabledEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string tenant_id = 2;
+  string feature_code = 3;
+  string reason = 4;
+  google.protobuf.Timestamp disabled_at = 5;
+}
+
+// Legacy events (keeping for backward compatibility if needed)
 message TenantDeactivatedEvent {
   com.nnipa.proto.common.EventMetadata metadata = 1;
   string tenant_id = 2;
@@ -61,7 +143,6 @@ message TenantDeactivatedEvent {
   string deactivated_by = 6;
 }
 
-// Event: Subscription Changed
 message SubscriptionChangedEvent {
   com.nnipa.proto.common.EventMetadata metadata = 1;
 
@@ -78,7 +159,6 @@ message SubscriptionChangedEvent {
   SubscriptionChange change = 2;
 }
 
-// Event: Tenant Migrated
 message TenantMigratedEvent {
   com.nnipa.proto.common.EventMetadata metadata = 1;
 
@@ -112,16 +192,6 @@ message TenantSubscriptionChangedEvent {
   SubscriptionData subscription_data = 2;
 }
 
-// Event: Tenant Suspended
-message TenantSuspendedEvent {
-  com.nnipa.proto.common.EventMetadata metadata = 1;
-  string tenant_id = 2;
-  string reason = 3;
-  google.protobuf.Timestamp suspended_at = 4;
-  google.protobuf.Timestamp auto_resume_at = 5;
-}
-
-// Event: Tenant Reactivated
 message TenantReactivatedEvent {
   com.nnipa.proto.common.EventMetadata metadata = 1;
   string tenant_id = 2;

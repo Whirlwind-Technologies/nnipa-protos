@@ -22,7 +22,9 @@ private static final long serialVersionUID = 0L;
   }
   private TenantSuspendedEvent() {
     tenantId_ = "";
+    tenantCode_ = "";
     reason_ = "";
+    suspendedBy_ = "";
   }
 
   @java.lang.Override
@@ -111,11 +113,50 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int REASON_FIELD_NUMBER = 3;
+  public static final int TENANT_CODE_FIELD_NUMBER = 3;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object tenantCode_ = "";
+  /**
+   * <code>string tenant_code = 3;</code>
+   * @return The tenantCode.
+   */
+  @java.lang.Override
+  public java.lang.String getTenantCode() {
+    java.lang.Object ref = tenantCode_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      tenantCode_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string tenant_code = 3;</code>
+   * @return The bytes for tenantCode.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getTenantCodeBytes() {
+    java.lang.Object ref = tenantCode_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      tenantCode_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int REASON_FIELD_NUMBER = 4;
   @SuppressWarnings("serial")
   private volatile java.lang.Object reason_ = "";
   /**
-   * <code>string reason = 3;</code>
+   * <code>string reason = 4;</code>
    * @return The reason.
    */
   @java.lang.Override
@@ -132,7 +173,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string reason = 3;</code>
+   * <code>string reason = 4;</code>
    * @return The bytes for reason.
    */
   @java.lang.Override
@@ -150,10 +191,49 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int SUSPENDED_AT_FIELD_NUMBER = 4;
+  public static final int SUSPENDED_BY_FIELD_NUMBER = 5;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object suspendedBy_ = "";
+  /**
+   * <code>string suspended_by = 5;</code>
+   * @return The suspendedBy.
+   */
+  @java.lang.Override
+  public java.lang.String getSuspendedBy() {
+    java.lang.Object ref = suspendedBy_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      suspendedBy_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string suspended_by = 5;</code>
+   * @return The bytes for suspendedBy.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getSuspendedByBytes() {
+    java.lang.Object ref = suspendedBy_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      suspendedBy_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SUSPENDED_AT_FIELD_NUMBER = 6;
   private com.google.protobuf.Timestamp suspendedAt_;
   /**
-   * <code>.google.protobuf.Timestamp suspended_at = 4;</code>
+   * <code>.google.protobuf.Timestamp suspended_at = 6;</code>
    * @return Whether the suspendedAt field is set.
    */
   @java.lang.Override
@@ -161,7 +241,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000002) != 0);
   }
   /**
-   * <code>.google.protobuf.Timestamp suspended_at = 4;</code>
+   * <code>.google.protobuf.Timestamp suspended_at = 6;</code>
    * @return The suspendedAt.
    */
   @java.lang.Override
@@ -169,37 +249,11 @@ private static final long serialVersionUID = 0L;
     return suspendedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : suspendedAt_;
   }
   /**
-   * <code>.google.protobuf.Timestamp suspended_at = 4;</code>
+   * <code>.google.protobuf.Timestamp suspended_at = 6;</code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getSuspendedAtOrBuilder() {
     return suspendedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : suspendedAt_;
-  }
-
-  public static final int AUTO_RESUME_AT_FIELD_NUMBER = 5;
-  private com.google.protobuf.Timestamp autoResumeAt_;
-  /**
-   * <code>.google.protobuf.Timestamp auto_resume_at = 5;</code>
-   * @return Whether the autoResumeAt field is set.
-   */
-  @java.lang.Override
-  public boolean hasAutoResumeAt() {
-    return ((bitField0_ & 0x00000004) != 0);
-  }
-  /**
-   * <code>.google.protobuf.Timestamp auto_resume_at = 5;</code>
-   * @return The autoResumeAt.
-   */
-  @java.lang.Override
-  public com.google.protobuf.Timestamp getAutoResumeAt() {
-    return autoResumeAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : autoResumeAt_;
-  }
-  /**
-   * <code>.google.protobuf.Timestamp auto_resume_at = 5;</code>
-   */
-  @java.lang.Override
-  public com.google.protobuf.TimestampOrBuilder getAutoResumeAtOrBuilder() {
-    return autoResumeAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : autoResumeAt_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -222,14 +276,17 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tenantId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, tenantId_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tenantCode_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, tenantCode_);
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reason_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, reason_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, reason_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(suspendedBy_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, suspendedBy_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      output.writeMessage(4, getSuspendedAt());
-    }
-    if (((bitField0_ & 0x00000004) != 0)) {
-      output.writeMessage(5, getAutoResumeAt());
+      output.writeMessage(6, getSuspendedAt());
     }
     getUnknownFields().writeTo(output);
   }
@@ -247,16 +304,18 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tenantId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, tenantId_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tenantCode_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, tenantCode_);
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reason_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, reason_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, reason_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(suspendedBy_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, suspendedBy_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, getSuspendedAt());
-    }
-    if (((bitField0_ & 0x00000004) != 0)) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, getAutoResumeAt());
+        .computeMessageSize(6, getSuspendedAt());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -280,17 +339,16 @@ private static final long serialVersionUID = 0L;
     }
     if (!getTenantId()
         .equals(other.getTenantId())) return false;
+    if (!getTenantCode()
+        .equals(other.getTenantCode())) return false;
     if (!getReason()
         .equals(other.getReason())) return false;
+    if (!getSuspendedBy()
+        .equals(other.getSuspendedBy())) return false;
     if (hasSuspendedAt() != other.hasSuspendedAt()) return false;
     if (hasSuspendedAt()) {
       if (!getSuspendedAt()
           .equals(other.getSuspendedAt())) return false;
-    }
-    if (hasAutoResumeAt() != other.hasAutoResumeAt()) return false;
-    if (hasAutoResumeAt()) {
-      if (!getAutoResumeAt()
-          .equals(other.getAutoResumeAt())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -309,15 +367,15 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + TENANT_ID_FIELD_NUMBER;
     hash = (53 * hash) + getTenantId().hashCode();
+    hash = (37 * hash) + TENANT_CODE_FIELD_NUMBER;
+    hash = (53 * hash) + getTenantCode().hashCode();
     hash = (37 * hash) + REASON_FIELD_NUMBER;
     hash = (53 * hash) + getReason().hashCode();
+    hash = (37 * hash) + SUSPENDED_BY_FIELD_NUMBER;
+    hash = (53 * hash) + getSuspendedBy().hashCode();
     if (hasSuspendedAt()) {
       hash = (37 * hash) + SUSPENDED_AT_FIELD_NUMBER;
       hash = (53 * hash) + getSuspendedAt().hashCode();
-    }
-    if (hasAutoResumeAt()) {
-      hash = (37 * hash) + AUTO_RESUME_AT_FIELD_NUMBER;
-      hash = (53 * hash) + getAutoResumeAt().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -455,7 +513,6 @@ private static final long serialVersionUID = 0L;
               .alwaysUseFieldBuilders) {
         getMetadataFieldBuilder();
         getSuspendedAtFieldBuilder();
-        getAutoResumeAtFieldBuilder();
       }
     }
     @java.lang.Override
@@ -468,16 +525,13 @@ private static final long serialVersionUID = 0L;
         metadataBuilder_ = null;
       }
       tenantId_ = "";
+      tenantCode_ = "";
       reason_ = "";
+      suspendedBy_ = "";
       suspendedAt_ = null;
       if (suspendedAtBuilder_ != null) {
         suspendedAtBuilder_.dispose();
         suspendedAtBuilder_ = null;
-      }
-      autoResumeAt_ = null;
-      if (autoResumeAtBuilder_ != null) {
-        autoResumeAtBuilder_.dispose();
-        autoResumeAtBuilder_ = null;
       }
       return this;
     }
@@ -523,19 +577,19 @@ private static final long serialVersionUID = 0L;
         result.tenantId_ = tenantId_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.reason_ = reason_;
+        result.tenantCode_ = tenantCode_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.reason_ = reason_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.suspendedBy_ = suspendedBy_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.suspendedAt_ = suspendedAtBuilder_ == null
             ? suspendedAt_
             : suspendedAtBuilder_.build();
         to_bitField0_ |= 0x00000002;
-      }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.autoResumeAt_ = autoResumeAtBuilder_ == null
-            ? autoResumeAt_
-            : autoResumeAtBuilder_.build();
-        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -592,16 +646,23 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (!other.getTenantCode().isEmpty()) {
+        tenantCode_ = other.tenantCode_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
       if (!other.getReason().isEmpty()) {
         reason_ = other.reason_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      if (!other.getSuspendedBy().isEmpty()) {
+        suspendedBy_ = other.suspendedBy_;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasSuspendedAt()) {
         mergeSuspendedAt(other.getSuspendedAt());
-      }
-      if (other.hasAutoResumeAt()) {
-        mergeAutoResumeAt(other.getAutoResumeAt());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -642,24 +703,27 @@ private static final long serialVersionUID = 0L;
               break;
             } // case 18
             case 26: {
-              reason_ = input.readStringRequireUtf8();
+              tenantCode_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000004;
               break;
             } // case 26
             case 34: {
-              input.readMessage(
-                  getSuspendedAtFieldBuilder().getBuilder(),
-                  extensionRegistry);
+              reason_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000008;
               break;
             } // case 34
             case 42: {
-              input.readMessage(
-                  getAutoResumeAtFieldBuilder().getBuilder(),
-                  extensionRegistry);
+              suspendedBy_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000010;
               break;
             } // case 42
+            case 50: {
+              input.readMessage(
+                  getSuspendedAtFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000020;
+              break;
+            } // case 50
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -870,9 +934,81 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object tenantCode_ = "";
+    /**
+     * <code>string tenant_code = 3;</code>
+     * @return The tenantCode.
+     */
+    public java.lang.String getTenantCode() {
+      java.lang.Object ref = tenantCode_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        tenantCode_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string tenant_code = 3;</code>
+     * @return The bytes for tenantCode.
+     */
+    public com.google.protobuf.ByteString
+        getTenantCodeBytes() {
+      java.lang.Object ref = tenantCode_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        tenantCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string tenant_code = 3;</code>
+     * @param value The tenantCode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTenantCode(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      tenantCode_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string tenant_code = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTenantCode() {
+      tenantCode_ = getDefaultInstance().getTenantCode();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string tenant_code = 3;</code>
+     * @param value The bytes for tenantCode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTenantCodeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      tenantCode_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object reason_ = "";
     /**
-     * <code>string reason = 3;</code>
+     * <code>string reason = 4;</code>
      * @return The reason.
      */
     public java.lang.String getReason() {
@@ -888,7 +1024,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string reason = 3;</code>
+     * <code>string reason = 4;</code>
      * @return The bytes for reason.
      */
     public com.google.protobuf.ByteString
@@ -905,7 +1041,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string reason = 3;</code>
+     * <code>string reason = 4;</code>
      * @param value The reason to set.
      * @return This builder for chaining.
      */
@@ -913,22 +1049,22 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       reason_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
     /**
-     * <code>string reason = 3;</code>
+     * <code>string reason = 4;</code>
      * @return This builder for chaining.
      */
     public Builder clearReason() {
       reason_ = getDefaultInstance().getReason();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
     /**
-     * <code>string reason = 3;</code>
+     * <code>string reason = 4;</code>
      * @param value The bytes for reason to set.
      * @return This builder for chaining.
      */
@@ -937,7 +1073,79 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       reason_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object suspendedBy_ = "";
+    /**
+     * <code>string suspended_by = 5;</code>
+     * @return The suspendedBy.
+     */
+    public java.lang.String getSuspendedBy() {
+      java.lang.Object ref = suspendedBy_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        suspendedBy_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string suspended_by = 5;</code>
+     * @return The bytes for suspendedBy.
+     */
+    public com.google.protobuf.ByteString
+        getSuspendedByBytes() {
+      java.lang.Object ref = suspendedBy_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        suspendedBy_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string suspended_by = 5;</code>
+     * @param value The suspendedBy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSuspendedBy(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      suspendedBy_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string suspended_by = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSuspendedBy() {
+      suspendedBy_ = getDefaultInstance().getSuspendedBy();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string suspended_by = 5;</code>
+     * @param value The bytes for suspendedBy to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSuspendedByBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      suspendedBy_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -946,14 +1154,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> suspendedAtBuilder_;
     /**
-     * <code>.google.protobuf.Timestamp suspended_at = 4;</code>
+     * <code>.google.protobuf.Timestamp suspended_at = 6;</code>
      * @return Whether the suspendedAt field is set.
      */
     public boolean hasSuspendedAt() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
     /**
-     * <code>.google.protobuf.Timestamp suspended_at = 4;</code>
+     * <code>.google.protobuf.Timestamp suspended_at = 6;</code>
      * @return The suspendedAt.
      */
     public com.google.protobuf.Timestamp getSuspendedAt() {
@@ -964,7 +1172,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Timestamp suspended_at = 4;</code>
+     * <code>.google.protobuf.Timestamp suspended_at = 6;</code>
      */
     public Builder setSuspendedAt(com.google.protobuf.Timestamp value) {
       if (suspendedAtBuilder_ == null) {
@@ -975,12 +1183,12 @@ private static final long serialVersionUID = 0L;
       } else {
         suspendedAtBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp suspended_at = 4;</code>
+     * <code>.google.protobuf.Timestamp suspended_at = 6;</code>
      */
     public Builder setSuspendedAt(
         com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -989,16 +1197,16 @@ private static final long serialVersionUID = 0L;
       } else {
         suspendedAtBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp suspended_at = 4;</code>
+     * <code>.google.protobuf.Timestamp suspended_at = 6;</code>
      */
     public Builder mergeSuspendedAt(com.google.protobuf.Timestamp value) {
       if (suspendedAtBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0) &&
+        if (((bitField0_ & 0x00000020) != 0) &&
           suspendedAt_ != null &&
           suspendedAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getSuspendedAtBuilder().mergeFrom(value);
@@ -1009,16 +1217,16 @@ private static final long serialVersionUID = 0L;
         suspendedAtBuilder_.mergeFrom(value);
       }
       if (suspendedAt_ != null) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp suspended_at = 4;</code>
+     * <code>.google.protobuf.Timestamp suspended_at = 6;</code>
      */
     public Builder clearSuspendedAt() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000020);
       suspendedAt_ = null;
       if (suspendedAtBuilder_ != null) {
         suspendedAtBuilder_.dispose();
@@ -1028,15 +1236,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp suspended_at = 4;</code>
+     * <code>.google.protobuf.Timestamp suspended_at = 6;</code>
      */
     public com.google.protobuf.Timestamp.Builder getSuspendedAtBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return getSuspendedAtFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.protobuf.Timestamp suspended_at = 4;</code>
+     * <code>.google.protobuf.Timestamp suspended_at = 6;</code>
      */
     public com.google.protobuf.TimestampOrBuilder getSuspendedAtOrBuilder() {
       if (suspendedAtBuilder_ != null) {
@@ -1047,7 +1255,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Timestamp suspended_at = 4;</code>
+     * <code>.google.protobuf.Timestamp suspended_at = 6;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -1061,127 +1269,6 @@ private static final long serialVersionUID = 0L;
         suspendedAt_ = null;
       }
       return suspendedAtBuilder_;
-    }
-
-    private com.google.protobuf.Timestamp autoResumeAt_;
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> autoResumeAtBuilder_;
-    /**
-     * <code>.google.protobuf.Timestamp auto_resume_at = 5;</code>
-     * @return Whether the autoResumeAt field is set.
-     */
-    public boolean hasAutoResumeAt() {
-      return ((bitField0_ & 0x00000010) != 0);
-    }
-    /**
-     * <code>.google.protobuf.Timestamp auto_resume_at = 5;</code>
-     * @return The autoResumeAt.
-     */
-    public com.google.protobuf.Timestamp getAutoResumeAt() {
-      if (autoResumeAtBuilder_ == null) {
-        return autoResumeAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : autoResumeAt_;
-      } else {
-        return autoResumeAtBuilder_.getMessage();
-      }
-    }
-    /**
-     * <code>.google.protobuf.Timestamp auto_resume_at = 5;</code>
-     */
-    public Builder setAutoResumeAt(com.google.protobuf.Timestamp value) {
-      if (autoResumeAtBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        autoResumeAt_ = value;
-      } else {
-        autoResumeAtBuilder_.setMessage(value);
-      }
-      bitField0_ |= 0x00000010;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.google.protobuf.Timestamp auto_resume_at = 5;</code>
-     */
-    public Builder setAutoResumeAt(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
-      if (autoResumeAtBuilder_ == null) {
-        autoResumeAt_ = builderForValue.build();
-      } else {
-        autoResumeAtBuilder_.setMessage(builderForValue.build());
-      }
-      bitField0_ |= 0x00000010;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.google.protobuf.Timestamp auto_resume_at = 5;</code>
-     */
-    public Builder mergeAutoResumeAt(com.google.protobuf.Timestamp value) {
-      if (autoResumeAtBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0) &&
-          autoResumeAt_ != null &&
-          autoResumeAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
-          getAutoResumeAtBuilder().mergeFrom(value);
-        } else {
-          autoResumeAt_ = value;
-        }
-      } else {
-        autoResumeAtBuilder_.mergeFrom(value);
-      }
-      if (autoResumeAt_ != null) {
-        bitField0_ |= 0x00000010;
-        onChanged();
-      }
-      return this;
-    }
-    /**
-     * <code>.google.protobuf.Timestamp auto_resume_at = 5;</code>
-     */
-    public Builder clearAutoResumeAt() {
-      bitField0_ = (bitField0_ & ~0x00000010);
-      autoResumeAt_ = null;
-      if (autoResumeAtBuilder_ != null) {
-        autoResumeAtBuilder_.dispose();
-        autoResumeAtBuilder_ = null;
-      }
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>.google.protobuf.Timestamp auto_resume_at = 5;</code>
-     */
-    public com.google.protobuf.Timestamp.Builder getAutoResumeAtBuilder() {
-      bitField0_ |= 0x00000010;
-      onChanged();
-      return getAutoResumeAtFieldBuilder().getBuilder();
-    }
-    /**
-     * <code>.google.protobuf.Timestamp auto_resume_at = 5;</code>
-     */
-    public com.google.protobuf.TimestampOrBuilder getAutoResumeAtOrBuilder() {
-      if (autoResumeAtBuilder_ != null) {
-        return autoResumeAtBuilder_.getMessageOrBuilder();
-      } else {
-        return autoResumeAt_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : autoResumeAt_;
-      }
-    }
-    /**
-     * <code>.google.protobuf.Timestamp auto_resume_at = 5;</code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
-        getAutoResumeAtFieldBuilder() {
-      if (autoResumeAtBuilder_ == null) {
-        autoResumeAtBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getAutoResumeAt(),
-                getParentForChildren(),
-                isClean());
-        autoResumeAt_ = null;
-      }
-      return autoResumeAtBuilder_;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

@@ -6,7 +6,7 @@ package com.nnipa.proto.tenant;
 
 /**
  * <pre>
- * Event: Tenant Deactivated
+ * Legacy events (keeping for backward compatibility if needed)
  * </pre>
  *
  * Protobuf type {@code com.nnipa.proto.tenant.TenantDeactivatedEvent}
@@ -476,7 +476,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Event: Tenant Deactivated
+   * Legacy events (keeping for backward compatibility if needed)
    * </pre>
    *
    * Protobuf type {@code com.nnipa.proto.tenant.TenantDeactivatedEvent}

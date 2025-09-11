@@ -5,10 +5,6 @@
 package com.nnipa.proto.tenant;
 
 /**
- * <pre>
- * Event: Subscription Changed
- * </pre>
- *
  * Protobuf type {@code com.nnipa.proto.tenant.SubscriptionChangedEvent}
  */
 public final class SubscriptionChangedEvent extends
@@ -1615,10 +1611,6 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
-   * <pre>
-   * Event: Subscription Changed
-   * </pre>
-   *
    * Protobuf type {@code com.nnipa.proto.tenant.SubscriptionChangedEvent}
    */
   public static final class Builder extends

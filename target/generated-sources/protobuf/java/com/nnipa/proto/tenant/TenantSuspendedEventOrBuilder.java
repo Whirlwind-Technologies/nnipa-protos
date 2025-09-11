@@ -36,44 +36,53 @@ public interface TenantSuspendedEventOrBuilder extends
       getTenantIdBytes();
 
   /**
-   * <code>string reason = 3;</code>
+   * <code>string tenant_code = 3;</code>
+   * @return The tenantCode.
+   */
+  java.lang.String getTenantCode();
+  /**
+   * <code>string tenant_code = 3;</code>
+   * @return The bytes for tenantCode.
+   */
+  com.google.protobuf.ByteString
+      getTenantCodeBytes();
+
+  /**
+   * <code>string reason = 4;</code>
    * @return The reason.
    */
   java.lang.String getReason();
   /**
-   * <code>string reason = 3;</code>
+   * <code>string reason = 4;</code>
    * @return The bytes for reason.
    */
   com.google.protobuf.ByteString
       getReasonBytes();
 
   /**
-   * <code>.google.protobuf.Timestamp suspended_at = 4;</code>
+   * <code>string suspended_by = 5;</code>
+   * @return The suspendedBy.
+   */
+  java.lang.String getSuspendedBy();
+  /**
+   * <code>string suspended_by = 5;</code>
+   * @return The bytes for suspendedBy.
+   */
+  com.google.protobuf.ByteString
+      getSuspendedByBytes();
+
+  /**
+   * <code>.google.protobuf.Timestamp suspended_at = 6;</code>
    * @return Whether the suspendedAt field is set.
    */
   boolean hasSuspendedAt();
   /**
-   * <code>.google.protobuf.Timestamp suspended_at = 4;</code>
+   * <code>.google.protobuf.Timestamp suspended_at = 6;</code>
    * @return The suspendedAt.
    */
   com.google.protobuf.Timestamp getSuspendedAt();
   /**
-   * <code>.google.protobuf.Timestamp suspended_at = 4;</code>
+   * <code>.google.protobuf.Timestamp suspended_at = 6;</code>
    */
   com.google.protobuf.TimestampOrBuilder getSuspendedAtOrBuilder();
-
-  /**
-   * <code>.google.protobuf.Timestamp auto_resume_at = 5;</code>
-   * @return Whether the autoResumeAt field is set.
-   */
-  boolean hasAutoResumeAt();
-  /**
-   * <code>.google.protobuf.Timestamp auto_resume_at = 5;</code>
-   * @return The autoResumeAt.
-   */
-  com.google.protobuf.Timestamp getAutoResumeAt();
-  /**
-   * <code>.google.protobuf.Timestamp auto_resume_at = 5;</code>
-   */
-  com.google.protobuf.TimestampOrBuilder getAutoResumeAtOrBuilder();
 }

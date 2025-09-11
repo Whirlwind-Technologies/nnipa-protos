@@ -16,30 +16,20 @@ public final class TenantEvents {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_nnipa_proto_tenant_TenantData_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_nnipa_proto_tenant_TenantData_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_nnipa_proto_tenant_SubscriptionData_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_nnipa_proto_tenant_SubscriptionData_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_nnipa_proto_tenant_TenantCreatedEvent_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_nnipa_proto_tenant_TenantCreatedEvent_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_nnipa_proto_tenant_TenantCreatedEvent_TenantData_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_nnipa_proto_tenant_TenantCreatedEvent_TenantData_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_nnipa_proto_tenant_TenantCreatedEvent_TenantData_MetadataEntry_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_nnipa_proto_tenant_TenantCreatedEvent_TenantData_MetadataEntry_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_nnipa_proto_tenant_TenantCreatedEvent_TenantData_SettingsEntry_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_nnipa_proto_tenant_TenantCreatedEvent_TenantData_SettingsEntry_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_nnipa_proto_tenant_TenantCreatedEvent_TenantData_FeatureFlagsEntry_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_nnipa_proto_tenant_TenantCreatedEvent_TenantData_FeatureFlagsEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_nnipa_proto_tenant_TenantUpdatedEvent_descriptor;
   static final 
@@ -50,6 +40,41 @@ public final class TenantEvents {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_nnipa_proto_tenant_TenantActivatedEvent_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_nnipa_proto_tenant_TenantSuspendedEvent_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_nnipa_proto_tenant_TenantSuspendedEvent_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_nnipa_proto_tenant_TenantDeletedEvent_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_nnipa_proto_tenant_TenantDeletedEvent_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_nnipa_proto_tenant_SubscriptionCreatedEvent_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_nnipa_proto_tenant_SubscriptionCreatedEvent_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_nnipa_proto_tenant_SubscriptionUpdatedEvent_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_nnipa_proto_tenant_SubscriptionUpdatedEvent_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_nnipa_proto_tenant_SubscriptionCancelledEvent_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_nnipa_proto_tenant_SubscriptionCancelledEvent_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_nnipa_proto_tenant_FeatureEnabledEvent_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_nnipa_proto_tenant_FeatureEnabledEvent_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_nnipa_proto_tenant_FeatureDisabledEvent_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_nnipa_proto_tenant_FeatureDisabledEvent_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_nnipa_proto_tenant_TenantDeactivatedEvent_descriptor;
   static final 
@@ -91,11 +116,6 @@ public final class TenantEvents {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_nnipa_proto_tenant_TenantSubscriptionChangedEvent_SubscriptionData_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_nnipa_proto_tenant_TenantSuspendedEvent_descriptor;
-  static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_com_nnipa_proto_tenant_TenantSuspendedEvent_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_nnipa_proto_tenant_TenantReactivatedEvent_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -112,91 +132,119 @@ public final class TenantEvents {
       "\n\032tenant/tenant_events.proto\022\026com.nnipa." +
       "proto.tenant\032\037google/protobuf/timestamp." +
       "proto\032\023common/common.proto\032\022common/enums" +
-      ".proto\"\316\006\n\022TenantCreatedEvent\0227\n\010metadat" +
+      ".proto\"\251\002\n\nTenantData\022\021\n\ttenant_id\030\001 \001(\t" +
+      "\022\023\n\013tenant_code\030\002 \001(\t\022\014\n\004name\030\003 \001(\t\022\031\n\021o" +
+      "rganization_type\030\004 \001(\t\022\016\n\006status\030\005 \001(\t\022." +
+      "\n\ncreated_at\030\006 \001(\0132\032.google.protobuf.Tim" +
+      "estamp\022\024\n\014display_name\030\007 \001(\t\022\032\n\022organiza" +
+      "tion_email\030\010 \001(\t\022\017\n\007country\030\t \001(\t\022\032\n\022iso" +
+      "lation_strategy\030\n \001(\t\022\021\n\tmax_users\030\013 \001(\005" +
+      "\022\030\n\020storage_quota_gb\030\014 \001(\005\"\305\002\n\020Subscript" +
+      "ionData\022\027\n\017subscription_id\030\001 \001(\t\022\021\n\ttena" +
+      "nt_id\030\002 \001(\t\022\014\n\004plan\030\003 \001(\t\022\016\n\006status\030\004 \001(" +
+      "\t\022.\n\nstart_date\030\005 \001(\0132\032.google.protobuf." +
+      "Timestamp\022,\n\010end_date\030\006 \001(\0132\032.google.pro" +
+      "tobuf.Timestamp\022\025\n\rmonthly_price\030\007 \001(\001\022\020" +
+      "\n\010currency\030\010 \001(\t\022\025\n\rbilling_cycle\030\t \001(\t\022" +
+      "5\n\021next_renewal_date\030\n \001(\0132\032.google.prot" +
+      "obuf.Timestamp\022\022\n\nauto_renew\030\013 \001(\010\"\201\001\n\022T" +
+      "enantCreatedEvent\0227\n\010metadata\030\001 \001(\0132%.co" +
+      "m.nnipa.proto.common.EventMetadata\0222\n\006te" +
+      "nant\030\002 \001(\0132\".com.nnipa.proto.tenant.Tena" +
+      "ntData\"\305\001\n\022TenantUpdatedEvent\0227\n\010metadat" +
       "a\030\001 \001(\0132%.com.nnipa.proto.common.EventMe" +
-      "tadata\022E\n\006tenant\030\002 \001(\01325.com.nnipa.proto" +
-      ".tenant.TenantCreatedEvent.TenantData\032\267\005" +
-      "\n\nTenantData\022\021\n\ttenant_id\030\001 \001(\t\022\023\n\013tenan" +
-      "t_code\030\002 \001(\t\022\014\n\004name\030\003 \001(\t\022\031\n\021organizati" +
-      "on_type\030\004 \001(\t\022\031\n\021subscription_plan\030\005 \001(\t" +
-      "\022\025\n\rbilling_cycle\030\006 \001(\t\022\032\n\022isolation_str" +
-      "ategy\030\007 \001(\t\022\016\n\006status\030\010 \001(\t\022\021\n\tmax_users" +
-      "\030\t \001(\005\022U\n\010metadata\030\n \003(\0132C.com.nnipa.pro" +
-      "to.tenant.TenantCreatedEvent.TenantData." +
-      "MetadataEntry\022U\n\010settings\030\013 \003(\0132C.com.nn" +
-      "ipa.proto.tenant.TenantCreatedEvent.Tena" +
-      "ntData.SettingsEntry\022^\n\rfeature_flags\030\014 " +
-      "\003(\0132G.com.nnipa.proto.tenant.TenantCreat" +
-      "edEvent.TenantData.FeatureFlagsEntry\022.\n\n" +
-      "created_at\030\r \001(\0132\032.google.protobuf.Times" +
-      "tamp\022\022\n\ncreated_by\030\016 \001(\t\032/\n\rMetadataEntr" +
-      "y\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\032/\n\rSet" +
-      "tingsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\002" +
-      "8\001\0323\n\021FeatureFlagsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005" +
-      "value\030\002 \001(\010:\0028\001\"\360\001\n\022TenantUpdatedEvent\0227" +
-      "\n\010metadata\030\001 \001(\0132%.com.nnipa.proto.commo" +
-      "n.EventMetadata\022E\n\006tenant\030\002 \001(\01325.com.nn" +
-      "ipa.proto.tenant.TenantCreatedEvent.Tena" +
-      "ntData\022.\n\nupdated_at\030\003 \001(\0132\032.google.prot" +
-      "obuf.Timestamp\022\022\n\nupdated_by\030\004 \001(\t\022\026\n\016ch" +
-      "anged_fields\030\005 \003(\t\"\272\001\n\024TenantActivatedEv" +
-      "ent\0227\n\010metadata\030\001 \001(\0132%.com.nnipa.proto." +
-      "common.EventMetadata\022\021\n\ttenant_id\030\002 \001(\t\022" +
-      "\024\n\014activated_by\030\003 \001(\t\0220\n\014activated_at\030\004 " +
-      "\001(\0132\032.google.protobuf.Timestamp\022\016\n\006reaso" +
-      "n\030\005 \001(\t\"\325\001\n\026TenantDeactivatedEvent\0227\n\010me" +
-      "tadata\030\001 \001(\0132%.com.nnipa.proto.common.Ev" +
-      "entMetadata\022\021\n\ttenant_id\030\002 \001(\t\022\023\n\013tenant" +
-      "_code\030\003 \001(\t\022\016\n\006reason\030\004 \001(\t\0222\n\016deactivat" +
-      "ed_at\030\005 \001(\0132\032.google.protobuf.Timestamp\022" +
-      "\026\n\016deactivated_by\030\006 \001(\t\"\270\003\n\030Subscription" +
-      "ChangedEvent\0227\n\010metadata\030\001 \001(\0132%.com.nni" +
-      "pa.proto.common.EventMetadata\022S\n\006change\030" +
-      "\002 \001(\0132C.com.nnipa.proto.tenant.Subscript" +
-      "ionChangedEvent.SubscriptionChange\032\215\002\n\022S" +
-      "ubscriptionChange\022\021\n\ttenant_id\030\001 \001(\t\022:\n\010" +
-      "old_tier\030\002 \001(\0162(.com.nnipa.proto.common." +
-      "SubscriptionTier\022:\n\010new_tier\030\003 \001(\0162(.com" +
-      ".nnipa.proto.common.SubscriptionTier\0222\n\016" +
-      "effective_date\030\004 \001(\0132\032.google.protobuf.T" +
-      "imestamp\022\022\n\nchanged_by\030\005 \001(\t\022\016\n\006reason\030\006" +
-      " \001(\t\022\024\n\014price_change\030\007 \001(\001\"\207\004\n\023TenantMig" +
-      "ratedEvent\0227\n\010metadata\030\001 \001(\0132%.com.nnipa" +
-      ".proto.common.EventMetadata\022L\n\tmigration" +
-      "\030\002 \001(\01329.com.nnipa.proto.tenant.TenantMi" +
-      "gratedEvent.MigrationData\032\350\002\n\rMigrationD" +
-      "ata\022\021\n\ttenant_id\030\001 \001(\t\022\025\n\rfrom_strategy\030" +
-      "\002 \001(\t\022\023\n\013to_strategy\030\003 \001(\t\022.\n\nstarted_at" +
-      "\030\004 \001(\0132\032.google.protobuf.Timestamp\0220\n\014co" +
-      "mpleted_at\030\005 \001(\0132\032.google.protobuf.Times" +
-      "tamp\022\016\n\006status\030\006 \001(\t\022l\n\022migration_metada" +
-      "ta\030\007 \003(\0132P.com.nnipa.proto.tenant.Tenant" +
-      "MigratedEvent.MigrationData.MigrationMet" +
-      "adataEntry\0328\n\026MigrationMetadataEntry\022\013\n\003" +
-      "key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\317\003\n\036TenantS" +
-      "ubscriptionChangedEvent\0227\n\010metadata\030\001 \001(" +
-      "\0132%.com.nnipa.proto.common.EventMetadata" +
-      "\022b\n\021subscription_data\030\002 \001(\0132G.com.nnipa." +
-      "proto.tenant.TenantSubscriptionChangedEv" +
-      "ent.SubscriptionData\032\217\002\n\020SubscriptionDat" +
-      "a\022\021\n\ttenant_id\030\001 \001(\t\022\020\n\010old_plan\030\002 \001(\t\022\020" +
-      "\n\010new_plan\030\003 \001(\t\022.\n\nchanged_at\030\004 \001(\0132\032.g" +
-      "oogle.protobuf.Timestamp\0222\n\016effective_da" +
-      "te\030\005 \001(\0132\032.google.protobuf.Timestamp\0225\n\021" +
-      "next_billing_date\030\006 \001(\0132\032.google.protobu" +
-      "f.Timestamp\022\022\n\nchanged_by\030\007 \001(\t\022\025\n\rchang" +
-      "e_reason\030\010 \001(\t\"\330\001\n\024TenantSuspendedEvent\022" +
-      "7\n\010metadata\030\001 \001(\0132%.com.nnipa.proto.comm" +
-      "on.EventMetadata\022\021\n\ttenant_id\030\002 \001(\t\022\016\n\006r" +
-      "eason\030\003 \001(\t\0220\n\014suspended_at\030\004 \001(\0132\032.goog" +
-      "le.protobuf.Timestamp\0222\n\016auto_resume_at\030" +
-      "\005 \001(\0132\032.google.protobuf.Timestamp\"\260\001\n\026Te" +
-      "nantReactivatedEvent\0227\n\010metadata\030\001 \001(\0132%" +
-      ".com.nnipa.proto.common.EventMetadata\022\021\n" +
-      "\ttenant_id\030\002 \001(\t\0222\n\016reactivated_at\030\003 \001(\013" +
-      "2\032.google.protobuf.Timestamp\022\026\n\016reactiva" +
-      "ted_by\030\004 \001(\tB\032\n\026com.nnipa.proto.tenantP\001" +
-      "b\006proto3"
+      "tadata\0222\n\006tenant\030\002 \001(\0132\".com.nnipa.proto" +
+      ".tenant.TenantData\022\022\n\nupdated_by\030\003 \001(\t\022." +
+      "\n\nupdated_at\030\004 \001(\0132\032.google.protobuf.Tim" +
+      "estamp\"\277\001\n\024TenantActivatedEvent\0227\n\010metad" +
+      "ata\030\001 \001(\0132%.com.nnipa.proto.common.Event" +
+      "Metadata\022\021\n\ttenant_id\030\002 \001(\t\022\023\n\013tenant_co" +
+      "de\030\003 \001(\t\022\024\n\014activated_by\030\004 \001(\t\0220\n\014activa" +
+      "ted_at\030\005 \001(\0132\032.google.protobuf.Timestamp" +
+      "\"\317\001\n\024TenantSuspendedEvent\0227\n\010metadata\030\001 " +
+      "\001(\0132%.com.nnipa.proto.common.EventMetada" +
+      "ta\022\021\n\ttenant_id\030\002 \001(\t\022\023\n\013tenant_code\030\003 \001" +
+      "(\t\022\016\n\006reason\030\004 \001(\t\022\024\n\014suspended_by\030\005 \001(\t" +
+      "\0220\n\014suspended_at\030\006 \001(\0132\032.google.protobuf" +
+      ".Timestamp\"\314\001\n\022TenantDeletedEvent\0227\n\010met" +
+      "adata\030\001 \001(\0132%.com.nnipa.proto.common.Eve" +
+      "ntMetadata\022\021\n\ttenant_id\030\002 \001(\t\022\023\n\013tenant_" +
+      "code\030\003 \001(\t\022\022\n\ndeleted_by\030\004 \001(\t\022.\n\ndelete" +
+      "d_at\030\005 \001(\0132\032.google.protobuf.Timestamp\022\021" +
+      "\n\tpermanent\030\006 \001(\010\"\223\001\n\030SubscriptionCreate" +
+      "dEvent\0227\n\010metadata\030\001 \001(\0132%.com.nnipa.pro" +
+      "to.common.EventMetadata\022>\n\014subscription\030" +
+      "\002 \001(\0132(.com.nnipa.proto.tenant.Subscript" +
+      "ionData\"\332\001\n\030SubscriptionUpdatedEvent\0227\n\010" +
+      "metadata\030\001 \001(\0132%.com.nnipa.proto.common." +
+      "EventMetadata\022>\n\014subscription\030\002 \001(\0132(.co" +
+      "m.nnipa.proto.tenant.SubscriptionData\022\025\n" +
+      "\rprevious_plan\030\003 \001(\t\022.\n\nupdated_at\030\004 \001(\013" +
+      "2\032.google.protobuf.Timestamp\"\205\002\n\032Subscri" +
+      "ptionCancelledEvent\0227\n\010metadata\030\001 \001(\0132%." +
+      "com.nnipa.proto.common.EventMetadata\022\027\n\017" +
+      "subscription_id\030\002 \001(\t\022\021\n\ttenant_id\030\003 \001(\t" +
+      "\022\014\n\004plan\030\004 \001(\t\022\016\n\006reason\030\005 \001(\t\0220\n\014cancel" +
+      "led_at\030\006 \001(\0132\032.google.protobuf.Timestamp" +
+      "\0222\n\016effective_date\030\007 \001(\0132\032.google.protob" +
+      "uf.Timestamp\"\372\001\n\023FeatureEnabledEvent\0227\n\010" +
+      "metadata\030\001 \001(\0132%.com.nnipa.proto.common." +
+      "EventMetadata\022\021\n\ttenant_id\030\002 \001(\t\022\024\n\014feat" +
+      "ure_code\030\003 \001(\t\022\024\n\014feature_name\030\004 \001(\t\022\020\n\010" +
+      "category\030\005 \001(\t\022.\n\nenabled_at\030\006 \001(\0132\032.goo" +
+      "gle.protobuf.Timestamp\022\025\n\rtrial_enabled\030" +
+      "\007 \001(\010\022\022\n\ntrial_days\030\010 \001(\005\"\271\001\n\024FeatureDis" +
+      "abledEvent\0227\n\010metadata\030\001 \001(\0132%.com.nnipa" +
+      ".proto.common.EventMetadata\022\021\n\ttenant_id" +
+      "\030\002 \001(\t\022\024\n\014feature_code\030\003 \001(\t\022\016\n\006reason\030\004" +
+      " \001(\t\022/\n\013disabled_at\030\005 \001(\0132\032.google.proto" +
+      "buf.Timestamp\"\325\001\n\026TenantDeactivatedEvent" +
+      "\0227\n\010metadata\030\001 \001(\0132%.com.nnipa.proto.com" +
+      "mon.EventMetadata\022\021\n\ttenant_id\030\002 \001(\t\022\023\n\013" +
+      "tenant_code\030\003 \001(\t\022\016\n\006reason\030\004 \001(\t\0222\n\016dea" +
+      "ctivated_at\030\005 \001(\0132\032.google.protobuf.Time" +
+      "stamp\022\026\n\016deactivated_by\030\006 \001(\t\"\270\003\n\030Subscr" +
+      "iptionChangedEvent\0227\n\010metadata\030\001 \001(\0132%.c" +
+      "om.nnipa.proto.common.EventMetadata\022S\n\006c" +
+      "hange\030\002 \001(\0132C.com.nnipa.proto.tenant.Sub" +
+      "scriptionChangedEvent.SubscriptionChange" +
+      "\032\215\002\n\022SubscriptionChange\022\021\n\ttenant_id\030\001 \001" +
+      "(\t\022:\n\010old_tier\030\002 \001(\0162(.com.nnipa.proto.c" +
+      "ommon.SubscriptionTier\022:\n\010new_tier\030\003 \001(\016" +
+      "2(.com.nnipa.proto.common.SubscriptionTi" +
+      "er\0222\n\016effective_date\030\004 \001(\0132\032.google.prot" +
+      "obuf.Timestamp\022\022\n\nchanged_by\030\005 \001(\t\022\016\n\006re" +
+      "ason\030\006 \001(\t\022\024\n\014price_change\030\007 \001(\001\"\207\004\n\023Ten" +
+      "antMigratedEvent\0227\n\010metadata\030\001 \001(\0132%.com" +
+      ".nnipa.proto.common.EventMetadata\022L\n\tmig" +
+      "ration\030\002 \001(\01329.com.nnipa.proto.tenant.Te" +
+      "nantMigratedEvent.MigrationData\032\350\002\n\rMigr" +
+      "ationData\022\021\n\ttenant_id\030\001 \001(\t\022\025\n\rfrom_str" +
+      "ategy\030\002 \001(\t\022\023\n\013to_strategy\030\003 \001(\t\022.\n\nstar" +
+      "ted_at\030\004 \001(\0132\032.google.protobuf.Timestamp" +
+      "\0220\n\014completed_at\030\005 \001(\0132\032.google.protobuf" +
+      ".Timestamp\022\016\n\006status\030\006 \001(\t\022l\n\022migration_" +
+      "metadata\030\007 \003(\0132P.com.nnipa.proto.tenant." +
+      "TenantMigratedEvent.MigrationData.Migrat" +
+      "ionMetadataEntry\0328\n\026MigrationMetadataEnt" +
+      "ry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\317\003\n\036T" +
+      "enantSubscriptionChangedEvent\0227\n\010metadat" +
+      "a\030\001 \001(\0132%.com.nnipa.proto.common.EventMe" +
+      "tadata\022b\n\021subscription_data\030\002 \001(\0132G.com." +
+      "nnipa.proto.tenant.TenantSubscriptionCha" +
+      "ngedEvent.SubscriptionData\032\217\002\n\020Subscript" +
+      "ionData\022\021\n\ttenant_id\030\001 \001(\t\022\020\n\010old_plan\030\002" +
+      " \001(\t\022\020\n\010new_plan\030\003 \001(\t\022.\n\nchanged_at\030\004 \001" +
+      "(\0132\032.google.protobuf.Timestamp\0222\n\016effect" +
+      "ive_date\030\005 \001(\0132\032.google.protobuf.Timesta" +
+      "mp\0225\n\021next_billing_date\030\006 \001(\0132\032.google.p" +
+      "rotobuf.Timestamp\022\022\n\nchanged_by\030\007 \001(\t\022\025\n" +
+      "\rchange_reason\030\010 \001(\t\"\260\001\n\026TenantReactivat" +
+      "edEvent\0227\n\010metadata\030\001 \001(\0132%.com.nnipa.pr" +
+      "oto.common.EventMetadata\022\021\n\ttenant_id\030\002 " +
+      "\001(\t\0222\n\016reactivated_at\030\003 \001(\0132\032.google.pro" +
+      "tobuf.Timestamp\022\026\n\016reactivated_by\030\004 \001(\tB" +
+      "\032\n\026com.nnipa.proto.tenantP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -205,56 +253,86 @@ public final class TenantEvents {
           com.nnipa.proto.common.CommonProtos.getDescriptor(),
           com.nnipa.proto.common.Enums.getDescriptor(),
         });
-    internal_static_com_nnipa_proto_tenant_TenantCreatedEvent_descriptor =
+    internal_static_com_nnipa_proto_tenant_TenantData_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_com_nnipa_proto_tenant_TenantData_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_nnipa_proto_tenant_TenantData_descriptor,
+        new java.lang.String[] { "TenantId", "TenantCode", "Name", "OrganizationType", "Status", "CreatedAt", "DisplayName", "OrganizationEmail", "Country", "IsolationStrategy", "MaxUsers", "StorageQuotaGb", });
+    internal_static_com_nnipa_proto_tenant_SubscriptionData_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_com_nnipa_proto_tenant_SubscriptionData_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_nnipa_proto_tenant_SubscriptionData_descriptor,
+        new java.lang.String[] { "SubscriptionId", "TenantId", "Plan", "Status", "StartDate", "EndDate", "MonthlyPrice", "Currency", "BillingCycle", "NextRenewalDate", "AutoRenew", });
+    internal_static_com_nnipa_proto_tenant_TenantCreatedEvent_descriptor =
+      getDescriptor().getMessageTypes().get(2);
     internal_static_com_nnipa_proto_tenant_TenantCreatedEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nnipa_proto_tenant_TenantCreatedEvent_descriptor,
         new java.lang.String[] { "Metadata", "Tenant", });
-    internal_static_com_nnipa_proto_tenant_TenantCreatedEvent_TenantData_descriptor =
-      internal_static_com_nnipa_proto_tenant_TenantCreatedEvent_descriptor.getNestedTypes().get(0);
-    internal_static_com_nnipa_proto_tenant_TenantCreatedEvent_TenantData_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_nnipa_proto_tenant_TenantCreatedEvent_TenantData_descriptor,
-        new java.lang.String[] { "TenantId", "TenantCode", "Name", "OrganizationType", "SubscriptionPlan", "BillingCycle", "IsolationStrategy", "Status", "MaxUsers", "Metadata", "Settings", "FeatureFlags", "CreatedAt", "CreatedBy", });
-    internal_static_com_nnipa_proto_tenant_TenantCreatedEvent_TenantData_MetadataEntry_descriptor =
-      internal_static_com_nnipa_proto_tenant_TenantCreatedEvent_TenantData_descriptor.getNestedTypes().get(0);
-    internal_static_com_nnipa_proto_tenant_TenantCreatedEvent_TenantData_MetadataEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_nnipa_proto_tenant_TenantCreatedEvent_TenantData_MetadataEntry_descriptor,
-        new java.lang.String[] { "Key", "Value", });
-    internal_static_com_nnipa_proto_tenant_TenantCreatedEvent_TenantData_SettingsEntry_descriptor =
-      internal_static_com_nnipa_proto_tenant_TenantCreatedEvent_TenantData_descriptor.getNestedTypes().get(1);
-    internal_static_com_nnipa_proto_tenant_TenantCreatedEvent_TenantData_SettingsEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_nnipa_proto_tenant_TenantCreatedEvent_TenantData_SettingsEntry_descriptor,
-        new java.lang.String[] { "Key", "Value", });
-    internal_static_com_nnipa_proto_tenant_TenantCreatedEvent_TenantData_FeatureFlagsEntry_descriptor =
-      internal_static_com_nnipa_proto_tenant_TenantCreatedEvent_TenantData_descriptor.getNestedTypes().get(2);
-    internal_static_com_nnipa_proto_tenant_TenantCreatedEvent_TenantData_FeatureFlagsEntry_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_nnipa_proto_tenant_TenantCreatedEvent_TenantData_FeatureFlagsEntry_descriptor,
-        new java.lang.String[] { "Key", "Value", });
     internal_static_com_nnipa_proto_tenant_TenantUpdatedEvent_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_com_nnipa_proto_tenant_TenantUpdatedEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nnipa_proto_tenant_TenantUpdatedEvent_descriptor,
-        new java.lang.String[] { "Metadata", "Tenant", "UpdatedAt", "UpdatedBy", "ChangedFields", });
+        new java.lang.String[] { "Metadata", "Tenant", "UpdatedBy", "UpdatedAt", });
     internal_static_com_nnipa_proto_tenant_TenantActivatedEvent_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_com_nnipa_proto_tenant_TenantActivatedEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nnipa_proto_tenant_TenantActivatedEvent_descriptor,
-        new java.lang.String[] { "Metadata", "TenantId", "ActivatedBy", "ActivatedAt", "Reason", });
+        new java.lang.String[] { "Metadata", "TenantId", "TenantCode", "ActivatedBy", "ActivatedAt", });
+    internal_static_com_nnipa_proto_tenant_TenantSuspendedEvent_descriptor =
+      getDescriptor().getMessageTypes().get(5);
+    internal_static_com_nnipa_proto_tenant_TenantSuspendedEvent_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_nnipa_proto_tenant_TenantSuspendedEvent_descriptor,
+        new java.lang.String[] { "Metadata", "TenantId", "TenantCode", "Reason", "SuspendedBy", "SuspendedAt", });
+    internal_static_com_nnipa_proto_tenant_TenantDeletedEvent_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_com_nnipa_proto_tenant_TenantDeletedEvent_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_nnipa_proto_tenant_TenantDeletedEvent_descriptor,
+        new java.lang.String[] { "Metadata", "TenantId", "TenantCode", "DeletedBy", "DeletedAt", "Permanent", });
+    internal_static_com_nnipa_proto_tenant_SubscriptionCreatedEvent_descriptor =
+      getDescriptor().getMessageTypes().get(7);
+    internal_static_com_nnipa_proto_tenant_SubscriptionCreatedEvent_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_nnipa_proto_tenant_SubscriptionCreatedEvent_descriptor,
+        new java.lang.String[] { "Metadata", "Subscription", });
+    internal_static_com_nnipa_proto_tenant_SubscriptionUpdatedEvent_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_com_nnipa_proto_tenant_SubscriptionUpdatedEvent_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_nnipa_proto_tenant_SubscriptionUpdatedEvent_descriptor,
+        new java.lang.String[] { "Metadata", "Subscription", "PreviousPlan", "UpdatedAt", });
+    internal_static_com_nnipa_proto_tenant_SubscriptionCancelledEvent_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_com_nnipa_proto_tenant_SubscriptionCancelledEvent_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_nnipa_proto_tenant_SubscriptionCancelledEvent_descriptor,
+        new java.lang.String[] { "Metadata", "SubscriptionId", "TenantId", "Plan", "Reason", "CancelledAt", "EffectiveDate", });
+    internal_static_com_nnipa_proto_tenant_FeatureEnabledEvent_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_com_nnipa_proto_tenant_FeatureEnabledEvent_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_nnipa_proto_tenant_FeatureEnabledEvent_descriptor,
+        new java.lang.String[] { "Metadata", "TenantId", "FeatureCode", "FeatureName", "Category", "EnabledAt", "TrialEnabled", "TrialDays", });
+    internal_static_com_nnipa_proto_tenant_FeatureDisabledEvent_descriptor =
+      getDescriptor().getMessageTypes().get(11);
+    internal_static_com_nnipa_proto_tenant_FeatureDisabledEvent_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_nnipa_proto_tenant_FeatureDisabledEvent_descriptor,
+        new java.lang.String[] { "Metadata", "TenantId", "FeatureCode", "Reason", "DisabledAt", });
     internal_static_com_nnipa_proto_tenant_TenantDeactivatedEvent_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_com_nnipa_proto_tenant_TenantDeactivatedEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nnipa_proto_tenant_TenantDeactivatedEvent_descriptor,
         new java.lang.String[] { "Metadata", "TenantId", "TenantCode", "Reason", "DeactivatedAt", "DeactivatedBy", });
     internal_static_com_nnipa_proto_tenant_SubscriptionChangedEvent_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(13);
     internal_static_com_nnipa_proto_tenant_SubscriptionChangedEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nnipa_proto_tenant_SubscriptionChangedEvent_descriptor,
@@ -266,7 +344,7 @@ public final class TenantEvents {
         internal_static_com_nnipa_proto_tenant_SubscriptionChangedEvent_SubscriptionChange_descriptor,
         new java.lang.String[] { "TenantId", "OldTier", "NewTier", "EffectiveDate", "ChangedBy", "Reason", "PriceChange", });
     internal_static_com_nnipa_proto_tenant_TenantMigratedEvent_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(14);
     internal_static_com_nnipa_proto_tenant_TenantMigratedEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nnipa_proto_tenant_TenantMigratedEvent_descriptor,
@@ -284,7 +362,7 @@ public final class TenantEvents {
         internal_static_com_nnipa_proto_tenant_TenantMigratedEvent_MigrationData_MigrationMetadataEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_com_nnipa_proto_tenant_TenantSubscriptionChangedEvent_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(15);
     internal_static_com_nnipa_proto_tenant_TenantSubscriptionChangedEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nnipa_proto_tenant_TenantSubscriptionChangedEvent_descriptor,
@@ -295,14 +373,8 @@ public final class TenantEvents {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nnipa_proto_tenant_TenantSubscriptionChangedEvent_SubscriptionData_descriptor,
         new java.lang.String[] { "TenantId", "OldPlan", "NewPlan", "ChangedAt", "EffectiveDate", "NextBillingDate", "ChangedBy", "ChangeReason", });
-    internal_static_com_nnipa_proto_tenant_TenantSuspendedEvent_descriptor =
-      getDescriptor().getMessageTypes().get(7);
-    internal_static_com_nnipa_proto_tenant_TenantSuspendedEvent_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_com_nnipa_proto_tenant_TenantSuspendedEvent_descriptor,
-        new java.lang.String[] { "Metadata", "TenantId", "Reason", "SuspendedAt", "AutoResumeAt", });
     internal_static_com_nnipa_proto_tenant_TenantReactivatedEvent_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(16);
     internal_static_com_nnipa_proto_tenant_TenantReactivatedEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nnipa_proto_tenant_TenantReactivatedEvent_descriptor,

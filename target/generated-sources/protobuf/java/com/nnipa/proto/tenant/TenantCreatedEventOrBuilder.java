@@ -24,17 +24,17 @@ public interface TenantCreatedEventOrBuilder extends
   com.nnipa.proto.common.EventMetadataOrBuilder getMetadataOrBuilder();
 
   /**
-   * <code>.com.nnipa.proto.tenant.TenantCreatedEvent.TenantData tenant = 2;</code>
+   * <code>.com.nnipa.proto.tenant.TenantData tenant = 2;</code>
    * @return Whether the tenant field is set.
    */
   boolean hasTenant();
   /**
-   * <code>.com.nnipa.proto.tenant.TenantCreatedEvent.TenantData tenant = 2;</code>
+   * <code>.com.nnipa.proto.tenant.TenantData tenant = 2;</code>
    * @return The tenant.
    */
-  com.nnipa.proto.tenant.TenantCreatedEvent.TenantData getTenant();
+  com.nnipa.proto.tenant.TenantData getTenant();
   /**
-   * <code>.com.nnipa.proto.tenant.TenantCreatedEvent.TenantData tenant = 2;</code>
+   * <code>.com.nnipa.proto.tenant.TenantData tenant = 2;</code>
    */
-  com.nnipa.proto.tenant.TenantCreatedEvent.TenantDataOrBuilder getTenantOrBuilder();
+  com.nnipa.proto.tenant.TenantDataOrBuilder getTenantOrBuilder();
 }

@@ -22,8 +22,8 @@ private static final long serialVersionUID = 0L;
   }
   private TenantActivatedEvent() {
     tenantId_ = "";
+    tenantCode_ = "";
     activatedBy_ = "";
-    reason_ = "";
   }
 
   @java.lang.Override
@@ -112,11 +112,50 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int ACTIVATED_BY_FIELD_NUMBER = 3;
+  public static final int TENANT_CODE_FIELD_NUMBER = 3;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object tenantCode_ = "";
+  /**
+   * <code>string tenant_code = 3;</code>
+   * @return The tenantCode.
+   */
+  @java.lang.Override
+  public java.lang.String getTenantCode() {
+    java.lang.Object ref = tenantCode_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      tenantCode_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string tenant_code = 3;</code>
+   * @return The bytes for tenantCode.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getTenantCodeBytes() {
+    java.lang.Object ref = tenantCode_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      tenantCode_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int ACTIVATED_BY_FIELD_NUMBER = 4;
   @SuppressWarnings("serial")
   private volatile java.lang.Object activatedBy_ = "";
   /**
-   * <code>string activated_by = 3;</code>
+   * <code>string activated_by = 4;</code>
    * @return The activatedBy.
    */
   @java.lang.Override
@@ -133,7 +172,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string activated_by = 3;</code>
+   * <code>string activated_by = 4;</code>
    * @return The bytes for activatedBy.
    */
   @java.lang.Override
@@ -151,10 +190,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int ACTIVATED_AT_FIELD_NUMBER = 4;
+  public static final int ACTIVATED_AT_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp activatedAt_;
   /**
-   * <code>.google.protobuf.Timestamp activated_at = 4;</code>
+   * <code>.google.protobuf.Timestamp activated_at = 5;</code>
    * @return Whether the activatedAt field is set.
    */
   @java.lang.Override
@@ -162,7 +201,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000002) != 0);
   }
   /**
-   * <code>.google.protobuf.Timestamp activated_at = 4;</code>
+   * <code>.google.protobuf.Timestamp activated_at = 5;</code>
    * @return The activatedAt.
    */
   @java.lang.Override
@@ -170,50 +209,11 @@ private static final long serialVersionUID = 0L;
     return activatedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : activatedAt_;
   }
   /**
-   * <code>.google.protobuf.Timestamp activated_at = 4;</code>
+   * <code>.google.protobuf.Timestamp activated_at = 5;</code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getActivatedAtOrBuilder() {
     return activatedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : activatedAt_;
-  }
-
-  public static final int REASON_FIELD_NUMBER = 5;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object reason_ = "";
-  /**
-   * <code>string reason = 5;</code>
-   * @return The reason.
-   */
-  @java.lang.Override
-  public java.lang.String getReason() {
-    java.lang.Object ref = reason_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      reason_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string reason = 5;</code>
-   * @return The bytes for reason.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getReasonBytes() {
-    java.lang.Object ref = reason_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      reason_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
   }
 
   private byte memoizedIsInitialized = -1;
@@ -236,14 +236,14 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tenantId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, tenantId_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tenantCode_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, tenantCode_);
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(activatedBy_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, activatedBy_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, activatedBy_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      output.writeMessage(4, getActivatedAt());
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reason_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, reason_);
+      output.writeMessage(5, getActivatedAt());
     }
     getUnknownFields().writeTo(output);
   }
@@ -261,15 +261,15 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tenantId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, tenantId_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tenantCode_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, tenantCode_);
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(activatedBy_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, activatedBy_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, activatedBy_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, getActivatedAt());
-    }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reason_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, reason_);
+        .computeMessageSize(5, getActivatedAt());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -293,6 +293,8 @@ private static final long serialVersionUID = 0L;
     }
     if (!getTenantId()
         .equals(other.getTenantId())) return false;
+    if (!getTenantCode()
+        .equals(other.getTenantCode())) return false;
     if (!getActivatedBy()
         .equals(other.getActivatedBy())) return false;
     if (hasActivatedAt() != other.hasActivatedAt()) return false;
@@ -300,8 +302,6 @@ private static final long serialVersionUID = 0L;
       if (!getActivatedAt()
           .equals(other.getActivatedAt())) return false;
     }
-    if (!getReason()
-        .equals(other.getReason())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -319,14 +319,14 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + TENANT_ID_FIELD_NUMBER;
     hash = (53 * hash) + getTenantId().hashCode();
+    hash = (37 * hash) + TENANT_CODE_FIELD_NUMBER;
+    hash = (53 * hash) + getTenantCode().hashCode();
     hash = (37 * hash) + ACTIVATED_BY_FIELD_NUMBER;
     hash = (53 * hash) + getActivatedBy().hashCode();
     if (hasActivatedAt()) {
       hash = (37 * hash) + ACTIVATED_AT_FIELD_NUMBER;
       hash = (53 * hash) + getActivatedAt().hashCode();
     }
-    hash = (37 * hash) + REASON_FIELD_NUMBER;
-    hash = (53 * hash) + getReason().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -475,13 +475,13 @@ private static final long serialVersionUID = 0L;
         metadataBuilder_ = null;
       }
       tenantId_ = "";
+      tenantCode_ = "";
       activatedBy_ = "";
       activatedAt_ = null;
       if (activatedAtBuilder_ != null) {
         activatedAtBuilder_.dispose();
         activatedAtBuilder_ = null;
       }
-      reason_ = "";
       return this;
     }
 
@@ -526,16 +526,16 @@ private static final long serialVersionUID = 0L;
         result.tenantId_ = tenantId_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.activatedBy_ = activatedBy_;
+        result.tenantCode_ = tenantCode_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.activatedBy_ = activatedBy_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.activatedAt_ = activatedAtBuilder_ == null
             ? activatedAt_
             : activatedAtBuilder_.build();
         to_bitField0_ |= 0x00000002;
-      }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.reason_ = reason_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -592,18 +592,18 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (!other.getTenantCode().isEmpty()) {
+        tenantCode_ = other.tenantCode_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
       if (!other.getActivatedBy().isEmpty()) {
         activatedBy_ = other.activatedBy_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasActivatedAt()) {
         mergeActivatedAt(other.getActivatedAt());
-      }
-      if (!other.getReason().isEmpty()) {
-        reason_ = other.reason_;
-        bitField0_ |= 0x00000010;
-        onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -644,19 +644,19 @@ private static final long serialVersionUID = 0L;
               break;
             } // case 18
             case 26: {
-              activatedBy_ = input.readStringRequireUtf8();
+              tenantCode_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000004;
               break;
             } // case 26
             case 34: {
-              input.readMessage(
-                  getActivatedAtFieldBuilder().getBuilder(),
-                  extensionRegistry);
+              activatedBy_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000008;
               break;
             } // case 34
             case 42: {
-              reason_ = input.readStringRequireUtf8();
+              input.readMessage(
+                  getActivatedAtFieldBuilder().getBuilder(),
+                  extensionRegistry);
               bitField0_ |= 0x00000010;
               break;
             } // case 42
@@ -870,9 +870,81 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object tenantCode_ = "";
+    /**
+     * <code>string tenant_code = 3;</code>
+     * @return The tenantCode.
+     */
+    public java.lang.String getTenantCode() {
+      java.lang.Object ref = tenantCode_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        tenantCode_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string tenant_code = 3;</code>
+     * @return The bytes for tenantCode.
+     */
+    public com.google.protobuf.ByteString
+        getTenantCodeBytes() {
+      java.lang.Object ref = tenantCode_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        tenantCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string tenant_code = 3;</code>
+     * @param value The tenantCode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTenantCode(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      tenantCode_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string tenant_code = 3;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTenantCode() {
+      tenantCode_ = getDefaultInstance().getTenantCode();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string tenant_code = 3;</code>
+     * @param value The bytes for tenantCode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTenantCodeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      tenantCode_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object activatedBy_ = "";
     /**
-     * <code>string activated_by = 3;</code>
+     * <code>string activated_by = 4;</code>
      * @return The activatedBy.
      */
     public java.lang.String getActivatedBy() {
@@ -888,7 +960,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string activated_by = 3;</code>
+     * <code>string activated_by = 4;</code>
      * @return The bytes for activatedBy.
      */
     public com.google.protobuf.ByteString
@@ -905,7 +977,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string activated_by = 3;</code>
+     * <code>string activated_by = 4;</code>
      * @param value The activatedBy to set.
      * @return This builder for chaining.
      */
@@ -913,22 +985,22 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       activatedBy_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
     /**
-     * <code>string activated_by = 3;</code>
+     * <code>string activated_by = 4;</code>
      * @return This builder for chaining.
      */
     public Builder clearActivatedBy() {
       activatedBy_ = getDefaultInstance().getActivatedBy();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
     /**
-     * <code>string activated_by = 3;</code>
+     * <code>string activated_by = 4;</code>
      * @param value The bytes for activatedBy to set.
      * @return This builder for chaining.
      */
@@ -937,7 +1009,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       activatedBy_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -946,14 +1018,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> activatedAtBuilder_;
     /**
-     * <code>.google.protobuf.Timestamp activated_at = 4;</code>
+     * <code>.google.protobuf.Timestamp activated_at = 5;</code>
      * @return Whether the activatedAt field is set.
      */
     public boolean hasActivatedAt() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
     /**
-     * <code>.google.protobuf.Timestamp activated_at = 4;</code>
+     * <code>.google.protobuf.Timestamp activated_at = 5;</code>
      * @return The activatedAt.
      */
     public com.google.protobuf.Timestamp getActivatedAt() {
@@ -964,7 +1036,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Timestamp activated_at = 4;</code>
+     * <code>.google.protobuf.Timestamp activated_at = 5;</code>
      */
     public Builder setActivatedAt(com.google.protobuf.Timestamp value) {
       if (activatedAtBuilder_ == null) {
@@ -975,12 +1047,12 @@ private static final long serialVersionUID = 0L;
       } else {
         activatedAtBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp activated_at = 4;</code>
+     * <code>.google.protobuf.Timestamp activated_at = 5;</code>
      */
     public Builder setActivatedAt(
         com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -989,16 +1061,16 @@ private static final long serialVersionUID = 0L;
       } else {
         activatedAtBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp activated_at = 4;</code>
+     * <code>.google.protobuf.Timestamp activated_at = 5;</code>
      */
     public Builder mergeActivatedAt(com.google.protobuf.Timestamp value) {
       if (activatedAtBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0) &&
+        if (((bitField0_ & 0x00000010) != 0) &&
           activatedAt_ != null &&
           activatedAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getActivatedAtBuilder().mergeFrom(value);
@@ -1009,16 +1081,16 @@ private static final long serialVersionUID = 0L;
         activatedAtBuilder_.mergeFrom(value);
       }
       if (activatedAt_ != null) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp activated_at = 4;</code>
+     * <code>.google.protobuf.Timestamp activated_at = 5;</code>
      */
     public Builder clearActivatedAt() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       activatedAt_ = null;
       if (activatedAtBuilder_ != null) {
         activatedAtBuilder_.dispose();
@@ -1028,15 +1100,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp activated_at = 4;</code>
+     * <code>.google.protobuf.Timestamp activated_at = 5;</code>
      */
     public com.google.protobuf.Timestamp.Builder getActivatedAtBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return getActivatedAtFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.protobuf.Timestamp activated_at = 4;</code>
+     * <code>.google.protobuf.Timestamp activated_at = 5;</code>
      */
     public com.google.protobuf.TimestampOrBuilder getActivatedAtOrBuilder() {
       if (activatedAtBuilder_ != null) {
@@ -1047,7 +1119,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Timestamp activated_at = 4;</code>
+     * <code>.google.protobuf.Timestamp activated_at = 5;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -1061,78 +1133,6 @@ private static final long serialVersionUID = 0L;
         activatedAt_ = null;
       }
       return activatedAtBuilder_;
-    }
-
-    private java.lang.Object reason_ = "";
-    /**
-     * <code>string reason = 5;</code>
-     * @return The reason.
-     */
-    public java.lang.String getReason() {
-      java.lang.Object ref = reason_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        reason_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string reason = 5;</code>
-     * @return The bytes for reason.
-     */
-    public com.google.protobuf.ByteString
-        getReasonBytes() {
-      java.lang.Object ref = reason_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        reason_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string reason = 5;</code>
-     * @param value The reason to set.
-     * @return This builder for chaining.
-     */
-    public Builder setReason(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      reason_ = value;
-      bitField0_ |= 0x00000010;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string reason = 5;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearReason() {
-      reason_ = getDefaultInstance().getReason();
-      bitField0_ = (bitField0_ & ~0x00000010);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string reason = 5;</code>
-     * @param value The bytes for reason to set.
-     * @return This builder for chaining.
-     */
-    public Builder setReasonBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      reason_ = value;
-      bitField0_ |= 0x00000010;
-      onChanged();
-      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(
