@@ -6,7 +6,7 @@ package com.nnipa.proto.tenant;
 
 /**
  * <pre>
- * Legacy events (keeping for backward compatibility if needed)
+ * Event: Tenant Deactivated (for backward compatibility)
  * </pre>
  *
  * Protobuf type {@code com.nnipa.proto.tenant.TenantDeactivatedEvent}
@@ -22,7 +22,6 @@ private static final long serialVersionUID = 0L;
   }
   private TenantDeactivatedEvent() {
     tenantId_ = "";
-    tenantCode_ = "";
     reason_ = "";
     deactivatedBy_ = "";
   }
@@ -113,50 +112,11 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int TENANT_CODE_FIELD_NUMBER = 3;
-  @SuppressWarnings("serial")
-  private volatile java.lang.Object tenantCode_ = "";
-  /**
-   * <code>string tenant_code = 3;</code>
-   * @return The tenantCode.
-   */
-  @java.lang.Override
-  public java.lang.String getTenantCode() {
-    java.lang.Object ref = tenantCode_;
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      tenantCode_ = s;
-      return s;
-    }
-  }
-  /**
-   * <code>string tenant_code = 3;</code>
-   * @return The bytes for tenantCode.
-   */
-  @java.lang.Override
-  public com.google.protobuf.ByteString
-      getTenantCodeBytes() {
-    java.lang.Object ref = tenantCode_;
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
-      tenantCode_ = b;
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
-  public static final int REASON_FIELD_NUMBER = 4;
+  public static final int REASON_FIELD_NUMBER = 3;
   @SuppressWarnings("serial")
   private volatile java.lang.Object reason_ = "";
   /**
-   * <code>string reason = 4;</code>
+   * <code>string reason = 3;</code>
    * @return The reason.
    */
   @java.lang.Override
@@ -173,7 +133,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string reason = 4;</code>
+   * <code>string reason = 3;</code>
    * @return The bytes for reason.
    */
   @java.lang.Override
@@ -191,10 +151,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int DEACTIVATED_AT_FIELD_NUMBER = 5;
+  public static final int DEACTIVATED_AT_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp deactivatedAt_;
   /**
-   * <code>.google.protobuf.Timestamp deactivated_at = 5;</code>
+   * <code>.google.protobuf.Timestamp deactivated_at = 4;</code>
    * @return Whether the deactivatedAt field is set.
    */
   @java.lang.Override
@@ -202,7 +162,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000002) != 0);
   }
   /**
-   * <code>.google.protobuf.Timestamp deactivated_at = 5;</code>
+   * <code>.google.protobuf.Timestamp deactivated_at = 4;</code>
    * @return The deactivatedAt.
    */
   @java.lang.Override
@@ -210,18 +170,18 @@ private static final long serialVersionUID = 0L;
     return deactivatedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : deactivatedAt_;
   }
   /**
-   * <code>.google.protobuf.Timestamp deactivated_at = 5;</code>
+   * <code>.google.protobuf.Timestamp deactivated_at = 4;</code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getDeactivatedAtOrBuilder() {
     return deactivatedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : deactivatedAt_;
   }
 
-  public static final int DEACTIVATED_BY_FIELD_NUMBER = 6;
+  public static final int DEACTIVATED_BY_FIELD_NUMBER = 5;
   @SuppressWarnings("serial")
   private volatile java.lang.Object deactivatedBy_ = "";
   /**
-   * <code>string deactivated_by = 6;</code>
+   * <code>string deactivated_by = 5;</code>
    * @return The deactivatedBy.
    */
   @java.lang.Override
@@ -238,7 +198,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string deactivated_by = 6;</code>
+   * <code>string deactivated_by = 5;</code>
    * @return The bytes for deactivatedBy.
    */
   @java.lang.Override
@@ -276,17 +236,14 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tenantId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, tenantId_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tenantCode_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, tenantCode_);
-    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reason_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, reason_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, reason_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      output.writeMessage(5, getDeactivatedAt());
+      output.writeMessage(4, getDeactivatedAt());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(deactivatedBy_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, deactivatedBy_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, deactivatedBy_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -304,18 +261,15 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tenantId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, tenantId_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tenantCode_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, tenantCode_);
-    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reason_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, reason_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, reason_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, getDeactivatedAt());
+        .computeMessageSize(4, getDeactivatedAt());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(deactivatedBy_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, deactivatedBy_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, deactivatedBy_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -339,8 +293,6 @@ private static final long serialVersionUID = 0L;
     }
     if (!getTenantId()
         .equals(other.getTenantId())) return false;
-    if (!getTenantCode()
-        .equals(other.getTenantCode())) return false;
     if (!getReason()
         .equals(other.getReason())) return false;
     if (hasDeactivatedAt() != other.hasDeactivatedAt()) return false;
@@ -367,8 +319,6 @@ private static final long serialVersionUID = 0L;
     }
     hash = (37 * hash) + TENANT_ID_FIELD_NUMBER;
     hash = (53 * hash) + getTenantId().hashCode();
-    hash = (37 * hash) + TENANT_CODE_FIELD_NUMBER;
-    hash = (53 * hash) + getTenantCode().hashCode();
     hash = (37 * hash) + REASON_FIELD_NUMBER;
     hash = (53 * hash) + getReason().hashCode();
     if (hasDeactivatedAt()) {
@@ -476,7 +426,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Legacy events (keeping for backward compatibility if needed)
+   * Event: Tenant Deactivated (for backward compatibility)
    * </pre>
    *
    * Protobuf type {@code com.nnipa.proto.tenant.TenantDeactivatedEvent}
@@ -525,7 +475,6 @@ private static final long serialVersionUID = 0L;
         metadataBuilder_ = null;
       }
       tenantId_ = "";
-      tenantCode_ = "";
       reason_ = "";
       deactivatedAt_ = null;
       if (deactivatedAtBuilder_ != null) {
@@ -577,18 +526,15 @@ private static final long serialVersionUID = 0L;
         result.tenantId_ = tenantId_;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.tenantCode_ = tenantCode_;
-      }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.reason_ = reason_;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.deactivatedAt_ = deactivatedAtBuilder_ == null
             ? deactivatedAt_
             : deactivatedAtBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.deactivatedBy_ = deactivatedBy_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -646,14 +592,9 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000002;
         onChanged();
       }
-      if (!other.getTenantCode().isEmpty()) {
-        tenantCode_ = other.tenantCode_;
-        bitField0_ |= 0x00000004;
-        onChanged();
-      }
       if (!other.getReason().isEmpty()) {
         reason_ = other.reason_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       if (other.hasDeactivatedAt()) {
@@ -661,7 +602,7 @@ private static final long serialVersionUID = 0L;
       }
       if (!other.getDeactivatedBy().isEmpty()) {
         deactivatedBy_ = other.deactivatedBy_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -703,27 +644,22 @@ private static final long serialVersionUID = 0L;
               break;
             } // case 18
             case 26: {
-              tenantCode_ = input.readStringRequireUtf8();
+              reason_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000004;
               break;
             } // case 26
             case 34: {
-              reason_ = input.readStringRequireUtf8();
+              input.readMessage(
+                  getDeactivatedAtFieldBuilder().getBuilder(),
+                  extensionRegistry);
               bitField0_ |= 0x00000008;
               break;
             } // case 34
             case 42: {
-              input.readMessage(
-                  getDeactivatedAtFieldBuilder().getBuilder(),
-                  extensionRegistry);
+              deactivatedBy_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000010;
               break;
             } // case 42
-            case 50: {
-              deactivatedBy_ = input.readStringRequireUtf8();
-              bitField0_ |= 0x00000020;
-              break;
-            } // case 50
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -934,81 +870,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private java.lang.Object tenantCode_ = "";
-    /**
-     * <code>string tenant_code = 3;</code>
-     * @return The tenantCode.
-     */
-    public java.lang.String getTenantCode() {
-      java.lang.Object ref = tenantCode_;
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        tenantCode_ = s;
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-    /**
-     * <code>string tenant_code = 3;</code>
-     * @return The bytes for tenantCode.
-     */
-    public com.google.protobuf.ByteString
-        getTenantCodeBytes() {
-      java.lang.Object ref = tenantCode_;
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        tenantCode_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-    /**
-     * <code>string tenant_code = 3;</code>
-     * @param value The tenantCode to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTenantCode(
-        java.lang.String value) {
-      if (value == null) { throw new NullPointerException(); }
-      tenantCode_ = value;
-      bitField0_ |= 0x00000004;
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string tenant_code = 3;</code>
-     * @return This builder for chaining.
-     */
-    public Builder clearTenantCode() {
-      tenantCode_ = getDefaultInstance().getTenantCode();
-      bitField0_ = (bitField0_ & ~0x00000004);
-      onChanged();
-      return this;
-    }
-    /**
-     * <code>string tenant_code = 3;</code>
-     * @param value The bytes for tenantCode to set.
-     * @return This builder for chaining.
-     */
-    public Builder setTenantCodeBytes(
-        com.google.protobuf.ByteString value) {
-      if (value == null) { throw new NullPointerException(); }
-      checkByteStringIsUtf8(value);
-      tenantCode_ = value;
-      bitField0_ |= 0x00000004;
-      onChanged();
-      return this;
-    }
-
     private java.lang.Object reason_ = "";
     /**
-     * <code>string reason = 4;</code>
+     * <code>string reason = 3;</code>
      * @return The reason.
      */
     public java.lang.String getReason() {
@@ -1024,7 +888,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string reason = 4;</code>
+     * <code>string reason = 3;</code>
      * @return The bytes for reason.
      */
     public com.google.protobuf.ByteString
@@ -1041,7 +905,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string reason = 4;</code>
+     * <code>string reason = 3;</code>
      * @param value The reason to set.
      * @return This builder for chaining.
      */
@@ -1049,22 +913,22 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       reason_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
     /**
-     * <code>string reason = 4;</code>
+     * <code>string reason = 3;</code>
      * @return This builder for chaining.
      */
     public Builder clearReason() {
       reason_ = getDefaultInstance().getReason();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000004);
       onChanged();
       return this;
     }
     /**
-     * <code>string reason = 4;</code>
+     * <code>string reason = 3;</code>
      * @param value The bytes for reason to set.
      * @return This builder for chaining.
      */
@@ -1073,7 +937,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       reason_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -1082,14 +946,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> deactivatedAtBuilder_;
     /**
-     * <code>.google.protobuf.Timestamp deactivated_at = 5;</code>
+     * <code>.google.protobuf.Timestamp deactivated_at = 4;</code>
      * @return Whether the deactivatedAt field is set.
      */
     public boolean hasDeactivatedAt() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
     /**
-     * <code>.google.protobuf.Timestamp deactivated_at = 5;</code>
+     * <code>.google.protobuf.Timestamp deactivated_at = 4;</code>
      * @return The deactivatedAt.
      */
     public com.google.protobuf.Timestamp getDeactivatedAt() {
@@ -1100,7 +964,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Timestamp deactivated_at = 5;</code>
+     * <code>.google.protobuf.Timestamp deactivated_at = 4;</code>
      */
     public Builder setDeactivatedAt(com.google.protobuf.Timestamp value) {
       if (deactivatedAtBuilder_ == null) {
@@ -1111,12 +975,12 @@ private static final long serialVersionUID = 0L;
       } else {
         deactivatedAtBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp deactivated_at = 5;</code>
+     * <code>.google.protobuf.Timestamp deactivated_at = 4;</code>
      */
     public Builder setDeactivatedAt(
         com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -1125,16 +989,16 @@ private static final long serialVersionUID = 0L;
       } else {
         deactivatedAtBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp deactivated_at = 5;</code>
+     * <code>.google.protobuf.Timestamp deactivated_at = 4;</code>
      */
     public Builder mergeDeactivatedAt(com.google.protobuf.Timestamp value) {
       if (deactivatedAtBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0) &&
+        if (((bitField0_ & 0x00000008) != 0) &&
           deactivatedAt_ != null &&
           deactivatedAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getDeactivatedAtBuilder().mergeFrom(value);
@@ -1145,16 +1009,16 @@ private static final long serialVersionUID = 0L;
         deactivatedAtBuilder_.mergeFrom(value);
       }
       if (deactivatedAt_ != null) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp deactivated_at = 5;</code>
+     * <code>.google.protobuf.Timestamp deactivated_at = 4;</code>
      */
     public Builder clearDeactivatedAt() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000008);
       deactivatedAt_ = null;
       if (deactivatedAtBuilder_ != null) {
         deactivatedAtBuilder_.dispose();
@@ -1164,15 +1028,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp deactivated_at = 5;</code>
+     * <code>.google.protobuf.Timestamp deactivated_at = 4;</code>
      */
     public com.google.protobuf.Timestamp.Builder getDeactivatedAtBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000008;
       onChanged();
       return getDeactivatedAtFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.protobuf.Timestamp deactivated_at = 5;</code>
+     * <code>.google.protobuf.Timestamp deactivated_at = 4;</code>
      */
     public com.google.protobuf.TimestampOrBuilder getDeactivatedAtOrBuilder() {
       if (deactivatedAtBuilder_ != null) {
@@ -1183,7 +1047,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Timestamp deactivated_at = 5;</code>
+     * <code>.google.protobuf.Timestamp deactivated_at = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
@@ -1201,7 +1065,7 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object deactivatedBy_ = "";
     /**
-     * <code>string deactivated_by = 6;</code>
+     * <code>string deactivated_by = 5;</code>
      * @return The deactivatedBy.
      */
     public java.lang.String getDeactivatedBy() {
@@ -1217,7 +1081,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string deactivated_by = 6;</code>
+     * <code>string deactivated_by = 5;</code>
      * @return The bytes for deactivatedBy.
      */
     public com.google.protobuf.ByteString
@@ -1234,7 +1098,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string deactivated_by = 6;</code>
+     * <code>string deactivated_by = 5;</code>
      * @param value The deactivatedBy to set.
      * @return This builder for chaining.
      */
@@ -1242,22 +1106,22 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       deactivatedBy_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
     /**
-     * <code>string deactivated_by = 6;</code>
+     * <code>string deactivated_by = 5;</code>
      * @return This builder for chaining.
      */
     public Builder clearDeactivatedBy() {
       deactivatedBy_ = getDefaultInstance().getDeactivatedBy();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
     /**
-     * <code>string deactivated_by = 6;</code>
+     * <code>string deactivated_by = 5;</code>
      * @param value The bytes for deactivatedBy to set.
      * @return This builder for chaining.
      */
@@ -1266,7 +1130,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       deactivatedBy_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

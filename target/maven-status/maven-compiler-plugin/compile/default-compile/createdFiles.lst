@@ -6,7 +6,6 @@ com\nnipa\proto\tenant\TenantSubscriptionChangedEvent$SubscriptionData$1.class
 com\nnipa\proto\auth\UserActivatedEvent$1.class
 com\nnipa\proto\storage\StorageOperationResult$ResultData.class
 com\nnipa\proto\tenant\TenantReactivatedEvent$1.class
-com\nnipa\proto\tenant\SubscriptionChangedEvent$SubscriptionChange.class
 com\nnipa\proto\user\SyncUserDataCommand.class
 com\nnipa\proto\storage\StorageScannedEvent$ScanData$ScanResultsDefaultEntryHolder.class
 com\nnipa\proto\tenant\UpdateTenantCommand$UpdateDetails$FeatureFlagsDefaultEntryHolder.class
@@ -88,7 +87,6 @@ com\nnipa\proto\storage\ValidateStorageIntegrityCommand.class
 com\nnipa\proto\storage\CreateVersionCommand$VersionDataOrBuilder.class
 com\nnipa\proto\auth\UserRegisteredEvent.class
 com\nnipa\proto\storage\StorageRestoredEvent.class
-com\nnipa\proto\tenant\SubscriptionChangedEvent.class
 com\nnipa\proto\user\UserCreatedEvent$1.class
 com\nnipa\proto\authz\CheckAuthorizationCommand$ContextDefaultEntryHolder.class
 com\nnipa\proto\auth\ActivateUserCommand.class
@@ -141,6 +139,7 @@ com\nnipa\proto\storage\StorageAccessedEvent.class
 com\nnipa\proto\common\StorageMetadata$Builder.class
 com\nnipa\proto\auth\SelfSignupEvent.class
 com\nnipa\proto\common\RegistrationType$1.class
+com\nnipa\proto\tenant\SubscriptionRenewedEvent$1.class
 com\nnipa\proto\tenant\TenantSuspendedEvent.class
 com\nnipa\proto\storage\StorageReplicatedEventOrBuilder.class
 com\nnipa\proto\billing\PaymentFailedEvent.class
@@ -170,12 +169,15 @@ com\nnipa\proto\storage\StorageEncryptedEvent.class
 com\nnipa\proto\common\EventMetadata$Builder.class
 com\nnipa\proto\auth\SelfSignupEvent$1.class
 com\nnipa\proto\billing\BillingEventOrBuilder.class
+com\nnipa\proto\tenant\SubscriptionRenewedEventOrBuilder.class
 com\nnipa\proto\common\ContactInfo.class
+com\nnipa\proto\tenant\FeatureUpdatedEvent$1.class
 com\nnipa\proto\command\CreateTenantCommand.class
 com\nnipa\proto\common\UserStatus$1.class
 com\nnipa\proto\storage\DeleteObjectCommand$Builder.class
 com\nnipa\proto\user\UserCreatedEventOrBuilder.class
 com\nnipa\proto\tenant\ProvisionTenantCommandOrBuilder.class
+com\nnipa\proto\tenant\SubscriptionRenewedEvent.class
 com\nnipa\proto\tenant\TenantDeletedEventOrBuilder.class
 com\nnipa\proto\storage\StorageSharedEvent$ShareData.class
 com\nnipa\proto\auth\LoginFailedEvent$FailureData.class
@@ -207,13 +209,12 @@ com\nnipa\proto\tenant\TenantActivatedEvent$Builder.class
 com\nnipa\proto\storage\StorageEncryptedEvent$EncryptionData$Builder.class
 com\nnipa\proto\storage\StorageOperationResultOrBuilder.class
 com\nnipa\proto\storage\StorageQuotaExceededEvent$QuotaData$1.class
-com\nnipa\proto\tenant\SubscriptionChangedEvent$1.class
 com\nnipa\proto\common\ContactInfoOrBuilder.class
+com\nnipa\proto\tenant\TenantBillingFailedEvent.class
 com\nnipa\proto\storage\StorageCompressedEvent$CompressionDataOrBuilder.class
 com\nnipa\proto\auth\ValidateUserCommandOrBuilder.class
 com\nnipa\proto\storage\RestoreVersionCommand$RestoreData$Builder.class
 com\nnipa\proto\storage\StorageScannedEvent$ScanData.class
-com\nnipa\proto\tenant\SubscriptionChangedEvent$SubscriptionChangeOrBuilder.class
 com\nnipa\proto\storage\StorageRestoredEvent$RestoreData$Builder.class
 com\nnipa\proto\command\CreateUserProfileCommand$Builder.class
 com\nnipa\proto\tenant\SubscriptionCancelledEvent.class
@@ -232,7 +233,6 @@ com\nnipa\proto\storage\RestoreVersionCommand$RestoreData.class
 com\nnipa\proto\storage\ScanObjectCommand$1.class
 com\nnipa\proto\billing\PaymentFailedEvent$1.class
 com\nnipa\proto\tenant\ProvisionTenantCommand.class
-com\nnipa\proto\tenant\SubscriptionChangedEvent$SubscriptionChange$Builder.class
 com\nnipa\proto\storage\ApplyLifecyclePolicyCommand$1.class
 com\nnipa\proto\tenant\CreateTenantCommand$TenantDetails$1.class
 com\nnipa\proto\auth\PasswordResetRequestedEvent$1.class
@@ -284,8 +284,10 @@ com\nnipa\proto\storage\StorageBackupCreatedEvent$BackupData.class
 com\nnipa\proto\command\SendNotificationCommand.class
 com\nnipa\proto\storage\ScanObjectCommand$ScanData.class
 com\nnipa\proto\common\PaginationInfo$1.class
+com\nnipa\proto\tenant\TenantBillingFailedEventOrBuilder.class
 com\nnipa\proto\auth\AuthCommands.class
 com\nnipa\proto\storage\CreateVersionCommand.class
+com\nnipa\proto\tenant\TenantBillingFailedEvent$1.class
 com\nnipa\proto\storage\CreateVersionCommand$VersionData$Builder.class
 com\nnipa\proto\tenant\SubscriptionUpdatedEventOrBuilder.class
 com\nnipa\proto\tenant\TenantMigratedEvent.class
@@ -316,11 +318,11 @@ com\nnipa\proto\storage\CopyObjectCommand$1.class
 com\nnipa\proto\tenant\UpdateTenantCommandOrBuilder.class
 com\nnipa\proto\common\EventStatus.class
 com\nnipa\proto\storage\StorageMigrationCompletedEvent.class
-com\nnipa\proto\tenant\SubscriptionChangedEventOrBuilder.class
 com\nnipa\proto\common\Priority$1.class
 com\nnipa\proto\auth\PasswordResetRequestedEvent.class
 com\nnipa\proto\storage\StorageCommands.class
 com\nnipa\proto\auth\AuthEvents.class
+com\nnipa\proto\tenant\FeatureUpdatedEvent$UpdatedSettingsDefaultEntryHolder.class
 com\nnipa\proto\storage\StorageVersionedEventOrBuilder.class
 com\nnipa\proto\storage\ChangeStorageTierCommand$TierChangeData$1.class
 com\nnipa\proto\storage\StorageMigrationCompletedEvent$CompletionData$1.class
@@ -409,6 +411,7 @@ com\nnipa\proto\auth\LoginFailedEvent$Builder.class
 com\nnipa\proto\tenant\UpdateTenantCommand$UpdateDetails$MetadataDefaultEntryHolder.class
 com\nnipa\proto\command\CreateUserProfileCommand.class
 com\nnipa\proto\common\ContactInfo$Builder.class
+com\nnipa\proto\tenant\FeatureUpdatedEventOrBuilder.class
 com\nnipa\proto\common\ErrorResponse$Builder.class
 com\nnipa\proto\user\UserUpdatedEventOrBuilder.class
 com\nnipa\proto\auth\MFAEnabledEventOrBuilder.class
@@ -468,6 +471,7 @@ com\nnipa\proto\storage\UploadObjectCommand$1.class
 com\nnipa\proto\command\ProvisionResourcesCommand$ConfigurationDefaultEntryHolder.class
 com\nnipa\proto\tenant\TenantSubscriptionChangedEvent$Builder.class
 com\nnipa\proto\tenant\TenantSubscriptionChangedEvent$SubscriptionData$Builder.class
+com\nnipa\proto\tenant\FeatureUpdatedEvent.class
 com\nnipa\proto\common\CompressionType$1.class
 com\nnipa\proto\storage\RestoreFromBackupCommand$RestoreDataOrBuilder.class
 com\nnipa\proto\auth\PasswordChangedEvent.class
@@ -505,6 +509,7 @@ com\nnipa\proto\storage\MigrateStorageCommand$1.class
 com\nnipa\proto\storage\StorageScannedEvent$Builder.class
 com\nnipa\proto\storage\StorageOperationResult$ResultData$1.class
 com\nnipa\proto\storage\UploadObjectCommand$Builder.class
+com\nnipa\proto\tenant\FeatureUpdatedEvent$Builder.class
 com\nnipa\proto\auth\UserLogoutEvent$LogoutDataOrBuilder.class
 com\nnipa\proto\tenant\TenantDeletedEvent.class
 com\nnipa\proto\authz\GrantPermissionCommand.class
@@ -582,6 +587,7 @@ com\nnipa\proto\storage\DeleteObjectCommand$DeleteData$1.class
 com\nnipa\proto\auth\AdminCreatedUserEvent$1.class
 com\nnipa\proto\tenant\SubscriptionCreatedEvent$1.class
 com\nnipa\proto\tenant\TenantReactivatedEvent.class
+com\nnipa\proto\tenant\SubscriptionRenewedEvent$Builder.class
 com\nnipa\proto\storage\StorageReplicatedEvent$1.class
 com\nnipa\proto\tenant\TenantDeletedEvent$Builder.class
 com\nnipa\proto\user\UserCreatedEvent.class
@@ -601,7 +607,6 @@ com\nnipa\proto\common\EventMetadata.class
 com\nnipa\proto\storage\CopyObjectCommand$CopyData.class
 com\nnipa\proto\tenant\ProvisionTenantCommand$ConfigurationDefaultEntryHolder.class
 com\nnipa\proto\billing\BillingEventProtos.class
-com\nnipa\proto\tenant\SubscriptionChangedEvent$Builder.class
 com\nnipa\proto\storage\StorageBackupCreatedEvent$BackupData$1.class
 com\nnipa\proto\common\SubscriptionTier$1.class
 com\nnipa\proto\storage\StorageVersionedEvent$Builder.class
@@ -625,7 +630,7 @@ com\nnipa\proto\storage\MoveObjectCommand$1.class
 com\nnipa\proto\storage\ScanObjectCommand$Builder.class
 com\nnipa\proto\storage\CopyObjectCommand$CopyData$TargetMetadataDefaultEntryHolder.class
 com\nnipa\proto\storage\StorageTieredEvent$1.class
-com\nnipa\proto\tenant\SubscriptionChangedEvent$SubscriptionChange$1.class
+com\nnipa\proto\tenant\TenantBillingFailedEvent$Builder.class
 com\nnipa\proto\auth\UserActivatedEvent.class
 com\nnipa\proto\auth\UserLoginEventOrBuilder.class
 com\nnipa\proto\storage\StorageRestoredEvent$Builder.class

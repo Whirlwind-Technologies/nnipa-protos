@@ -1,5 +1,6 @@
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\command\CreateTenantCommandOrBuilder.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\storage\StorageBackupCreatedEventOrBuilder.java
+C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\tenant\SubscriptionRenewedEvent.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\tenant\TenantReactivatedEvent.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\storage\CreateBackupCommand.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\auth\UserLoginEventOrBuilder.java
@@ -57,6 +58,7 @@ C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\genera
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\storage\StorageScannedEvent.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\auth\ActivateUserCommandOrBuilder.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\common\UserStatus.java
+C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\tenant\FeatureUpdatedEvent.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\billing\BillingEvent.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\storage\ValidateStorageIntegrityCommand.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\common\OrganizationType.java
@@ -68,13 +70,16 @@ C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\genera
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\authz\GrantPermissionCommandOrBuilder.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\storage\RestoreFromBackupCommand.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\storage\UploadObjectCommand.java
+C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\tenant\TenantBillingFailedEventOrBuilder.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\tenant\TenantSubscriptionChangedEventOrBuilder.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\billing\SubscriptionRenewedEventOrBuilder.java
+C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\tenant\FeatureUpdatedEventOrBuilder.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\storage\CreateVersionCommand.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\authz\AuthorizationCheckedEventOrBuilder.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\common\CompressionType.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\authz\PermissionGrantedEventOrBuilder.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\auth\UserActivatedEventOrBuilder.java
+C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\tenant\SubscriptionRenewedEventOrBuilder.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\common\CommandMetadata.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\storage\ApplyLifecyclePolicyCommand.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\storage\StorageRestoredEvent.java
@@ -135,6 +140,7 @@ C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\genera
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\command\AuditLogCommandOrBuilder.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\command\SendNotificationCommandOrBuilder.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\tenant\TenantMigratedEventOrBuilder.java
+C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\tenant\TenantBillingFailedEvent.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\auth\SelfSignupEventOrBuilder.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\storage\ValidateStorageIntegrityCommandOrBuilder.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\tenant\FeatureDisabledEventOrBuilder.java
@@ -162,7 +168,6 @@ C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\genera
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\common\CommandResponse.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\common\Priority.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\auth\PasswordResetRequestedEventOrBuilder.java
-C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\tenant\SubscriptionChangedEventOrBuilder.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\auth\ActivateUserCommand.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\auth\LoginFailedEventOrBuilder.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\command\AuditLogCommand.java
@@ -196,7 +201,6 @@ C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\genera
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\storage\StorageBackupCreatedEvent.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\storage\StorageDeletedEvent.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\auth\AuthEvents.java
-C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\tenant\SubscriptionChangedEvent.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\storage\StorageOperationResultOrBuilder.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\user\UpdateUserProfileCommand.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\common\EventMetadata.java

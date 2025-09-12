@@ -36,51 +36,39 @@ public interface TenantDeactivatedEventOrBuilder extends
       getTenantIdBytes();
 
   /**
-   * <code>string tenant_code = 3;</code>
-   * @return The tenantCode.
-   */
-  java.lang.String getTenantCode();
-  /**
-   * <code>string tenant_code = 3;</code>
-   * @return The bytes for tenantCode.
-   */
-  com.google.protobuf.ByteString
-      getTenantCodeBytes();
-
-  /**
-   * <code>string reason = 4;</code>
+   * <code>string reason = 3;</code>
    * @return The reason.
    */
   java.lang.String getReason();
   /**
-   * <code>string reason = 4;</code>
+   * <code>string reason = 3;</code>
    * @return The bytes for reason.
    */
   com.google.protobuf.ByteString
       getReasonBytes();
 
   /**
-   * <code>.google.protobuf.Timestamp deactivated_at = 5;</code>
+   * <code>.google.protobuf.Timestamp deactivated_at = 4;</code>
    * @return Whether the deactivatedAt field is set.
    */
   boolean hasDeactivatedAt();
   /**
-   * <code>.google.protobuf.Timestamp deactivated_at = 5;</code>
+   * <code>.google.protobuf.Timestamp deactivated_at = 4;</code>
    * @return The deactivatedAt.
    */
   com.google.protobuf.Timestamp getDeactivatedAt();
   /**
-   * <code>.google.protobuf.Timestamp deactivated_at = 5;</code>
+   * <code>.google.protobuf.Timestamp deactivated_at = 4;</code>
    */
   com.google.protobuf.TimestampOrBuilder getDeactivatedAtOrBuilder();
 
   /**
-   * <code>string deactivated_by = 6;</code>
+   * <code>string deactivated_by = 5;</code>
    * @return The deactivatedBy.
    */
   java.lang.String getDeactivatedBy();
   /**
-   * <code>string deactivated_by = 6;</code>
+   * <code>string deactivated_by = 5;</code>
    * @return The bytes for deactivatedBy.
    */
   com.google.protobuf.ByteString

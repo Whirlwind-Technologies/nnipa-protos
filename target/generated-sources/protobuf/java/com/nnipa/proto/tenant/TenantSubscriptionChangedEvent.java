@@ -5,6 +5,10 @@
 package com.nnipa.proto.tenant;
 
 /**
+ * <pre>
+ * Event: Tenant Subscription Changed (for plan changes)
+ * </pre>
+ *
  * Protobuf type {@code com.nnipa.proto.tenant.TenantSubscriptionChangedEvent}
  */
 public final class TenantSubscriptionChangedEvent extends
@@ -2023,6 +2027,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * Event: Tenant Subscription Changed (for plan changes)
+   * </pre>
+   *
    * Protobuf type {@code com.nnipa.proto.tenant.TenantSubscriptionChangedEvent}
    */
   public static final class Builder extends

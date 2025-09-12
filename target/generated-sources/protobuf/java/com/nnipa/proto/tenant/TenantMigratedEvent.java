@@ -5,6 +5,10 @@
 package com.nnipa.proto.tenant;
 
 /**
+ * <pre>
+ * Event: Tenant Migrated (for isolation strategy changes)
+ * </pre>
+ *
  * Protobuf type {@code com.nnipa.proto.tenant.TenantMigratedEvent}
  */
 public final class TenantMigratedEvent extends
@@ -1988,6 +1992,10 @@ java.lang.String defaultValue) {
     return builder;
   }
   /**
+   * <pre>
+   * Event: Tenant Migrated (for isolation strategy changes)
+   * </pre>
+   *
    * Protobuf type {@code com.nnipa.proto.tenant.TenantMigratedEvent}
    */
   public static final class Builder extends

@@ -6,7 +6,7 @@ package com.nnipa.proto.tenant;
 
 /**
  * <pre>
- * Event: Tenant Suspended
+ * Event: Tenant Suspended (completing the definition)
  * </pre>
  *
  * Protobuf type {@code com.nnipa.proto.tenant.TenantSuspendedEvent}
@@ -476,7 +476,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Event: Tenant Suspended
+   * Event: Tenant Suspended (completing the definition)
    * </pre>
    *
    * Protobuf type {@code com.nnipa.proto.tenant.TenantSuspendedEvent}

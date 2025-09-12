@@ -5,6 +5,10 @@
 package com.nnipa.proto.tenant;
 
 /**
+ * <pre>
+ * Event: Tenant Reactivated
+ * </pre>
+ *
  * Protobuf type {@code com.nnipa.proto.tenant.TenantReactivatedEvent}
  */
 public final class TenantReactivatedEvent extends
@@ -371,6 +375,10 @@ private static final long serialVersionUID = 0L;
     return builder;
   }
   /**
+   * <pre>
+   * Event: Tenant Reactivated
+   * </pre>
+   *
    * Protobuf type {@code com.nnipa.proto.tenant.TenantReactivatedEvent}
    */
   public static final class Builder extends

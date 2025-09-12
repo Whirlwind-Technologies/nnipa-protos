@@ -7,7 +7,6 @@ option java_multiple_files = true;
 
 import "google/protobuf/timestamp.proto";
 import "common/common.proto";
-import "common/enums.proto";
 
 // Shared TenantData message used across events
 message TenantData {
@@ -67,7 +66,7 @@ message TenantActivatedEvent {
   google.protobuf.Timestamp activated_at = 5;
 }
 
-// Event: Tenant Suspended
+// Event: Tenant Suspended (completing the definition)
 message TenantSuspendedEvent {
   com.nnipa.proto.common.EventMetadata metadata = 1;
   string tenant_id = 2;
@@ -85,6 +84,23 @@ message TenantDeletedEvent {
   string deleted_by = 4;
   google.protobuf.Timestamp deleted_at = 5;
   bool permanent = 6;
+}
+
+// Event: Tenant Reactivated
+message TenantReactivatedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string tenant_id = 2;
+  google.protobuf.Timestamp reactivated_at = 3;
+  string reactivated_by = 4;
+}
+
+// Event: Tenant Deactivated (for backward compatibility)
+message TenantDeactivatedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string tenant_id = 2;
+  string reason = 3;
+  google.protobuf.Timestamp deactivated_at = 4;
+  string deactivated_by = 5;
 }
 
 // Event: Subscription Created
@@ -112,6 +128,16 @@ message SubscriptionCancelledEvent {
   google.protobuf.Timestamp effective_date = 7;
 }
 
+// Event: Subscription Renewed
+message SubscriptionRenewedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string subscription_id = 2;
+  string tenant_id = 3;
+  string plan = 4;
+  google.protobuf.Timestamp renewed_at = 5;
+  google.protobuf.Timestamp next_renewal_date = 6;
+}
+
 // Event: Feature Enabled
 message FeatureEnabledEvent {
   com.nnipa.proto.common.EventMetadata metadata = 1;
@@ -133,48 +159,18 @@ message FeatureDisabledEvent {
   google.protobuf.Timestamp disabled_at = 5;
 }
 
-// Legacy events (keeping for backward compatibility if needed)
-message TenantDeactivatedEvent {
+// Event: Feature Updated
+message FeatureUpdatedEvent {
   com.nnipa.proto.common.EventMetadata metadata = 1;
   string tenant_id = 2;
-  string tenant_code = 3;
-  string reason = 4;
-  google.protobuf.Timestamp deactivated_at = 5;
-  string deactivated_by = 6;
+  string feature_code = 3;
+  string feature_name = 4;
+  map<string, string> updated_settings = 5;
+  google.protobuf.Timestamp updated_at = 6;
+  string updated_by = 7;
 }
 
-message SubscriptionChangedEvent {
-  com.nnipa.proto.common.EventMetadata metadata = 1;
-
-  message SubscriptionChange {
-    string tenant_id = 1;
-    com.nnipa.proto.common.SubscriptionTier old_tier = 2;
-    com.nnipa.proto.common.SubscriptionTier new_tier = 3;
-    google.protobuf.Timestamp effective_date = 4;
-    string changed_by = 5;
-    string reason = 6;
-    double price_change = 7;
-  }
-
-  SubscriptionChange change = 2;
-}
-
-message TenantMigratedEvent {
-  com.nnipa.proto.common.EventMetadata metadata = 1;
-
-  message MigrationData {
-    string tenant_id = 1;
-    string from_strategy = 2;
-    string to_strategy = 3;
-    google.protobuf.Timestamp started_at = 4;
-    google.protobuf.Timestamp completed_at = 5;
-    string status = 6;
-    map<string, string> migration_metadata = 7;
-  }
-
-  MigrationData migration = 2;
-}
-
+// Event: Tenant Subscription Changed (for plan changes)
 message TenantSubscriptionChangedEvent {
   com.nnipa.proto.common.EventMetadata metadata = 1;
 
@@ -192,9 +188,32 @@ message TenantSubscriptionChangedEvent {
   SubscriptionData subscription_data = 2;
 }
 
-message TenantReactivatedEvent {
+// Event: Tenant Migrated (for isolation strategy changes)
+message TenantMigratedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  message MigrationData {
+    string tenant_id = 1;
+    string from_strategy = 2;
+    string to_strategy = 3;
+    google.protobuf.Timestamp started_at = 4;
+    google.protobuf.Timestamp completed_at = 5;
+    string status = 6;
+    map<string, string> migration_metadata = 7;
+  }
+
+  MigrationData migration = 2;
+}
+
+// Event: Tenant Billing Failed (for tenant-specific billing events)
+message TenantBillingFailedEvent {
   com.nnipa.proto.common.EventMetadata metadata = 1;
   string tenant_id = 2;
-  google.protobuf.Timestamp reactivated_at = 3;
-  string reactivated_by = 4;
+  string subscription_id = 3;
+  double amount = 4;
+  string currency = 5;
+  int32 failed_count = 6;
+  string failure_reason = 7;
+  google.protobuf.Timestamp failed_at = 8;
+  google.protobuf.Timestamp next_retry_at = 9;
 }
