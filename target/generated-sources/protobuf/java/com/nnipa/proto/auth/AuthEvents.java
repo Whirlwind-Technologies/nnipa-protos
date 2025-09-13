@@ -16,6 +16,26 @@ public final class AuthEvents {
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_nnipa_proto_auth_AuthenticationEvent_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_nnipa_proto_auth_AuthenticationEvent_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_nnipa_proto_auth_AuthenticationEvent_AdditionalDataEntry_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_nnipa_proto_auth_AuthenticationEvent_AdditionalDataEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_nnipa_proto_auth_SecurityEvent_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_nnipa_proto_auth_SecurityEvent_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_nnipa_proto_auth_SecurityEvent_MetadataEntry_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_nnipa_proto_auth_SecurityEvent_MetadataEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_nnipa_proto_auth_SelfSignupEvent_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -106,96 +126,117 @@ public final class AuthEvents {
     java.lang.String[] descriptorData = {
       "\n\026auth/auth_events.proto\022\024com.nnipa.prot" +
       "o.auth\032\037google/protobuf/timestamp.proto\032" +
-      "\023common/common.proto\"\221\003\n\017SelfSignupEvent" +
+      "\023common/common.proto\"\325\002\n\023AuthenticationE" +
+      "vent\022\020\n\010event_id\030\001 \001(\t\022\022\n\nevent_type\030\002 \001" +
+      "(\t\022\017\n\007user_id\030\003 \001(\t\022\021\n\ttenant_id\030\004 \001(\t\022\026" +
+      "\n\016correlation_id\030\005 \001(\t\022\021\n\ttimestamp\030\006 \001(" +
+      "\003\022\022\n\nip_address\030\007 \001(\t\022\022\n\nuser_agent\030\010 \001(" +
+      "\t\022\022\n\nsession_id\030\t \001(\t\022V\n\017additional_data" +
+      "\030\n \003(\0132=.com.nnipa.proto.auth.Authentica" +
+      "tionEvent.AdditionalDataEntry\0325\n\023Additio" +
+      "nalDataEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t" +
+      ":\0028\001\"\372\003\n\rSecurityEvent\022\020\n\010event_id\030\001 \001(\t" +
+      "\022\022\n\nevent_type\030\002 \001(\t\022\017\n\007user_id\030\003 \001(\t\022\020\n" +
+      "\010username\030\004 \001(\t\022\021\n\ttenant_id\030\005 \001(\t\022\026\n\016co" +
+      "rrelation_id\030\006 \001(\t\022\021\n\ttimestamp\030\007 \001(\003\022\022\n" +
+      "\nip_address\030\010 \001(\t\022\022\n\nuser_agent\030\t \001(\t\022\020\n" +
+      "\010severity\030\n \001(\t\022\023\n\013description\030\013 \001(\t\022\022\n\n" +
+      "risk_score\030\014 \001(\005\022C\n\010metadata\030\r \003(\01321.com" +
+      ".nnipa.proto.auth.SecurityEvent.Metadata" +
+      "Entry\022\025\n\rsource_system\030\016 \001(\t\022\030\n\020detectio" +
+      "n_method\030\017 \001(\t\022\031\n\021threat_indicators\030\020 \003(" +
+      "\t\022\035\n\025geographical_location\030\021 \001(\t\022\036\n\026requ" +
+      "ires_investigation\030\022 \001(\010\032/\n\rMetadataEntr" +
+      "y\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\221\003\n\017Se" +
+      "lfSignupEvent\0227\n\010metadata\030\001 \001(\0132%.com.nn" +
+      "ipa.proto.common.EventMetadata\022\017\n\007user_i" +
+      "d\030\002 \001(\t\022\r\n\005email\030\003 \001(\t\022\020\n\010username\030\004 \001(\t" +
+      "\022\022\n\nfirst_name\030\005 \001(\t\022\021\n\tlast_name\030\006 \001(\t\022" +
+      "\024\n\014phone_number\030\007 \001(\t\022\030\n\020activation_toke" +
+      "n\030\010 \001(\t\022\031\n\021organization_name\030\t \001(\t\022\031\n\021or" +
+      "ganization_type\030\n \001(\t\022\032\n\022organization_em" +
+      "ail\030\013 \001(\t\022\023\n\013mfa_enabled\030\014 \001(\010\022-\n\ttimest" +
+      "amp\030\r \001(\0132\032.google.protobuf.Timestamp\022\022\n" +
+      "\nip_address\030\016 \001(\t\022\022\n\nuser_agent\030\017 \001(\t\"\370\002" +
+      "\n\025AdminCreatedUserEvent\0227\n\010metadata\030\001 \001(" +
+      "\0132%.com.nnipa.proto.common.EventMetadata" +
+      "\022\017\n\007user_id\030\002 \001(\t\022\021\n\ttenant_id\030\003 \001(\t\022\r\n\005" +
+      "email\030\004 \001(\t\022\020\n\010username\030\005 \001(\t\022\022\n\nfirst_n" +
+      "ame\030\006 \001(\t\022\021\n\tlast_name\030\007 \001(\t\022\024\n\014phone_nu" +
+      "mber\030\010 \001(\t\022\030\n\020activation_token\030\t \001(\t\022\022\n\n" +
+      "created_by\030\n \001(\t\022\024\n\014initial_role\030\013 \001(\t\022\023" +
+      "\n\013mfa_enabled\030\014 \001(\010\022\034\n\024must_change_passw" +
+      "ord\030\r \001(\010\022-\n\ttimestamp\030\016 \001(\0132\032.google.pr" +
+      "otobuf.Timestamp\"\307\004\n\023UserRegisteredEvent" +
       "\0227\n\010metadata\030\001 \001(\0132%.com.nnipa.proto.com" +
-      "mon.EventMetadata\022\017\n\007user_id\030\002 \001(\t\022\r\n\005em" +
-      "ail\030\003 \001(\t\022\020\n\010username\030\004 \001(\t\022\022\n\nfirst_nam" +
-      "e\030\005 \001(\t\022\021\n\tlast_name\030\006 \001(\t\022\024\n\014phone_numb" +
-      "er\030\007 \001(\t\022\030\n\020activation_token\030\010 \001(\t\022\031\n\021or" +
-      "ganization_name\030\t \001(\t\022\031\n\021organization_ty" +
-      "pe\030\n \001(\t\022\032\n\022organization_email\030\013 \001(\t\022\023\n\013" +
-      "mfa_enabled\030\014 \001(\010\022-\n\ttimestamp\030\r \001(\0132\032.g" +
-      "oogle.protobuf.Timestamp\022\022\n\nip_address\030\016" +
-      " \001(\t\022\022\n\nuser_agent\030\017 \001(\t\"\370\002\n\025AdminCreate" +
-      "dUserEvent\0227\n\010metadata\030\001 \001(\0132%.com.nnipa" +
-      ".proto.common.EventMetadata\022\017\n\007user_id\030\002" +
-      " \001(\t\022\021\n\ttenant_id\030\003 \001(\t\022\r\n\005email\030\004 \001(\t\022\020" +
-      "\n\010username\030\005 \001(\t\022\022\n\nfirst_name\030\006 \001(\t\022\021\n\t" +
-      "last_name\030\007 \001(\t\022\024\n\014phone_number\030\010 \001(\t\022\030\n" +
-      "\020activation_token\030\t \001(\t\022\022\n\ncreated_by\030\n " +
-      "\001(\t\022\024\n\014initial_role\030\013 \001(\t\022\023\n\013mfa_enabled" +
-      "\030\014 \001(\010\022\034\n\024must_change_password\030\r \001(\010\022-\n\t" +
-      "timestamp\030\016 \001(\0132\032.google.protobuf.Timest" +
-      "amp\"\307\004\n\023UserRegisteredEvent\0227\n\010metadata\030" +
-      "\001 \001(\0132%.com.nnipa.proto.common.EventMeta" +
-      "data\022P\n\014registration\030\002 \001(\0132:.com.nnipa.p" +
-      "roto.auth.UserRegisteredEvent.Registrati" +
-      "onData\032\244\003\n\020RegistrationData\022\017\n\007user_id\030\001" +
-      " \001(\t\022\021\n\ttenant_id\030\002 \001(\t\022\020\n\010username\030\003 \001(" +
-      "\t\022\r\n\005email\030\004 \001(\t\022\033\n\023registration_method\030" +
-      "\005 \001(\t\0221\n\rregistered_at\030\006 \001(\0132\032.google.pr" +
-      "otobuf.Timestamp\022\022\n\nip_address\030\007 \001(\t\022\022\n\n" +
-      "user_agent\030\010 \001(\t\022\026\n\016email_verified\030\t \001(\010" +
-      "\022\033\n\023registration_source\030\n \001(\t\022g\n\017additio" +
-      "nal_info\030\013 \003(\0132N.com.nnipa.proto.auth.Us" +
-      "erRegisteredEvent.RegistrationData.Addit" +
-      "ionalInfoEntry\0325\n\023AdditionalInfoEntry\022\013\n" +
-      "\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\321\001\n\022UserAc" +
-      "tivatedEvent\0227\n\010metadata\030\001 \001(\0132%.com.nni" +
-      "pa.proto.common.EventMetadata\022\017\n\007user_id" +
-      "\030\002 \001(\t\022\021\n\ttenant_id\030\003 \001(\t\022\030\n\020activation_" +
-      "token\030\004 \001(\t\0220\n\014activated_at\030\005 \001(\0132\032.goog" +
-      "le.protobuf.Timestamp\022\022\n\nip_address\030\006 \001(" +
-      "\t\"\237\004\n\016UserLoginEvent\0227\n\010metadata\030\001 \001(\0132%" +
-      ".com.nnipa.proto.common.EventMetadata\022=\n" +
-      "\005login\030\002 \001(\0132..com.nnipa.proto.auth.User" +
-      "LoginEvent.LoginData\032\224\003\n\tLoginData\022\017\n\007us" +
-      "er_id\030\001 \001(\t\022\021\n\ttenant_id\030\002 \001(\t\022\020\n\010userna" +
-      "me\030\003 \001(\t\022\r\n\005email\030\004 \001(\t\022\035\n\025authenticatio" +
-      "n_method\030\005 \001(\t\022\022\n\nip_address\030\006 \001(\t\022\022\n\nus" +
-      "er_agent\030\007 \001(\t\022\022\n\nsession_id\030\010 \001(\t\022.\n\nlo" +
-      "gin_time\030\t \001(\0132\032.google.protobuf.Timesta" +
-      "mp\022\020\n\010mfa_used\030\n \001(\010\022\021\n\tdevice_id\030\013 \001(\t\022" +
-      "[\n\017additional_info\030\014 \003(\0132B.com.nnipa.pro" +
-      "to.auth.UserLoginEvent.LoginData.Additio" +
-      "nalInfoEntry\0325\n\023AdditionalInfoEntry\022\013\n\003k" +
-      "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\270\002\n\017UserLogo" +
-      "utEvent\0227\n\010metadata\030\001 \001(\0132%.com.nnipa.pr" +
-      "oto.common.EventMetadata\022@\n\006logout\030\002 \001(\013" +
-      "20.com.nnipa.proto.auth.UserLogoutEvent." +
-      "LogoutData\032\251\001\n\nLogoutData\022\017\n\007user_id\030\001 \001" +
-      "(\t\022\021\n\ttenant_id\030\002 \001(\t\022\022\n\nsession_id\030\003 \001(" +
-      "\t\022/\n\013logout_time\030\004 \001(\0132\032.google.protobuf" +
-      ".Timestamp\022\025\n\rlogout_reason\030\005 \001(\t\022\033\n\023ses" +
-      "sion_duration_ms\030\006 \001(\003\"\346\002\n\020LoginFailedEv" +
-      "ent\0227\n\010metadata\030\001 \001(\0132%.com.nnipa.proto." +
-      "common.EventMetadata\022C\n\007failure\030\002 \001(\01322." +
-      "com.nnipa.proto.auth.LoginFailedEvent.Fa" +
-      "ilureData\032\323\001\n\013FailureData\022\020\n\010username\030\001 " +
-      "\001(\t\022\021\n\ttenant_id\030\002 \001(\t\022\026\n\016failure_reason" +
-      "\030\003 \001(\t\022\022\n\nip_address\030\004 \001(\t\022\022\n\nuser_agent" +
-      "\030\005 \001(\t\0220\n\014attempt_time\030\006 \001(\0132\032.google.pr" +
-      "otobuf.Timestamp\022\025\n\rfailure_count\030\007 \001(\005\022" +
-      "\026\n\016account_locked\030\010 \001(\010\"\345\001\n\024PasswordChan" +
-      "gedEvent\0227\n\010metadata\030\001 \001(\0132%.com.nnipa.p" +
-      "roto.common.EventMetadata\022\017\n\007user_id\030\002 \001" +
-      "(\t\022\021\n\ttenant_id\030\003 \001(\t\022\022\n\nchanged_by\030\004 \001(" +
-      "\t\022.\n\nchanged_at\030\005 \001(\0132\032.google.protobuf." +
-      "Timestamp\022\025\n\rforced_change\030\006 \001(\010\022\025\n\rchan" +
-      "ge_reason\030\007 \001(\t\"\224\002\n\033PasswordResetRequest" +
+      "mon.EventMetadata\022P\n\014registration\030\002 \001(\0132" +
+      ":.com.nnipa.proto.auth.UserRegisteredEve" +
+      "nt.RegistrationData\032\244\003\n\020RegistrationData" +
+      "\022\017\n\007user_id\030\001 \001(\t\022\021\n\ttenant_id\030\002 \001(\t\022\020\n\010" +
+      "username\030\003 \001(\t\022\r\n\005email\030\004 \001(\t\022\033\n\023registr" +
+      "ation_method\030\005 \001(\t\0221\n\rregistered_at\030\006 \001(" +
+      "\0132\032.google.protobuf.Timestamp\022\022\n\nip_addr" +
+      "ess\030\007 \001(\t\022\022\n\nuser_agent\030\010 \001(\t\022\026\n\016email_v" +
+      "erified\030\t \001(\010\022\033\n\023registration_source\030\n \001" +
+      "(\t\022g\n\017additional_info\030\013 \003(\0132N.com.nnipa." +
+      "proto.auth.UserRegisteredEvent.Registrat" +
+      "ionData.AdditionalInfoEntry\0325\n\023Additiona" +
+      "lInfoEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\002" +
+      "8\001\"\321\001\n\022UserActivatedEvent\0227\n\010metadata\030\001 " +
+      "\001(\0132%.com.nnipa.proto.common.EventMetada" +
+      "ta\022\017\n\007user_id\030\002 \001(\t\022\021\n\ttenant_id\030\003 \001(\t\022\030" +
+      "\n\020activation_token\030\004 \001(\t\0220\n\014activated_at" +
+      "\030\005 \001(\0132\032.google.protobuf.Timestamp\022\022\n\nip" +
+      "_address\030\006 \001(\t\"\237\004\n\016UserLoginEvent\0227\n\010met" +
+      "adata\030\001 \001(\0132%.com.nnipa.proto.common.Eve" +
+      "ntMetadata\022=\n\005login\030\002 \001(\0132..com.nnipa.pr" +
+      "oto.auth.UserLoginEvent.LoginData\032\224\003\n\tLo" +
+      "ginData\022\017\n\007user_id\030\001 \001(\t\022\021\n\ttenant_id\030\002 " +
+      "\001(\t\022\020\n\010username\030\003 \001(\t\022\r\n\005email\030\004 \001(\t\022\035\n\025" +
+      "authentication_method\030\005 \001(\t\022\022\n\nip_addres" +
+      "s\030\006 \001(\t\022\022\n\nuser_agent\030\007 \001(\t\022\022\n\nsession_i" +
+      "d\030\010 \001(\t\022.\n\nlogin_time\030\t \001(\0132\032.google.pro" +
+      "tobuf.Timestamp\022\020\n\010mfa_used\030\n \001(\010\022\021\n\tdev" +
+      "ice_id\030\013 \001(\t\022[\n\017additional_info\030\014 \003(\0132B." +
+      "com.nnipa.proto.auth.UserLoginEvent.Logi" +
+      "nData.AdditionalInfoEntry\0325\n\023AdditionalI" +
+      "nfoEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001" +
+      "\"\270\002\n\017UserLogoutEvent\0227\n\010metadata\030\001 \001(\0132%" +
+      ".com.nnipa.proto.common.EventMetadata\022@\n" +
+      "\006logout\030\002 \001(\01320.com.nnipa.proto.auth.Use" +
+      "rLogoutEvent.LogoutData\032\251\001\n\nLogoutData\022\017" +
+      "\n\007user_id\030\001 \001(\t\022\021\n\ttenant_id\030\002 \001(\t\022\022\n\nse" +
+      "ssion_id\030\003 \001(\t\022/\n\013logout_time\030\004 \001(\0132\032.go" +
+      "ogle.protobuf.Timestamp\022\025\n\rlogout_reason" +
+      "\030\005 \001(\t\022\033\n\023session_duration_ms\030\006 \001(\003\"\346\002\n\020" +
+      "LoginFailedEvent\0227\n\010metadata\030\001 \001(\0132%.com" +
+      ".nnipa.proto.common.EventMetadata\022C\n\007fai" +
+      "lure\030\002 \001(\01322.com.nnipa.proto.auth.LoginF" +
+      "ailedEvent.FailureData\032\323\001\n\013FailureData\022\020" +
+      "\n\010username\030\001 \001(\t\022\021\n\ttenant_id\030\002 \001(\t\022\026\n\016f" +
+      "ailure_reason\030\003 \001(\t\022\022\n\nip_address\030\004 \001(\t\022" +
+      "\022\n\nuser_agent\030\005 \001(\t\0220\n\014attempt_time\030\006 \001(" +
+      "\0132\032.google.protobuf.Timestamp\022\025\n\rfailure" +
+      "_count\030\007 \001(\005\022\026\n\016account_locked\030\010 \001(\010\"\345\001\n" +
+      "\024PasswordChangedEvent\0227\n\010metadata\030\001 \001(\0132" +
+      "%.com.nnipa.proto.common.EventMetadata\022\017" +
+      "\n\007user_id\030\002 \001(\t\022\021\n\ttenant_id\030\003 \001(\t\022\022\n\nch" +
+      "anged_by\030\004 \001(\t\022.\n\nchanged_at\030\005 \001(\0132\032.goo" +
+      "gle.protobuf.Timestamp\022\025\n\rforced_change\030" +
+      "\006 \001(\010\022\025\n\rchange_reason\030\007 \001(\t\"\224\002\n\033Passwor" +
+      "dResetRequestedEvent\0227\n\010metadata\030\001 \001(\0132%" +
+      ".com.nnipa.proto.common.EventMetadata\022\017\n" +
+      "\007user_id\030\002 \001(\t\022\r\n\005email\030\003 \001(\t\022\021\n\ttenant_" +
+      "id\030\004 \001(\t\022\023\n\013reset_token\030\005 \001(\t\0220\n\014request" +
+      "ed_at\030\006 \001(\0132\032.google.protobuf.Timestamp\022" +
+      ".\n\nexpires_at\030\007 \001(\0132\032.google.protobuf.Ti" +
+      "mestamp\022\022\n\nip_address\030\010 \001(\t\"\305\001\n\017MFAEnabl" +
       "edEvent\0227\n\010metadata\030\001 \001(\0132%.com.nnipa.pr" +
       "oto.common.EventMetadata\022\017\n\007user_id\030\002 \001(" +
-      "\t\022\r\n\005email\030\003 \001(\t\022\021\n\ttenant_id\030\004 \001(\t\022\023\n\013r" +
-      "eset_token\030\005 \001(\t\0220\n\014requested_at\030\006 \001(\0132\032" +
-      ".google.protobuf.Timestamp\022.\n\nexpires_at" +
-      "\030\007 \001(\0132\032.google.protobuf.Timestamp\022\022\n\nip" +
-      "_address\030\010 \001(\t\"\305\001\n\017MFAEnabledEvent\0227\n\010me" +
-      "tadata\030\001 \001(\0132%.com.nnipa.proto.common.Ev" +
-      "entMetadata\022\017\n\007user_id\030\002 \001(\t\022\021\n\ttenant_i" +
-      "d\030\003 \001(\t\022\020\n\010mfa_type\030\004 \001(\t\022.\n\nenabled_at\030" +
-      "\005 \001(\0132\032.google.protobuf.Timestamp\022\023\n\013dev" +
-      "ice_name\030\006 \001(\tB\030\n\024com.nnipa.proto.authP\001" +
-      "b\006proto3"
+      "\t\022\021\n\ttenant_id\030\003 \001(\t\022\020\n\010mfa_type\030\004 \001(\t\022." +
+      "\n\nenabled_at\030\005 \001(\0132\032.google.protobuf.Tim" +
+      "estamp\022\023\n\013device_name\030\006 \001(\tB\030\n\024com.nnipa" +
+      ".proto.authP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -203,20 +244,44 @@ public final class AuthEvents {
           com.google.protobuf.TimestampProto.getDescriptor(),
           com.nnipa.proto.common.CommonProtos.getDescriptor(),
         });
-    internal_static_com_nnipa_proto_auth_SelfSignupEvent_descriptor =
+    internal_static_com_nnipa_proto_auth_AuthenticationEvent_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_com_nnipa_proto_auth_AuthenticationEvent_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_nnipa_proto_auth_AuthenticationEvent_descriptor,
+        new java.lang.String[] { "EventId", "EventType", "UserId", "TenantId", "CorrelationId", "Timestamp", "IpAddress", "UserAgent", "SessionId", "AdditionalData", });
+    internal_static_com_nnipa_proto_auth_AuthenticationEvent_AdditionalDataEntry_descriptor =
+      internal_static_com_nnipa_proto_auth_AuthenticationEvent_descriptor.getNestedTypes().get(0);
+    internal_static_com_nnipa_proto_auth_AuthenticationEvent_AdditionalDataEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_nnipa_proto_auth_AuthenticationEvent_AdditionalDataEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_com_nnipa_proto_auth_SecurityEvent_descriptor =
+      getDescriptor().getMessageTypes().get(1);
+    internal_static_com_nnipa_proto_auth_SecurityEvent_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_nnipa_proto_auth_SecurityEvent_descriptor,
+        new java.lang.String[] { "EventId", "EventType", "UserId", "Username", "TenantId", "CorrelationId", "Timestamp", "IpAddress", "UserAgent", "Severity", "Description", "RiskScore", "Metadata", "SourceSystem", "DetectionMethod", "ThreatIndicators", "GeographicalLocation", "RequiresInvestigation", });
+    internal_static_com_nnipa_proto_auth_SecurityEvent_MetadataEntry_descriptor =
+      internal_static_com_nnipa_proto_auth_SecurityEvent_descriptor.getNestedTypes().get(0);
+    internal_static_com_nnipa_proto_auth_SecurityEvent_MetadataEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_nnipa_proto_auth_SecurityEvent_MetadataEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_com_nnipa_proto_auth_SelfSignupEvent_descriptor =
+      getDescriptor().getMessageTypes().get(2);
     internal_static_com_nnipa_proto_auth_SelfSignupEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nnipa_proto_auth_SelfSignupEvent_descriptor,
         new java.lang.String[] { "Metadata", "UserId", "Email", "Username", "FirstName", "LastName", "PhoneNumber", "ActivationToken", "OrganizationName", "OrganizationType", "OrganizationEmail", "MfaEnabled", "Timestamp", "IpAddress", "UserAgent", });
     internal_static_com_nnipa_proto_auth_AdminCreatedUserEvent_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(3);
     internal_static_com_nnipa_proto_auth_AdminCreatedUserEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nnipa_proto_auth_AdminCreatedUserEvent_descriptor,
         new java.lang.String[] { "Metadata", "UserId", "TenantId", "Email", "Username", "FirstName", "LastName", "PhoneNumber", "ActivationToken", "CreatedBy", "InitialRole", "MfaEnabled", "MustChangePassword", "Timestamp", });
     internal_static_com_nnipa_proto_auth_UserRegisteredEvent_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_com_nnipa_proto_auth_UserRegisteredEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nnipa_proto_auth_UserRegisteredEvent_descriptor,
@@ -234,13 +299,13 @@ public final class AuthEvents {
         internal_static_com_nnipa_proto_auth_UserRegisteredEvent_RegistrationData_AdditionalInfoEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_com_nnipa_proto_auth_UserActivatedEvent_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_com_nnipa_proto_auth_UserActivatedEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nnipa_proto_auth_UserActivatedEvent_descriptor,
         new java.lang.String[] { "Metadata", "UserId", "TenantId", "ActivationToken", "ActivatedAt", "IpAddress", });
     internal_static_com_nnipa_proto_auth_UserLoginEvent_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_com_nnipa_proto_auth_UserLoginEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nnipa_proto_auth_UserLoginEvent_descriptor,
@@ -258,7 +323,7 @@ public final class AuthEvents {
         internal_static_com_nnipa_proto_auth_UserLoginEvent_LoginData_AdditionalInfoEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_com_nnipa_proto_auth_UserLogoutEvent_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_com_nnipa_proto_auth_UserLogoutEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nnipa_proto_auth_UserLogoutEvent_descriptor,
@@ -270,7 +335,7 @@ public final class AuthEvents {
         internal_static_com_nnipa_proto_auth_UserLogoutEvent_LogoutData_descriptor,
         new java.lang.String[] { "UserId", "TenantId", "SessionId", "LogoutTime", "LogoutReason", "SessionDurationMs", });
     internal_static_com_nnipa_proto_auth_LoginFailedEvent_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_com_nnipa_proto_auth_LoginFailedEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nnipa_proto_auth_LoginFailedEvent_descriptor,
@@ -282,19 +347,19 @@ public final class AuthEvents {
         internal_static_com_nnipa_proto_auth_LoginFailedEvent_FailureData_descriptor,
         new java.lang.String[] { "Username", "TenantId", "FailureReason", "IpAddress", "UserAgent", "AttemptTime", "FailureCount", "AccountLocked", });
     internal_static_com_nnipa_proto_auth_PasswordChangedEvent_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_com_nnipa_proto_auth_PasswordChangedEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nnipa_proto_auth_PasswordChangedEvent_descriptor,
         new java.lang.String[] { "Metadata", "UserId", "TenantId", "ChangedBy", "ChangedAt", "ForcedChange", "ChangeReason", });
     internal_static_com_nnipa_proto_auth_PasswordResetRequestedEvent_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_com_nnipa_proto_auth_PasswordResetRequestedEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nnipa_proto_auth_PasswordResetRequestedEvent_descriptor,
         new java.lang.String[] { "Metadata", "UserId", "Email", "TenantId", "ResetToken", "RequestedAt", "ExpiresAt", "IpAddress", });
     internal_static_com_nnipa_proto_auth_MFAEnabledEvent_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_com_nnipa_proto_auth_MFAEnabledEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nnipa_proto_auth_MFAEnabledEvent_descriptor,

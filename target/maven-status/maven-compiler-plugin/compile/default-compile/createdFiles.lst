@@ -57,6 +57,7 @@ com\nnipa\proto\storage\StorageEncryptedEvent$EncryptionData.class
 com\nnipa\proto\common\StorageBackend.class
 com\nnipa\proto\storage\UploadObjectCommand$UploadDataOrBuilder.class
 com\nnipa\proto\auth\MFAEnabledEvent$1.class
+com\nnipa\proto\auth\SecurityEvent$Builder.class
 com\nnipa\proto\storage\ShareObjectCommand$ShareData$Builder.class
 com\nnipa\proto\common\AuditInfoOrBuilder.class
 com\nnipa\proto\authz\RoleAssignedEvent$1.class
@@ -88,6 +89,7 @@ com\nnipa\proto\storage\CreateVersionCommand$VersionDataOrBuilder.class
 com\nnipa\proto\auth\UserRegisteredEvent.class
 com\nnipa\proto\storage\StorageRestoredEvent.class
 com\nnipa\proto\user\UserCreatedEvent$1.class
+com\nnipa\proto\auth\AuthenticationEvent.class
 com\nnipa\proto\authz\CheckAuthorizationCommand$ContextDefaultEntryHolder.class
 com\nnipa\proto\auth\ActivateUserCommand.class
 com\nnipa\proto\auth\LoginFailedEvent$FailureDataOrBuilder.class
@@ -200,6 +202,8 @@ com\nnipa\proto\storage\ApplyLifecyclePolicyCommand$PolicyData$Builder.class
 com\nnipa\proto\storage\StorageVersionedEvent$VersionDataOrBuilder.class
 com\nnipa\proto\user\UserActivatedEvent$Builder.class
 com\nnipa\proto\billing\PaymentSucceededEventOrBuilder.class
+com\nnipa\proto\auth\SecurityEvent$MetadataDefaultEntryHolder.class
+com\nnipa\proto\auth\SecurityEvent.class
 com\nnipa\proto\common\Priority.class
 com\nnipa\proto\storage\CopyObjectCommand$Builder.class
 com\nnipa\proto\tenant\SubscriptionUpdatedEvent$Builder.class
@@ -266,6 +270,7 @@ com\nnipa\proto\common\EncryptionStatus$1.class
 com\nnipa\proto\tenant\SubscriptionDataOrBuilder.class
 com\nnipa\proto\common\AuditInfo.class
 com\nnipa\proto\storage\MoveObjectCommandOrBuilder.class
+com\nnipa\proto\auth\SecurityEventOrBuilder.class
 com\nnipa\proto\storage\RestoreFromBackupCommand$Builder.class
 com\nnipa\proto\storage\CopyObjectCommand$CopyData$Builder.class
 com\nnipa\proto\storage\StorageTieredEvent$TierData.class
@@ -318,6 +323,7 @@ com\nnipa\proto\storage\CopyObjectCommand$1.class
 com\nnipa\proto\tenant\UpdateTenantCommandOrBuilder.class
 com\nnipa\proto\common\EventStatus.class
 com\nnipa\proto\storage\StorageMigrationCompletedEvent.class
+com\nnipa\proto\auth\AuthenticationEventOrBuilder.class
 com\nnipa\proto\common\Priority$1.class
 com\nnipa\proto\auth\PasswordResetRequestedEvent.class
 com\nnipa\proto\storage\StorageCommands.class
@@ -441,6 +447,7 @@ com\nnipa\proto\tenant\TenantMigratedEvent$MigrationData.class
 com\nnipa\proto\command\SendNotificationCommand$NotificationData$Builder.class
 com\nnipa\proto\storage\StorageBackupCreatedEvent$BackupDataOrBuilder.class
 com\nnipa\proto\storage\StorageUpdatedEventOrBuilder.class
+com\nnipa\proto\auth\AuthenticationEvent$Builder.class
 com\nnipa\proto\auth\UserLoginEvent$Builder.class
 com\nnipa\proto\tenant\TenantMigratedEvent$MigrationData$1.class
 com\nnipa\proto\auth\UserActivatedEventOrBuilder.class
@@ -486,6 +493,7 @@ com\nnipa\proto\authz\CheckAuthorizationCommand$Builder.class
 com\nnipa\proto\command\AuditLogCommand$Builder.class
 com\nnipa\proto\tenant\SubscriptionCancelledEvent$1.class
 com\nnipa\proto\auth\UserLoginEvent$LoginData$Builder.class
+com\nnipa\proto\auth\SecurityEvent$1.class
 com\nnipa\proto\authz\RoleAssignedEvent$Builder.class
 com\nnipa\proto\authz\PermissionGrantedEventOrBuilder.class
 com\nnipa\proto\command\CreateTenantCommand$1.class
@@ -569,6 +577,7 @@ com\nnipa\proto\common\EventStatus$1.class
 com\nnipa\proto\user\SyncUserDataCommandOrBuilder.class
 com\nnipa\proto\common\StorageMetadataOrBuilder.class
 com\nnipa\proto\tenant\FeatureDisabledEvent.class
+com\nnipa\proto\auth\AuthenticationEvent$AdditionalDataDefaultEntryHolder.class
 com\nnipa\proto\storage\StorageCompressedEvent$CompressionData.class
 com\nnipa\proto\tenant\TenantSuspendedEvent$Builder.class
 com\nnipa\proto\command\AuditLogCommand.class
@@ -585,6 +594,7 @@ com\nnipa\proto\tenant\TenantUpdatedEventOrBuilder.class
 com\nnipa\proto\common\CommandMetadata$1.class
 com\nnipa\proto\storage\DeleteObjectCommand$DeleteData$1.class
 com\nnipa\proto\auth\AdminCreatedUserEvent$1.class
+com\nnipa\proto\auth\AuthenticationEvent$1.class
 com\nnipa\proto\tenant\SubscriptionCreatedEvent$1.class
 com\nnipa\proto\tenant\TenantReactivatedEvent.class
 com\nnipa\proto\tenant\SubscriptionRenewedEvent$Builder.class

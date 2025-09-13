@@ -9,6 +9,53 @@ import "google/protobuf/timestamp.proto";
 import "common/common.proto";
 
 // ============================================
+// Generic Authentication Event
+// ============================================
+
+// Generic event wrapper that matches your Java code structure
+message AuthenticationEvent {
+  string event_id = 1;
+  string event_type = 2;
+  string user_id = 3;
+  string tenant_id = 4;
+  string correlation_id = 5;
+  int64 timestamp = 6;
+
+  // Optional fields for additional context
+  string ip_address = 7;
+  string user_agent = 8;
+  string session_id = 9;
+  map<string, string> additional_data = 10;
+}
+
+// ============================================
+// Security Event Message
+// ============================================
+
+message SecurityEvent {
+  string event_id = 1;
+  string event_type = 2;
+  string user_id = 3;
+  string username = 4;
+  string tenant_id = 5;
+  string correlation_id = 6;
+  int64 timestamp = 7;
+  string ip_address = 8;
+  string user_agent = 9;
+  string severity = 10;
+  string description = 11;
+  int32 risk_score = 12;
+  map<string, string> metadata = 13;
+
+  // Additional security-specific fields
+  string source_system = 14;
+  string detection_method = 15;
+  repeated string threat_indicators = 16;
+  string geographical_location = 17;
+  bool requires_investigation = 18;
+}
+
+// ============================================
 // New Registration Events
 // ============================================
 
