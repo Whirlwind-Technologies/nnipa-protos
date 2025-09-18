@@ -30,6 +30,7 @@ com\nnipa\proto\user\UserUpdatedEvent$1.class
 com\nnipa\proto\storage\MigrateStorageCommand$Builder.class
 com\nnipa\proto\storage\ShareObjectCommand.class
 com\nnipa\proto\auth\UserActivatedEvent$Builder.class
+com\nnipa\proto\tenant\UpdateUserTenantAssociationCommand$Builder.class
 com\nnipa\proto\command\SendNotificationCommandOrBuilder.class
 com\nnipa\proto\tenant\TenantMigratedEvent$MigrationDataOrBuilder.class
 com\nnipa\proto\storage\StorageMigrationStartedEvent$MigrationData$Builder.class
@@ -56,6 +57,7 @@ com\nnipa\proto\storage\StorageTieredEventOrBuilder.class
 com\nnipa\proto\storage\StorageCreatedEventOrBuilder.class
 com\nnipa\proto\tenant\TenantDataOrBuilder.class
 com\nnipa\proto\storage\StorageEncryptedEvent$EncryptionData.class
+com\nnipa\proto\tenant\UpdateUserTenantAssociationCommand.class
 com\nnipa\proto\common\StorageBackend.class
 com\nnipa\proto\storage\UploadObjectCommand$UploadDataOrBuilder.class
 com\nnipa\proto\auth\MFAEnabledEvent$1.class
@@ -282,6 +284,7 @@ com\nnipa\proto\storage\StorageMigrationStartedEventOrBuilder.class
 com\nnipa\proto\storage\ApplyLifecyclePolicyCommandOrBuilder.class
 com\nnipa\proto\storage\ScanObjectCommandOrBuilder.class
 com\nnipa\proto\common\Address$Builder.class
+com\nnipa\proto\tenant\UpdateUserTenantAssociationCommand$1.class
 com\nnipa\proto\authz\RoleRevokedEvent$1.class
 com\nnipa\proto\billing\BillingEvent.class
 com\nnipa\proto\storage\StorageLifecyclePolicyAppliedEvent$PolicyDataOrBuilder.class
@@ -631,6 +634,7 @@ com\nnipa\proto\storage\CreateBackupCommand$BackupDataOrBuilder.class
 com\nnipa\proto\auth\ResetPasswordCommand$1.class
 com\nnipa\proto\tenant\TenantSubscriptionChangedEventOrBuilder.class
 com\nnipa\proto\auth\ResetPasswordCommandOrBuilder.class
+com\nnipa\proto\tenant\UpdateUserTenantAssociationCommandOrBuilder.class
 com\nnipa\proto\common\ErrorResponse.class
 com\nnipa\proto\storage\StorageLifecyclePolicyAppliedEvent$1.class
 com\nnipa\proto\storage\DownloadObjectCommand$DownloadData.class
