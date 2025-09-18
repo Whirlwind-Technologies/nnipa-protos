@@ -1,0 +1,139 @@
+syntax = "proto3";
+
+package com.nnipa.proto.tenant;
+
+option java_package = "com.nnipa.proto.tenant";
+option java_multiple_files = true;
+option java_outer_classname = "TenantServiceProto";
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/empty.proto";
+
+// ===============================================
+// gRPC Service Definition for Tenant Management
+// ===============================================
+
+service TenantService {
+  // Create a new tenant synchronously
+  rpc CreateTenant(CreateTenantRequest) returns (CreateTenantResponse);
+
+  // Get tenant by ID
+  rpc GetTenant(GetTenantRequest) returns (GetTenantResponse);
+
+  // Get tenant by code
+  rpc GetTenantByCode(GetTenantByCodeRequest) returns (GetTenantResponse);
+
+  // Check if tenant exists
+  rpc TenantExists(TenantExistsRequest) returns (TenantExistsResponse);
+
+  // Update tenant
+  rpc UpdateTenant(UpdateTenantRequest) returns (UpdateTenantResponse);
+
+  // Activate tenant
+  rpc ActivateTenant(ActivateTenantRequest) returns (google.protobuf.Empty);
+
+  // Suspend tenant
+  rpc SuspendTenant(SuspendTenantRequest) returns (google.protobuf.Empty);
+
+  // Get tenant status
+  rpc GetTenantStatus(GetTenantStatusRequest) returns (GetTenantStatusResponse);
+}
+
+// ===============================================
+// Request and Response Messages
+// ===============================================
+
+// Create Tenant Messages
+message CreateTenantRequest {
+  string name = 1;
+  string email = 2;
+  string organization_type = 3;
+  string tenant_code = 4;
+  string subscription_plan = 5;
+  string created_by = 6;
+  string correlation_id = 7;
+  map<string, string> metadata = 8;
+}
+
+message CreateTenantResponse {
+  string tenant_id = 1;
+  string tenant_code = 2;
+  string name = 3;
+  string status = 4;
+  google.protobuf.Timestamp created_at = 5;
+}
+
+// Get Tenant Messages
+message GetTenantRequest {
+  string tenant_id = 1;
+}
+
+message GetTenantByCodeRequest {
+  string tenant_code = 1;
+}
+
+message GetTenantResponse {
+  string tenant_id = 1;
+  string tenant_code = 2;
+  string name = 3;
+  string email = 4;
+  string organization_type = 5;
+  string status = 6;
+  string subscription_plan = 7;
+  google.protobuf.Timestamp created_at = 8;
+  google.protobuf.Timestamp updated_at = 9;
+  map<string, string> metadata = 10;
+}
+
+// Tenant Exists Messages
+message TenantExistsRequest {
+  string tenant_id = 1;
+}
+
+message TenantExistsResponse {
+  bool exists = 1;
+  string status = 2;
+}
+
+// Update Tenant Messages
+message UpdateTenantRequest {
+  string tenant_id = 1;
+  optional string name = 2;
+  optional string email = 3;
+  optional string subscription_plan = 4;
+  map<string, string> metadata = 5;
+  string updated_by = 6;
+}
+
+message UpdateTenantResponse {
+  string tenant_id = 1;
+  string status = 2;
+  google.protobuf.Timestamp updated_at = 3;
+}
+
+// Activate Tenant Messages
+message ActivateTenantRequest {
+  string tenant_id = 1;
+  string activated_by = 2;
+}
+
+// Suspend Tenant Messages
+message SuspendTenantRequest {
+  string tenant_id = 1;
+  string reason = 2;
+  string suspended_by = 3;
+}
+
+// Tenant Status Messages
+message GetTenantStatusRequest {
+  string tenant_id = 1;
+}
+
+message GetTenantStatusResponse {
+  string tenant_id = 1;
+  string status = 2;
+  bool is_active = 3;
+  google.protobuf.Timestamp last_activity = 4;
+  int32 user_count = 5;
+  string subscription_status = 6;
+}
