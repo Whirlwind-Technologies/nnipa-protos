@@ -36,36 +36,48 @@ public interface TenantCreationResponseEventOrBuilder extends
       getUserIdBytes();
 
   /**
-   * <code>string tenant_id = 3;</code>
+   * <code>string user_email = 3;</code>
+   * @return The userEmail.
+   */
+  java.lang.String getUserEmail();
+  /**
+   * <code>string user_email = 3;</code>
+   * @return The bytes for userEmail.
+   */
+  com.google.protobuf.ByteString
+      getUserEmailBytes();
+
+  /**
+   * <code>string tenant_id = 4;</code>
    * @return The tenantId.
    */
   java.lang.String getTenantId();
   /**
-   * <code>string tenant_id = 3;</code>
+   * <code>string tenant_id = 4;</code>
    * @return The bytes for tenantId.
    */
   com.google.protobuf.ByteString
       getTenantIdBytes();
 
   /**
-   * <code>string tenant_code = 4;</code>
+   * <code>string tenant_code = 5;</code>
    * @return The tenantCode.
    */
   java.lang.String getTenantCode();
   /**
-   * <code>string tenant_code = 4;</code>
+   * <code>string tenant_code = 5;</code>
    * @return The bytes for tenantCode.
    */
   com.google.protobuf.ByteString
       getTenantCodeBytes();
 
   /**
-   * <code>string organization_name = 5;</code>
+   * <code>string organization_name = 6;</code>
    * @return The organizationName.
    */
   java.lang.String getOrganizationName();
   /**
-   * <code>string organization_name = 5;</code>
+   * <code>string organization_name = 6;</code>
    * @return The bytes for organizationName.
    */
   com.google.protobuf.ByteString
@@ -76,7 +88,7 @@ public interface TenantCreationResponseEventOrBuilder extends
    * SUCCESS, FAILED
    * </pre>
    *
-   * <code>string status = 6;</code>
+   * <code>string status = 7;</code>
    * @return The status.
    */
   java.lang.String getStatus();
@@ -85,29 +97,36 @@ public interface TenantCreationResponseEventOrBuilder extends
    * SUCCESS, FAILED
    * </pre>
    *
-   * <code>string status = 6;</code>
+   * <code>string status = 7;</code>
    * @return The bytes for status.
    */
   com.google.protobuf.ByteString
       getStatusBytes();
 
   /**
-   * <pre>
-   * Only populated when status is FAILED
-   * </pre>
-   *
-   * <code>string error_message = 7;</code>
+   * <code>string error_message = 8;</code>
    * @return The errorMessage.
    */
   java.lang.String getErrorMessage();
   /**
-   * <pre>
-   * Only populated when status is FAILED
-   * </pre>
-   *
-   * <code>string error_message = 7;</code>
+   * <code>string error_message = 8;</code>
    * @return The bytes for errorMessage.
    */
   com.google.protobuf.ByteString
       getErrorMessageBytes();
+
+  /**
+   * <code>.google.protobuf.Timestamp created_at = 9;</code>
+   * @return Whether the createdAt field is set.
+   */
+  boolean hasCreatedAt();
+  /**
+   * <code>.google.protobuf.Timestamp created_at = 9;</code>
+   * @return The createdAt.
+   */
+  com.google.protobuf.Timestamp getCreatedAt();
+  /**
+   * <code>.google.protobuf.Timestamp created_at = 9;</code>
+   */
+  com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder();
 }
