@@ -101,7 +101,7 @@ public final class CommonProtos {
     java.lang.String[] descriptorData = {
       "\n\023common/common.proto\022\026com.nnipa.proto.c" +
       "ommon\032\037google/protobuf/timestamp.proto\032\022" +
-      "common/enums.proto\"\363\002\n\rEventMetadata\022\020\n\010" +
+      "common/enums.proto\"\207\003\n\rEventMetadata\022\020\n\010" +
       "event_id\030\001 \001(\t\022\026\n\016correlation_id\030\002 \001(\t\022\026" +
       "\n\016source_service\030\003 \001(\t\022-\n\ttimestamp\030\004 \001(" +
       "\0132\032.google.protobuf.Timestamp\022\017\n\007version" +
@@ -109,58 +109,58 @@ public final class CommonProtos {
       "o.common.EventMetadata.HeadersEntry\022\021\n\tt" +
       "enant_id\030\007 \001(\t\022\017\n\007user_id\030\010 \001(\t\0222\n\010prior" +
       "ity\030\t \001(\0162 .com.nnipa.proto.common.Prior" +
-      "ity\022\023\n\013retry_count\030\n \001(\005\032.\n\014HeadersEntry" +
-      "\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\363\001\n\013Err" +
-      "orDetail\022\014\n\004code\030\001 \001(\t\022\017\n\007message\030\002 \001(\t\022" +
-      "\017\n\007details\030\003 \001(\t\022-\n\ttimestamp\030\004 \001(\0132\032.go" +
-      "ogle.protobuf.Timestamp\022\017\n\007service\030\005 \001(\t" +
-      "\022C\n\010metadata\030\006 \003(\01321.com.nnipa.proto.com" +
-      "mon.ErrorDetail.MetadataEntry\032/\n\rMetadat" +
-      "aEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\256" +
-      "\001\n\017CommandResponse\022\017\n\007success\030\001 \001(\010\022\017\n\007m" +
-      "essage\030\002 \001(\t\0222\n\005error\030\003 \001(\0132#.com.nnipa." +
-      "proto.common.ErrorDetail\022-\n\ttimestamp\030\004 " +
-      "\001(\0132\032.google.protobuf.Timestamp\022\026\n\016corre" +
-      "lation_id\030\005 \001(\t\"[\n\016PaginationInfo\022\014\n\004pag" +
-      "e\030\001 \001(\005\022\021\n\tpage_size\030\002 \001(\005\022\023\n\013total_item" +
-      "s\030\003 \001(\003\022\023\n\013total_pages\030\004 \001(\005\"\273\001\n\tAuditIn" +
-      "fo\022\022\n\ncreated_by\030\001 \001(\t\022.\n\ncreated_at\030\002 \001" +
-      "(\0132\032.google.protobuf.Timestamp\022\022\n\nupdate" +
-      "d_by\030\003 \001(\t\022.\n\nupdated_at\030\004 \001(\0132\032.google." +
-      "protobuf.Timestamp\022\022\n\nip_address\030\005 \001(\t\022\022" +
-      "\n\nuser_agent\030\006 \001(\t\"\246\001\n\007Address\022\024\n\014street" +
-      "_line1\030\001 \001(\t\022\024\n\014street_line2\030\002 \001(\t\022\014\n\004ci" +
-      "ty\030\003 \001(\t\022\026\n\016state_province\030\004 \001(\t\022\023\n\013post" +
-      "al_code\030\005 \001(\t\022\017\n\007country\030\006 \001(\t\022\020\n\010latitu" +
-      "de\030\007 \001(\001\022\021\n\tlongitude\030\010 \001(\001\"z\n\013ContactIn" +
-      "fo\022\r\n\005email\030\001 \001(\t\022\r\n\005phone\030\002 \001(\t\022\016\n\006mobi" +
-      "le\030\003 \001(\t\022\013\n\003fax\030\004 \001(\t\0220\n\007address\030\005 \001(\0132\037" +
-      ".com.nnipa.proto.common.Address\"\235\003\n\017Stor" +
-      "ageMetadata\022\021\n\tobject_id\030\001 \001(\t\022\021\n\ttenant" +
-      "_id\030\002 \001(\t\022\023\n\013bucket_name\030\003 \001(\t\022\016\n\006region" +
-      "\030\004 \001(\t\022\025\n\rstorage_class\030\005 \001(\t\022\022\n\nsize_by" +
-      "tes\030\006 \001(\003\022\024\n\014content_type\030\007 \001(\t\022\020\n\010check" +
-      "sum\030\010 \001(\t\022.\n\ncreated_at\030\t \001(\0132\032.google.p" +
-      "rotobuf.Timestamp\022/\n\013modified_at\030\n \001(\0132\032" +
-      ".google.protobuf.Timestamp\022T\n\017custom_met" +
-      "adata\030\013 \003(\0132;.com.nnipa.proto.common.Sto" +
-      "rageMetadata.CustomMetadataEntry\0325\n\023Cust" +
-      "omMetadataEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 " +
-      "\001(\t:\0028\001\"\224\002\n\017CommandMetadata\022\022\n\ncommand_i" +
-      "d\030\001 \001(\t\022-\n\ttimestamp\030\002 \001(\0132\032.google.prot" +
-      "obuf.Timestamp\022\016\n\006source\030\003 \001(\t\022\016\n\006target" +
-      "\030\004 \001(\t\022\026\n\016correlation_id\030\005 \001(\t\022\017\n\007user_i" +
-      "d\030\006 \001(\t\022E\n\007headers\030\007 \003(\01324.com.nnipa.pro" +
-      "to.common.CommandMetadata.HeadersEntry\032." +
-      "\n\014HeadersEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001" +
-      "(\t:\0028\001\"\352\001\n\rErrorResponse\022\020\n\010error_id\030\001 \001" +
-      "(\t\022\022\n\nerror_code\030\002 \001(\t\022\017\n\007message\030\003 \001(\t\022" +
-      "-\n\ttimestamp\030\004 \001(\0132\032.google.protobuf.Tim" +
-      "estamp\022C\n\007details\030\005 \003(\01322.com.nnipa.prot" +
-      "o.common.ErrorResponse.DetailsEntry\032.\n\014D" +
-      "etailsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:" +
-      "\0028\001B(\n\026com.nnipa.proto.commonB\014CommonPro" +
-      "tosP\001b\006proto3"
+      "ity\022\023\n\013retry_count\030\n \001(\005\022\022\n\nevent_type\030\013" +
+      " \001(\t\032.\n\014HeadersEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005val" +
+      "ue\030\002 \001(\t:\0028\001\"\363\001\n\013ErrorDetail\022\014\n\004code\030\001 \001" +
+      "(\t\022\017\n\007message\030\002 \001(\t\022\017\n\007details\030\003 \001(\t\022-\n\t" +
+      "timestamp\030\004 \001(\0132\032.google.protobuf.Timest" +
+      "amp\022\017\n\007service\030\005 \001(\t\022C\n\010metadata\030\006 \003(\01321" +
+      ".com.nnipa.proto.common.ErrorDetail.Meta" +
+      "dataEntry\032/\n\rMetadataEntry\022\013\n\003key\030\001 \001(\t\022" +
+      "\r\n\005value\030\002 \001(\t:\0028\001\"\256\001\n\017CommandResponse\022\017" +
+      "\n\007success\030\001 \001(\010\022\017\n\007message\030\002 \001(\t\0222\n\005erro" +
+      "r\030\003 \001(\0132#.com.nnipa.proto.common.ErrorDe" +
+      "tail\022-\n\ttimestamp\030\004 \001(\0132\032.google.protobu" +
+      "f.Timestamp\022\026\n\016correlation_id\030\005 \001(\t\"[\n\016P" +
+      "aginationInfo\022\014\n\004page\030\001 \001(\005\022\021\n\tpage_size" +
+      "\030\002 \001(\005\022\023\n\013total_items\030\003 \001(\003\022\023\n\013total_pag" +
+      "es\030\004 \001(\005\"\273\001\n\tAuditInfo\022\022\n\ncreated_by\030\001 \001" +
+      "(\t\022.\n\ncreated_at\030\002 \001(\0132\032.google.protobuf" +
+      ".Timestamp\022\022\n\nupdated_by\030\003 \001(\t\022.\n\nupdate" +
+      "d_at\030\004 \001(\0132\032.google.protobuf.Timestamp\022\022" +
+      "\n\nip_address\030\005 \001(\t\022\022\n\nuser_agent\030\006 \001(\t\"\246" +
+      "\001\n\007Address\022\024\n\014street_line1\030\001 \001(\t\022\024\n\014stre" +
+      "et_line2\030\002 \001(\t\022\014\n\004city\030\003 \001(\t\022\026\n\016state_pr" +
+      "ovince\030\004 \001(\t\022\023\n\013postal_code\030\005 \001(\t\022\017\n\007cou" +
+      "ntry\030\006 \001(\t\022\020\n\010latitude\030\007 \001(\001\022\021\n\tlongitud" +
+      "e\030\010 \001(\001\"z\n\013ContactInfo\022\r\n\005email\030\001 \001(\t\022\r\n" +
+      "\005phone\030\002 \001(\t\022\016\n\006mobile\030\003 \001(\t\022\013\n\003fax\030\004 \001(" +
+      "\t\0220\n\007address\030\005 \001(\0132\037.com.nnipa.proto.com" +
+      "mon.Address\"\235\003\n\017StorageMetadata\022\021\n\tobjec" +
+      "t_id\030\001 \001(\t\022\021\n\ttenant_id\030\002 \001(\t\022\023\n\013bucket_" +
+      "name\030\003 \001(\t\022\016\n\006region\030\004 \001(\t\022\025\n\rstorage_cl" +
+      "ass\030\005 \001(\t\022\022\n\nsize_bytes\030\006 \001(\003\022\024\n\014content" +
+      "_type\030\007 \001(\t\022\020\n\010checksum\030\010 \001(\t\022.\n\ncreated" +
+      "_at\030\t \001(\0132\032.google.protobuf.Timestamp\022/\n" +
+      "\013modified_at\030\n \001(\0132\032.google.protobuf.Tim" +
+      "estamp\022T\n\017custom_metadata\030\013 \003(\0132;.com.nn" +
+      "ipa.proto.common.StorageMetadata.CustomM" +
+      "etadataEntry\0325\n\023CustomMetadataEntry\022\013\n\003k" +
+      "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\224\002\n\017CommandM" +
+      "etadata\022\022\n\ncommand_id\030\001 \001(\t\022-\n\ttimestamp" +
+      "\030\002 \001(\0132\032.google.protobuf.Timestamp\022\016\n\006so" +
+      "urce\030\003 \001(\t\022\016\n\006target\030\004 \001(\t\022\026\n\016correlatio" +
+      "n_id\030\005 \001(\t\022\017\n\007user_id\030\006 \001(\t\022E\n\007headers\030\007" +
+      " \003(\01324.com.nnipa.proto.common.CommandMet" +
+      "adata.HeadersEntry\032.\n\014HeadersEntry\022\013\n\003ke" +
+      "y\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\352\001\n\rErrorResp" +
+      "onse\022\020\n\010error_id\030\001 \001(\t\022\022\n\nerror_code\030\002 \001" +
+      "(\t\022\017\n\007message\030\003 \001(\t\022-\n\ttimestamp\030\004 \001(\0132\032" +
+      ".google.protobuf.Timestamp\022C\n\007details\030\005 " +
+      "\003(\01322.com.nnipa.proto.common.ErrorRespon" +
+      "se.DetailsEntry\032.\n\014DetailsEntry\022\013\n\003key\030\001" +
+      " \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001B(\n\026com.nnipa.pro" +
+      "to.commonB\014CommonProtosP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -173,7 +173,7 @@ public final class CommonProtos {
     internal_static_com_nnipa_proto_common_EventMetadata_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nnipa_proto_common_EventMetadata_descriptor,
-        new java.lang.String[] { "EventId", "CorrelationId", "SourceService", "Timestamp", "Version", "Headers", "TenantId", "UserId", "Priority", "RetryCount", });
+        new java.lang.String[] { "EventId", "CorrelationId", "SourceService", "Timestamp", "Version", "Headers", "TenantId", "UserId", "Priority", "RetryCount", "EventType", });
     internal_static_com_nnipa_proto_common_EventMetadata_HeadersEntry_descriptor =
       internal_static_com_nnipa_proto_common_EventMetadata_descriptor.getNestedTypes().get(0);
     internal_static_com_nnipa_proto_common_EventMetadata_HeadersEntry_fieldAccessorTable = new

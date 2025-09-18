@@ -25,6 +25,7 @@ message EventMetadata {
   string user_id = 8;                       // User who triggered the event
   Priority priority = 9;                    // Event priority
   int32 retry_count = 10;                   // Number of retries
+  string event_type = 11;                   // Event type classification
 }
 
 // Standard error information
@@ -118,4 +119,3 @@ message ErrorResponse {
   google.protobuf.Timestamp timestamp = 4;
   map<string, string> details = 5;
 }
-

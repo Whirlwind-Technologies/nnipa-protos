@@ -6,11 +6,13 @@ com\nnipa\proto\tenant\TenantSubscriptionChangedEvent$SubscriptionData$1.class
 com\nnipa\proto\auth\UserActivatedEvent$1.class
 com\nnipa\proto\storage\StorageOperationResult$ResultData.class
 com\nnipa\proto\tenant\TenantReactivatedEvent$1.class
+com\nnipa\proto\tenant\TenantCreationResponseEvent$Builder.class
 com\nnipa\proto\user\SyncUserDataCommand.class
 com\nnipa\proto\storage\StorageScannedEvent$ScanData$ScanResultsDefaultEntryHolder.class
 com\nnipa\proto\tenant\UpdateTenantCommand$UpdateDetails$FeatureFlagsDefaultEntryHolder.class
 com\nnipa\proto\storage\ShareObjectCommandOrBuilder.class
 com\nnipa\proto\tenant\UpdateTenantCommand$UpdateDetailsOrBuilder.class
+com\nnipa\proto\tenant\TenantCreationResponseEvent.class
 com\nnipa\proto\common\CommandResponse.class
 com\nnipa\proto\storage\StorageMigrationStartedEvent$1.class
 com\nnipa\proto\tenant\TenantUpdatedEvent$Builder.class
@@ -159,6 +161,7 @@ com\nnipa\proto\auth\UserLogoutEvent$LogoutData$1.class
 com\nnipa\proto\storage\StorageTieredEvent$TierData$Builder.class
 com\nnipa\proto\tenant\CreateTenantCommand$TenantDetails.class
 com\nnipa\proto\storage\GeneratePresignedUrlCommand$UrlData$1.class
+com\nnipa\proto\tenant\TenantCreationResponseEvent$1.class
 com\nnipa\proto\storage\StorageDeletedEvent$1.class
 com\nnipa\proto\tenant\ValidateTenantCommandOrBuilder.class
 com\nnipa\proto\storage\MoveObjectCommand$Builder.class
@@ -409,6 +412,7 @@ com\nnipa\proto\storage\StorageAccessedEventOrBuilder.class
 com\nnipa\proto\storage\StorageCompressedEvent$Builder.class
 com\nnipa\proto\storage\StorageMigrationCompletedEvent$CompletionDataOrBuilder.class
 com\nnipa\proto\authz\AuthzCommands.class
+com\nnipa\proto\tenant\TenantCreationResponseEventOrBuilder.class
 com\nnipa\proto\storage\ShareObjectCommand$Builder.class
 com\nnipa\proto\storage\StorageRestoredEvent$RestoreData$1.class
 com\nnipa\proto\tenant\TenantCreatedEvent$Builder.class

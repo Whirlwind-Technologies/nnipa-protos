@@ -237,4 +237,24 @@ java.lang.String defaultValue);
    * @return The retryCount.
    */
   int getRetryCount();
+
+  /**
+   * <pre>
+   * Event type classification
+   * </pre>
+   *
+   * <code>string event_type = 11;</code>
+   * @return The eventType.
+   */
+  java.lang.String getEventType();
+  /**
+   * <pre>
+   * Event type classification
+   * </pre>
+   *
+   * <code>string event_type = 11;</code>
+   * @return The bytes for eventType.
+   */
+  com.google.protobuf.ByteString
+      getEventTypeBytes();
 }

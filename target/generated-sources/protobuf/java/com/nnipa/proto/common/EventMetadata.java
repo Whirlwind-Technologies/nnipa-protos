@@ -28,6 +28,7 @@ private static final long serialVersionUID = 0L;
     tenantId_ = "";
     userId_ = "";
     priority_ = 0;
+    eventType_ = "";
   }
 
   @java.lang.Override
@@ -519,6 +520,53 @@ java.lang.String defaultValue) {
     return retryCount_;
   }
 
+  public static final int EVENT_TYPE_FIELD_NUMBER = 11;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object eventType_ = "";
+  /**
+   * <pre>
+   * Event type classification
+   * </pre>
+   *
+   * <code>string event_type = 11;</code>
+   * @return The eventType.
+   */
+  @java.lang.Override
+  public java.lang.String getEventType() {
+    java.lang.Object ref = eventType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      eventType_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Event type classification
+   * </pre>
+   *
+   * <code>string event_type = 11;</code>
+   * @return The bytes for eventType.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getEventTypeBytes() {
+    java.lang.Object ref = eventType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      eventType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -565,6 +613,9 @@ java.lang.String defaultValue) {
     }
     if (retryCount_ != 0) {
       output.writeInt32(10, retryCount_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(eventType_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, eventType_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -615,6 +666,9 @@ java.lang.String defaultValue) {
       size += com.google.protobuf.CodedOutputStream
         .computeInt32Size(10, retryCount_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(eventType_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, eventType_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -652,6 +706,8 @@ java.lang.String defaultValue) {
     if (priority_ != other.priority_) return false;
     if (getRetryCount()
         != other.getRetryCount()) return false;
+    if (!getEventType()
+        .equals(other.getEventType())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -687,6 +743,8 @@ java.lang.String defaultValue) {
     hash = (53 * hash) + priority_;
     hash = (37 * hash) + RETRY_COUNT_FIELD_NUMBER;
     hash = (53 * hash) + getRetryCount();
+    hash = (37 * hash) + EVENT_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getEventType().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -864,6 +922,7 @@ java.lang.String defaultValue) {
       userId_ = "";
       priority_ = 0;
       retryCount_ = 0;
+      eventType_ = "";
       return this;
     }
 
@@ -931,6 +990,9 @@ java.lang.String defaultValue) {
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
         result.retryCount_ = retryCount_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.eventType_ = eventType_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1021,6 +1083,11 @@ java.lang.String defaultValue) {
       if (other.getRetryCount() != 0) {
         setRetryCount(other.getRetryCount());
       }
+      if (!other.getEventType().isEmpty()) {
+        eventType_ = other.eventType_;
+        bitField0_ |= 0x00000400;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1103,6 +1170,11 @@ java.lang.String defaultValue) {
               bitField0_ |= 0x00000200;
               break;
             } // case 80
+            case 90: {
+              eventType_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000400;
+              break;
+            } // case 90
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -2097,6 +2169,98 @@ java.lang.String defaultValue) {
     public Builder clearRetryCount() {
       bitField0_ = (bitField0_ & ~0x00000200);
       retryCount_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object eventType_ = "";
+    /**
+     * <pre>
+     * Event type classification
+     * </pre>
+     *
+     * <code>string event_type = 11;</code>
+     * @return The eventType.
+     */
+    public java.lang.String getEventType() {
+      java.lang.Object ref = eventType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        eventType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Event type classification
+     * </pre>
+     *
+     * <code>string event_type = 11;</code>
+     * @return The bytes for eventType.
+     */
+    public com.google.protobuf.ByteString
+        getEventTypeBytes() {
+      java.lang.Object ref = eventType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        eventType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Event type classification
+     * </pre>
+     *
+     * <code>string event_type = 11;</code>
+     * @param value The eventType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEventType(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      eventType_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Event type classification
+     * </pre>
+     *
+     * <code>string event_type = 11;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearEventType() {
+      eventType_ = getDefaultInstance().getEventType();
+      bitField0_ = (bitField0_ & ~0x00000400);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Event type classification
+     * </pre>
+     *
+     * <code>string event_type = 11;</code>
+     * @param value The bytes for eventType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEventTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      eventType_ = value;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }

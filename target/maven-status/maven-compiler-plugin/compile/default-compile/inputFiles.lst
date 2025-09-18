@@ -115,6 +115,7 @@ C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\genera
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\command\Commands.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\auth\ResetPasswordCommand.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\common\DataIsolationStrategy.java
+C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\tenant\TenantCreationResponseEvent.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\auth\UserLogoutEventOrBuilder.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\tenant\FeatureEnabledEvent.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\tenant\TenantReactivatedEventOrBuilder.java
@@ -161,6 +162,7 @@ C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\genera
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\tenant\ValidateTenantCommand.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\storage\ScanObjectCommand.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\auth\AuthenticationEvent.java
+C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\tenant\TenantCreationResponseEventOrBuilder.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\auth\AdminCreatedUserEvent.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\authz\RoleCreatedEvent.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\command\AssignRoleCommand.java
