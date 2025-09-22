@@ -26,6 +26,7 @@ private static final long serialVersionUID = 0L;
     resource_ = "";
     action_ = "";
     reason_ = "";
+    ipAddress_ = "";
   }
 
   @java.lang.Override
@@ -40,6 +41,18 @@ private static final long serialVersionUID = 0L;
     return com.nnipa.proto.authz.AuthzEvents.internal_static_com_nnipa_proto_authz_AuthorizationCheckedEvent_descriptor;
   }
 
+  @SuppressWarnings({"rawtypes"})
+  @java.lang.Override
+  protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+      int number) {
+    switch (number) {
+      case 10:
+        return internalGetContext();
+      default:
+        throw new RuntimeException(
+            "Invalid map field number: " + number);
+    }
+  }
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
@@ -307,6 +320,124 @@ private static final long serialVersionUID = 0L;
     return checkedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : checkedAt_;
   }
 
+  public static final int IP_ADDRESS_FIELD_NUMBER = 9;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object ipAddress_ = "";
+  /**
+   * <code>string ip_address = 9;</code>
+   * @return The ipAddress.
+   */
+  @java.lang.Override
+  public java.lang.String getIpAddress() {
+    java.lang.Object ref = ipAddress_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      ipAddress_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string ip_address = 9;</code>
+   * @return The bytes for ipAddress.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getIpAddressBytes() {
+    java.lang.Object ref = ipAddress_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      ipAddress_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int CONTEXT_FIELD_NUMBER = 10;
+  private static final class ContextDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<
+        java.lang.String, java.lang.String> defaultEntry =
+            com.google.protobuf.MapEntry
+            .<java.lang.String, java.lang.String>newDefaultInstance(
+                com.nnipa.proto.authz.AuthzEvents.internal_static_com_nnipa_proto_authz_AuthorizationCheckedEvent_ContextEntry_descriptor, 
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "",
+                com.google.protobuf.WireFormat.FieldType.STRING,
+                "");
+  }
+  @SuppressWarnings("serial")
+  private com.google.protobuf.MapField<
+      java.lang.String, java.lang.String> context_;
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+  internalGetContext() {
+    if (context_ == null) {
+      return com.google.protobuf.MapField.emptyMapField(
+          ContextDefaultEntryHolder.defaultEntry);
+    }
+    return context_;
+  }
+  public int getContextCount() {
+    return internalGetContext().getMap().size();
+  }
+  /**
+   * <code>map&lt;string, string&gt; context = 10;</code>
+   */
+  @java.lang.Override
+  public boolean containsContext(
+      java.lang.String key) {
+    if (key == null) { throw new NullPointerException("map key"); }
+    return internalGetContext().getMap().containsKey(key);
+  }
+  /**
+   * Use {@link #getContextMap()} instead.
+   */
+  @java.lang.Override
+  @java.lang.Deprecated
+  public java.util.Map<java.lang.String, java.lang.String> getContext() {
+    return getContextMap();
+  }
+  /**
+   * <code>map&lt;string, string&gt; context = 10;</code>
+   */
+  @java.lang.Override
+  public java.util.Map<java.lang.String, java.lang.String> getContextMap() {
+    return internalGetContext().getMap();
+  }
+  /**
+   * <code>map&lt;string, string&gt; context = 10;</code>
+   */
+  @java.lang.Override
+  public /* nullable */
+java.lang.String getContextOrDefault(
+      java.lang.String key,
+      /* nullable */
+java.lang.String defaultValue) {
+    if (key == null) { throw new NullPointerException("map key"); }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetContext().getMap();
+    return map.containsKey(key) ? map.get(key) : defaultValue;
+  }
+  /**
+   * <code>map&lt;string, string&gt; context = 10;</code>
+   */
+  @java.lang.Override
+  public java.lang.String getContextOrThrow(
+      java.lang.String key) {
+    if (key == null) { throw new NullPointerException("map key"); }
+    java.util.Map<java.lang.String, java.lang.String> map =
+        internalGetContext().getMap();
+    if (!map.containsKey(key)) {
+      throw new java.lang.IllegalArgumentException();
+    }
+    return map.get(key);
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -345,6 +476,15 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(8, getCheckedAt());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ipAddress_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, ipAddress_);
+    }
+    com.google.protobuf.GeneratedMessageV3
+      .serializeStringMapTo(
+        output,
+        internalGetContext(),
+        ContextDefaultEntryHolder.defaultEntry,
+        10);
     getUnknownFields().writeTo(output);
   }
 
@@ -380,6 +520,19 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(8, getCheckedAt());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(ipAddress_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, ipAddress_);
+    }
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
+         : internalGetContext().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+      context__ = ContextDefaultEntryHolder.defaultEntry.newBuilderForType()
+          .setKey(entry.getKey())
+          .setValue(entry.getValue())
+          .build();
+      size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(10, context__);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -418,6 +571,10 @@ private static final long serialVersionUID = 0L;
       if (!getCheckedAt()
           .equals(other.getCheckedAt())) return false;
     }
+    if (!getIpAddress()
+        .equals(other.getIpAddress())) return false;
+    if (!internalGetContext().equals(
+        other.internalGetContext())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -449,6 +606,12 @@ private static final long serialVersionUID = 0L;
     if (hasCheckedAt()) {
       hash = (37 * hash) + CHECKED_AT_FIELD_NUMBER;
       hash = (53 * hash) + getCheckedAt().hashCode();
+    }
+    hash = (37 * hash) + IP_ADDRESS_FIELD_NUMBER;
+    hash = (53 * hash) + getIpAddress().hashCode();
+    if (!internalGetContext().getMap().isEmpty()) {
+      hash = (37 * hash) + CONTEXT_FIELD_NUMBER;
+      hash = (53 * hash) + internalGetContext().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -563,6 +726,28 @@ private static final long serialVersionUID = 0L;
       return com.nnipa.proto.authz.AuthzEvents.internal_static_com_nnipa_proto_authz_AuthorizationCheckedEvent_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 10:
+          return internalGetContext();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 10:
+          return internalGetMutableContext();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -608,6 +793,8 @@ private static final long serialVersionUID = 0L;
         checkedAtBuilder_.dispose();
         checkedAtBuilder_ = null;
       }
+      ipAddress_ = "";
+      internalGetMutableContext().clear();
       return this;
     }
 
@@ -671,6 +858,13 @@ private static final long serialVersionUID = 0L;
             ? checkedAt_
             : checkedAtBuilder_.build();
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.ipAddress_ = ipAddress_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.context_ = internalGetContext();
+        result.context_.makeImmutable();
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -753,6 +947,14 @@ private static final long serialVersionUID = 0L;
       if (other.hasCheckedAt()) {
         mergeCheckedAt(other.getCheckedAt());
       }
+      if (!other.getIpAddress().isEmpty()) {
+        ipAddress_ = other.ipAddress_;
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      internalGetMutableContext().mergeFrom(
+          other.internalGetContext());
+      bitField0_ |= 0x00000200;
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -823,6 +1025,20 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000080;
               break;
             } // case 66
+            case 74: {
+              ipAddress_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000100;
+              break;
+            } // case 74
+            case 82: {
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+              context__ = input.readMessage(
+                  ContextDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              internalGetMutableContext().getMutableMap().put(
+                  context__.getKey(), context__.getValue());
+              bitField0_ |= 0x00000200;
+              break;
+            } // case 82
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1472,6 +1688,205 @@ private static final long serialVersionUID = 0L;
         checkedAt_ = null;
       }
       return checkedAtBuilder_;
+    }
+
+    private java.lang.Object ipAddress_ = "";
+    /**
+     * <code>string ip_address = 9;</code>
+     * @return The ipAddress.
+     */
+    public java.lang.String getIpAddress() {
+      java.lang.Object ref = ipAddress_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ipAddress_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string ip_address = 9;</code>
+     * @return The bytes for ipAddress.
+     */
+    public com.google.protobuf.ByteString
+        getIpAddressBytes() {
+      java.lang.Object ref = ipAddress_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        ipAddress_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string ip_address = 9;</code>
+     * @param value The ipAddress to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIpAddress(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      ipAddress_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string ip_address = 9;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearIpAddress() {
+      ipAddress_ = getDefaultInstance().getIpAddress();
+      bitField0_ = (bitField0_ & ~0x00000100);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string ip_address = 9;</code>
+     * @param value The bytes for ipAddress to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIpAddressBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      ipAddress_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.MapField<
+        java.lang.String, java.lang.String> context_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetContext() {
+      if (context_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            ContextDefaultEntryHolder.defaultEntry);
+      }
+      return context_;
+    }
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetMutableContext() {
+      if (context_ == null) {
+        context_ = com.google.protobuf.MapField.newMapField(
+            ContextDefaultEntryHolder.defaultEntry);
+      }
+      if (!context_.isMutable()) {
+        context_ = context_.copy();
+      }
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return context_;
+    }
+    public int getContextCount() {
+      return internalGetContext().getMap().size();
+    }
+    /**
+     * <code>map&lt;string, string&gt; context = 10;</code>
+     */
+    @java.lang.Override
+    public boolean containsContext(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      return internalGetContext().getMap().containsKey(key);
+    }
+    /**
+     * Use {@link #getContextMap()} instead.
+     */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getContext() {
+      return getContextMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; context = 10;</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getContextMap() {
+      return internalGetContext().getMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; context = 10;</code>
+     */
+    @java.lang.Override
+    public /* nullable */
+java.lang.String getContextOrDefault(
+        java.lang.String key,
+        /* nullable */
+java.lang.String defaultValue) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetContext().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+    /**
+     * <code>map&lt;string, string&gt; context = 10;</code>
+     */
+    @java.lang.Override
+    public java.lang.String getContextOrThrow(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      java.util.Map<java.lang.String, java.lang.String> map =
+          internalGetContext().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+    public Builder clearContext() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      internalGetMutableContext().getMutableMap()
+          .clear();
+      return this;
+    }
+    /**
+     * <code>map&lt;string, string&gt; context = 10;</code>
+     */
+    public Builder removeContext(
+        java.lang.String key) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      internalGetMutableContext().getMutableMap()
+          .remove(key);
+      return this;
+    }
+    /**
+     * Use alternate mutation accessors instead.
+     */
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String>
+        getMutableContext() {
+      bitField0_ |= 0x00000200;
+      return internalGetMutableContext().getMutableMap();
+    }
+    /**
+     * <code>map&lt;string, string&gt; context = 10;</code>
+     */
+    public Builder putContext(
+        java.lang.String key,
+        java.lang.String value) {
+      if (key == null) { throw new NullPointerException("map key"); }
+      if (value == null) { throw new NullPointerException("map value"); }
+      internalGetMutableContext().getMutableMap()
+          .put(key, value);
+      bitField0_ |= 0x00000200;
+      return this;
+    }
+    /**
+     * <code>map&lt;string, string&gt; context = 10;</code>
+     */
+    public Builder putAllContext(
+        java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableContext().getMutableMap()
+          .putAll(values);
+      bitField0_ |= 0x00000200;
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

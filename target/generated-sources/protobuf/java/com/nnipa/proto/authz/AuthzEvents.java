@@ -21,6 +21,21 @@ public final class AuthzEvents {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_nnipa_proto_authz_RoleCreatedEvent_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_nnipa_proto_authz_RoleUpdatedEvent_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_nnipa_proto_authz_RoleUpdatedEvent_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_nnipa_proto_authz_RoleUpdatedEvent_ChangesEntry_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_nnipa_proto_authz_RoleUpdatedEvent_ChangesEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_nnipa_proto_authz_RoleDeletedEvent_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_nnipa_proto_authz_RoleDeletedEvent_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_nnipa_proto_authz_RoleAssignedEvent_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -36,10 +51,30 @@ public final class AuthzEvents {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_nnipa_proto_authz_PermissionGrantedEvent_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_nnipa_proto_authz_PermissionRevokedEvent_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_nnipa_proto_authz_PermissionRevokedEvent_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_nnipa_proto_authz_AuthorizationCheckedEvent_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_nnipa_proto_authz_AuthorizationCheckedEvent_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_nnipa_proto_authz_AuthorizationCheckedEvent_ContextEntry_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_nnipa_proto_authz_AuthorizationCheckedEvent_ContextEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_nnipa_proto_authz_PolicyCreatedEvent_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_nnipa_proto_authz_PolicyCreatedEvent_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_nnipa_proto_authz_PolicyEvaluatedEvent_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_nnipa_proto_authz_PolicyEvaluatedEvent_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -57,32 +92,66 @@ public final class AuthzEvents {
       "\n\ttenant_id\030\003 \001(\t\022\021\n\trole_name\030\004 \001(\t\022\023\n\013" +
       "description\030\005 \001(\t\022\023\n\013permissions\030\006 \003(\t\022." +
       "\n\ncreated_at\030\007 \001(\0132\032.google.protobuf.Tim" +
-      "estamp\022\022\n\ncreated_by\030\010 \001(\t\"\212\002\n\021RoleAssig" +
-      "nedEvent\0227\n\010metadata\030\001 \001(\0132%.com.nnipa.p" +
-      "roto.common.EventMetadata\022\017\n\007user_id\030\002 \001" +
-      "(\t\022\021\n\ttenant_id\030\003 \001(\t\022\017\n\007role_id\030\004 \001(\t\022\021" +
-      "\n\trole_name\030\005 \001(\t\022\023\n\013assigned_by\030\006 \001(\t\022/" +
-      "\n\013assigned_at\030\007 \001(\0132\032.google.protobuf.Ti" +
-      "mestamp\022.\n\nexpires_at\030\010 \001(\0132\032.google.pro" +
-      "tobuf.Timestamp\"\347\001\n\020RoleRevokedEvent\0227\n\010" +
-      "metadata\030\001 \001(\0132%.com.nnipa.proto.common." +
-      "EventMetadata\022\017\n\007user_id\030\002 \001(\t\022\021\n\ttenant" +
-      "_id\030\003 \001(\t\022\017\n\007role_id\030\004 \001(\t\022\021\n\trole_name\030" +
-      "\005 \001(\t\022\022\n\nrevoked_by\030\006 \001(\t\022.\n\nrevoked_at\030" +
-      "\007 \001(\0132\032.google.protobuf.Timestamp\022\016\n\006rea" +
-      "son\030\010 \001(\t\"\333\001\n\026PermissionGrantedEvent\0227\n\010" +
-      "metadata\030\001 \001(\0132%.com.nnipa.proto.common." +
-      "EventMetadata\022\017\n\007user_id\030\002 \001(\t\022\021\n\ttenant" +
-      "_id\030\003 \001(\t\022\020\n\010resource\030\004 \001(\t\022\016\n\006action\030\005 " +
-      "\001(\t\022\022\n\ngranted_by\030\006 \001(\t\022.\n\ngranted_at\030\007 " +
-      "\001(\0132\032.google.protobuf.Timestamp\"\353\001\n\031Auth" +
-      "orizationCheckedEvent\0227\n\010metadata\030\001 \001(\0132" +
-      "%.com.nnipa.proto.common.EventMetadata\022\017" +
-      "\n\007user_id\030\002 \001(\t\022\021\n\ttenant_id\030\003 \001(\t\022\020\n\010re" +
-      "source\030\004 \001(\t\022\016\n\006action\030\005 \001(\t\022\017\n\007allowed\030" +
-      "\006 \001(\010\022\016\n\006reason\030\007 \001(\t\022.\n\nchecked_at\030\010 \001(" +
-      "\0132\032.google.protobuf.TimestampB\031\n\025com.nni" +
-      "pa.proto.authzP\001b\006proto3"
+      "estamp\022\022\n\ncreated_by\030\010 \001(\t\"\252\002\n\020RoleUpdat" +
+      "edEvent\0227\n\010metadata\030\001 \001(\0132%.com.nnipa.pr" +
+      "oto.common.EventMetadata\022\017\n\007role_id\030\002 \001(" +
+      "\t\022\021\n\ttenant_id\030\003 \001(\t\022E\n\007changes\030\004 \003(\01324." +
+      "com.nnipa.proto.authz.RoleUpdatedEvent.C" +
+      "hangesEntry\022.\n\nupdated_at\030\005 \001(\0132\032.google" +
+      ".protobuf.Timestamp\022\022\n\nupdated_by\030\006 \001(\t\032" +
+      ".\n\014ChangesEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 " +
+      "\001(\t:\0028\001\"\263\001\n\020RoleDeletedEvent\0227\n\010metadata" +
+      "\030\001 \001(\0132%.com.nnipa.proto.common.EventMet" +
+      "adata\022\017\n\007role_id\030\002 \001(\t\022\021\n\ttenant_id\030\003 \001(" +
+      "\t\022.\n\ndeleted_at\030\004 \001(\0132\032.google.protobuf." +
+      "Timestamp\022\022\n\ndeleted_by\030\005 \001(\t\"\212\002\n\021RoleAs" +
+      "signedEvent\0227\n\010metadata\030\001 \001(\0132%.com.nnip" +
+      "a.proto.common.EventMetadata\022\017\n\007user_id\030" +
+      "\002 \001(\t\022\021\n\ttenant_id\030\003 \001(\t\022\017\n\007role_id\030\004 \001(" +
+      "\t\022\021\n\trole_name\030\005 \001(\t\022\023\n\013assigned_by\030\006 \001(" +
+      "\t\022/\n\013assigned_at\030\007 \001(\0132\032.google.protobuf" +
+      ".Timestamp\022.\n\nexpires_at\030\010 \001(\0132\032.google." +
+      "protobuf.Timestamp\"\347\001\n\020RoleRevokedEvent\022" +
+      "7\n\010metadata\030\001 \001(\0132%.com.nnipa.proto.comm" +
+      "on.EventMetadata\022\017\n\007user_id\030\002 \001(\t\022\021\n\tten" +
+      "ant_id\030\003 \001(\t\022\017\n\007role_id\030\004 \001(\t\022\021\n\trole_na" +
+      "me\030\005 \001(\t\022\022\n\nrevoked_by\030\006 \001(\t\022.\n\nrevoked_" +
+      "at\030\007 \001(\0132\032.google.protobuf.Timestamp\022\016\n\006" +
+      "reason\030\010 \001(\t\"\232\002\n\026PermissionGrantedEvent\022" +
+      "7\n\010metadata\030\001 \001(\0132%.com.nnipa.proto.comm" +
+      "on.EventMetadata\022\017\n\007user_id\030\002 \001(\t\022\021\n\tten" +
+      "ant_id\030\003 \001(\t\022\017\n\007role_id\030\004 \001(\t\022\025\n\rpermiss" +
+      "ion_id\030\005 \001(\t\022\020\n\010resource\030\006 \001(\t\022\025\n\rresour" +
+      "ce_type\030\007 \001(\t\022\016\n\006action\030\010 \001(\t\022\022\n\ngranted" +
+      "_by\030\t \001(\t\022.\n\ngranted_at\030\n \001(\0132\032.google.p" +
+      "rotobuf.Timestamp\"\275\001\n\026PermissionRevokedE" +
+      "vent\0227\n\010metadata\030\001 \001(\0132%.com.nnipa.proto" +
+      ".common.EventMetadata\022\017\n\007role_id\030\002 \001(\t\022\025" +
+      "\n\rpermission_id\030\003 \001(\t\022.\n\nrevoked_at\030\004 \001(" +
+      "\0132\032.google.protobuf.Timestamp\022\022\n\nrevoked" +
+      "_by\030\005 \001(\t\"\377\002\n\031AuthorizationCheckedEvent\022" +
+      "7\n\010metadata\030\001 \001(\0132%.com.nnipa.proto.comm" +
+      "on.EventMetadata\022\017\n\007user_id\030\002 \001(\t\022\021\n\tten" +
+      "ant_id\030\003 \001(\t\022\020\n\010resource\030\004 \001(\t\022\016\n\006action" +
+      "\030\005 \001(\t\022\017\n\007allowed\030\006 \001(\010\022\016\n\006reason\030\007 \001(\t\022" +
+      ".\n\nchecked_at\030\010 \001(\0132\032.google.protobuf.Ti" +
+      "mestamp\022\022\n\nip_address\030\t \001(\t\022N\n\007context\030\n" +
+      " \003(\0132=.com.nnipa.proto.authz.Authorizati" +
+      "onCheckedEvent.ContextEntry\032.\n\014ContextEn" +
+      "try\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\361\001\n\022" +
+      "PolicyCreatedEvent\0227\n\010metadata\030\001 \001(\0132%.c" +
+      "om.nnipa.proto.common.EventMetadata\022\021\n\tp" +
+      "olicy_id\030\002 \001(\t\022\021\n\ttenant_id\030\003 \001(\t\022\023\n\013pol" +
+      "icy_name\030\004 \001(\t\022\023\n\013policy_type\030\005 \001(\t\022\016\n\006e" +
+      "ffect\030\006 \001(\t\022.\n\ncreated_at\030\007 \001(\0132\032.google" +
+      ".protobuf.Timestamp\022\022\n\ncreated_by\030\010 \001(\t\"" +
+      "\327\001\n\024PolicyEvaluatedEvent\0227\n\010metadata\030\001 \001" +
+      "(\0132%.com.nnipa.proto.common.EventMetadat" +
+      "a\022\021\n\tpolicy_id\030\002 \001(\t\022\017\n\007user_id\030\003 \001(\t\022\020\n" +
+      "\010resource\030\004 \001(\t\022\016\n\006action\030\005 \001(\t\022\016\n\006resul" +
+      "t\030\006 \001(\t\0220\n\014evaluated_at\030\007 \001(\0132\032.google.p" +
+      "rotobuf.TimestampB\031\n\025com.nnipa.proto.aut" +
+      "hzP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -96,30 +165,72 @@ public final class AuthzEvents {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nnipa_proto_authz_RoleCreatedEvent_descriptor,
         new java.lang.String[] { "Metadata", "RoleId", "TenantId", "RoleName", "Description", "Permissions", "CreatedAt", "CreatedBy", });
-    internal_static_com_nnipa_proto_authz_RoleAssignedEvent_descriptor =
+    internal_static_com_nnipa_proto_authz_RoleUpdatedEvent_descriptor =
       getDescriptor().getMessageTypes().get(1);
+    internal_static_com_nnipa_proto_authz_RoleUpdatedEvent_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_nnipa_proto_authz_RoleUpdatedEvent_descriptor,
+        new java.lang.String[] { "Metadata", "RoleId", "TenantId", "Changes", "UpdatedAt", "UpdatedBy", });
+    internal_static_com_nnipa_proto_authz_RoleUpdatedEvent_ChangesEntry_descriptor =
+      internal_static_com_nnipa_proto_authz_RoleUpdatedEvent_descriptor.getNestedTypes().get(0);
+    internal_static_com_nnipa_proto_authz_RoleUpdatedEvent_ChangesEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_nnipa_proto_authz_RoleUpdatedEvent_ChangesEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_com_nnipa_proto_authz_RoleDeletedEvent_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_com_nnipa_proto_authz_RoleDeletedEvent_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_nnipa_proto_authz_RoleDeletedEvent_descriptor,
+        new java.lang.String[] { "Metadata", "RoleId", "TenantId", "DeletedAt", "DeletedBy", });
+    internal_static_com_nnipa_proto_authz_RoleAssignedEvent_descriptor =
+      getDescriptor().getMessageTypes().get(3);
     internal_static_com_nnipa_proto_authz_RoleAssignedEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nnipa_proto_authz_RoleAssignedEvent_descriptor,
         new java.lang.String[] { "Metadata", "UserId", "TenantId", "RoleId", "RoleName", "AssignedBy", "AssignedAt", "ExpiresAt", });
     internal_static_com_nnipa_proto_authz_RoleRevokedEvent_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_com_nnipa_proto_authz_RoleRevokedEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nnipa_proto_authz_RoleRevokedEvent_descriptor,
         new java.lang.String[] { "Metadata", "UserId", "TenantId", "RoleId", "RoleName", "RevokedBy", "RevokedAt", "Reason", });
     internal_static_com_nnipa_proto_authz_PermissionGrantedEvent_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_com_nnipa_proto_authz_PermissionGrantedEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nnipa_proto_authz_PermissionGrantedEvent_descriptor,
-        new java.lang.String[] { "Metadata", "UserId", "TenantId", "Resource", "Action", "GrantedBy", "GrantedAt", });
+        new java.lang.String[] { "Metadata", "UserId", "TenantId", "RoleId", "PermissionId", "Resource", "ResourceType", "Action", "GrantedBy", "GrantedAt", });
+    internal_static_com_nnipa_proto_authz_PermissionRevokedEvent_descriptor =
+      getDescriptor().getMessageTypes().get(6);
+    internal_static_com_nnipa_proto_authz_PermissionRevokedEvent_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_nnipa_proto_authz_PermissionRevokedEvent_descriptor,
+        new java.lang.String[] { "Metadata", "RoleId", "PermissionId", "RevokedAt", "RevokedBy", });
     internal_static_com_nnipa_proto_authz_AuthorizationCheckedEvent_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_com_nnipa_proto_authz_AuthorizationCheckedEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nnipa_proto_authz_AuthorizationCheckedEvent_descriptor,
-        new java.lang.String[] { "Metadata", "UserId", "TenantId", "Resource", "Action", "Allowed", "Reason", "CheckedAt", });
+        new java.lang.String[] { "Metadata", "UserId", "TenantId", "Resource", "Action", "Allowed", "Reason", "CheckedAt", "IpAddress", "Context", });
+    internal_static_com_nnipa_proto_authz_AuthorizationCheckedEvent_ContextEntry_descriptor =
+      internal_static_com_nnipa_proto_authz_AuthorizationCheckedEvent_descriptor.getNestedTypes().get(0);
+    internal_static_com_nnipa_proto_authz_AuthorizationCheckedEvent_ContextEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_nnipa_proto_authz_AuthorizationCheckedEvent_ContextEntry_descriptor,
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_com_nnipa_proto_authz_PolicyCreatedEvent_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_com_nnipa_proto_authz_PolicyCreatedEvent_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_nnipa_proto_authz_PolicyCreatedEvent_descriptor,
+        new java.lang.String[] { "Metadata", "PolicyId", "TenantId", "PolicyName", "PolicyType", "Effect", "CreatedAt", "CreatedBy", });
+    internal_static_com_nnipa_proto_authz_PolicyEvaluatedEvent_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_com_nnipa_proto_authz_PolicyEvaluatedEvent_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_nnipa_proto_authz_PolicyEvaluatedEvent_descriptor,
+        new java.lang.String[] { "Metadata", "PolicyId", "UserId", "Resource", "Action", "Result", "EvaluatedAt", });
     com.google.protobuf.TimestampProto.getDescriptor();
     com.nnipa.proto.common.CommonProtos.getDescriptor();
   }

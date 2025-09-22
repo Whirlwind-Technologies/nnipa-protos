@@ -48,53 +48,89 @@ public interface PermissionGrantedEventOrBuilder extends
       getTenantIdBytes();
 
   /**
-   * <code>string resource = 4;</code>
+   * <code>string role_id = 4;</code>
+   * @return The roleId.
+   */
+  java.lang.String getRoleId();
+  /**
+   * <code>string role_id = 4;</code>
+   * @return The bytes for roleId.
+   */
+  com.google.protobuf.ByteString
+      getRoleIdBytes();
+
+  /**
+   * <code>string permission_id = 5;</code>
+   * @return The permissionId.
+   */
+  java.lang.String getPermissionId();
+  /**
+   * <code>string permission_id = 5;</code>
+   * @return The bytes for permissionId.
+   */
+  com.google.protobuf.ByteString
+      getPermissionIdBytes();
+
+  /**
+   * <code>string resource = 6;</code>
    * @return The resource.
    */
   java.lang.String getResource();
   /**
-   * <code>string resource = 4;</code>
+   * <code>string resource = 6;</code>
    * @return The bytes for resource.
    */
   com.google.protobuf.ByteString
       getResourceBytes();
 
   /**
-   * <code>string action = 5;</code>
+   * <code>string resource_type = 7;</code>
+   * @return The resourceType.
+   */
+  java.lang.String getResourceType();
+  /**
+   * <code>string resource_type = 7;</code>
+   * @return The bytes for resourceType.
+   */
+  com.google.protobuf.ByteString
+      getResourceTypeBytes();
+
+  /**
+   * <code>string action = 8;</code>
    * @return The action.
    */
   java.lang.String getAction();
   /**
-   * <code>string action = 5;</code>
+   * <code>string action = 8;</code>
    * @return The bytes for action.
    */
   com.google.protobuf.ByteString
       getActionBytes();
 
   /**
-   * <code>string granted_by = 6;</code>
+   * <code>string granted_by = 9;</code>
    * @return The grantedBy.
    */
   java.lang.String getGrantedBy();
   /**
-   * <code>string granted_by = 6;</code>
+   * <code>string granted_by = 9;</code>
    * @return The bytes for grantedBy.
    */
   com.google.protobuf.ByteString
       getGrantedByBytes();
 
   /**
-   * <code>.google.protobuf.Timestamp granted_at = 7;</code>
+   * <code>.google.protobuf.Timestamp granted_at = 10;</code>
    * @return Whether the grantedAt field is set.
    */
   boolean hasGrantedAt();
   /**
-   * <code>.google.protobuf.Timestamp granted_at = 7;</code>
+   * <code>.google.protobuf.Timestamp granted_at = 10;</code>
    * @return The grantedAt.
    */
   com.google.protobuf.Timestamp getGrantedAt();
   /**
-   * <code>.google.protobuf.Timestamp granted_at = 7;</code>
+   * <code>.google.protobuf.Timestamp granted_at = 10;</code>
    */
   com.google.protobuf.TimestampOrBuilder getGrantedAtOrBuilder();
 }

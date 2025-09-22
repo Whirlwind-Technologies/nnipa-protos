@@ -20,6 +20,25 @@ message RoleCreatedEvent {
   string created_by = 8;
 }
 
+// Event: Role Updated
+message RoleUpdatedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string role_id = 2;
+  string tenant_id = 3;
+  map<string, string> changes = 4;
+  google.protobuf.Timestamp updated_at = 5;
+  string updated_by = 6;
+}
+
+// Event: Role Deleted
+message RoleDeletedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string role_id = 2;
+  string tenant_id = 3;
+  google.protobuf.Timestamp deleted_at = 4;
+  string deleted_by = 5;
+}
+
 // Event: Role Assigned
 message RoleAssignedEvent {
   com.nnipa.proto.common.EventMetadata metadata = 1;
@@ -49,10 +68,22 @@ message PermissionGrantedEvent {
   com.nnipa.proto.common.EventMetadata metadata = 1;
   string user_id = 2;
   string tenant_id = 3;
-  string resource = 4;
-  string action = 5;
-  string granted_by = 6;
-  google.protobuf.Timestamp granted_at = 7;
+  string role_id = 4;
+  string permission_id = 5;
+  string resource = 6;
+  string resource_type = 7;
+  string action = 8;
+  string granted_by = 9;
+  google.protobuf.Timestamp granted_at = 10;
+}
+
+// Event: Permission Revoked
+message PermissionRevokedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string role_id = 2;
+  string permission_id = 3;
+  google.protobuf.Timestamp revoked_at = 4;
+  string revoked_by = 5;
 }
 
 // Event: Authorization Checked
@@ -65,4 +96,29 @@ message AuthorizationCheckedEvent {
   bool allowed = 6;
   string reason = 7;
   google.protobuf.Timestamp checked_at = 8;
+  string ip_address = 9;
+  map<string, string> context = 10;
+}
+
+// Event: Policy Created
+message PolicyCreatedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string policy_id = 2;
+  string tenant_id = 3;
+  string policy_name = 4;
+  string policy_type = 5;
+  string effect = 6;
+  google.protobuf.Timestamp created_at = 7;
+  string created_by = 8;
+}
+
+// Event: Policy Evaluated
+message PolicyEvaluatedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string policy_id = 2;
+  string user_id = 3;
+  string resource = 4;
+  string action = 5;
+  string result = 6;
+  google.protobuf.Timestamp evaluated_at = 7;
 }

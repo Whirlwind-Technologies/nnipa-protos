@@ -23,7 +23,10 @@ private static final long serialVersionUID = 0L;
   private PermissionGrantedEvent() {
     userId_ = "";
     tenantId_ = "";
+    roleId_ = "";
+    permissionId_ = "";
     resource_ = "";
+    resourceType_ = "";
     action_ = "";
     grantedBy_ = "";
   }
@@ -153,11 +156,89 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int RESOURCE_FIELD_NUMBER = 4;
+  public static final int ROLE_ID_FIELD_NUMBER = 4;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object roleId_ = "";
+  /**
+   * <code>string role_id = 4;</code>
+   * @return The roleId.
+   */
+  @java.lang.Override
+  public java.lang.String getRoleId() {
+    java.lang.Object ref = roleId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      roleId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string role_id = 4;</code>
+   * @return The bytes for roleId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getRoleIdBytes() {
+    java.lang.Object ref = roleId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      roleId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int PERMISSION_ID_FIELD_NUMBER = 5;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object permissionId_ = "";
+  /**
+   * <code>string permission_id = 5;</code>
+   * @return The permissionId.
+   */
+  @java.lang.Override
+  public java.lang.String getPermissionId() {
+    java.lang.Object ref = permissionId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      permissionId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string permission_id = 5;</code>
+   * @return The bytes for permissionId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getPermissionIdBytes() {
+    java.lang.Object ref = permissionId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      permissionId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int RESOURCE_FIELD_NUMBER = 6;
   @SuppressWarnings("serial")
   private volatile java.lang.Object resource_ = "";
   /**
-   * <code>string resource = 4;</code>
+   * <code>string resource = 6;</code>
    * @return The resource.
    */
   @java.lang.Override
@@ -174,7 +255,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string resource = 4;</code>
+   * <code>string resource = 6;</code>
    * @return The bytes for resource.
    */
   @java.lang.Override
@@ -192,11 +273,50 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int ACTION_FIELD_NUMBER = 5;
+  public static final int RESOURCE_TYPE_FIELD_NUMBER = 7;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object resourceType_ = "";
+  /**
+   * <code>string resource_type = 7;</code>
+   * @return The resourceType.
+   */
+  @java.lang.Override
+  public java.lang.String getResourceType() {
+    java.lang.Object ref = resourceType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      resourceType_ = s;
+      return s;
+    }
+  }
+  /**
+   * <code>string resource_type = 7;</code>
+   * @return The bytes for resourceType.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getResourceTypeBytes() {
+    java.lang.Object ref = resourceType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      resourceType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int ACTION_FIELD_NUMBER = 8;
   @SuppressWarnings("serial")
   private volatile java.lang.Object action_ = "";
   /**
-   * <code>string action = 5;</code>
+   * <code>string action = 8;</code>
    * @return The action.
    */
   @java.lang.Override
@@ -213,7 +333,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string action = 5;</code>
+   * <code>string action = 8;</code>
    * @return The bytes for action.
    */
   @java.lang.Override
@@ -231,11 +351,11 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int GRANTED_BY_FIELD_NUMBER = 6;
+  public static final int GRANTED_BY_FIELD_NUMBER = 9;
   @SuppressWarnings("serial")
   private volatile java.lang.Object grantedBy_ = "";
   /**
-   * <code>string granted_by = 6;</code>
+   * <code>string granted_by = 9;</code>
    * @return The grantedBy.
    */
   @java.lang.Override
@@ -252,7 +372,7 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
-   * <code>string granted_by = 6;</code>
+   * <code>string granted_by = 9;</code>
    * @return The bytes for grantedBy.
    */
   @java.lang.Override
@@ -270,10 +390,10 @@ private static final long serialVersionUID = 0L;
     }
   }
 
-  public static final int GRANTED_AT_FIELD_NUMBER = 7;
+  public static final int GRANTED_AT_FIELD_NUMBER = 10;
   private com.google.protobuf.Timestamp grantedAt_;
   /**
-   * <code>.google.protobuf.Timestamp granted_at = 7;</code>
+   * <code>.google.protobuf.Timestamp granted_at = 10;</code>
    * @return Whether the grantedAt field is set.
    */
   @java.lang.Override
@@ -281,7 +401,7 @@ private static final long serialVersionUID = 0L;
     return ((bitField0_ & 0x00000002) != 0);
   }
   /**
-   * <code>.google.protobuf.Timestamp granted_at = 7;</code>
+   * <code>.google.protobuf.Timestamp granted_at = 10;</code>
    * @return The grantedAt.
    */
   @java.lang.Override
@@ -289,7 +409,7 @@ private static final long serialVersionUID = 0L;
     return grantedAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : grantedAt_;
   }
   /**
-   * <code>.google.protobuf.Timestamp granted_at = 7;</code>
+   * <code>.google.protobuf.Timestamp granted_at = 10;</code>
    */
   @java.lang.Override
   public com.google.protobuf.TimestampOrBuilder getGrantedAtOrBuilder() {
@@ -319,17 +439,26 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tenantId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, tenantId_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(roleId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, roleId_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(permissionId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, permissionId_);
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resource_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, resource_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, resource_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceType_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, resourceType_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(action_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, action_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, action_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(grantedBy_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, grantedBy_);
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, grantedBy_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
-      output.writeMessage(7, getGrantedAt());
+      output.writeMessage(10, getGrantedAt());
     }
     getUnknownFields().writeTo(output);
   }
@@ -350,18 +479,27 @@ private static final long serialVersionUID = 0L;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tenantId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, tenantId_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(roleId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, roleId_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(permissionId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, permissionId_);
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resource_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, resource_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, resource_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resourceType_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, resourceType_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(action_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, action_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, action_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(grantedBy_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, grantedBy_);
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, grantedBy_);
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(7, getGrantedAt());
+        .computeMessageSize(10, getGrantedAt());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -387,8 +525,14 @@ private static final long serialVersionUID = 0L;
         .equals(other.getUserId())) return false;
     if (!getTenantId()
         .equals(other.getTenantId())) return false;
+    if (!getRoleId()
+        .equals(other.getRoleId())) return false;
+    if (!getPermissionId()
+        .equals(other.getPermissionId())) return false;
     if (!getResource()
         .equals(other.getResource())) return false;
+    if (!getResourceType()
+        .equals(other.getResourceType())) return false;
     if (!getAction()
         .equals(other.getAction())) return false;
     if (!getGrantedBy()
@@ -417,8 +561,14 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getUserId().hashCode();
     hash = (37 * hash) + TENANT_ID_FIELD_NUMBER;
     hash = (53 * hash) + getTenantId().hashCode();
+    hash = (37 * hash) + ROLE_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getRoleId().hashCode();
+    hash = (37 * hash) + PERMISSION_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getPermissionId().hashCode();
     hash = (37 * hash) + RESOURCE_FIELD_NUMBER;
     hash = (53 * hash) + getResource().hashCode();
+    hash = (37 * hash) + RESOURCE_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getResourceType().hashCode();
     hash = (37 * hash) + ACTION_FIELD_NUMBER;
     hash = (53 * hash) + getAction().hashCode();
     hash = (37 * hash) + GRANTED_BY_FIELD_NUMBER;
@@ -576,7 +726,10 @@ private static final long serialVersionUID = 0L;
       }
       userId_ = "";
       tenantId_ = "";
+      roleId_ = "";
+      permissionId_ = "";
       resource_ = "";
+      resourceType_ = "";
       action_ = "";
       grantedBy_ = "";
       grantedAt_ = null;
@@ -631,15 +784,24 @@ private static final long serialVersionUID = 0L;
         result.tenantId_ = tenantId_;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
-        result.resource_ = resource_;
+        result.roleId_ = roleId_;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.action_ = action_;
+        result.permissionId_ = permissionId_;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.grantedBy_ = grantedBy_;
+        result.resource_ = resource_;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.resourceType_ = resourceType_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.action_ = action_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.grantedBy_ = grantedBy_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.grantedAt_ = grantedAtBuilder_ == null
             ? grantedAt_
             : grantedAtBuilder_.build();
@@ -705,19 +867,34 @@ private static final long serialVersionUID = 0L;
         bitField0_ |= 0x00000004;
         onChanged();
       }
+      if (!other.getRoleId().isEmpty()) {
+        roleId_ = other.roleId_;
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      if (!other.getPermissionId().isEmpty()) {
+        permissionId_ = other.permissionId_;
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
       if (!other.getResource().isEmpty()) {
         resource_ = other.resource_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000020;
+        onChanged();
+      }
+      if (!other.getResourceType().isEmpty()) {
+        resourceType_ = other.resourceType_;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (!other.getAction().isEmpty()) {
         action_ = other.action_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (!other.getGrantedBy().isEmpty()) {
         grantedBy_ = other.grantedBy_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (other.hasGrantedAt()) {
@@ -767,27 +944,42 @@ private static final long serialVersionUID = 0L;
               break;
             } // case 26
             case 34: {
-              resource_ = input.readStringRequireUtf8();
+              roleId_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000008;
               break;
             } // case 34
             case 42: {
-              action_ = input.readStringRequireUtf8();
+              permissionId_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000010;
               break;
             } // case 42
             case 50: {
-              grantedBy_ = input.readStringRequireUtf8();
+              resource_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000020;
               break;
             } // case 50
             case 58: {
-              input.readMessage(
-                  getGrantedAtFieldBuilder().getBuilder(),
-                  extensionRegistry);
+              resourceType_ = input.readStringRequireUtf8();
               bitField0_ |= 0x00000040;
               break;
             } // case 58
+            case 66: {
+              action_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000080;
+              break;
+            } // case 66
+            case 74: {
+              grantedBy_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000100;
+              break;
+            } // case 74
+            case 82: {
+              input.readMessage(
+                  getGrantedAtFieldBuilder().getBuilder(),
+                  extensionRegistry);
+              bitField0_ |= 0x00000200;
+              break;
+            } // case 82
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1070,9 +1262,153 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    private java.lang.Object roleId_ = "";
+    /**
+     * <code>string role_id = 4;</code>
+     * @return The roleId.
+     */
+    public java.lang.String getRoleId() {
+      java.lang.Object ref = roleId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        roleId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string role_id = 4;</code>
+     * @return The bytes for roleId.
+     */
+    public com.google.protobuf.ByteString
+        getRoleIdBytes() {
+      java.lang.Object ref = roleId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        roleId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string role_id = 4;</code>
+     * @param value The roleId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRoleId(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      roleId_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string role_id = 4;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearRoleId() {
+      roleId_ = getDefaultInstance().getRoleId();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string role_id = 4;</code>
+     * @param value The bytes for roleId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRoleIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      roleId_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object permissionId_ = "";
+    /**
+     * <code>string permission_id = 5;</code>
+     * @return The permissionId.
+     */
+    public java.lang.String getPermissionId() {
+      java.lang.Object ref = permissionId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        permissionId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string permission_id = 5;</code>
+     * @return The bytes for permissionId.
+     */
+    public com.google.protobuf.ByteString
+        getPermissionIdBytes() {
+      java.lang.Object ref = permissionId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        permissionId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string permission_id = 5;</code>
+     * @param value The permissionId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPermissionId(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      permissionId_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string permission_id = 5;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearPermissionId() {
+      permissionId_ = getDefaultInstance().getPermissionId();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string permission_id = 5;</code>
+     * @param value The bytes for permissionId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPermissionIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      permissionId_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object resource_ = "";
     /**
-     * <code>string resource = 4;</code>
+     * <code>string resource = 6;</code>
      * @return The resource.
      */
     public java.lang.String getResource() {
@@ -1088,7 +1424,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string resource = 4;</code>
+     * <code>string resource = 6;</code>
      * @return The bytes for resource.
      */
     public com.google.protobuf.ByteString
@@ -1105,7 +1441,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string resource = 4;</code>
+     * <code>string resource = 6;</code>
      * @param value The resource to set.
      * @return This builder for chaining.
      */
@@ -1113,22 +1449,22 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       resource_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
     /**
-     * <code>string resource = 4;</code>
+     * <code>string resource = 6;</code>
      * @return This builder for chaining.
      */
     public Builder clearResource() {
       resource_ = getDefaultInstance().getResource();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
     /**
-     * <code>string resource = 4;</code>
+     * <code>string resource = 6;</code>
      * @param value The bytes for resource to set.
      * @return This builder for chaining.
      */
@@ -1137,14 +1473,86 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       resource_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object resourceType_ = "";
+    /**
+     * <code>string resource_type = 7;</code>
+     * @return The resourceType.
+     */
+    public java.lang.String getResourceType() {
+      java.lang.Object ref = resourceType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        resourceType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <code>string resource_type = 7;</code>
+     * @return The bytes for resourceType.
+     */
+    public com.google.protobuf.ByteString
+        getResourceTypeBytes() {
+      java.lang.Object ref = resourceType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        resourceType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <code>string resource_type = 7;</code>
+     * @param value The resourceType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResourceType(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      resourceType_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string resource_type = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearResourceType() {
+      resourceType_ = getDefaultInstance().getResourceType();
+      bitField0_ = (bitField0_ & ~0x00000040);
+      onChanged();
+      return this;
+    }
+    /**
+     * <code>string resource_type = 7;</code>
+     * @param value The bytes for resourceType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResourceTypeBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      resourceType_ = value;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
 
     private java.lang.Object action_ = "";
     /**
-     * <code>string action = 5;</code>
+     * <code>string action = 8;</code>
      * @return The action.
      */
     public java.lang.String getAction() {
@@ -1160,7 +1568,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string action = 5;</code>
+     * <code>string action = 8;</code>
      * @return The bytes for action.
      */
     public com.google.protobuf.ByteString
@@ -1177,7 +1585,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string action = 5;</code>
+     * <code>string action = 8;</code>
      * @param value The action to set.
      * @return This builder for chaining.
      */
@@ -1185,22 +1593,22 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       action_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
     /**
-     * <code>string action = 5;</code>
+     * <code>string action = 8;</code>
      * @return This builder for chaining.
      */
     public Builder clearAction() {
       action_ = getDefaultInstance().getAction();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
     /**
-     * <code>string action = 5;</code>
+     * <code>string action = 8;</code>
      * @param value The bytes for action to set.
      * @return This builder for chaining.
      */
@@ -1209,14 +1617,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       action_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
 
     private java.lang.Object grantedBy_ = "";
     /**
-     * <code>string granted_by = 6;</code>
+     * <code>string granted_by = 9;</code>
      * @return The grantedBy.
      */
     public java.lang.String getGrantedBy() {
@@ -1232,7 +1640,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string granted_by = 6;</code>
+     * <code>string granted_by = 9;</code>
      * @return The bytes for grantedBy.
      */
     public com.google.protobuf.ByteString
@@ -1249,7 +1657,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>string granted_by = 6;</code>
+     * <code>string granted_by = 9;</code>
      * @param value The grantedBy to set.
      * @return This builder for chaining.
      */
@@ -1257,22 +1665,22 @@ private static final long serialVersionUID = 0L;
         java.lang.String value) {
       if (value == null) { throw new NullPointerException(); }
       grantedBy_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
     /**
-     * <code>string granted_by = 6;</code>
+     * <code>string granted_by = 9;</code>
      * @return This builder for chaining.
      */
     public Builder clearGrantedBy() {
       grantedBy_ = getDefaultInstance().getGrantedBy();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
     /**
-     * <code>string granted_by = 6;</code>
+     * <code>string granted_by = 9;</code>
      * @param value The bytes for grantedBy to set.
      * @return This builder for chaining.
      */
@@ -1281,7 +1689,7 @@ private static final long serialVersionUID = 0L;
       if (value == null) { throw new NullPointerException(); }
       checkByteStringIsUtf8(value);
       grantedBy_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -1290,14 +1698,14 @@ private static final long serialVersionUID = 0L;
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> grantedAtBuilder_;
     /**
-     * <code>.google.protobuf.Timestamp granted_at = 7;</code>
+     * <code>.google.protobuf.Timestamp granted_at = 10;</code>
      * @return Whether the grantedAt field is set.
      */
     public boolean hasGrantedAt() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
     /**
-     * <code>.google.protobuf.Timestamp granted_at = 7;</code>
+     * <code>.google.protobuf.Timestamp granted_at = 10;</code>
      * @return The grantedAt.
      */
     public com.google.protobuf.Timestamp getGrantedAt() {
@@ -1308,7 +1716,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Timestamp granted_at = 7;</code>
+     * <code>.google.protobuf.Timestamp granted_at = 10;</code>
      */
     public Builder setGrantedAt(com.google.protobuf.Timestamp value) {
       if (grantedAtBuilder_ == null) {
@@ -1319,12 +1727,12 @@ private static final long serialVersionUID = 0L;
       } else {
         grantedAtBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp granted_at = 7;</code>
+     * <code>.google.protobuf.Timestamp granted_at = 10;</code>
      */
     public Builder setGrantedAt(
         com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -1333,16 +1741,16 @@ private static final long serialVersionUID = 0L;
       } else {
         grantedAtBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp granted_at = 7;</code>
+     * <code>.google.protobuf.Timestamp granted_at = 10;</code>
      */
     public Builder mergeGrantedAt(com.google.protobuf.Timestamp value) {
       if (grantedAtBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0) &&
+        if (((bitField0_ & 0x00000200) != 0) &&
           grantedAt_ != null &&
           grantedAt_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getGrantedAtBuilder().mergeFrom(value);
@@ -1353,16 +1761,16 @@ private static final long serialVersionUID = 0L;
         grantedAtBuilder_.mergeFrom(value);
       }
       if (grantedAt_ != null) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp granted_at = 7;</code>
+     * <code>.google.protobuf.Timestamp granted_at = 10;</code>
      */
     public Builder clearGrantedAt() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000200);
       grantedAt_ = null;
       if (grantedAtBuilder_ != null) {
         grantedAtBuilder_.dispose();
@@ -1372,15 +1780,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
-     * <code>.google.protobuf.Timestamp granted_at = 7;</code>
+     * <code>.google.protobuf.Timestamp granted_at = 10;</code>
      */
     public com.google.protobuf.Timestamp.Builder getGrantedAtBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000200;
       onChanged();
       return getGrantedAtFieldBuilder().getBuilder();
     }
     /**
-     * <code>.google.protobuf.Timestamp granted_at = 7;</code>
+     * <code>.google.protobuf.Timestamp granted_at = 10;</code>
      */
     public com.google.protobuf.TimestampOrBuilder getGrantedAtOrBuilder() {
       if (grantedAtBuilder_ != null) {
@@ -1391,7 +1799,7 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
-     * <code>.google.protobuf.Timestamp granted_at = 7;</code>
+     * <code>.google.protobuf.Timestamp granted_at = 10;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
         com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 

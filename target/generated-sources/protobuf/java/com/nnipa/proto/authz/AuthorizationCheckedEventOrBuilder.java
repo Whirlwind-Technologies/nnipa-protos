@@ -103,4 +103,50 @@ public interface AuthorizationCheckedEventOrBuilder extends
    * <code>.google.protobuf.Timestamp checked_at = 8;</code>
    */
   com.google.protobuf.TimestampOrBuilder getCheckedAtOrBuilder();
+
+  /**
+   * <code>string ip_address = 9;</code>
+   * @return The ipAddress.
+   */
+  java.lang.String getIpAddress();
+  /**
+   * <code>string ip_address = 9;</code>
+   * @return The bytes for ipAddress.
+   */
+  com.google.protobuf.ByteString
+      getIpAddressBytes();
+
+  /**
+   * <code>map&lt;string, string&gt; context = 10;</code>
+   */
+  int getContextCount();
+  /**
+   * <code>map&lt;string, string&gt; context = 10;</code>
+   */
+  boolean containsContext(
+      java.lang.String key);
+  /**
+   * Use {@link #getContextMap()} instead.
+   */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String>
+  getContext();
+  /**
+   * <code>map&lt;string, string&gt; context = 10;</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String>
+  getContextMap();
+  /**
+   * <code>map&lt;string, string&gt; context = 10;</code>
+   */
+  /* nullable */
+java.lang.String getContextOrDefault(
+      java.lang.String key,
+      /* nullable */
+java.lang.String defaultValue);
+  /**
+   * <code>map&lt;string, string&gt; context = 10;</code>
+   */
+  java.lang.String getContextOrThrow(
+      java.lang.String key);
 }
