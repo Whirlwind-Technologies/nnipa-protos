@@ -150,4 +150,58 @@ public interface TenantDataOrBuilder extends
    * @return The storageQuotaGb.
    */
   int getStorageQuotaGb();
+
+  /**
+   * <pre>
+   * Add metadata field to store additional data including user_id
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; metadata = 13;</code>
+   */
+  int getMetadataCount();
+  /**
+   * <pre>
+   * Add metadata field to store additional data including user_id
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; metadata = 13;</code>
+   */
+  boolean containsMetadata(
+      java.lang.String key);
+  /**
+   * Use {@link #getMetadataMap()} instead.
+   */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String>
+  getMetadata();
+  /**
+   * <pre>
+   * Add metadata field to store additional data including user_id
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; metadata = 13;</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String>
+  getMetadataMap();
+  /**
+   * <pre>
+   * Add metadata field to store additional data including user_id
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; metadata = 13;</code>
+   */
+  /* nullable */
+java.lang.String getMetadataOrDefault(
+      java.lang.String key,
+      /* nullable */
+java.lang.String defaultValue);
+  /**
+   * <pre>
+   * Add metadata field to store additional data including user_id
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; metadata = 13;</code>
+   */
+  java.lang.String getMetadataOrThrow(
+      java.lang.String key);
 }

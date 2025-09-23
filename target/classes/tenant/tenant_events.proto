@@ -24,6 +24,9 @@ message TenantData {
   string isolation_strategy = 10;
   int32 max_users = 11;
   int32 storage_quota_gb = 12;
+
+  // Add metadata field to store additional data including user_id
+  map<string, string> metadata = 13;
 }
 
 // Shared SubscriptionData message used across events
