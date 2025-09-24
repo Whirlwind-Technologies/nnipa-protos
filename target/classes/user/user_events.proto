@@ -9,11 +9,56 @@ import "google/protobuf/timestamp.proto";
 import "common/common.proto";
 import "common/enums.proto";
 
+// ============================================
+// SAGA-RELATED USER EVENTS
+// ============================================
+
+// Event: User Profile Created (Part of Saga)
+// Published by user-management-service to complete the saga
+message UserProfileCreatedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  // Core identifiers
+  string user_id = 2;
+  string tenant_id = 3;
+
+  // Profile details
+  string email = 4;
+  string username = 5;
+  string display_name = 6;
+  string user_type = 7;  // OWNER, ADMIN, MEMBER
+
+  // Saga context
+  string saga_id = 8;
+  bool part_of_saga = 9;
+
+  // Timestamps
+  google.protobuf.Timestamp created_at = 10;
+
+  // Additional metadata
+  map<string, string> profile_metadata = 11;
+}
+
+// Event: User Profile Creation Failed (Saga Failure)
+message UserProfileCreationFailedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string saga_id = 2;
+  string user_id = 3;
+  string tenant_id = 4;
+  string error_code = 5;
+  string error_message = 6;
+  google.protobuf.Timestamp failed_at = 7;
+}
+
+// ============================================
+// USER EVENTS
+// ============================================
+
 // Event: User Created
 message UserCreatedEvent {
   com.nnipa.proto.common.EventMetadata metadata = 1;
   string user_id = 2;
-  string tenant_id = 3;
+  string tenant_id = 3;  // May be empty for saga flow initially
   string username = 4;
   string email = 5;
   string first_name = 6;
@@ -21,6 +66,11 @@ message UserCreatedEvent {
   string user_type = 8;
   com.nnipa.proto.common.UserStatus status = 9;
   google.protobuf.Timestamp created_at = 10;
+
+  // Saga support fields
+  string creation_method = 11;  // SAGA, DIRECT, ADMIN_CREATED
+  string saga_id = 12;  // Present if created via saga
+  bool awaiting_tenant = 13;  // True if waiting for tenant creation
 }
 
 // Event: User Updated
@@ -31,6 +81,21 @@ message UserUpdatedEvent {
   map<string, string> changed_fields = 4;
   google.protobuf.Timestamp updated_at = 5;
   string updated_by = 6;
+
+  // Track saga-related updates
+  bool tenant_association_update = 7;  // True if tenant_id was updated
+  string old_tenant_id = 8;  // Previous tenant if changed
+}
+
+// Event: User Tenant Associated
+// Published when user is associated with tenant in saga flow
+message UserTenantAssociatedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string user_id = 2;
+  string tenant_id = 3;
+  string saga_id = 4;
+  google.protobuf.Timestamp associated_at = 5;
+  string association_type = 6;  // OWNER, MEMBER, ADMIN
 }
 
 // Event: User Activated
@@ -59,4 +124,53 @@ message UserProfileUpdatedEvent {
   string tenant_id = 3;
   map<string, string> profile_data = 4;
   google.protobuf.Timestamp updated_at = 5;
+}
+
+// ============================================
+// USER SAGA STATE EVENTS
+// ============================================
+
+// Event: User Saga Stage Started
+message UserSagaStageStartedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string saga_id = 2;
+  string stage = 3;  // USER_PROFILE_CREATION, USER_SETTINGS_INIT
+  string user_id = 4;
+  string tenant_id = 5;
+  google.protobuf.Timestamp started_at = 6;
+}
+
+// Event: User Saga Stage Completed
+message UserSagaStageCompletedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string saga_id = 2;
+  string stage = 3;
+  string user_id = 4;
+  string tenant_id = 5;
+  google.protobuf.Timestamp completed_at = 6;
+  int64 duration_ms = 7;
+}
+
+// ============================================
+// USER ACTIVITY EVENTS
+// ============================================
+
+// Event: User Activity Tracked
+message UserActivityEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string user_id = 2;
+  string tenant_id = 3;
+  string activity_type = 4;
+  map<string, string> activity_data = 5;
+  google.protobuf.Timestamp occurred_at = 6;
+}
+
+// Event: User Last Login Updated
+message UserLastLoginUpdatedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string user_id = 2;
+  string tenant_id = 3;
+  google.protobuf.Timestamp last_login_at = 4;
+  string ip_address = 5;
+  string user_agent = 6;
 }

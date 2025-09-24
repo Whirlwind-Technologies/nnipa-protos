@@ -4,7 +4,7 @@
 // Protobuf Java Version: 3.25.3
 package com.nnipa.proto.auth;
 
-public interface SelfSignupEventOrBuilder extends
+@java.lang.Deprecated public interface SelfSignupEventOrBuilder extends
     // @@protoc_insertion_point(interface_extends:com.nnipa.proto.auth.SelfSignupEvent)
     com.google.protobuf.MessageOrBuilder {
 

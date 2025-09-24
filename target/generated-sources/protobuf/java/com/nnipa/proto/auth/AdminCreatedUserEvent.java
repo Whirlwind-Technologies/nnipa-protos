@@ -6,7 +6,7 @@ package com.nnipa.proto.auth;
 
 /**
  * <pre>
- * Event: Admin-Created User (Existing Tenant)
+ * Event: Admin-Created User (KEEP - still used for existing tenant flow)
  * </pre>
  *
  * Protobuf type {@code com.nnipa.proto.auth.AdminCreatedUserEvent}
@@ -822,7 +822,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Event: Admin-Created User (Existing Tenant)
+   * Event: Admin-Created User (KEEP - still used for existing tenant flow)
    * </pre>
    *
    * Protobuf type {@code com.nnipa.proto.auth.AdminCreatedUserEvent}

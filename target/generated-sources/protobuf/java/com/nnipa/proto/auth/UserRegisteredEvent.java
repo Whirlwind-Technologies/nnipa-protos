@@ -6,7 +6,7 @@ package com.nnipa.proto.auth;
 
 /**
  * <pre>
- * Event: User Registered (Generic - for backward compatibility)
+ * Event: User Registered (Generic - KEEP for notifications/audit)
  * </pre>
  *
  * Protobuf type {@code com.nnipa.proto.auth.UserRegisteredEvent}
@@ -96,11 +96,19 @@ private static final long serialVersionUID = 0L;
         getEmailBytes();
 
     /**
+     * <pre>
+     * SELF_SIGNUP, ADMIN_CREATED, SAGA
+     * </pre>
+     *
      * <code>string registration_method = 5;</code>
      * @return The registrationMethod.
      */
     java.lang.String getRegistrationMethod();
     /**
+     * <pre>
+     * SELF_SIGNUP, ADMIN_CREATED, SAGA
+     * </pre>
+     *
      * <code>string registration_method = 5;</code>
      * @return The bytes for registrationMethod.
      */
@@ -197,6 +205,32 @@ java.lang.String defaultValue);
      */
     java.lang.String getAdditionalInfoOrThrow(
         java.lang.String key);
+
+    /**
+     * <pre>
+     * New fields for saga support
+     * </pre>
+     *
+     * <code>string saga_id = 12;</code>
+     * @return The sagaId.
+     */
+    java.lang.String getSagaId();
+    /**
+     * <pre>
+     * New fields for saga support
+     * </pre>
+     *
+     * <code>string saga_id = 12;</code>
+     * @return The bytes for sagaId.
+     */
+    com.google.protobuf.ByteString
+        getSagaIdBytes();
+
+    /**
+     * <code>bool via_saga = 13;</code>
+     * @return The viaSaga.
+     */
+    boolean getViaSaga();
   }
   /**
    * Protobuf type {@code com.nnipa.proto.auth.UserRegisteredEvent.RegistrationData}
@@ -219,6 +253,7 @@ java.lang.String defaultValue);
       ipAddress_ = "";
       userAgent_ = "";
       registrationSource_ = "";
+      sagaId_ = "";
     }
 
     @java.lang.Override
@@ -414,6 +449,10 @@ java.lang.String defaultValue);
     @SuppressWarnings("serial")
     private volatile java.lang.Object registrationMethod_ = "";
     /**
+     * <pre>
+     * SELF_SIGNUP, ADMIN_CREATED, SAGA
+     * </pre>
+     *
      * <code>string registration_method = 5;</code>
      * @return The registrationMethod.
      */
@@ -431,6 +470,10 @@ java.lang.String defaultValue);
       }
     }
     /**
+     * <pre>
+     * SELF_SIGNUP, ADMIN_CREATED, SAGA
+     * </pre>
+     *
      * <code>string registration_method = 5;</code>
      * @return The bytes for registrationMethod.
      */
@@ -682,6 +725,64 @@ java.lang.String defaultValue) {
       return map.get(key);
     }
 
+    public static final int SAGA_ID_FIELD_NUMBER = 12;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object sagaId_ = "";
+    /**
+     * <pre>
+     * New fields for saga support
+     * </pre>
+     *
+     * <code>string saga_id = 12;</code>
+     * @return The sagaId.
+     */
+    @java.lang.Override
+    public java.lang.String getSagaId() {
+      java.lang.Object ref = sagaId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sagaId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * New fields for saga support
+     * </pre>
+     *
+     * <code>string saga_id = 12;</code>
+     * @return The bytes for sagaId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSagaIdBytes() {
+      java.lang.Object ref = sagaId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        sagaId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int VIA_SAGA_FIELD_NUMBER = 13;
+    private boolean viaSaga_ = false;
+    /**
+     * <code>bool via_saga = 13;</code>
+     * @return The viaSaga.
+     */
+    @java.lang.Override
+    public boolean getViaSaga() {
+      return viaSaga_;
+    }
+
     private byte memoizedIsInitialized = -1;
     @java.lang.Override
     public final boolean isInitialized() {
@@ -732,6 +833,12 @@ java.lang.String defaultValue) {
           internalGetAdditionalInfo(),
           AdditionalInfoDefaultEntryHolder.defaultEntry,
           11);
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sagaId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, sagaId_);
+      }
+      if (viaSaga_ != false) {
+        output.writeBool(13, viaSaga_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -783,6 +890,13 @@ java.lang.String defaultValue) {
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(11, additionalInfo__);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sagaId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, sagaId_);
+      }
+      if (viaSaga_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(13, viaSaga_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -823,6 +937,10 @@ java.lang.String defaultValue) {
           .equals(other.getRegistrationSource())) return false;
       if (!internalGetAdditionalInfo().equals(
           other.internalGetAdditionalInfo())) return false;
+      if (!getSagaId()
+          .equals(other.getSagaId())) return false;
+      if (getViaSaga()
+          != other.getViaSaga()) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -861,6 +979,11 @@ java.lang.String defaultValue) {
         hash = (37 * hash) + ADDITIONAL_INFO_FIELD_NUMBER;
         hash = (53 * hash) + internalGetAdditionalInfo().hashCode();
       }
+      hash = (37 * hash) + SAGA_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getSagaId().hashCode();
+      hash = (37 * hash) + VIA_SAGA_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getViaSaga());
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1035,6 +1158,8 @@ java.lang.String defaultValue) {
         emailVerified_ = false;
         registrationSource_ = "";
         internalGetMutableAdditionalInfo().clear();
+        sagaId_ = "";
+        viaSaga_ = false;
         return this;
       }
 
@@ -1105,6 +1230,12 @@ java.lang.String defaultValue) {
         if (((from_bitField0_ & 0x00000400) != 0)) {
           result.additionalInfo_ = internalGetAdditionalInfo();
           result.additionalInfo_.makeImmutable();
+        }
+        if (((from_bitField0_ & 0x00000800) != 0)) {
+          result.sagaId_ = sagaId_;
+        }
+        if (((from_bitField0_ & 0x00001000) != 0)) {
+          result.viaSaga_ = viaSaga_;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -1202,6 +1333,14 @@ java.lang.String defaultValue) {
         internalGetMutableAdditionalInfo().mergeFrom(
             other.internalGetAdditionalInfo());
         bitField0_ |= 0x00000400;
+        if (!other.getSagaId().isEmpty()) {
+          sagaId_ = other.sagaId_;
+          bitField0_ |= 0x00000800;
+          onChanged();
+        }
+        if (other.getViaSaga() != false) {
+          setViaSaga(other.getViaSaga());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -1289,6 +1428,16 @@ java.lang.String defaultValue) {
                 bitField0_ |= 0x00000400;
                 break;
               } // case 90
+              case 98: {
+                sagaId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 98
+              case 104: {
+                viaSaga_ = input.readBool();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 104
               default: {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                   done = true; // was an endgroup tag
@@ -1596,6 +1745,10 @@ java.lang.String defaultValue) {
 
       private java.lang.Object registrationMethod_ = "";
       /**
+       * <pre>
+       * SELF_SIGNUP, ADMIN_CREATED, SAGA
+       * </pre>
+       *
        * <code>string registration_method = 5;</code>
        * @return The registrationMethod.
        */
@@ -1612,6 +1765,10 @@ java.lang.String defaultValue) {
         }
       }
       /**
+       * <pre>
+       * SELF_SIGNUP, ADMIN_CREATED, SAGA
+       * </pre>
+       *
        * <code>string registration_method = 5;</code>
        * @return The bytes for registrationMethod.
        */
@@ -1629,6 +1786,10 @@ java.lang.String defaultValue) {
         }
       }
       /**
+       * <pre>
+       * SELF_SIGNUP, ADMIN_CREATED, SAGA
+       * </pre>
+       *
        * <code>string registration_method = 5;</code>
        * @param value The registrationMethod to set.
        * @return This builder for chaining.
@@ -1642,6 +1803,10 @@ java.lang.String defaultValue) {
         return this;
       }
       /**
+       * <pre>
+       * SELF_SIGNUP, ADMIN_CREATED, SAGA
+       * </pre>
+       *
        * <code>string registration_method = 5;</code>
        * @return This builder for chaining.
        */
@@ -1652,6 +1817,10 @@ java.lang.String defaultValue) {
         return this;
       }
       /**
+       * <pre>
+       * SELF_SIGNUP, ADMIN_CREATED, SAGA
+       * </pre>
+       *
        * <code>string registration_method = 5;</code>
        * @param value The bytes for registrationMethod to set.
        * @return This builder for chaining.
@@ -2161,6 +2330,130 @@ java.lang.String defaultValue) {
         bitField0_ |= 0x00000400;
         return this;
       }
+
+      private java.lang.Object sagaId_ = "";
+      /**
+       * <pre>
+       * New fields for saga support
+       * </pre>
+       *
+       * <code>string saga_id = 12;</code>
+       * @return The sagaId.
+       */
+      public java.lang.String getSagaId() {
+        java.lang.Object ref = sagaId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          sagaId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * New fields for saga support
+       * </pre>
+       *
+       * <code>string saga_id = 12;</code>
+       * @return The bytes for sagaId.
+       */
+      public com.google.protobuf.ByteString
+          getSagaIdBytes() {
+        java.lang.Object ref = sagaId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          sagaId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * New fields for saga support
+       * </pre>
+       *
+       * <code>string saga_id = 12;</code>
+       * @param value The sagaId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSagaId(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        sagaId_ = value;
+        bitField0_ |= 0x00000800;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * New fields for saga support
+       * </pre>
+       *
+       * <code>string saga_id = 12;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSagaId() {
+        sagaId_ = getDefaultInstance().getSagaId();
+        bitField0_ = (bitField0_ & ~0x00000800);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * New fields for saga support
+       * </pre>
+       *
+       * <code>string saga_id = 12;</code>
+       * @param value The bytes for sagaId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSagaIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        sagaId_ = value;
+        bitField0_ |= 0x00000800;
+        onChanged();
+        return this;
+      }
+
+      private boolean viaSaga_ ;
+      /**
+       * <code>bool via_saga = 13;</code>
+       * @return The viaSaga.
+       */
+      @java.lang.Override
+      public boolean getViaSaga() {
+        return viaSaga_;
+      }
+      /**
+       * <code>bool via_saga = 13;</code>
+       * @param value The viaSaga to set.
+       * @return This builder for chaining.
+       */
+      public Builder setViaSaga(boolean value) {
+
+        viaSaga_ = value;
+        bitField0_ |= 0x00001000;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool via_saga = 13;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearViaSaga() {
+        bitField0_ = (bitField0_ & ~0x00001000);
+        viaSaga_ = false;
+        onChanged();
+        return this;
+      }
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -2458,7 +2751,7 @@ java.lang.String defaultValue) {
   }
   /**
    * <pre>
-   * Event: User Registered (Generic - for backward compatibility)
+   * Event: User Registered (Generic - KEEP for notifications/audit)
    * </pre>
    *
    * Protobuf type {@code com.nnipa.proto.auth.UserRegisteredEvent}

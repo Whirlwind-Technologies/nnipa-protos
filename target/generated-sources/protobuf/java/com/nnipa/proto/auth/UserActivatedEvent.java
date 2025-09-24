@@ -6,7 +6,7 @@ package com.nnipa.proto.auth;
 
 /**
  * <pre>
- * Event: User Activated
+ * Event: User Activated (UNCHANGED)
  * </pre>
  *
  * Protobuf type {@code com.nnipa.proto.auth.UserActivatedEvent}
@@ -476,7 +476,7 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Event: User Activated
+   * Event: User Activated (UNCHANGED)
    * </pre>
    *
    * Protobuf type {@code com.nnipa.proto.auth.UserActivatedEvent}

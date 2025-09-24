@@ -24,6 +24,7 @@ private static final long serialVersionUID = 0L;
     userId_ = "";
     tenantId_ = "";
     updatedBy_ = "";
+    oldTenantId_ = "";
   }
 
   @java.lang.Override
@@ -307,6 +308,68 @@ java.lang.String defaultValue) {
     }
   }
 
+  public static final int TENANT_ASSOCIATION_UPDATE_FIELD_NUMBER = 7;
+  private boolean tenantAssociationUpdate_ = false;
+  /**
+   * <pre>
+   * Track saga-related updates
+   * </pre>
+   *
+   * <code>bool tenant_association_update = 7;</code>
+   * @return The tenantAssociationUpdate.
+   */
+  @java.lang.Override
+  public boolean getTenantAssociationUpdate() {
+    return tenantAssociationUpdate_;
+  }
+
+  public static final int OLD_TENANT_ID_FIELD_NUMBER = 8;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object oldTenantId_ = "";
+  /**
+   * <pre>
+   * Previous tenant if changed
+   * </pre>
+   *
+   * <code>string old_tenant_id = 8;</code>
+   * @return The oldTenantId.
+   */
+  @java.lang.Override
+  public java.lang.String getOldTenantId() {
+    java.lang.Object ref = oldTenantId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      oldTenantId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Previous tenant if changed
+   * </pre>
+   *
+   * <code>string old_tenant_id = 8;</code>
+   * @return The bytes for oldTenantId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getOldTenantIdBytes() {
+    java.lang.Object ref = oldTenantId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      oldTenantId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -341,6 +404,12 @@ java.lang.String defaultValue) {
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(updatedBy_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, updatedBy_);
+    }
+    if (tenantAssociationUpdate_ != false) {
+      output.writeBool(7, tenantAssociationUpdate_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(oldTenantId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 8, oldTenantId_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -378,6 +447,13 @@ java.lang.String defaultValue) {
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(updatedBy_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, updatedBy_);
     }
+    if (tenantAssociationUpdate_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(7, tenantAssociationUpdate_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(oldTenantId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, oldTenantId_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -411,6 +487,10 @@ java.lang.String defaultValue) {
     }
     if (!getUpdatedBy()
         .equals(other.getUpdatedBy())) return false;
+    if (getTenantAssociationUpdate()
+        != other.getTenantAssociationUpdate()) return false;
+    if (!getOldTenantId()
+        .equals(other.getOldTenantId())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -440,6 +520,11 @@ java.lang.String defaultValue) {
     }
     hash = (37 * hash) + UPDATED_BY_FIELD_NUMBER;
     hash = (53 * hash) + getUpdatedBy().hashCode();
+    hash = (37 * hash) + TENANT_ASSOCIATION_UPDATE_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getTenantAssociationUpdate());
+    hash = (37 * hash) + OLD_TENANT_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getOldTenantId().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -618,6 +703,8 @@ java.lang.String defaultValue) {
         updatedAtBuilder_ = null;
       }
       updatedBy_ = "";
+      tenantAssociationUpdate_ = false;
+      oldTenantId_ = "";
       return this;
     }
 
@@ -676,6 +763,12 @@ java.lang.String defaultValue) {
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.updatedBy_ = updatedBy_;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.tenantAssociationUpdate_ = tenantAssociationUpdate_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.oldTenantId_ = oldTenantId_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -748,6 +841,14 @@ java.lang.String defaultValue) {
         bitField0_ |= 0x00000020;
         onChanged();
       }
+      if (other.getTenantAssociationUpdate() != false) {
+        setTenantAssociationUpdate(other.getTenantAssociationUpdate());
+      }
+      if (!other.getOldTenantId().isEmpty()) {
+        oldTenantId_ = other.oldTenantId_;
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -812,6 +913,16 @@ java.lang.String defaultValue) {
               bitField0_ |= 0x00000020;
               break;
             } // case 50
+            case 56: {
+              tenantAssociationUpdate_ = input.readBool();
+              bitField0_ |= 0x00000040;
+              break;
+            } // case 56
+            case 66: {
+              oldTenantId_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000080;
+              break;
+            } // case 66
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1410,6 +1521,142 @@ java.lang.String defaultValue) {
       checkByteStringIsUtf8(value);
       updatedBy_ = value;
       bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    private boolean tenantAssociationUpdate_ ;
+    /**
+     * <pre>
+     * Track saga-related updates
+     * </pre>
+     *
+     * <code>bool tenant_association_update = 7;</code>
+     * @return The tenantAssociationUpdate.
+     */
+    @java.lang.Override
+    public boolean getTenantAssociationUpdate() {
+      return tenantAssociationUpdate_;
+    }
+    /**
+     * <pre>
+     * Track saga-related updates
+     * </pre>
+     *
+     * <code>bool tenant_association_update = 7;</code>
+     * @param value The tenantAssociationUpdate to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTenantAssociationUpdate(boolean value) {
+
+      tenantAssociationUpdate_ = value;
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Track saga-related updates
+     * </pre>
+     *
+     * <code>bool tenant_association_update = 7;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearTenantAssociationUpdate() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      tenantAssociationUpdate_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object oldTenantId_ = "";
+    /**
+     * <pre>
+     * Previous tenant if changed
+     * </pre>
+     *
+     * <code>string old_tenant_id = 8;</code>
+     * @return The oldTenantId.
+     */
+    public java.lang.String getOldTenantId() {
+      java.lang.Object ref = oldTenantId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        oldTenantId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Previous tenant if changed
+     * </pre>
+     *
+     * <code>string old_tenant_id = 8;</code>
+     * @return The bytes for oldTenantId.
+     */
+    public com.google.protobuf.ByteString
+        getOldTenantIdBytes() {
+      java.lang.Object ref = oldTenantId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        oldTenantId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Previous tenant if changed
+     * </pre>
+     *
+     * <code>string old_tenant_id = 8;</code>
+     * @param value The oldTenantId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOldTenantId(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      oldTenantId_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Previous tenant if changed
+     * </pre>
+     *
+     * <code>string old_tenant_id = 8;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearOldTenantId() {
+      oldTenantId_ = getDefaultInstance().getOldTenantId();
+      bitField0_ = (bitField0_ & ~0x00000080);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Previous tenant if changed
+     * </pre>
+     *
+     * <code>string old_tenant_id = 8;</code>
+     * @param value The bytes for oldTenantId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOldTenantIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      oldTenantId_ = value;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }

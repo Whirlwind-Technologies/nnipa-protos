@@ -107,4 +107,34 @@ java.lang.String defaultValue);
    */
   com.google.protobuf.ByteString
       getUpdatedByBytes();
+
+  /**
+   * <pre>
+   * Track saga-related updates
+   * </pre>
+   *
+   * <code>bool tenant_association_update = 7;</code>
+   * @return The tenantAssociationUpdate.
+   */
+  boolean getTenantAssociationUpdate();
+
+  /**
+   * <pre>
+   * Previous tenant if changed
+   * </pre>
+   *
+   * <code>string old_tenant_id = 8;</code>
+   * @return The oldTenantId.
+   */
+  java.lang.String getOldTenantId();
+  /**
+   * <pre>
+   * Previous tenant if changed
+   * </pre>
+   *
+   * <code>string old_tenant_id = 8;</code>
+   * @return The bytes for oldTenantId.
+   */
+  com.google.protobuf.ByteString
+      getOldTenantIdBytes();
 }

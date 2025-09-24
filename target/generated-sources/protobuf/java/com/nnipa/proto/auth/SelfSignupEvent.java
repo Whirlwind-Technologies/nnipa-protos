@@ -6,12 +6,13 @@ package com.nnipa.proto.auth;
 
 /**
  * <pre>
- * Event: Self-Signup (New Tenant)
+ * Event: Self-Signup (DEPRECATED - use UserRegistrationSagaEvent)
+ * Kept for backward compatibility during migration
  * </pre>
  *
  * Protobuf type {@code com.nnipa.proto.auth.SelfSignupEvent}
  */
-public final class SelfSignupEvent extends
+@java.lang.Deprecated public final class SelfSignupEvent extends
     com.google.protobuf.GeneratedMessageV3 implements
     // @@protoc_insertion_point(message_implements:com.nnipa.proto.auth.SelfSignupEvent)
     SelfSignupEventOrBuilder {
@@ -899,7 +900,8 @@ private static final long serialVersionUID = 0L;
   }
   /**
    * <pre>
-   * Event: Self-Signup (New Tenant)
+   * Event: Self-Signup (DEPRECATED - use UserRegistrationSagaEvent)
+   * Kept for backward compatibility during migration
    * </pre>
    *
    * Protobuf type {@code com.nnipa.proto.auth.SelfSignupEvent}

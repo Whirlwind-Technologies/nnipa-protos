@@ -29,6 +29,8 @@ private static final long serialVersionUID = 0L;
     lastName_ = "";
     userType_ = "";
     status_ = 0;
+    creationMethod_ = "";
+    sagaId_ = "";
   }
 
   @java.lang.Override
@@ -121,6 +123,10 @@ private static final long serialVersionUID = 0L;
   @SuppressWarnings("serial")
   private volatile java.lang.Object tenantId_ = "";
   /**
+   * <pre>
+   * May be empty for saga flow initially
+   * </pre>
+   *
    * <code>string tenant_id = 3;</code>
    * @return The tenantId.
    */
@@ -138,6 +144,10 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   * <pre>
+   * May be empty for saga flow initially
+   * </pre>
+   *
    * <code>string tenant_id = 3;</code>
    * @return The bytes for tenantId.
    */
@@ -395,6 +405,115 @@ private static final long serialVersionUID = 0L;
     return createdAt_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createdAt_;
   }
 
+  public static final int CREATION_METHOD_FIELD_NUMBER = 11;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object creationMethod_ = "";
+  /**
+   * <pre>
+   * Saga support fields
+   * </pre>
+   *
+   * <code>string creation_method = 11;</code>
+   * @return The creationMethod.
+   */
+  @java.lang.Override
+  public java.lang.String getCreationMethod() {
+    java.lang.Object ref = creationMethod_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      creationMethod_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Saga support fields
+   * </pre>
+   *
+   * <code>string creation_method = 11;</code>
+   * @return The bytes for creationMethod.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getCreationMethodBytes() {
+    java.lang.Object ref = creationMethod_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      creationMethod_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SAGA_ID_FIELD_NUMBER = 12;
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sagaId_ = "";
+  /**
+   * <pre>
+   * Present if created via saga
+   * </pre>
+   *
+   * <code>string saga_id = 12;</code>
+   * @return The sagaId.
+   */
+  @java.lang.Override
+  public java.lang.String getSagaId() {
+    java.lang.Object ref = sagaId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = 
+          (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      sagaId_ = s;
+      return s;
+    }
+  }
+  /**
+   * <pre>
+   * Present if created via saga
+   * </pre>
+   *
+   * <code>string saga_id = 12;</code>
+   * @return The bytes for sagaId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString
+      getSagaIdBytes() {
+    java.lang.Object ref = sagaId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b = 
+          com.google.protobuf.ByteString.copyFromUtf8(
+              (java.lang.String) ref);
+      sagaId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int AWAITING_TENANT_FIELD_NUMBER = 13;
+  private boolean awaitingTenant_ = false;
+  /**
+   * <pre>
+   * True if waiting for tenant creation
+   * </pre>
+   *
+   * <code>bool awaiting_tenant = 13;</code>
+   * @return The awaitingTenant.
+   */
+  @java.lang.Override
+  public boolean getAwaitingTenant() {
+    return awaitingTenant_;
+  }
+
   private byte memoizedIsInitialized = -1;
   @java.lang.Override
   public final boolean isInitialized() {
@@ -439,6 +558,15 @@ private static final long serialVersionUID = 0L;
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(10, getCreatedAt());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(creationMethod_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, creationMethod_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sagaId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, sagaId_);
+    }
+    if (awaitingTenant_ != false) {
+      output.writeBool(13, awaitingTenant_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -481,6 +609,16 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.CodedOutputStream
         .computeMessageSize(10, getCreatedAt());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(creationMethod_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, creationMethod_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sagaId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, sagaId_);
+    }
+    if (awaitingTenant_ != false) {
+      size += com.google.protobuf.CodedOutputStream
+        .computeBoolSize(13, awaitingTenant_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -521,6 +659,12 @@ private static final long serialVersionUID = 0L;
       if (!getCreatedAt()
           .equals(other.getCreatedAt())) return false;
     }
+    if (!getCreationMethod()
+        .equals(other.getCreationMethod())) return false;
+    if (!getSagaId()
+        .equals(other.getSagaId())) return false;
+    if (getAwaitingTenant()
+        != other.getAwaitingTenant()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -556,6 +700,13 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + CREATED_AT_FIELD_NUMBER;
       hash = (53 * hash) + getCreatedAt().hashCode();
     }
+    hash = (37 * hash) + CREATION_METHOD_FIELD_NUMBER;
+    hash = (53 * hash) + getCreationMethod().hashCode();
+    hash = (37 * hash) + SAGA_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getSagaId().hashCode();
+    hash = (37 * hash) + AWAITING_TENANT_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+        getAwaitingTenant());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -716,6 +867,9 @@ private static final long serialVersionUID = 0L;
         createdAtBuilder_.dispose();
         createdAtBuilder_ = null;
       }
+      creationMethod_ = "";
+      sagaId_ = "";
+      awaitingTenant_ = false;
       return this;
     }
 
@@ -785,6 +939,15 @@ private static final long serialVersionUID = 0L;
             ? createdAt_
             : createdAtBuilder_.build();
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.creationMethod_ = creationMethod_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.sagaId_ = sagaId_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.awaitingTenant_ = awaitingTenant_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -877,6 +1040,19 @@ private static final long serialVersionUID = 0L;
       if (other.hasCreatedAt()) {
         mergeCreatedAt(other.getCreatedAt());
       }
+      if (!other.getCreationMethod().isEmpty()) {
+        creationMethod_ = other.creationMethod_;
+        bitField0_ |= 0x00000400;
+        onChanged();
+      }
+      if (!other.getSagaId().isEmpty()) {
+        sagaId_ = other.sagaId_;
+        bitField0_ |= 0x00000800;
+        onChanged();
+      }
+      if (other.getAwaitingTenant() != false) {
+        setAwaitingTenant(other.getAwaitingTenant());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -957,6 +1133,21 @@ private static final long serialVersionUID = 0L;
               bitField0_ |= 0x00000200;
               break;
             } // case 82
+            case 90: {
+              creationMethod_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000400;
+              break;
+            } // case 90
+            case 98: {
+              sagaId_ = input.readStringRequireUtf8();
+              bitField0_ |= 0x00000800;
+              break;
+            } // case 98
+            case 104: {
+              awaitingTenant_ = input.readBool();
+              bitField0_ |= 0x00001000;
+              break;
+            } // case 104
             default: {
               if (!super.parseUnknownField(input, extensionRegistry, tag)) {
                 done = true; // was an endgroup tag
@@ -1169,6 +1360,10 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object tenantId_ = "";
     /**
+     * <pre>
+     * May be empty for saga flow initially
+     * </pre>
+     *
      * <code>string tenant_id = 3;</code>
      * @return The tenantId.
      */
@@ -1185,6 +1380,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * May be empty for saga flow initially
+     * </pre>
+     *
      * <code>string tenant_id = 3;</code>
      * @return The bytes for tenantId.
      */
@@ -1202,6 +1401,10 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     * <pre>
+     * May be empty for saga flow initially
+     * </pre>
+     *
      * <code>string tenant_id = 3;</code>
      * @param value The tenantId to set.
      * @return This builder for chaining.
@@ -1215,6 +1418,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * May be empty for saga flow initially
+     * </pre>
+     *
      * <code>string tenant_id = 3;</code>
      * @return This builder for chaining.
      */
@@ -1225,6 +1432,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     * <pre>
+     * May be empty for saga flow initially
+     * </pre>
+     *
      * <code>string tenant_id = 3;</code>
      * @param value The bytes for tenantId to set.
      * @return This builder for chaining.
@@ -1771,6 +1982,234 @@ private static final long serialVersionUID = 0L;
         createdAt_ = null;
       }
       return createdAtBuilder_;
+    }
+
+    private java.lang.Object creationMethod_ = "";
+    /**
+     * <pre>
+     * Saga support fields
+     * </pre>
+     *
+     * <code>string creation_method = 11;</code>
+     * @return The creationMethod.
+     */
+    public java.lang.String getCreationMethod() {
+      java.lang.Object ref = creationMethod_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        creationMethod_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Saga support fields
+     * </pre>
+     *
+     * <code>string creation_method = 11;</code>
+     * @return The bytes for creationMethod.
+     */
+    public com.google.protobuf.ByteString
+        getCreationMethodBytes() {
+      java.lang.Object ref = creationMethod_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        creationMethod_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Saga support fields
+     * </pre>
+     *
+     * <code>string creation_method = 11;</code>
+     * @param value The creationMethod to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCreationMethod(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      creationMethod_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Saga support fields
+     * </pre>
+     *
+     * <code>string creation_method = 11;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearCreationMethod() {
+      creationMethod_ = getDefaultInstance().getCreationMethod();
+      bitField0_ = (bitField0_ & ~0x00000400);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Saga support fields
+     * </pre>
+     *
+     * <code>string creation_method = 11;</code>
+     * @param value The bytes for creationMethod to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCreationMethodBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      creationMethod_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object sagaId_ = "";
+    /**
+     * <pre>
+     * Present if created via saga
+     * </pre>
+     *
+     * <code>string saga_id = 12;</code>
+     * @return The sagaId.
+     */
+    public java.lang.String getSagaId() {
+      java.lang.Object ref = sagaId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs =
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sagaId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Present if created via saga
+     * </pre>
+     *
+     * <code>string saga_id = 12;</code>
+     * @return The bytes for sagaId.
+     */
+    public com.google.protobuf.ByteString
+        getSagaIdBytes() {
+      java.lang.Object ref = sagaId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        sagaId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     * <pre>
+     * Present if created via saga
+     * </pre>
+     *
+     * <code>string saga_id = 12;</code>
+     * @param value The sagaId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSagaId(
+        java.lang.String value) {
+      if (value == null) { throw new NullPointerException(); }
+      sagaId_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Present if created via saga
+     * </pre>
+     *
+     * <code>string saga_id = 12;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearSagaId() {
+      sagaId_ = getDefaultInstance().getSagaId();
+      bitField0_ = (bitField0_ & ~0x00000800);
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * Present if created via saga
+     * </pre>
+     *
+     * <code>string saga_id = 12;</code>
+     * @param value The bytes for sagaId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSagaIdBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) { throw new NullPointerException(); }
+      checkByteStringIsUtf8(value);
+      sagaId_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    private boolean awaitingTenant_ ;
+    /**
+     * <pre>
+     * True if waiting for tenant creation
+     * </pre>
+     *
+     * <code>bool awaiting_tenant = 13;</code>
+     * @return The awaitingTenant.
+     */
+    @java.lang.Override
+    public boolean getAwaitingTenant() {
+      return awaitingTenant_;
+    }
+    /**
+     * <pre>
+     * True if waiting for tenant creation
+     * </pre>
+     *
+     * <code>bool awaiting_tenant = 13;</code>
+     * @param value The awaitingTenant to set.
+     * @return This builder for chaining.
+     */
+    public Builder setAwaitingTenant(boolean value) {
+
+      awaitingTenant_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+    /**
+     * <pre>
+     * True if waiting for tenant creation
+     * </pre>
+     *
+     * <code>bool awaiting_tenant = 13;</code>
+     * @return This builder for chaining.
+     */
+    public Builder clearAwaitingTenant() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      awaitingTenant_ = false;
+      onChanged();
+      return this;
     }
     @java.lang.Override
     public final Builder setUnknownFields(

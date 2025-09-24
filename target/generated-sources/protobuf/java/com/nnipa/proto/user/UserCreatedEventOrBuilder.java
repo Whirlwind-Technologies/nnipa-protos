@@ -36,11 +36,19 @@ public interface UserCreatedEventOrBuilder extends
       getUserIdBytes();
 
   /**
+   * <pre>
+   * May be empty for saga flow initially
+   * </pre>
+   *
    * <code>string tenant_id = 3;</code>
    * @return The tenantId.
    */
   java.lang.String getTenantId();
   /**
+   * <pre>
+   * May be empty for saga flow initially
+   * </pre>
+   *
    * <code>string tenant_id = 3;</code>
    * @return The bytes for tenantId.
    */
@@ -132,4 +140,54 @@ public interface UserCreatedEventOrBuilder extends
    * <code>.google.protobuf.Timestamp created_at = 10;</code>
    */
   com.google.protobuf.TimestampOrBuilder getCreatedAtOrBuilder();
+
+  /**
+   * <pre>
+   * Saga support fields
+   * </pre>
+   *
+   * <code>string creation_method = 11;</code>
+   * @return The creationMethod.
+   */
+  java.lang.String getCreationMethod();
+  /**
+   * <pre>
+   * Saga support fields
+   * </pre>
+   *
+   * <code>string creation_method = 11;</code>
+   * @return The bytes for creationMethod.
+   */
+  com.google.protobuf.ByteString
+      getCreationMethodBytes();
+
+  /**
+   * <pre>
+   * Present if created via saga
+   * </pre>
+   *
+   * <code>string saga_id = 12;</code>
+   * @return The sagaId.
+   */
+  java.lang.String getSagaId();
+  /**
+   * <pre>
+   * Present if created via saga
+   * </pre>
+   *
+   * <code>string saga_id = 12;</code>
+   * @return The bytes for sagaId.
+   */
+  com.google.protobuf.ByteString
+      getSagaIdBytes();
+
+  /**
+   * <pre>
+   * True if waiting for tenant creation
+   * </pre>
+   *
+   * <code>bool awaiting_tenant = 13;</code>
+   * @return The awaitingTenant.
+   */
+  boolean getAwaitingTenant();
 }

@@ -56,11 +56,90 @@ message SecurityEvent {
 }
 
 // ============================================
-// New Registration Events
+// SAGA EVENTS
 // ============================================
 
-// Event: Self-Signup (New Tenant)
+// Event: User Registration Saga
+// This single event initiates the entire registration flow
+message UserRegistrationSagaEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  // User information
+  string user_id = 2;
+  string email = 3;
+  string username = 4;
+  string first_name = 5;
+  string last_name = 6;
+  string phone_number = 7;
+
+  // Organization information (for self-signup)
+  string organization_name = 8;
+  string organization_type = 9;
+  string organization_email = 10;
+  string organization_phone = 11;
+
+  // Registration context
+  string activation_token = 12;
+  bool mfa_enabled = 13;
+  string subscription_plan = 14;  // TRIAL, BASIC, PRO, etc.
+  google.protobuf.Timestamp initiated_at = 15;
+  string ip_address = 16;
+  string user_agent = 17;
+
+  // Saga control
+  string saga_id = 18;  // Unique identifier for this saga instance
+  int32 saga_version = 19;  // For handling schema evolution
+}
+
+// Event: Registration Saga Completed
+// Published when all steps are successfully completed
+message RegistrationSagaCompletedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string saga_id = 2;
+  string user_id = 3;
+  string tenant_id = 4;
+  google.protobuf.Timestamp completed_at = 5;
+  int64 duration_ms = 6;  // Total time taken
+
+  // Final state
+  string user_status = 7;
+  string tenant_status = 8;
+  bool email_sent = 9;
+}
+
+// Event: Registration Saga Failed
+// Published when any step fails and compensation is needed
+message RegistrationSagaFailedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string saga_id = 2;
+  string user_id = 3;
+  string tenant_id = 4;  // May be empty if tenant creation failed
+
+  // Failure details
+  string failed_stage = 5;  // TENANT_CREATION, USER_PROFILE_CREATION, EMAIL_SENDING
+  string error_code = 6;
+  string error_message = 7;
+  google.protobuf.Timestamp failed_at = 8;
+
+  // Compensation needed
+  bool user_created = 9;
+  bool tenant_created = 10;
+  bool profile_created = 11;
+
+  // Retry information
+  int32 retry_count = 12;
+  bool retriable = 13;
+}
+
+// ============================================
+// EXISTING REGISTRATION EVENTS (KEPT FOR COMPATIBILITY)
+// ============================================
+
+// Event: Self-Signup (DEPRECATED - use UserRegistrationSagaEvent)
+// Kept for backward compatibility during migration
 message SelfSignupEvent {
+  option deprecated = true;
+
   com.nnipa.proto.common.EventMetadata metadata = 1;
   string user_id = 2;
   string email = 3;
@@ -78,7 +157,7 @@ message SelfSignupEvent {
   string user_agent = 15;
 }
 
-// Event: Admin-Created User (Existing Tenant)
+// Event: Admin-Created User (KEEP - still used for existing tenant flow)
 message AdminCreatedUserEvent {
   com.nnipa.proto.common.EventMetadata metadata = 1;
   string user_id = 2;
@@ -96,7 +175,7 @@ message AdminCreatedUserEvent {
   google.protobuf.Timestamp timestamp = 14;
 }
 
-// Event: User Registered (Generic - for backward compatibility)
+// Event: User Registered (Generic - KEEP for notifications/audit)
 message UserRegisteredEvent {
   com.nnipa.proto.common.EventMetadata metadata = 1;
 
@@ -105,19 +184,23 @@ message UserRegisteredEvent {
     string tenant_id = 2;
     string username = 3;
     string email = 4;
-    string registration_method = 5;
+    string registration_method = 5;  // SELF_SIGNUP, ADMIN_CREATED, SAGA
     google.protobuf.Timestamp registered_at = 6;
     string ip_address = 7;
     string user_agent = 8;
     bool email_verified = 9;
     string registration_source = 10;
     map<string, string> additional_info = 11;
+
+    // New fields for saga support
+    string saga_id = 12;
+    bool via_saga = 13;
   }
 
   RegistrationData registration = 2;
 }
 
-// Event: User Activated
+// Event: User Activated (UNCHANGED)
 message UserActivatedEvent {
   com.nnipa.proto.common.EventMetadata metadata = 1;
   string user_id = 2;
@@ -126,6 +209,10 @@ message UserActivatedEvent {
   google.protobuf.Timestamp activated_at = 5;
   string ip_address = 6;
 }
+
+// ============================================
+// LOGIN/LOGOUT EVENTS
+// ============================================
 
 // Event: User Login
 message UserLoginEvent {
@@ -183,6 +270,10 @@ message LoginFailedEvent {
   FailureData failure = 2;
 }
 
+// ============================================
+// PASSWORD EVENTS
+// ============================================
+
 // Event: Password Changed
 message PasswordChangedEvent {
   com.nnipa.proto.common.EventMetadata metadata = 1;
@@ -206,6 +297,10 @@ message PasswordResetRequestedEvent {
   string ip_address = 8;
 }
 
+// ============================================
+// MFA EVENTS
+// ============================================
+
 // Event: MFA Enabled
 message MFAEnabledEvent {
   com.nnipa.proto.common.EventMetadata metadata = 1;
@@ -214,4 +309,41 @@ message MFAEnabledEvent {
   string mfa_type = 4;
   google.protobuf.Timestamp enabled_at = 5;
   string device_name = 6;
+}
+
+// ============================================
+// SAGA STATE EVENTS (for monitoring/debugging)
+// ============================================
+
+// Event: Saga Stage Completed
+// Published after each major step for observability
+message SagaStageCompletedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string saga_id = 2;
+  string stage_name = 3;  // USER_CREATED, TENANT_CREATED, PROFILE_CREATED
+  google.protobuf.Timestamp completed_at = 4;
+  int64 stage_duration_ms = 5;
+  map<string, string> stage_output = 6;  // IDs and other outputs
+}
+
+// Event: Saga Compensation Started
+// Published when rollback begins
+message SagaCompensationStartedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string saga_id = 2;
+  string user_id = 3;
+  string trigger_reason = 4;
+  repeated string compensation_steps = 5;  // Steps to be compensated
+  google.protobuf.Timestamp started_at = 6;
+}
+
+// Event: Saga Compensation Completed
+// Published when rollback completes
+message SagaCompensationCompletedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string saga_id = 2;
+  bool success = 3;
+  repeated string compensated_steps = 4;
+  repeated string failed_compensations = 5;
+  google.protobuf.Timestamp completed_at = 6;
 }
