@@ -46,6 +46,11 @@ public final class UserEvents {
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_nnipa_proto_user_UserUpdatedEvent_ChangedFieldsEntry_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_nnipa_proto_user_UserDeletedEvent_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_nnipa_proto_user_UserDeletedEvent_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
     internal_static_com_nnipa_proto_user_UserTenantAssociatedEvent_descriptor;
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -142,55 +147,60 @@ public final class UserEvents {
       "tamp\022\022\n\nupdated_by\030\006 \001(\t\022!\n\031tenant_assoc" +
       "iation_update\030\007 \001(\010\022\025\n\rold_tenant_id\030\010 \001" +
       "(\t\0324\n\022ChangedFieldsEntry\022\013\n\003key\030\001 \001(\t\022\r\n" +
-      "\005value\030\002 \001(\t:\0028\001\"\326\001\n\031UserTenantAssociate" +
-      "dEvent\0227\n\010metadata\030\001 \001(\0132%.com.nnipa.pro" +
-      "to.common.EventMetadata\022\017\n\007user_id\030\002 \001(\t" +
-      "\022\021\n\ttenant_id\030\003 \001(\t\022\017\n\007saga_id\030\004 \001(\t\0221\n\r" +
-      "associated_at\030\005 \001(\0132\032.google.protobuf.Ti" +
-      "mestamp\022\030\n\020association_type\030\006 \001(\t\"\271\001\n\022Us" +
-      "erActivatedEvent\0227\n\010metadata\030\001 \001(\0132%.com" +
-      ".nnipa.proto.common.EventMetadata\022\017\n\007use" +
-      "r_id\030\002 \001(\t\022\021\n\ttenant_id\030\003 \001(\t\0220\n\014activat" +
-      "ed_at\030\004 \001(\0132\032.google.protobuf.Timestamp\022" +
-      "\024\n\014activated_by\030\005 \001(\t\"\317\001\n\024UserDeactivate" +
-      "dEvent\0227\n\010metadata\030\001 \001(\0132%.com.nnipa.pro" +
-      "to.common.EventMetadata\022\017\n\007user_id\030\002 \001(\t" +
-      "\022\021\n\ttenant_id\030\003 \001(\t\022\016\n\006reason\030\004 \001(\t\0222\n\016d" +
-      "eactivated_at\030\005 \001(\0132\032.google.protobuf.Ti" +
-      "mestamp\022\026\n\016deactivated_by\030\006 \001(\t\"\260\002\n\027User" +
-      "ProfileUpdatedEvent\0227\n\010metadata\030\001 \001(\0132%." +
-      "com.nnipa.proto.common.EventMetadata\022\017\n\007" +
-      "user_id\030\002 \001(\t\022\021\n\ttenant_id\030\003 \001(\t\022T\n\014prof" +
-      "ile_data\030\004 \003(\0132>.com.nnipa.proto.user.Us" +
-      "erProfileUpdatedEvent.ProfileDataEntry\022." +
-      "\n\nupdated_at\030\005 \001(\0132\032.google.protobuf.Tim" +
-      "estamp\0322\n\020ProfileDataEntry\022\013\n\003key\030\001 \001(\t\022" +
-      "\r\n\005value\030\002 \001(\t:\0028\001\"\310\001\n\031UserSagaStageStar" +
-      "tedEvent\0227\n\010metadata\030\001 \001(\0132%.com.nnipa.p" +
-      "roto.common.EventMetadata\022\017\n\007saga_id\030\002 \001" +
-      "(\t\022\r\n\005stage\030\003 \001(\t\022\017\n\007user_id\030\004 \001(\t\022\021\n\tte" +
-      "nant_id\030\005 \001(\t\022.\n\nstarted_at\030\006 \001(\0132\032.goog" +
-      "le.protobuf.Timestamp\"\341\001\n\033UserSagaStageC" +
-      "ompletedEvent\0227\n\010metadata\030\001 \001(\0132%.com.nn" +
-      "ipa.proto.common.EventMetadata\022\017\n\007saga_i" +
-      "d\030\002 \001(\t\022\r\n\005stage\030\003 \001(\t\022\017\n\007user_id\030\004 \001(\t\022" +
-      "\021\n\ttenant_id\030\005 \001(\t\0220\n\014completed_at\030\006 \001(\013" +
-      "2\032.google.protobuf.Timestamp\022\023\n\013duration" +
-      "_ms\030\007 \001(\003\"\277\002\n\021UserActivityEvent\0227\n\010metad" +
-      "ata\030\001 \001(\0132%.com.nnipa.proto.common.Event" +
-      "Metadata\022\017\n\007user_id\030\002 \001(\t\022\021\n\ttenant_id\030\003" +
-      " \001(\t\022\025\n\ractivity_type\030\004 \001(\t\022P\n\ractivity_" +
-      "data\030\005 \003(\01329.com.nnipa.proto.user.UserAc" +
-      "tivityEvent.ActivityDataEntry\022/\n\013occurre" +
-      "d_at\030\006 \001(\0132\032.google.protobuf.Timestamp\0323" +
-      "\n\021ActivityDataEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005valu" +
-      "e\030\002 \001(\t:\0028\001\"\323\001\n\031UserLastLoginUpdatedEven" +
-      "t\0227\n\010metadata\030\001 \001(\0132%.com.nnipa.proto.co" +
-      "mmon.EventMetadata\022\017\n\007user_id\030\002 \001(\t\022\021\n\tt" +
-      "enant_id\030\003 \001(\t\0221\n\rlast_login_at\030\004 \001(\0132\032." +
-      "google.protobuf.Timestamp\022\022\n\nip_address\030" +
-      "\005 \001(\t\022\022\n\nuser_agent\030\006 \001(\tB\030\n\024com.nnipa.p" +
-      "roto.userP\001b\006proto3"
+      "\005value\030\002 \001(\t:\0028\001\"\330\001\n\020UserDeletedEvent\0227\n" +
+      "\010metadata\030\001 \001(\0132%.com.nnipa.proto.common" +
+      ".EventMetadata\022\017\n\007user_id\030\002 \001(\t\022\021\n\ttenan" +
+      "t_id\030\003 \001(\t\022\016\n\006reason\030\004 \001(\t\022.\n\ndeleted_at" +
+      "\030\005 \001(\0132\032.google.protobuf.Timestamp\022\022\n\nde" +
+      "leted_by\030\006 \001(\t\022\023\n\013soft_delete\030\007 \001(\010\"\326\001\n\031" +
+      "UserTenantAssociatedEvent\0227\n\010metadata\030\001 " +
+      "\001(\0132%.com.nnipa.proto.common.EventMetada" +
+      "ta\022\017\n\007user_id\030\002 \001(\t\022\021\n\ttenant_id\030\003 \001(\t\022\017" +
+      "\n\007saga_id\030\004 \001(\t\0221\n\rassociated_at\030\005 \001(\0132\032" +
+      ".google.protobuf.Timestamp\022\030\n\020associatio" +
+      "n_type\030\006 \001(\t\"\271\001\n\022UserActivatedEvent\0227\n\010m" +
+      "etadata\030\001 \001(\0132%.com.nnipa.proto.common.E" +
+      "ventMetadata\022\017\n\007user_id\030\002 \001(\t\022\021\n\ttenant_" +
+      "id\030\003 \001(\t\0220\n\014activated_at\030\004 \001(\0132\032.google." +
+      "protobuf.Timestamp\022\024\n\014activated_by\030\005 \001(\t" +
+      "\"\317\001\n\024UserDeactivatedEvent\0227\n\010metadata\030\001 " +
+      "\001(\0132%.com.nnipa.proto.common.EventMetada" +
+      "ta\022\017\n\007user_id\030\002 \001(\t\022\021\n\ttenant_id\030\003 \001(\t\022\016" +
+      "\n\006reason\030\004 \001(\t\0222\n\016deactivated_at\030\005 \001(\0132\032" +
+      ".google.protobuf.Timestamp\022\026\n\016deactivate" +
+      "d_by\030\006 \001(\t\"\260\002\n\027UserProfileUpdatedEvent\0227" +
+      "\n\010metadata\030\001 \001(\0132%.com.nnipa.proto.commo" +
+      "n.EventMetadata\022\017\n\007user_id\030\002 \001(\t\022\021\n\ttena" +
+      "nt_id\030\003 \001(\t\022T\n\014profile_data\030\004 \003(\0132>.com." +
+      "nnipa.proto.user.UserProfileUpdatedEvent" +
+      ".ProfileDataEntry\022.\n\nupdated_at\030\005 \001(\0132\032." +
+      "google.protobuf.Timestamp\0322\n\020ProfileData" +
+      "Entry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\310\001" +
+      "\n\031UserSagaStageStartedEvent\0227\n\010metadata\030" +
+      "\001 \001(\0132%.com.nnipa.proto.common.EventMeta" +
+      "data\022\017\n\007saga_id\030\002 \001(\t\022\r\n\005stage\030\003 \001(\t\022\017\n\007" +
+      "user_id\030\004 \001(\t\022\021\n\ttenant_id\030\005 \001(\t\022.\n\nstar" +
+      "ted_at\030\006 \001(\0132\032.google.protobuf.Timestamp" +
+      "\"\341\001\n\033UserSagaStageCompletedEvent\0227\n\010meta" +
+      "data\030\001 \001(\0132%.com.nnipa.proto.common.Even" +
+      "tMetadata\022\017\n\007saga_id\030\002 \001(\t\022\r\n\005stage\030\003 \001(" +
+      "\t\022\017\n\007user_id\030\004 \001(\t\022\021\n\ttenant_id\030\005 \001(\t\0220\n" +
+      "\014completed_at\030\006 \001(\0132\032.google.protobuf.Ti" +
+      "mestamp\022\023\n\013duration_ms\030\007 \001(\003\"\277\002\n\021UserAct" +
+      "ivityEvent\0227\n\010metadata\030\001 \001(\0132%.com.nnipa" +
+      ".proto.common.EventMetadata\022\017\n\007user_id\030\002" +
+      " \001(\t\022\021\n\ttenant_id\030\003 \001(\t\022\025\n\ractivity_type" +
+      "\030\004 \001(\t\022P\n\ractivity_data\030\005 \003(\01329.com.nnip" +
+      "a.proto.user.UserActivityEvent.ActivityD" +
+      "ataEntry\022/\n\013occurred_at\030\006 \001(\0132\032.google.p" +
+      "rotobuf.Timestamp\0323\n\021ActivityDataEntry\022\013" +
+      "\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\323\001\n\031UserL" +
+      "astLoginUpdatedEvent\0227\n\010metadata\030\001 \001(\0132%" +
+      ".com.nnipa.proto.common.EventMetadata\022\017\n" +
+      "\007user_id\030\002 \001(\t\022\021\n\ttenant_id\030\003 \001(\t\0221\n\rlas" +
+      "t_login_at\030\004 \001(\0132\032.google.protobuf.Times" +
+      "tamp\022\022\n\nip_address\030\005 \001(\t\022\022\n\nuser_agent\030\006" +
+      " \001(\tB\030\n\024com.nnipa.proto.userP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -235,26 +245,32 @@ public final class UserEvents {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nnipa_proto_user_UserUpdatedEvent_ChangedFieldsEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
-    internal_static_com_nnipa_proto_user_UserTenantAssociatedEvent_descriptor =
+    internal_static_com_nnipa_proto_user_UserDeletedEvent_descriptor =
       getDescriptor().getMessageTypes().get(4);
+    internal_static_com_nnipa_proto_user_UserDeletedEvent_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_nnipa_proto_user_UserDeletedEvent_descriptor,
+        new java.lang.String[] { "Metadata", "UserId", "TenantId", "Reason", "DeletedAt", "DeletedBy", "SoftDelete", });
+    internal_static_com_nnipa_proto_user_UserTenantAssociatedEvent_descriptor =
+      getDescriptor().getMessageTypes().get(5);
     internal_static_com_nnipa_proto_user_UserTenantAssociatedEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nnipa_proto_user_UserTenantAssociatedEvent_descriptor,
         new java.lang.String[] { "Metadata", "UserId", "TenantId", "SagaId", "AssociatedAt", "AssociationType", });
     internal_static_com_nnipa_proto_user_UserActivatedEvent_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_com_nnipa_proto_user_UserActivatedEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nnipa_proto_user_UserActivatedEvent_descriptor,
         new java.lang.String[] { "Metadata", "UserId", "TenantId", "ActivatedAt", "ActivatedBy", });
     internal_static_com_nnipa_proto_user_UserDeactivatedEvent_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_com_nnipa_proto_user_UserDeactivatedEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nnipa_proto_user_UserDeactivatedEvent_descriptor,
         new java.lang.String[] { "Metadata", "UserId", "TenantId", "Reason", "DeactivatedAt", "DeactivatedBy", });
     internal_static_com_nnipa_proto_user_UserProfileUpdatedEvent_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_com_nnipa_proto_user_UserProfileUpdatedEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nnipa_proto_user_UserProfileUpdatedEvent_descriptor,
@@ -266,19 +282,19 @@ public final class UserEvents {
         internal_static_com_nnipa_proto_user_UserProfileUpdatedEvent_ProfileDataEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_com_nnipa_proto_user_UserSagaStageStartedEvent_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_com_nnipa_proto_user_UserSagaStageStartedEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nnipa_proto_user_UserSagaStageStartedEvent_descriptor,
         new java.lang.String[] { "Metadata", "SagaId", "Stage", "UserId", "TenantId", "StartedAt", });
     internal_static_com_nnipa_proto_user_UserSagaStageCompletedEvent_descriptor =
-      getDescriptor().getMessageTypes().get(9);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_com_nnipa_proto_user_UserSagaStageCompletedEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nnipa_proto_user_UserSagaStageCompletedEvent_descriptor,
         new java.lang.String[] { "Metadata", "SagaId", "Stage", "UserId", "TenantId", "CompletedAt", "DurationMs", });
     internal_static_com_nnipa_proto_user_UserActivityEvent_descriptor =
-      getDescriptor().getMessageTypes().get(10);
+      getDescriptor().getMessageTypes().get(11);
     internal_static_com_nnipa_proto_user_UserActivityEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nnipa_proto_user_UserActivityEvent_descriptor,
@@ -290,7 +306,7 @@ public final class UserEvents {
         internal_static_com_nnipa_proto_user_UserActivityEvent_ActivityDataEntry_descriptor,
         new java.lang.String[] { "Key", "Value", });
     internal_static_com_nnipa_proto_user_UserLastLoginUpdatedEvent_descriptor =
-      getDescriptor().getMessageTypes().get(11);
+      getDescriptor().getMessageTypes().get(12);
     internal_static_com_nnipa_proto_user_UserLastLoginUpdatedEvent_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nnipa_proto_user_UserLastLoginUpdatedEvent_descriptor,

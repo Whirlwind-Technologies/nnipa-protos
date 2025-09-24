@@ -13,6 +13,7 @@ com\nnipa\proto\tenant\TenantServiceGrpc.class
 com\nnipa\proto\common\CommandResponse.class
 com\nnipa\proto\storage\StorageMigrationStartedEvent$1.class
 com\nnipa\proto\auth\SagaStageCompletedEvent$StageOutputDefaultEntryHolder.class
+com\nnipa\proto\user\UserDeletedEventOrBuilder.class
 com\nnipa\proto\auth\LoginFailedEvent$FailureData$Builder.class
 com\nnipa\proto\auth\RegistrationSagaFailedEvent.class
 com\nnipa\proto\storage\StorageCompressedEventOrBuilder.class
@@ -260,6 +261,7 @@ com\nnipa\proto\storage\StorageScannedEvent$ScanDataOrBuilder.class
 com\nnipa\proto\authz\AuthorizationCheckedEvent$1.class
 com\nnipa\proto\user\UpdateUserProfileCommandOrBuilder.class
 com\nnipa\proto\tenant\GetTenantStatusResponse$1.class
+com\nnipa\proto\user\UserDeletedEvent.class
 com\nnipa\proto\storage\StorageUpdatedEvent$Builder.class
 com\nnipa\proto\storage\GeneratePresignedUrlCommand$UrlDataOrBuilder.class
 com\nnipa\proto\tenant\GetTenantRequest$1.class
@@ -549,6 +551,7 @@ com\nnipa\proto\storage\StorageOperationResult$ResultDataOrBuilder.class
 com\nnipa\proto\storage\ChangeStorageTierCommand$1.class
 com\nnipa\proto\auth\UserLogoutEvent$LogoutData$1.class
 com\nnipa\proto\storage\GeneratePresignedUrlCommand$UrlData$1.class
+com\nnipa\proto\user\UserDeletedEvent$Builder.class
 com\nnipa\proto\tenant\TenantCreationResponseEvent$1.class
 com\nnipa\proto\storage\StorageDeletedEvent$1.class
 com\nnipa\proto\tenant\ValidateTenantCommandOrBuilder.class
@@ -804,6 +807,7 @@ com\nnipa\proto\tenant\ValidateTenantCommand.class
 com\nnipa\proto\common\EventMetadata.class
 com\nnipa\proto\tenant\ProvisionTenantCommand$ConfigurationDefaultEntryHolder.class
 com\nnipa\proto\billing\BillingEventProtos.class
+com\nnipa\proto\user\UserDeletedEvent$1.class
 com\nnipa\proto\user\UserUpdatedEvent$Builder.class
 com\nnipa\proto\auth\SagaCompensationCompletedEvent$1.class
 com\nnipa\proto\tenant\TenantServiceGrpc$TenantServiceBaseDescriptorSupplier.class

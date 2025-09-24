@@ -87,6 +87,17 @@ message UserUpdatedEvent {
   string old_tenant_id = 8;  // Previous tenant if changed
 }
 
+// Event: User Deleted
+message UserDeletedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string user_id = 2;
+  string tenant_id = 3;
+  string reason = 4;  // Optional: reason for deletion
+  google.protobuf.Timestamp deleted_at = 5;
+  string deleted_by = 6;  // User ID of who performed the deletion
+  bool soft_delete = 7;  // Whether this is a soft delete or hard delete
+}
+
 // Event: User Tenant Associated
 // Published when user is associated with tenant in saga flow
 message UserTenantAssociatedEvent {

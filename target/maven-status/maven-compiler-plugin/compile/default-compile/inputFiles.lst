@@ -25,6 +25,7 @@ C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\genera
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\command\ProvisionResourcesCommandOrBuilder.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\auth\SagaCompensationStartedEvent.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\common\AuditInfo.java
+C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\user\UserDeletedEventOrBuilder.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\tenant\UpdateTenantResponse.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\storage\CopyObjectCommandOrBuilder.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\command\CreateUserProfileCommand.java
@@ -123,6 +124,7 @@ C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\genera
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\storage\StorageSharedEventOrBuilder.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\auth\SagaStageCompletedEventOrBuilder.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\authz\RoleRevokedEventOrBuilder.java
+C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\user\UserDeletedEvent.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\storage\MoveObjectCommand.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\billing\PaymentSucceededEventOrBuilder.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\user\UserProfileCreationFailedEventOrBuilder.java
