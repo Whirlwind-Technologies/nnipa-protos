@@ -27,6 +27,7 @@ C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\genera
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\command\CreateUserProfileCommand.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\authz\PermissionGrantedEvent.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\user\UserCreatedEventOrBuilder.java
+C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\authz\CrossTenantAccessGrantedEventOrBuilder.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\storage\StorageQuotaExceededEvent.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\tenant\CreateTenantResponseOrBuilder.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\tenant\SuspendTenantRequest.java
@@ -103,6 +104,7 @@ C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\genera
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\storage\ApplyLifecyclePolicyCommand.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\storage\StorageRestoredEvent.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\tenant\FeatureEnabledEventOrBuilder.java
+C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\authz\CrossTenantAccessRevokedEvent.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\storage\StorageTieredEventOrBuilder.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\storage\StorageDeletedEventOrBuilder.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\billing\SubscriptionRenewedEvent.java
@@ -192,6 +194,7 @@ C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\genera
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\command\AssignRoleCommand.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\user\UserActivatedEvent.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\command\CreateUserProfileCommandOrBuilder.java
+C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\authz\CrossTenantAccessRevokedEventOrBuilder.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\common\StorageTier.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\common\CommandResponse.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\common\Priority.java
@@ -248,6 +251,7 @@ C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\genera
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\common\PaginationInfoOrBuilder.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\storage\StorageTieredEvent.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\auth\SecurityEventOrBuilder.java
+C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\authz\CrossTenantAccessGrantedEvent.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\storage\StorageUpdatedEventOrBuilder.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\tenant\TenantDeletedEvent.java
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java\com\nnipa\proto\storage\StorageCompressedEvent.java

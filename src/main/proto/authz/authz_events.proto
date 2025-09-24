@@ -122,3 +122,23 @@ message PolicyEvaluatedEvent {
   string result = 6;
   google.protobuf.Timestamp evaluated_at = 7;
 }
+
+// Event: Cross-Tenant Access Granted
+message CrossTenantAccessGrantedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string source_tenant_id = 2;
+  string target_tenant_id = 3;
+  string resource_type = 4;
+  string granted_by = 5;
+  google.protobuf.Timestamp timestamp = 6;
+}
+
+// Event: Cross-Tenant Access Revoked
+message CrossTenantAccessRevokedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+  string source_tenant_id = 2;
+  string target_tenant_id = 3;
+  string resource_type = 4;
+  string revoked_by = 5;
+  google.protobuf.Timestamp timestamp = 6;
+}

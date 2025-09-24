@@ -75,6 +75,16 @@ public final class AuthzEvents {
   static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_com_nnipa_proto_authz_PolicyEvaluatedEvent_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_nnipa_proto_authz_CrossTenantAccessGrantedEvent_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_nnipa_proto_authz_CrossTenantAccessGrantedEvent_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_nnipa_proto_authz_CrossTenantAccessRevokedEvent_descriptor;
+  static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_com_nnipa_proto_authz_CrossTenantAccessRevokedEvent_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -150,8 +160,19 @@ public final class AuthzEvents {
       "a\022\021\n\tpolicy_id\030\002 \001(\t\022\017\n\007user_id\030\003 \001(\t\022\020\n" +
       "\010resource\030\004 \001(\t\022\016\n\006action\030\005 \001(\t\022\016\n\006resul" +
       "t\030\006 \001(\t\0220\n\014evaluated_at\030\007 \001(\0132\032.google.p" +
-      "rotobuf.TimestampB\031\n\025com.nnipa.proto.aut" +
-      "hzP\001b\006proto3"
+      "rotobuf.Timestamp\"\346\001\n\035CrossTenantAccessG" +
+      "rantedEvent\0227\n\010metadata\030\001 \001(\0132%.com.nnip" +
+      "a.proto.common.EventMetadata\022\030\n\020source_t" +
+      "enant_id\030\002 \001(\t\022\030\n\020target_tenant_id\030\003 \001(\t" +
+      "\022\025\n\rresource_type\030\004 \001(\t\022\022\n\ngranted_by\030\005 " +
+      "\001(\t\022-\n\ttimestamp\030\006 \001(\0132\032.google.protobuf" +
+      ".Timestamp\"\346\001\n\035CrossTenantAccessRevokedE" +
+      "vent\0227\n\010metadata\030\001 \001(\0132%.com.nnipa.proto" +
+      ".common.EventMetadata\022\030\n\020source_tenant_i" +
+      "d\030\002 \001(\t\022\030\n\020target_tenant_id\030\003 \001(\t\022\025\n\rres" +
+      "ource_type\030\004 \001(\t\022\022\n\nrevoked_by\030\005 \001(\t\022-\n\t" +
+      "timestamp\030\006 \001(\0132\032.google.protobuf.Timest" +
+      "ampB\031\n\025com.nnipa.proto.authzP\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -231,6 +252,18 @@ public final class AuthzEvents {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_com_nnipa_proto_authz_PolicyEvaluatedEvent_descriptor,
         new java.lang.String[] { "Metadata", "PolicyId", "UserId", "Resource", "Action", "Result", "EvaluatedAt", });
+    internal_static_com_nnipa_proto_authz_CrossTenantAccessGrantedEvent_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_com_nnipa_proto_authz_CrossTenantAccessGrantedEvent_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_nnipa_proto_authz_CrossTenantAccessGrantedEvent_descriptor,
+        new java.lang.String[] { "Metadata", "SourceTenantId", "TargetTenantId", "ResourceType", "GrantedBy", "Timestamp", });
+    internal_static_com_nnipa_proto_authz_CrossTenantAccessRevokedEvent_descriptor =
+      getDescriptor().getMessageTypes().get(11);
+    internal_static_com_nnipa_proto_authz_CrossTenantAccessRevokedEvent_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_com_nnipa_proto_authz_CrossTenantAccessRevokedEvent_descriptor,
+        new java.lang.String[] { "Metadata", "SourceTenantId", "TargetTenantId", "ResourceType", "RevokedBy", "Timestamp", });
     com.google.protobuf.TimestampProto.getDescriptor();
     com.nnipa.proto.common.CommonProtos.getDescriptor();
   }
