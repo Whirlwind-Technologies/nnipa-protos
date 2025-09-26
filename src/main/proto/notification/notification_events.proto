@@ -1,0 +1,239 @@
+syntax = "proto3";
+
+package com.nnipa.proto.notification;
+
+import "common/common.proto";
+import "common/enums.proto";
+import "google/protobuf/timestamp.proto";
+
+option java_package = "com.nnipa.proto.notification";
+option java_multiple_files = true;
+option java_outer_classname = "NotificationEventsProto";
+
+// Welcome notification request event
+message WelcomeNotificationRequestedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  string user_id = 2;
+  string tenant_id = 3;
+  string user_email = 4;
+  string user_first_name = 5;
+  string user_last_name = 6;
+  string user_status = 7;
+  string saga_id = 8;
+
+  com.nnipa.proto.common.NotificationType notification_type = 9;
+  com.nnipa.proto.common.NotificationChannel channel = 10;
+  com.nnipa.proto.common.NotificationPriority priority = 11;
+  google.protobuf.Timestamp requested_at = 12;
+
+  // Optional template data for personalization
+  map<string, string> template_data = 13;
+
+  // Optional scheduling
+  google.protobuf.Timestamp send_at = 14;
+
+  // Optional user preferences
+  UserNotificationPreferences user_preferences = 15;
+}
+
+// Generic notification request event for other types
+message NotificationRequestedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  string user_id = 2;
+  string tenant_id = 3;
+  string recipient_email = 4;
+  string recipient_phone = 5; // For SMS
+
+  com.nnipa.proto.common.NotificationType notification_type = 6;
+  com.nnipa.proto.common.NotificationChannel channel = 7;
+  com.nnipa.proto.common.NotificationPriority priority = 8;
+  google.protobuf.Timestamp requested_at = 9;
+
+  // Notification content
+  string subject = 10;
+  string body = 11;
+  string template_id = 12;
+  map<string, string> template_data = 13;
+
+  // Optional scheduling
+  google.protobuf.Timestamp send_at = 14;
+  int32 retry_count = 15;
+  int32 max_retries = 16;
+
+  // Optional context
+  string context_id = 17; // Could be saga_id, order_id, etc.
+  string context_type = 18; // SAGA, ORDER, USER_ACTION, etc.
+
+  // User preferences
+  UserNotificationPreferences user_preferences = 19;
+}
+
+// Email verification notification request
+message EmailVerificationRequestedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  string user_id = 2;
+  string tenant_id = 3;
+  string user_email = 4;
+  string user_first_name = 5;
+  string verification_token = 6;
+  string verification_link = 7;
+
+  com.nnipa.proto.common.NotificationChannel channel = 8;
+  com.nnipa.proto.common.NotificationPriority priority = 9;
+  google.protobuf.Timestamp requested_at = 10;
+  google.protobuf.Timestamp expires_at = 11;
+
+  map<string, string> template_data = 12;
+}
+
+// Password reset notification request
+message PasswordResetRequestedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  string user_id = 2;
+  string tenant_id = 3;
+  string user_email = 4;
+  string user_first_name = 5;
+  string reset_token = 6;
+  string reset_link = 7;
+
+  com.nnipa.proto.common.NotificationChannel channel = 8;
+  com.nnipa.proto.common.NotificationPriority priority = 9;
+  google.protobuf.Timestamp requested_at = 10;
+  google.protobuf.Timestamp expires_at = 11;
+
+  map<string, string> template_data = 12;
+}
+
+// Notification sent event (response from notification service)
+message NotificationSentEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  string notification_id = 2;
+  string user_id = 3;
+  string tenant_id = 4;
+  string recipient = 5; // email, phone, etc.
+
+  com.nnipa.proto.common.NotificationType notification_type = 6;
+  com.nnipa.proto.common.NotificationChannel channel = 7;
+  com.nnipa.proto.common.NotificationStatus status = 8;
+
+  google.protobuf.Timestamp sent_at = 9;
+  google.protobuf.Timestamp delivered_at = 10;
+
+  // Optional error information
+  string error_code = 11;
+  string error_message = 12;
+
+  // Provider information (SendGrid, Twilio, etc.)
+  string provider = 13;
+  string provider_message_id = 14;
+
+  // Context for correlation
+  string context_id = 15;
+  string context_type = 16;
+
+  // Retry information
+  int32 retry_count = 17;
+  bool will_retry = 18;
+  google.protobuf.Timestamp next_retry_at = 19;
+}
+
+// Notification failed event
+message NotificationFailedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  string notification_id = 2;
+  string user_id = 3;
+  string tenant_id = 4;
+  string recipient = 5;
+
+  com.nnipa.proto.common.NotificationType notification_type = 6;
+  com.nnipa.proto.common.NotificationChannel channel = 7;
+
+  google.protobuf.Timestamp failed_at = 8;
+  string error_code = 9;
+  string error_message = 10;
+
+  // Provider information
+  string provider = 11;
+  string provider_error_code = 12;
+
+  // Context
+  string context_id = 13;
+  string context_type = 14;
+
+  // Retry information
+  int32 retry_count = 15;
+  int32 max_retries = 16;
+  bool will_retry = 17;
+  google.protobuf.Timestamp next_retry_at = 18;
+
+  // Final failure indicator
+  bool final_failure = 19;
+}
+
+// User notification preferences
+message UserNotificationPreferences {
+  bool email_enabled = 1;
+  bool sms_enabled = 2;
+  bool push_enabled = 3;
+  bool in_app_enabled = 4;
+
+  // Specific notification type preferences
+  map<string, bool> notification_type_preferences = 5;
+
+  // Quiet hours
+  string quiet_hours_start = 6; // Format: "HH:mm"
+  string quiet_hours_end = 7;   // Format: "HH:mm"
+  string timezone = 8;
+
+  // Frequency preferences using common enum
+  com.nnipa.proto.common.NotificationPriority digest_enabled = 9;
+  string digest_frequency = 10; // DAILY, WEEKLY, MONTHLY
+
+  // Language preference
+  string language = 11;
+}
+
+// Bulk notification request (for system-wide notifications)
+message BulkNotificationRequestedEvent {
+  com.nnipa.proto.common.EventMetadata metadata = 1;
+
+  string tenant_id = 2;
+  string campaign_id = 3;
+
+  com.nnipa.proto.common.NotificationType notification_type = 4;
+  com.nnipa.proto.common.NotificationChannel channel = 5;
+  com.nnipa.proto.common.NotificationPriority priority = 6;
+
+  // Target criteria
+  repeated string user_ids = 7; // Specific users
+  UserSegmentCriteria segment_criteria = 8; // Or segment-based
+
+  // Content
+  string subject = 9;
+  string body = 10;
+  string template_id = 11;
+  map<string, string> template_data = 12;
+
+  // Scheduling
+  google.protobuf.Timestamp send_at = 13;
+  bool respect_user_preferences = 14;
+
+  google.protobuf.Timestamp requested_at = 15;
+}
+
+// User segment criteria for bulk notifications
+message UserSegmentCriteria {
+  repeated string user_statuses = 1;
+  repeated string user_roles = 2;
+  google.protobuf.Timestamp created_after = 3;
+  google.protobuf.Timestamp created_before = 4;
+  google.protobuf.Timestamp last_login_after = 5;
+  google.protobuf.Timestamp last_login_before = 6;
+  map<string, string> metadata_filters = 7;
+}

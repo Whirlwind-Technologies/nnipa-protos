@@ -136,3 +136,49 @@ enum MigrationStatus {
   MIGRATION_FAILED = 4;
   MIGRATION_CANCELLED = 5;
 }
+
+// Enum for notification types
+enum NotificationType {
+  NOTIFICATION_TYPE_UNSPECIFIED = 0;
+  WELCOME = 1;
+  EMAIL_VERIFICATION = 2;
+  PASSWORD_RESET = 3;
+  PASSWORD_CHANGED = 4;
+  ACCOUNT_ACTIVATED = 5;
+  ACCOUNT_LOCKED = 6;
+  LOGIN_ALERT = 7;
+  SUBSCRIPTION_RENEWED = 8;
+  PAYMENT_FAILED = 9;
+  SYSTEM_MAINTENANCE = 10;
+  FEATURE_ANNOUNCEMENT = 11;
+}
+
+// Enum for notification channels
+enum NotificationChannel {
+  CHANNEL_UNSPECIFIED = 0;
+  EMAIL = 1;
+  SMS = 2;
+  PUSH = 3;
+  IN_APP = 4;
+  WEBHOOK = 5;
+}
+
+// Enum for notification priority
+enum NotificationPriority {
+  NOTIFICATION_PRIORITY_UNSPECIFIED = 0;
+  LOW = 1;
+  NORMAL = 2;
+  HIGH = 3;
+  URGENT = 4;
+}
+
+// Enum for notification status
+enum NotificationStatus {
+  STATUS_UNSPECIFIED = 0;
+  PENDING = 1;
+  SENT = 2;
+  DELIVERED = 3;
+  FAILED = 4;
+  RETRY = 5;
+  CANCELLED = 6;
+}

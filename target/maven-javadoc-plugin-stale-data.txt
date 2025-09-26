@@ -30,6 +30,7 @@ com.nnipa.proto.authz
 com.nnipa.proto.billing
 com.nnipa.proto.command
 com.nnipa.proto.common
+com.nnipa.proto.notification
 com.nnipa.proto.storage
 com.nnipa.proto.tenant
 com.nnipa.proto.user
@@ -49,23 +50,23 @@ C:\Users\HarryMcNinson\.m2\repository\com\google\api\grpc\proto-google-common-pr
 C:\Users\HarryMcNinson\.m2\repository\io\grpc\grpc-stub\1.69.0\grpc-stub-1.69.0.jar = 1754585370898
 C:\Users\HarryMcNinson\.m2\repository\javax\annotation\javax.annotation-api\1.3.2\javax.annotation-api-1.3.2.jar = 1755545714501
 C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\src\main\java = 1756597627957
-C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java = 1758753232785
-C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\grpc-java = 1758753233402
-C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\annotations = 1758753221349
-C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\apidocs\allclasses-index.html = 1758753251490
-C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\apidocs\allpackages-index.html = 1758753251491
-C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\apidocs\constant-values.html = 1758753247302
-C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\apidocs\deprecated-list.html = 1758753249797
-C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\apidocs\element-list = 1758753247166
-C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\apidocs\help-doc.html = 1758753251812
-C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\apidocs\index-all.html = 1758753251798
-C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\apidocs\index.html = 1758753249800
-C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\apidocs\member-search-index.js = 1758753251514
-C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\apidocs\module-search-index.js = 1758753251492
-C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\apidocs\overview-summary.html = 1758753251809
-C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\apidocs\overview-tree.html = 1758753249786
-C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\apidocs\package-search-index.js = 1758753251492
-C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\apidocs\search.html = 1758753251800
-C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\apidocs\serialized-form.html = 1758753247375
-C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\apidocs\tag-search-index.js = 1758753251516
-C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\apidocs\type-search-index.js = 1758753251494
+C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\java = 1758930386774
+C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\protobuf\grpc-java = 1758930387429
+C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\generated-sources\annotations = 1758930374245
+C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\apidocs\allclasses-index.html = 1758930410280
+C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\apidocs\allpackages-index.html = 1758930410283
+C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\apidocs\constant-values.html = 1758930404903
+C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\apidocs\deprecated-list.html = 1758930407935
+C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\apidocs\element-list = 1758930404744
+C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\apidocs\help-doc.html = 1758930410724
+C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\apidocs\index-all.html = 1758930410704
+C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\apidocs\index.html = 1758930407943
+C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\apidocs\member-search-index.js = 1758930410309
+C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\apidocs\module-search-index.js = 1758930410284
+C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\apidocs\overview-summary.html = 1758930410719
+C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\apidocs\overview-tree.html = 1758930407924
+C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\apidocs\package-search-index.js = 1758930410285
+C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\apidocs\search.html = 1758930410715
+C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\apidocs\serialized-form.html = 1758930404986
+C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\apidocs\tag-search-index.js = 1758930410309
+C:\Users\HarryMcNinson\Documents\projects\nnipa\nnipa\nnipa-protos\target\apidocs\type-search-index.js = 1758930410287

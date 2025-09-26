@@ -31,6 +31,7 @@ com\nnipa\proto\storage\DeleteObjectCommandOrBuilder.class
 com\nnipa\proto\user\UserProfileUpdatedEventOrBuilder.class
 com\nnipa\proto\user\UserSagaStageStartedEvent$Builder.class
 com\nnipa\proto\common\Enums.class
+com\nnipa\proto\notification\UserNotificationPreferences.class
 com\nnipa\proto\tenant\TenantReactivatedEventOrBuilder.class
 com\nnipa\proto\tenant\TenantServiceProto.class
 com\nnipa\proto\common\CommonProtos.class
@@ -46,6 +47,7 @@ com\nnipa\proto\storage\StorageCreatedEventOrBuilder.class
 com\nnipa\proto\tenant\CreateTenantResponse$Builder.class
 com\nnipa\proto\tenant\GetTenantByCodeRequest.class
 com\nnipa\proto\common\StorageBackend.class
+com\nnipa\proto\notification\BulkNotificationRequestedEventOrBuilder.class
 com\nnipa\proto\storage\UploadObjectCommand$UploadDataOrBuilder.class
 com\nnipa\proto\auth\MFAEnabledEvent$1.class
 com\nnipa\proto\auth\SecurityEvent$Builder.class
@@ -54,6 +56,7 @@ com\nnipa\proto\tenant\ActivateTenantRequest$Builder.class
 com\nnipa\proto\common\AuditInfoOrBuilder.class
 com\nnipa\proto\authz\RoleAssignedEvent$1.class
 com\nnipa\proto\authz\GrantPermissionCommand$1.class
+com\nnipa\proto\notification\NotificationSentEvent$Builder.class
 com\nnipa\proto\auth\UserRegisteredEvent$RegistrationData$AdditionalInfoDefaultEntryHolder.class
 com\nnipa\proto\storage\StorageMigrationStartedEvent.class
 com\nnipa\proto\tenant\TenantDeactivatedEvent$1.class
@@ -69,6 +72,7 @@ com\nnipa\proto\auth\UserRegisteredEvent.class
 com\nnipa\proto\authz\CheckAuthorizationCommand$ContextDefaultEntryHolder.class
 com\nnipa\proto\auth\SagaCompensationCompletedEventOrBuilder.class
 com\nnipa\proto\authz\RoleDeletedEventOrBuilder.class
+com\nnipa\proto\notification\NotificationRequestedEvent$1.class
 com\nnipa\proto\common\CommandResponse$Builder.class
 com\nnipa\proto\storage\ApplyLifecyclePolicyCommand$Builder.class
 com\nnipa\proto\storage\ShareObjectCommand$ShareData.class
@@ -113,6 +117,7 @@ com\nnipa\proto\storage\StorageOperationResult$1.class
 com\nnipa\proto\tenant\TenantMigratedEvent$MigrationData$Builder.class
 com\nnipa\proto\command\AuditLogCommand$AuditEntry$Builder.class
 com\nnipa\proto\storage\StorageEncryptedEvent.class
+com\nnipa\proto\notification\EmailVerificationRequestedEvent.class
 com\nnipa\proto\common\EventMetadata$Builder.class
 com\nnipa\proto\tenant\ActivateTenantRequestOrBuilder.class
 com\nnipa\proto\tenant\FeatureUpdatedEvent$1.class
@@ -127,6 +132,7 @@ com\nnipa\proto\storage\StorageQuotaExceededEvent.class
 com\nnipa\proto\tenant\TenantDeactivatedEventOrBuilder.class
 com\nnipa\proto\auth\SagaCompensationCompletedEvent$Builder.class
 com\nnipa\proto\tenant\TenantCreatedEventOrBuilder.class
+com\nnipa\proto\notification\EmailVerificationRequestedEvent$TemplateDataDefaultEntryHolder.class
 com\nnipa\proto\storage\ApplyLifecyclePolicyCommand$PolicyData$Builder.class
 com\nnipa\proto\storage\StorageVersionedEvent$VersionDataOrBuilder.class
 com\nnipa\proto\billing\PaymentSucceededEventOrBuilder.class
@@ -143,7 +149,9 @@ com\nnipa\proto\auth\ValidateUserCommandOrBuilder.class
 com\nnipa\proto\storage\StorageRestoredEvent$RestoreData$Builder.class
 com\nnipa\proto\authz\PermissionRevokedEventOrBuilder.class
 com\nnipa\proto\command\CreateUserProfileCommand$Builder.class
+com\nnipa\proto\common\NotificationType$1.class
 com\nnipa\proto\tenant\SubscriptionCancelledEvent.class
+com\nnipa\proto\notification\UserSegmentCriteria$Builder.class
 com\nnipa\proto\tenant\TenantSubscriptionChangedEvent$SubscriptionData.class
 com\nnipa\proto\command\CreateTenantCommand$AdditionalSettingsDefaultEntryHolder.class
 com\nnipa\proto\tenant\SubscriptionCreatedEvent$Builder.class
@@ -167,8 +175,13 @@ com\nnipa\proto\storage\StorageMigrationStartedEvent$MigrationData$1.class
 com\nnipa\proto\auth\ValidateUserCommand$Builder.class
 com\nnipa\proto\tenant\TenantServiceGrpc$TenantServiceStub.class
 com\nnipa\proto\common\AuditInfo$Builder.class
+com\nnipa\proto\notification\WelcomeNotificationRequestedEvent$TemplateDataDefaultEntryHolder.class
 com\nnipa\proto\storage\CreateVersionCommand$Builder.class
+com\nnipa\proto\notification\UserNotificationPreferences$NotificationTypePreferencesDefaultEntryHolder.class
+com\nnipa\proto\notification\UserNotificationPreferences$Builder.class
 com\nnipa\proto\storage\MoveObjectCommand.class
+com\nnipa\proto\notification\UserNotificationPreferences$1.class
+com\nnipa\proto\notification\UserSegmentCriteria.class
 com\nnipa\proto\auth\MFAEnabledEvent$Builder.class
 com\nnipa\proto\user\UserActivatedEvent.class
 com\nnipa\proto\storage\ChangeStorageTierCommandOrBuilder.class
@@ -187,6 +200,7 @@ com\nnipa\proto\storage\StorageUpdatedEvent$Builder$ChangedFieldsConverter.class
 com\nnipa\proto\storage\StorageMigrationStartedEventOrBuilder.class
 com\nnipa\proto\storage\ApplyLifecyclePolicyCommandOrBuilder.class
 com\nnipa\proto\storage\ScanObjectCommandOrBuilder.class
+com\nnipa\proto\notification\PasswordResetRequestedEvent$TemplateDataDefaultEntryHolder.class
 com\nnipa\proto\tenant\UpdateUserTenantAssociationCommand$1.class
 com\nnipa\proto\storage\StorageLifecyclePolicyAppliedEvent$PolicyDataOrBuilder.class
 com\nnipa\proto\storage\MoveObjectCommand$MoveData$Builder.class
@@ -283,8 +297,11 @@ com\nnipa\proto\tenant\UpdateTenantCommand$UpdateDetails$1.class
 com\nnipa\proto\auth\LoginFailedEvent$Builder.class
 com\nnipa\proto\command\CreateUserProfileCommand.class
 com\nnipa\proto\common\ContactInfo$Builder.class
+com\nnipa\proto\notification\NotificationSentEvent$1.class
 com\nnipa\proto\common\ErrorResponse$Builder.class
+com\nnipa\proto\notification\NotificationFailedEvent.class
 com\nnipa\proto\tenant\UpdateTenantResponse$1.class
+com\nnipa\proto\common\NotificationChannel.class
 com\nnipa\proto\auth\MFAEnabledEventOrBuilder.class
 com\nnipa\proto\authz\CrossTenantAccessGrantedEventOrBuilder.class
 com\nnipa\proto\storage\StorageReplicatedEvent$ReplicationData$1.class
@@ -326,6 +343,7 @@ com\nnipa\proto\common\CompressionType$1.class
 com\nnipa\proto\storage\RestoreFromBackupCommand$RestoreDataOrBuilder.class
 com\nnipa\proto\auth\AdminCreatedUserEventOrBuilder.class
 com\nnipa\proto\authz\RoleCreatedEvent.class
+com\nnipa\proto\notification\PasswordResetRequestedEvent$1.class
 com\nnipa\proto\authz\PermissionGrantedEvent$Builder.class
 com\nnipa\proto\authz\RoleUpdatedEvent$1.class
 com\nnipa\proto\tenant\SuspendTenantRequest.class
@@ -361,6 +379,7 @@ com\nnipa\proto\auth\ValidateUserCommand.class
 com\nnipa\proto\storage\ScanObjectCommand$ScanDataOrBuilder.class
 com\nnipa\proto\common\MigrationStatus$1.class
 com\nnipa\proto\storage\CreateVersionCommand$VersionData.class
+com\nnipa\proto\notification\NotificationRequestedEvent$TemplateDataDefaultEntryHolder.class
 com\nnipa\proto\user\UserSagaStageStartedEvent$1.class
 com\nnipa\proto\authz\AuthorizationCheckedEventOrBuilder.class
 com\nnipa\proto\storage\StorageScannedEvent$ScanData$Builder.class
@@ -380,6 +399,7 @@ com\nnipa\proto\storage\DownloadObjectCommand$1.class
 com\nnipa\proto\auth\UserRegistrationSagaEvent.class
 com\nnipa\proto\auth\SelfSignupEventOrBuilder.class
 com\nnipa\proto\billing\PaymentSucceededEvent.class
+com\nnipa\proto\notification\BulkNotificationRequestedEvent$Builder.class
 com\nnipa\proto\common\EventStatus$1.class
 com\nnipa\proto\common\StorageMetadataOrBuilder.class
 com\nnipa\proto\tenant\CreateTenantResponseOrBuilder.class
@@ -401,12 +421,14 @@ com\nnipa\proto\auth\AuthenticationEvent$1.class
 com\nnipa\proto\tenant\SubscriptionCreatedEvent$1.class
 com\nnipa\proto\user\UserTenantAssociatedEvent$1.class
 com\nnipa\proto\tenant\TenantDeletedEvent$Builder.class
+com\nnipa\proto\notification\EmailVerificationRequestedEvent$Builder.class
 com\nnipa\proto\storage\StorageScannedEvent$1.class
 com\nnipa\proto\auth\LoginFailedEvent$FailureData$1.class
 com\nnipa\proto\storage\GeneratePresignedUrlCommand.class
 com\nnipa\proto\tenant\TenantServiceGrpc$TenantServiceMethodDescriptorSupplier.class
 com\nnipa\proto\common\ErrorDetail$Builder.class
 com\nnipa\proto\storage\StorageCreatedEvent$1.class
+com\nnipa\proto\notification\UserNotificationPreferencesOrBuilder.class
 com\nnipa\proto\storage\StorageOperationResult$Builder.class
 com\nnipa\proto\storage\CopyObjectCommand$CopyData.class
 com\nnipa\proto\storage\StorageBackupCreatedEvent$BackupData$1.class
@@ -422,12 +444,15 @@ com\nnipa\proto\tenant\UpdateUserTenantAssociationCommandOrBuilder.class
 com\nnipa\proto\common\ErrorResponse.class
 com\nnipa\proto\storage\StorageLifecyclePolicyAppliedEvent$1.class
 com\nnipa\proto\storage\DownloadObjectCommand$DownloadData.class
+com\nnipa\proto\common\NotificationPriority$1.class
+com\nnipa\proto\notification\NotificationFailedEvent$Builder.class
 com\nnipa\proto\storage\StorageDeletedEventOrBuilder.class
 com\nnipa\proto\tenant\SubscriptionCreatedEventOrBuilder.class
 com\nnipa\proto\storage\StorageTieredEvent$1.class
 com\nnipa\proto\tenant\TenantBillingFailedEvent$Builder.class
 com\nnipa\proto\auth\UserActivatedEvent.class
 com\nnipa\proto\auth\UserLoginEventOrBuilder.class
+com\nnipa\proto\notification\WelcomeNotificationRequestedEventOrBuilder.class
 com\nnipa\proto\storage\StorageRestoredEvent$Builder.class
 com\nnipa\proto\auth\UserLoginEvent$1.class
 com\nnipa\proto\user\UserActivityEvent$Builder.class
@@ -450,6 +475,7 @@ com\nnipa\proto\authz\PermissionGrantedEvent$1.class
 com\nnipa\proto\storage\ValidateStorageIntegrityCommand$1.class
 com\nnipa\proto\auth\UserLogoutEventOrBuilder.class
 com\nnipa\proto\tenant\TenantServiceGrpc$TenantServiceImplBase.class
+com\nnipa\proto\common\NotificationChannel$1.class
 com\nnipa\proto\auth\UserActivatedEvent$1.class
 com\nnipa\proto\auth\UserRegistrationSagaEvent$Builder.class
 com\nnipa\proto\storage\StorageOperationResult$ResultData.class
@@ -462,6 +488,7 @@ com\nnipa\proto\storage\ShareObjectCommandOrBuilder.class
 com\nnipa\proto\tenant\TenantUpdatedEvent$Builder.class
 com\nnipa\proto\authz\RoleAssignedEvent.class
 com\nnipa\proto\billing\BillingEvent$1.class
+com\nnipa\proto\notification\NotificationRequestedEventOrBuilder.class
 com\nnipa\proto\storage\RestoreVersionCommand$Builder.class
 com\nnipa\proto\common\SubscriptionTier.class
 com\nnipa\proto\tenant\GetTenantResponseOrBuilder.class
@@ -482,6 +509,7 @@ com\nnipa\proto\command\AuditLogCommand$1.class
 com\nnipa\proto\common\DataIsolationStrategy.class
 com\nnipa\proto\common\ErrorResponse$1.class
 com\nnipa\proto\authz\PolicyCreatedEvent.class
+com\nnipa\proto\notification\UserSegmentCriteria$1.class
 com\nnipa\proto\tenant\TenantDataOrBuilder.class
 com\nnipa\proto\storage\StorageEncryptedEvent$EncryptionData.class
 com\nnipa\proto\tenant\UpdateUserTenantAssociationCommand.class
@@ -509,6 +537,7 @@ com\nnipa\proto\authz\RoleUpdatedEvent.class
 com\nnipa\proto\auth\AuthenticationEvent.class
 com\nnipa\proto\auth\ActivateUserCommand.class
 com\nnipa\proto\auth\LoginFailedEvent$FailureDataOrBuilder.class
+com\nnipa\proto\notification\WelcomeNotificationRequestedEvent$Builder.class
 com\nnipa\proto\tenant\UpdateTenantCommand$UpdateDetails.class
 com\nnipa\proto\tenant\TenantCreatedEvent$1.class
 com\nnipa\proto\storage\ValidateStorageIntegrityCommandOrBuilder.class
@@ -525,14 +554,17 @@ com\nnipa\proto\authz\CrossTenantAccessGrantedEvent.class
 com\nnipa\proto\storage\RestoreFromBackupCommandOrBuilder.class
 com\nnipa\proto\storage\StorageReplicatedEvent$ReplicationDataOrBuilder.class
 com\nnipa\proto\tenant\GetTenantResponse$Builder.class
+com\nnipa\proto\notification\EmailVerificationRequestedEventOrBuilder.class
 com\nnipa\proto\storage\GeneratePresignedUrlCommand$Builder.class
 com\nnipa\proto\tenant\CreateTenantCommandOrBuilder.class
+com\nnipa\proto\notification\PasswordResetRequestedEventOrBuilder.class
 com\nnipa\proto\user\UserDeactivatedEventOrBuilder.class
 com\nnipa\proto\auth\UserLogoutEvent.class
 com\nnipa\proto\storage\StorageTieredEvent$TierDataOrBuilder.class
 com\nnipa\proto\auth\ValidateUserCommand$1.class
 com\nnipa\proto\tenant\SubscriptionData$1.class
 com\nnipa\proto\auth\UserRegistrationSagaEventOrBuilder.class
+com\nnipa\proto\common\NotificationType.class
 com\nnipa\proto\storage\MigrateStorageCommandOrBuilder.class
 com\nnipa\proto\tenant\SubscriptionData$Builder.class
 com\nnipa\proto\authz\RoleUpdatedEvent$ChangesDefaultEntryHolder.class
@@ -541,6 +573,7 @@ com\nnipa\proto\tenant\FeatureDisabledEvent$Builder.class
 com\nnipa\proto\auth\SagaStageCompletedEvent$1.class
 com\nnipa\proto\tenant\TenantServiceGrpc$1.class
 com\nnipa\proto\auth\SelfSignupEvent.class
+com\nnipa\proto\notification\NotificationEventsProto.class
 com\nnipa\proto\tenant\SubscriptionRenewedEvent$1.class
 com\nnipa\proto\tenant\TenantSuspendedEvent.class
 com\nnipa\proto\billing\PaymentFailedEvent.class
@@ -553,6 +586,7 @@ com\nnipa\proto\auth\UserLogoutEvent$LogoutData$1.class
 com\nnipa\proto\storage\GeneratePresignedUrlCommand$UrlData$1.class
 com\nnipa\proto\user\UserDeletedEvent$Builder.class
 com\nnipa\proto\tenant\TenantCreationResponseEvent$1.class
+com\nnipa\proto\notification\NotificationRequestedEvent.class
 com\nnipa\proto\storage\StorageDeletedEvent$1.class
 com\nnipa\proto\tenant\ValidateTenantCommandOrBuilder.class
 com\nnipa\proto\storage\MigrateStorageCommand.class
@@ -587,6 +621,7 @@ com\nnipa\proto\storage\StorageOperationResultOrBuilder.class
 com\nnipa\proto\common\ContactInfoOrBuilder.class
 com\nnipa\proto\storage\RestoreVersionCommand$RestoreData$Builder.class
 com\nnipa\proto\storage\StorageScannedEvent$ScanData.class
+com\nnipa\proto\common\NotificationStatus$1.class
 com\nnipa\proto\common\PaginationInfoOrBuilder.class
 com\nnipa\proto\storage\UploadObjectCommand$UploadData.class
 com\nnipa\proto\storage\ApplyLifecyclePolicyCommand$PolicyData.class
@@ -595,7 +630,9 @@ com\nnipa\proto\auth\SagaCompensationStartedEventOrBuilder.class
 com\nnipa\proto\storage\RestoreFromBackupCommand$RestoreData$Builder.class
 com\nnipa\proto\auth\SagaStageCompletedEvent$Builder.class
 com\nnipa\proto\billing\PaymentFailedEvent$1.class
+com\nnipa\proto\notification\NotificationRequestedEvent$Builder.class
 com\nnipa\proto\tenant\CreateTenantCommand$TenantDetails$1.class
+com\nnipa\proto\common\NotificationPriority.class
 com\nnipa\proto\storage\StorageDeletedEvent.class
 com\nnipa\proto\command\CreateUserProfileCommandOrBuilder.class
 com\nnipa\proto\auth\UserLogoutEvent$Builder.class
@@ -634,6 +671,7 @@ com\nnipa\proto\storage\ValidateStorageIntegrityCommand$ValidationData$Builder.c
 com\nnipa\proto\auth\ActivateUserCommand$Builder.class
 com\nnipa\proto\common\Address$1.class
 com\nnipa\proto\storage\ApplyLifecyclePolicyCommand$PolicyRuleOrBuilder.class
+com\nnipa\proto\notification\PasswordResetRequestedEvent.class
 com\nnipa\proto\auth\ActivateUserCommandOrBuilder.class
 com\nnipa\proto\storage\StorageCompressedEvent$CompressionData$Builder.class
 com\nnipa\proto\user\UpdateUserProfileCommand$ProfileUpdatesDefaultEntryHolder.class
@@ -643,8 +681,10 @@ com\nnipa\proto\auth\PasswordResetRequestedEvent.class
 com\nnipa\proto\authz\RoleDeletedEvent$Builder.class
 com\nnipa\proto\auth\AuthEvents.class
 com\nnipa\proto\tenant\FeatureUpdatedEvent$UpdatedSettingsDefaultEntryHolder.class
+com\nnipa\proto\notification\NotificationFailedEventOrBuilder.class
 com\nnipa\proto\storage\StorageVersionedEventOrBuilder.class
 com\nnipa\proto\storage\ChangeStorageTierCommand$TierChangeData$1.class
+com\nnipa\proto\notification\WelcomeNotificationRequestedEvent$1.class
 com\nnipa\proto\command\SendNotificationCommand$Builder.class
 com\nnipa\proto\storage\MoveObjectCommand$MoveData$1.class
 com\nnipa\proto\authz\CrossTenantAccessRevokedEvent$Builder.class
@@ -655,6 +695,9 @@ com\nnipa\proto\common\OrganizationType$1.class
 com\nnipa\proto\common\CommandMetadata.class
 com\nnipa\proto\storage\CreateBackupCommand$BackupData.class
 com\nnipa\proto\command\SendNotificationCommand$1.class
+com\nnipa\proto\common\NotificationStatus.class
+com\nnipa\proto\notification\NotificationSentEventOrBuilder.class
+com\nnipa\proto\notification\EmailVerificationRequestedEvent$1.class
 com\nnipa\proto\storage\DownloadObjectCommand$DownloadDataOrBuilder.class
 com\nnipa\proto\storage\MigrateStorageCommand$MigrationData$1.class
 com\nnipa\proto\auth\UserRegisteredEvent$RegistrationDataOrBuilder.class
@@ -671,11 +714,13 @@ com\nnipa\proto\storage\StorageOperationResult$ResultData$ResultMetadataDefaultE
 com\nnipa\proto\tenant\UpdateTenantCommand$UpdateDetails$Builder.class
 com\nnipa\proto\storage\StorageCreatedEvent$StorageData$Builder.class
 com\nnipa\proto\storage\RestoreVersionCommand$RestoreDataOrBuilder.class
+com\nnipa\proto\notification\BulkNotificationRequestedEvent$1.class
 com\nnipa\proto\authz\RoleDeletedEvent.class
 com\nnipa\proto\storage\StorageAccessedEvent$Builder.class
 com\nnipa\proto\auth\PasswordChangedEvent$1.class
 com\nnipa\proto\storage\DeleteObjectCommand$DeleteDataOrBuilder.class
 com\nnipa\proto\command\AssignRoleCommand$1.class
+com\nnipa\proto\notification\UserSegmentCriteria$MetadataFiltersDefaultEntryHolder.class
 com\nnipa\proto\storage\MigrateStorageCommand$MigrationData$Builder.class
 com\nnipa\proto\storage\RestoreFromBackupCommand$RestoreData$1.class
 com\nnipa\proto\tenant\GetTenantByCodeRequest$Builder.class
@@ -728,6 +773,7 @@ com\nnipa\proto\storage\GeneratePresignedUrlCommand$UrlData$UrlParametersDefault
 com\nnipa\proto\tenant\GetTenantStatusResponseOrBuilder.class
 com\nnipa\proto\storage\CreateBackupCommand$BackupData$1.class
 com\nnipa\proto\tenant\TenantExistsRequest.class
+com\nnipa\proto\notification\BulkNotificationRequestedEvent.class
 com\nnipa\proto\command\ProvisionResourcesCommand$ConfigurationDefaultEntryHolder.class
 com\nnipa\proto\tenant\TenantSubscriptionChangedEvent$SubscriptionData$Builder.class
 com\nnipa\proto\tenant\FeatureUpdatedEvent.class
@@ -757,6 +803,7 @@ com\nnipa\proto\tenant\CreateTenantCommand$TenantDetails$SettingsDefaultEntryHol
 com\nnipa\proto\storage\DownloadObjectCommand$DownloadData$Builder.class
 com\nnipa\proto\storage\RestoreFromBackupCommand$1.class
 com\nnipa\proto\tenant\TenantCreatedEvent.class
+com\nnipa\proto\notification\PasswordResetRequestedEvent$Builder.class
 com\nnipa\proto\storage\CopyObjectCommand$CopyData$1.class
 com\nnipa\proto\tenant\GetTenantRequestOrBuilder.class
 com\nnipa\proto\storage\StorageMigrationStartedEvent$MigrationData.class
@@ -769,6 +816,7 @@ com\nnipa\proto\tenant\SubscriptionData.class
 com\nnipa\proto\common\Address.class
 com\nnipa\proto\tenant\ValidateTenantCommand$1.class
 com\nnipa\proto\auth\ActivateUserCommand$1.class
+com\nnipa\proto\notification\UserSegmentCriteriaOrBuilder.class
 com\nnipa\proto\common\CompressionType.class
 com\nnipa\proto\command\AuditLogCommand$AuditEntry$1.class
 com\nnipa\proto\command\Commands.class
@@ -807,16 +855,20 @@ com\nnipa\proto\tenant\ValidateTenantCommand.class
 com\nnipa\proto\common\EventMetadata.class
 com\nnipa\proto\tenant\ProvisionTenantCommand$ConfigurationDefaultEntryHolder.class
 com\nnipa\proto\billing\BillingEventProtos.class
+com\nnipa\proto\notification\NotificationSentEvent.class
 com\nnipa\proto\user\UserDeletedEvent$1.class
 com\nnipa\proto\user\UserUpdatedEvent$Builder.class
 com\nnipa\proto\auth\SagaCompensationCompletedEvent$1.class
+com\nnipa\proto\notification\NotificationFailedEvent$1.class
 com\nnipa\proto\tenant\TenantServiceGrpc$TenantServiceBaseDescriptorSupplier.class
 com\nnipa\proto\authz\PolicyCreatedEvent$1.class
 com\nnipa\proto\storage\StorageSharedEventOrBuilder.class
 com\nnipa\proto\billing\PaymentSucceededEvent$1.class
+com\nnipa\proto\notification\WelcomeNotificationRequestedEvent.class
 com\nnipa\proto\storage\StorageCreatedEvent$Builder.class
 com\nnipa\proto\storage\StorageEncryptedEvent$EncryptionDataOrBuilder.class
 com\nnipa\proto\storage\MoveObjectCommand$1.class
+com\nnipa\proto\notification\BulkNotificationRequestedEvent$TemplateDataDefaultEntryHolder.class
 com\nnipa\proto\storage\ScanObjectCommand$Builder.class
 com\nnipa\proto\storage\CopyObjectCommand$CopyData$TargetMetadataDefaultEntryHolder.class
 com\nnipa\proto\common\StorageMetadata.class
